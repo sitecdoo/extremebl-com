@@ -2,7 +2,7 @@ import type { PropsWithChildren } from "react";
 import { type VariantProps, cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
-export const textVariants = cva("font-league-spartan", {
+export const textVariants = cva("", {
   variants: {
     variant: {
       caption: "text-xs lg:text-sm font-['Open_Sans']",
