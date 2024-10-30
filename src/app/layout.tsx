@@ -1,12 +1,6 @@
-import type { Metadata } from "next";
-import { League_Spartan } from "next/font/google";
+import { leagueSpartan, openSans } from "@/lib/fonts";
 import "./globals.css";
-
-const leagueSpartan = League_Spartan({
-  subsets: ["latin"],
-  display: "swap",
-  fallback: ["Open Sans"],
-});
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,7 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${leagueSpartan.className} antialiased`}>
+      <body
+        className={`${leagueSpartan.className} ${openSans.className} antialiased`}
+      >
         {children}
       </body>
     </html>

@@ -5,9 +5,9 @@ import { cn } from "@/lib/utils";
 export const textVariants = cva("", {
   variants: {
     variant: {
-      caption: "text-xs lg:text-sm font-['Open_Sans']",
-      "body-sm": "text-sm lg:text-lg lg:leading-6 font-['Open_Sans']",
-      body: "text-base lg:text-xl lg:leading-8 font-['Open_Sans']",
+      caption: "font-open-sans text-xs lg:text-sm",
+      "body-sm": "font-open-sans text-sm lg:text-lg lg:leading-6",
+      body: "font-open-sans text-base lg:text-xl lg:leading-8",
       subtitle: "text-xl lg:text-3.5xl/10",
       h5: "text-2xl lg:text-3.5xl/10",
       h4: "text-2.5xl/9 lg:text-4xl lg:leading-11",
@@ -18,6 +18,7 @@ export const textVariants = cva("", {
     },
     fontWeight: {
       light: "font-light",
+      normal: "font-normal",
       bold: "font-bold",
     },
     uppercase: {
@@ -26,11 +27,12 @@ export const textVariants = cva("", {
   },
   defaultVariants: {
     variant: "body",
-    fontWeight: "light",
+    fontWeight: "normal",
   },
 });
 
 type HTMLTextElement = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span";
+
 type TextVariantProps = VariantProps<typeof textVariants>;
 
 type TypographyProps = PropsWithChildren<
