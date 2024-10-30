@@ -9,6 +9,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        "league-spartan": "League Spartan",
+        "open-sans": "Open Sans",
+      },
       lineHeight: {
         "11": "2.625rem",
         "12": "3.125rem",
