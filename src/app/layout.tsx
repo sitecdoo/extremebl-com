@@ -1,4 +1,4 @@
-import { leagueSpartan, openSans } from "@/lib/fonts";
+import { leagueSpartan, openSans } from "@/styles/fonts";
 import "./globals.css";
 import type { Metadata } from "next";
 
@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${leagueSpartan.className} ${openSans.className} antialiased`}
+        className={`${leagueSpartan.variable} ${openSans.variable} font-league-spartan antialiased`}
       >
         {children}
       </body>
