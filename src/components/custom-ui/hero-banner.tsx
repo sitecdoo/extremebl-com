@@ -16,9 +16,9 @@ const HeroBanner = ({ img, title }: HeroBannerProps) => {
           width={1632}
           height={650}
           className="min-h-[500px] min-w-72 rounded-2xl object-cover object-[65%] sm:h-full sm:w-full lg:max-h-[650px] lg:rounded-[40px]"
-          placeholder="blur"
-          blurDataURL={img}
+          priority
         />
+        <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#393939]/0 to-[#393939]/30 lg:rounded-[40px]" />
         <Typography
           variant="h1"
           fontWeight="bold"
@@ -26,6 +26,7 @@ const HeroBanner = ({ img, title }: HeroBannerProps) => {
         >
           {title}
         </Typography>
+        <div />
       </div>
     </section>
   );
