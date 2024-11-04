@@ -1,6 +1,7 @@
 import { leagueSpartan, openSans } from "@/styles/fonts";
 import "./globals.css";
 import type { Metadata } from "next";
+import Footer from "@/components/custom-ui/footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,6 +19,7 @@ export default function RootLayout({
         className={`${leagueSpartan.variable} ${openSans.variable} font-league-spartan antialiased`}
       >
         {children}
+        <Footer />
       </body>
     </html>
   );
