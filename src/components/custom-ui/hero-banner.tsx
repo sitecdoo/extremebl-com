@@ -18,7 +18,7 @@ const HeroBanner = ({ img, title }: HeroBannerProps) => {
           className="lg:rounded-large h-[31.25rem] min-w-72 rounded-2xl object-cover object-[65%] sm:w-full lg:h-[40.625rem]"
           priority
         />
-        <div className="lg:rounded-large absolute inset-0 rounded-2xl bg-gradient-to-b from-[#393939]/0 to-[#393939]/30" />
+        <div className="lg:rounded-large from-dark-500/0 to-dark-500/30 absolute inset-0 rounded-2xl bg-gradient-to-b" />
         <Typography
           variant="h1"
           fontWeight="bold"

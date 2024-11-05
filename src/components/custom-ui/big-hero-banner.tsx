@@ -13,7 +13,7 @@ const BigHeroBanner = () => {
           className="lg:rounded-40 h-[47rem] min-w-64 rounded-2xl object-cover object-[70%] sm:w-full lg:h-[62.5rem] lg:object-bottom"
           priority
         />
-        <div className="lg:rounded-40 absolute inset-0 rounded-2xl bg-gradient-to-b from-[#393939]/0 from-40% to-[#393939] lg:bg-gradient-to-l lg:to-[#393939]/50" />
+        <div className="lg:rounded-40 from-dark-500/0 to-dark-500 lg:to-dark-500/50 absolute inset-0 rounded-2xl bg-gradient-to-b from-40% lg:bg-gradient-to-l" />
         <div className="absolute top-1/2 px-4 text-neutrals-50 sm:left-10 sm:max-w-xl sm:px-0 lg:left-14 lg:top-1/3 lg:max-w-2xl 2xl:left-32">
           {/*Banner title for desktop */}
           <Typography
