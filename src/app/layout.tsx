@@ -1,6 +1,8 @@
 import { leagueSpartan, openSans } from "@/styles/fonts";
 import "./globals.css";
 import type { Metadata } from "next";
+import BigHeroBanner from "@/components/custom-ui/big-hero-banner";
+import HeroBanner from "@/components/custom-ui/hero-banner";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +19,11 @@ export default function RootLayout({
       <body
         className={`${leagueSpartan.variable} ${openSans.variable} font-league-spartan antialiased`}
       >
-        {children}
+        <div className="flex flex-col items-center gap-16 px-4 pt-10">
+          <HeroBanner img="/o-nama.jpg" title="O nama" />
+          <BigHeroBanner />
+          {children}
+        </div>
       </body>
     </html>
   );
