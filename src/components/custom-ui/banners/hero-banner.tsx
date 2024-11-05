@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Typography from "./typography";
+import Typography from "../typography";
 
 type HeroBannerProps = {
   img: string;
@@ -14,10 +14,10 @@ const HeroBanner = ({ img, title }: HeroBannerProps) => {
         alt={title}
         width={1632}
         height={650}
-        className="lg:rounded-40 h-[31.25rem] min-w-72 rounded-2xl object-cover object-[65%] sm:w-full lg:h-[40.625rem]"
+        className="h-[31.25rem] min-w-72 rounded-2xl object-cover object-[65%] sm:w-full lg:h-[40.625rem] lg:rounded-40"
         priority
       />
-      <div className="lg:rounded-40 from-dark-500/0 to-dark-500/30 absolute inset-0 rounded-2xl bg-gradient-to-b" />
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-dark-500/0 to-dark-500/30 lg:rounded-40" />
       <Typography
         variant="h1"
         fontWeight="bold"

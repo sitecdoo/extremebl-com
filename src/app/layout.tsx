@@ -1,8 +1,7 @@
 import { leagueSpartan, openSans } from "@/styles/fonts";
 import "./globals.css";
 import type { Metadata } from "next";
-import BigHeroBanner from "@/components/custom-ui/big-hero-banner";
-import HeroBanner from "@/components/custom-ui/hero-banner";
+import { BigHeroBanner, HeroBanner } from "@/components/custom-ui/banners";
 
 export const metadata: Metadata = {
   title: "Create Next App",
