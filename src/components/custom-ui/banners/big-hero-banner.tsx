@@ -18,7 +18,7 @@ const BigHeroBanner = () => {
         <Typography
           variant="display"
           tag="h3"
-          fontWeight="extra-bold"
+          fontWeight="extrabold"
           uppercase
           className="hidden lg:block"
         >
@@ -28,7 +28,7 @@ const BigHeroBanner = () => {
         <Typography
           variant="h2"
           tag="h2"
-          fontWeight="extra-bold"
+          fontWeight="extrabold"
           uppercase
           className="lg:hidden"
         >
