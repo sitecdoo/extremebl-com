@@ -8,7 +8,7 @@ type HeroBannerProps = {
 
 const HeroBanner = ({ img, title }: HeroBannerProps) => {
   return (
-    <section className="relative flex w-full max-w-[102rem] justify-center">
+    <section className="relative w-full">
       <Image
         src={img}
         alt={title}

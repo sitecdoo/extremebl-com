@@ -18,7 +18,7 @@ export default function RootLayout({
       <body
         className={`${leagueSpartan.variable} ${openSans.variable} font-league-spartan antialiased`}
       >
-        <div className="flex flex-col items-center gap-16 px-4 pt-10">
+        <div className="mx-auto flex w-full max-w-[108rem] flex-col items-center gap-16 px-4 py-10 lg:px-12">
           <HeroBanner img="/o-nama.jpg" title="O nama" />
           <BigHeroBanner />
           {children}

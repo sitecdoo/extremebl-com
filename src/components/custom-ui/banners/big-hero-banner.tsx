@@ -3,7 +3,7 @@ import Typography from "../typography";
 
 const BigHeroBanner = () => {
   return (
-    <section className="relative flex w-full max-w-[102rem] justify-center">
+    <section className="relative w-full">
       <Image
         src="/hero-image.jpg"
         alt="hero-banner"
