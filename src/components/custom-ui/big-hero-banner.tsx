@@ -4,13 +4,13 @@ import Typography from "./typography";
 const BigHeroBanner = () => {
   return (
     <section className="flex justify-center">
-      <div className="relative w-full max-w-[1632px]">
+      <div className="relative w-full max-w-[102rem]">
         <Image
           src="/hero-image.jpg"
           alt="hero-banner"
           width={1632}
           height={1000}
-          className="lg:rounded-40 h-[753px] min-w-64 rounded-2xl object-cover object-[70%] sm:w-full lg:h-[1000px] lg:object-bottom"
+          className="lg:rounded-40 h-[47rem] min-w-64 rounded-2xl object-cover object-[70%] sm:w-full lg:h-[62.5rem] lg:object-bottom"
           priority
         />
         <div className="lg:rounded-40 absolute inset-0 rounded-2xl bg-gradient-to-b from-[#393939]/0 from-40% to-[#393939] lg:bg-gradient-to-l lg:to-[#393939]/50" />
