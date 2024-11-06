@@ -22,7 +22,7 @@ const InfoSection = ({
         alt="card"
         width={806}
         height={699}
-        className="h-[22.375rem] min-w-72 rounded-2xl object-cover object-[30%] lg:h-[43.75rem] lg:rounded-[1.25rem] lg:object-[40%]"
+        className="h-[22.5rem] min-w-72 rounded-2xl object-cover object-[30%] lg:h-[43.75rem] lg:rounded-20 lg:object-[40%]"
         priority
       />
       <div className="flex flex-col justify-center gap-y-3 lg:gap-y-10 xl:max-w-lg">
