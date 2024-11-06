@@ -1,6 +1,7 @@
 import { leagueSpartan, openSans } from "@/styles/fonts";
 import "./globals.css";
 import type { Metadata } from "next";
+import Navbar from "./components/custom-ui/navbar/navbar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body
         className={`${leagueSpartan.variable} ${openSans.variable} font-league-spartan antialiased`}
       >
+        <Navbar />
         {children}
       </body>
     </html>
