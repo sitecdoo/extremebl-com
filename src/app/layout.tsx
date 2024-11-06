@@ -2,6 +2,8 @@ import { leagueSpartan, openSans } from "@/styles/fonts";
 import "./globals.css";
 import type { Metadata } from "next";
 import InfoSection from "@/components/custom-ui/info-section";
+import Typography from "@/components/custom-ui/typography";
+import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -40,8 +42,14 @@ export default function RootLayout({
               image={info.image}
               title={info.title}
               description={info.description}
-              buttonType="Read more"
-            />
+            >
+              <button className="mt-3 flex items-center gap-x-2 lg:mt-0">
+                <Typography tag="span" fontWeight="bold">
+                  Pročitaj više
+                </Typography>
+                <ArrowRight className="size-5 lg:size-8" strokeWidth={2} />
+              </button>
+            </InfoSection>
           ))}
           {children}
         </div>
