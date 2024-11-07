@@ -22,6 +22,7 @@ export default function RootLayout({
         <Navbar />
         <div className="mx-auto flex w-full max-w-[108rem] flex-col items-center gap-16 px-4 py-10 lg:px-12">
           <Services />
+          {children}
         </div>
       </body>
     </html>

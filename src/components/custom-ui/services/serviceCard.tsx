@@ -9,7 +9,7 @@ type ServiceCardProps = {
 
 const ServiceCard = ({ title, description, image }: ServiceCardProps) => {
   return (
-    <div className="flex min-h-80 min-w-72 flex-col items-center gap-y-6 rounded-2xl bg-neutrals-100 py-12 text-neutrals-800 sm:min-h-[25rem] sm:gap-y-8 sm:py-11 lg:justify-center lg:rounded-20 2xl:min-w-[25rem]">
+    <div className="flex min-h-80 min-w-52 flex-col items-center justify-center gap-y-6 rounded-2xl bg-neutrals-100 pb-8 pt-11 text-neutrals-800 sm:min-h-[25rem] sm:gap-y-8 lg:rounded-20 2xl:min-w-[25rem]">
       <Image
         src={image}
         width={90}
