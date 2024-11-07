@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Typography from "../components/custom-ui/typography";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -13,22 +14,22 @@ export default function Home() {
           height={38}
           priority
         />
-        <ol className="list-inside list-decimal text-center text-sm sm:text-left">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="rounded bg-black/[.05] px-1 py-0.5 font-semibold dark:bg-white/[.06]">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
         <div>
           <Typography variant="body">This text uses open sans font.</Typography>
           <Typography variant="h5">
             This text uses league spartan font.
           </Typography>
         </div>
+        <Button variant="black" size="regular">
+          Black Regular
+        </Button>
+        <Button variant="yellow" size="small">
+          Yellow Small
+        </Button>
+        <Button variant="blue" size="xsmall">
+          Blue XSmall
+        </Button>
+        <Button variant="ghost">Ghost</Button>
       </main>
     </div>
   );
