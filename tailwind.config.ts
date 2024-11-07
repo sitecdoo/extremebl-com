@@ -115,6 +115,7 @@ const config: Config = {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        20: "1.25rem",
         40: "2.5rem",
         60: "3.75rem",
       },
