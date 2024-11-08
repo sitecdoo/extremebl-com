@@ -2,6 +2,7 @@ import { leagueSpartan, openSans } from "@/styles/fonts";
 import "./globals.css";
 import type { Metadata } from "next";
 import Footer from "@/components/custom-ui/footer";
+import Navbar from "@/components/custom-ui/navbar/navbar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,6 +20,10 @@ export default function RootLayout({
         className={`${leagueSpartan.variable} ${openSans.variable} font-league-spartan antialiased`}
       >
         {children}
+        <Navbar />
+        <div className="mx-auto flex w-full max-w-[108rem] flex-col items-center gap-16 px-4 py-10 lg:px-12">
+          {children}
+        </div>
         <Footer />
       </body>
     </html>

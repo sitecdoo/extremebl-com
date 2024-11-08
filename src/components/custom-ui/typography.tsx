@@ -20,6 +20,7 @@ export const textVariants = cva("", {
       light: "font-light",
       normal: "font-normal",
       bold: "font-bold",
+      extrabold: "font-extrabold",
     },
     uppercase: {
       true: "uppercase",
