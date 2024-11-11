@@ -2,6 +2,11 @@ import { leagueSpartan, openSans } from "@/styles/fonts";
 import "./globals.css";
 import type { Metadata } from "next";
 import Navbar from "@/components/custom-ui/navbar/navbar";
+import {
+  ListItem,
+  PriceList,
+  PricingData,
+} from "@/components/custom-ui/pricing";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,14 +18,28 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const data = PricingData;
   return (
     <html lang="en">
       <body
         className={`${leagueSpartan.variable} ${openSans.variable} font-league-spartan antialiased`}
       >
         <Navbar />
-        <div className="mx-auto flex w-full max-w-[108rem] flex-col items-center gap-16 px-4 py-10 lg:px-12">
-          {children}
+        <div className="mx-auto flex w-full max-w-[108rem] flex-col items-center gap-16 px-4 py-10 text-neutrals-800 lg:px-12">
+          <PriceList pricingData={data.childrenPrices}>
+            <ListItem
+              title={data.youngerChildren.title}
+              data={data.youngerChildren.date}
+            />
+            <ListItem
+              title={data.olderChildren.title}
+              data={data.olderChildren.date}
+            />
+          </PriceList>
+          <PriceList pricingData={data.adultPrices}>
+            <ListItem title={data.adults.title} data={data.adults.date} />
+          </PriceList>
+          {/* {children} */}
         </div>
       </body>
     </html>
