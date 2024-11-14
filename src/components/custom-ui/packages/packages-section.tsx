@@ -10,8 +10,8 @@ const PackagesSection = () => {
       <Typography tag="h2" variant="h2" fontWeight="bold">
         Paketi
       </Typography>
-      <div className="flex w-screen justify-center px-10 sm:bg-[#F7F7F7]">
-        <div className="grid grid-cols-1 justify-items-center gap-5 sm:grid-cols-2 lg:gap-8 xl:grid-cols-3">
+      <div className="flex w-screen justify-center px-10 md:bg-[#F7F7F7]">
+        <div className="grid grid-cols-1 justify-items-center gap-5 md:grid-cols-2 lg:gap-8 xl:grid-cols-3">
           {data.map((item, index) => (
             <PackageCard
               key={index}
