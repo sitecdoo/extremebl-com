@@ -19,6 +19,7 @@ const LanguageSelector = () => {
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
+          size="icon"
           className="size-12 gap-0 p-0 text-neutrals-50 hover:bg-inherit hover:text-neutrals-200 lg:size-8 lg:text-neutrals-800 hover:lg:bg-[#F8F7F2] hover:lg:text-inherit xl:size-12"
         >
           <Earth className="size-6 lg:size-4 xl:size-6" />
