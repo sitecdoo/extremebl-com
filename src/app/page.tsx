@@ -1,10 +1,17 @@
 import Image from "next/image";
 import Typography from "../components/custom-ui/typography";
+import ImageCarousel from "@/components/custom-ui/image-carousel";
+
+const images = [
+  { url: "/ko-smo-mi.jpg", alt: "ko smo mi" },
+  { url: "/hero-image.jpg", alt: "hero image" },
+  { url: "/nasa-misija.jpg", alt: "nasa misija" },
+];
 
 export default function Home() {
   return (
-    <div className="grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 sm:p-20">
-      <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
+    <div className="grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16">
+      <main className="row-start-2 flex flex-col items-center gap-8">
         <Image
           className="dark:invert"
           src="/logo.svg"
@@ -29,6 +36,7 @@ export default function Home() {
             This text uses league spartan font.
           </Typography>
         </div>
+        <ImageCarousel images={images} />
       </main>
     </div>
   );
