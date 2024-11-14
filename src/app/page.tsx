@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Typography from "../components/custom-ui/typography";
-import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -20,16 +19,6 @@ export default function Home() {
             This text uses league spartan font.
           </Typography>
         </div>
-        <Button variant="black" size="regular">
-          Black Regular
-        </Button>
-        <Button variant="yellow" size="small">
-          Yellow Small
-        </Button>
-        <Button variant="blue" size="xsmall">
-          Blue XSmall
-        </Button>
-        <Button variant="ghost">Ghost</Button>
       </main>
     </div>
   );
