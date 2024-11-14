@@ -1,3 +1,3 @@
-import Services from "./services";
+import ServicesSection from "./services-section";
 
-export default Services;
+export default ServicesSection;
