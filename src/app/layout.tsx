@@ -2,7 +2,7 @@ import { leagueSpartan, openSans } from "@/styles/fonts";
 import "./globals.css";
 import type { Metadata } from "next";
 import Navbar from "@/components/custom-ui/navbar/navbar";
-import { PackageCard, PackageData } from "@/components/custom-ui/packages";
+import { PackagesSection } from "@/components/custom-ui/packages";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,8 +14,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const data = PackageData;
-
   return (
     <html lang="en">
       <body
@@ -23,18 +21,7 @@ export default function RootLayout({
       >
         <Navbar />
         <div className="mx-auto flex w-full max-w-[108rem] flex-col items-center gap-16 px-4 py-10 lg:px-12">
-          <div className="flex w-screen justify-center px-10 sm:bg-[#F7F7F7]">
-            <div className="grid grid-cols-1 justify-items-center gap-5 sm:grid-cols-2 lg:gap-8 xl:grid-cols-3">
-              {data.map((item, index) => (
-                <PackageCard
-                  key={index}
-                  name={item.name}
-                  price={item.price}
-                  offers={item.offers}
-                />
-              ))}
-            </div>
-          </div>
+          <PackagesSection />
           {/* {children} */}
         </div>
       </body>

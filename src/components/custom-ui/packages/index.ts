@@ -1,4 +1,3 @@
-import PackageCard from "./package-card";
-import PackageData from "./package-data";
+import PackagesSection from "./packages-section";
 
-export { PackageCard, PackageData };
+export { PackagesSection };
