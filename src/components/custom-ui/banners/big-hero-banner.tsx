@@ -38,7 +38,6 @@ const BigHeroBanner = () => {
         <Typography variant="subtitle" className="sm:mt-1">
           Kreni ka novim visinama, Pridruži se našem klubu!
         </Typography>
-        {/*Replace buttons with shadcn buttons here*/}
         <div className="mt-6 flex max-w-fit flex-col-reverse gap-4 sm:flex-row lg:mt-7 lg:gap-9">
           <Button variant="yellow">
             <Typography fontWeight="bold">Penjanje za djecu</Typography>
