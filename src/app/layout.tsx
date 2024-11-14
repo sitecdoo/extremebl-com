@@ -2,7 +2,7 @@ import { leagueSpartan, openSans } from "@/styles/fonts";
 import "./globals.css";
 import type { Metadata } from "next";
 import Navbar from "@/components/custom-ui/navbar/navbar";
-import Testimonial from "@/components/custom-ui/testimonial";
+import { TestimonialSection } from "@/components/custom-ui/testimonial";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,11 +21,7 @@ export default function RootLayout({
       >
         <Navbar />
         <div className="mx-auto flex w-full max-w-[108rem] flex-col items-center gap-16 px-4 py-10 lg:px-12">
-          <Testimonial
-            image="/marija-peric.jpg"
-            name="Marija Peric"
-            description="Najviše mi se svidjelo kako su aktivnosti bile prilagođene našim sposobnostima, omogućujući svakom članu tima da se osjeća uključenim i podržanim. Ovo iskustvo je definitivno poboljšalo našu timsku dinamiku i preporučujemo ga svakome tko želi ojačati svoj tim kroz zabavu i avanturu!"
-          />
+          <TestimonialSection />
           {/* {children} */}
         </div>
       </body>
