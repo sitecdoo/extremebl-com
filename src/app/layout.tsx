@@ -2,7 +2,7 @@ import { leagueSpartan, openSans } from "@/styles/fonts";
 import "./globals.css";
 import type { Metadata } from "next";
 import Navbar from "@/components/custom-ui/navbar/navbar";
-import Card from "@/components/custom-ui/card";
+import RecentBlogWrapper from "@/components/custom-ui/blog/recent-blog-wrapper/recent-blog-wrapper";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,7 +22,7 @@ export default function RootLayout({
         <Navbar />
         <div className="mx-auto flex w-full max-w-[108rem] flex-col items-center gap-16 px-4 py-10 lg:px-12">
           {/* Div with the grid will be removed on pr approval */}
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+          {/* <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
             {Array.from({ length: 9 }).map((_, index) => (
               <Card
                 key={index}
@@ -33,8 +33,9 @@ export default function RootLayout({
                 tags={["Penjanje", "Boulder", "fleksibilnost"]}
               />
             ))}
-          </div>
-          {children}
+          </div> */}
+          <RecentBlogWrapper />
+          {/* {children} */}
         </div>
       </body>
     </html>
