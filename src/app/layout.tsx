@@ -20,7 +20,7 @@ export default function RootLayout({
         className={`${leagueSpartan.variable} ${openSans.variable} bg-neutrals-50 font-league-spartan antialiased`}
       >
         <Navbar />
-        <div className="mx-auto flex w-full max-w-[108rem] flex-col items-center gap-16 px-4 py-10 lg:px-12">
+        <div className="mx-auto flex w-full max-w-[108rem] flex-col items-center gap-16 px-4 lg:px-12">
           {/* Div with the grid will be removed on pr approval */}
           {/* <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
             {Array.from({ length: 9 }).map((_, index) => (
