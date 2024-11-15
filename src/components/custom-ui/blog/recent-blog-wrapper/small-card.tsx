@@ -20,10 +20,10 @@ const SmallCard = ({
   tags,
 }: SmallCardProps) => {
   return (
-    <div className="rounded-28 flex min-h-[30rem] min-w-60 max-w-[334px] flex-col gap-3 bg-neutrals-50 p-3 pb-4 hover:bg-neutrals-100 lg:min-h-[33.5rem] lg:max-w-[25rem] lg:gap-4 lg:p-4 lg:pb-6">
+    <div className="flex min-h-[30rem] min-w-60 max-w-[334px] flex-col gap-3 rounded-28 bg-neutrals-50 p-3 pb-4 hover:bg-neutrals-100 lg:min-h-[33.5rem] lg:max-w-[25rem] lg:gap-4 lg:p-4 lg:pb-6">
       <Link href="/blog">
         <Image
-          className="rounded-18 h-44 object-cover lg:h-[12.5rem]"
+          className="h-44 rounded-18 object-cover lg:h-[12.5rem]"
           src={image}
           width={498}
           height={300}

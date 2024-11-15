@@ -37,7 +37,7 @@ const Card = ({ image, time, title, description, tags }: CardProps) => {
               variant="h5"
               tag="h5"
               fontWeight="bold"
-              className="lg:hidden"
+              className="line-clamp-2 lg:hidden"
             >
               {title}
             </Typography>
@@ -46,12 +46,14 @@ const Card = ({ image, time, title, description, tags }: CardProps) => {
               variant="h4"
               tag="h4"
               fontWeight="bold"
-              className="hidden lg:block"
+              className="line-clamp-2 hidden lg:block"
             >
               {title}
             </Typography>
           </Link>
-          <Typography variant="body-sm">{description}</Typography>
+          <Typography variant="body-sm" className="line-clamp-6">
+            {description}
+          </Typography>
         </div>
         <div className="mt-auto flex flex-wrap items-center gap-2">
           {tags.map((name, index) => (
