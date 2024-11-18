@@ -2,7 +2,6 @@ import { leagueSpartan, openSans } from "@/styles/fonts";
 import "./globals.css";
 import type { Metadata } from "next";
 import Navbar from "@/components/custom-ui/navbar/navbar";
-import TrainingSchedule from "@/components/custom-ui/training-schedule";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,8 +20,7 @@ export default function RootLayout({
       >
         <Navbar />
         <div className="mx-auto flex w-full max-w-[108rem] flex-col items-center gap-16 px-4 pb-10 lg:px-12">
-          <TrainingSchedule />
-          {/* {children} */}
+          {children}
         </div>
       </body>
     </html>
