@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Typography from "../components/custom-ui/typography";
-import TrainingSchedule from "@/components/custom-ui/training-schedule";
 
 export default function Home() {
   return (
@@ -20,7 +19,6 @@ export default function Home() {
             This text uses league spartan font.
           </Typography>
         </div>
-        <TrainingSchedule />
       </main>
     </div>
   );

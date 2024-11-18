@@ -2,11 +2,17 @@ import React from "react";
 import Typography from "../typography";
 import { Separator } from "../../ui/separator";
 import { colorMap, schedule } from "./training-schedule-config";
+import { cn } from "@/lib/utils";
 
 const TrainingSchedule = () => {
   return (
-    <div className="flex flex-col gap-4 sm:items-center">
-      <Typography variant="h2" tag="h2" fontWeight="bold">
+    <div className="flex w-full flex-col gap-4 sm:items-center">
+      <Typography
+        variant="h2"
+        tag="h2"
+        fontWeight="bold"
+        className="text-center"
+      >
         Raspored treninga
       </Typography>
       <div className="grid grid-flow-row gap-6 rounded-2xl bg-neutrals-100 p-2 sm:grid-cols-4 sm:p-3 xl:grid-cols-7 xl:p-16">
@@ -27,7 +33,10 @@ const TrainingSchedule = () => {
               {activities.map((activity, index) => (
                 <li
                   key={index}
-                  className={`flex items-center justify-between gap-2 rounded-md px-2 py-2 sm:min-h-[130px] sm:flex-col sm:justify-center ${colorMap[activity.name] || "bg-gray-200"}`}
+                  className={cn(
+                    "flex items-center justify-between gap-2 rounded-md px-2 py-2 sm:min-h-[130px] sm:flex-col sm:justify-center",
+                    colorMap[activity.name] || "bg-gray-200",
+                  )}
                 >
                   <Typography
                     tag="span"
