@@ -47,24 +47,24 @@ const Questions = () => {
   const [open, setIsOpen] = useState("");
 
   return (
-    <div className="grid w-full grid-cols-1 gap-8 self-start md:px-4 lg:w-fit lg:grid-cols-[1fr,2fr] lg:gap-x-10 lg:px-8 xl:gap-x-12 xl:px-16 2xl:gap-x-24 2xl:px-36">
+    <div className="grid w-full grid-cols-1 gap-8 self-start md:px-4 lg:w-fit lg:grid-cols-[1fr,1.5fr] lg:gap-x-10 lg:px-8 xl:gap-x-12 xl:px-16 2xl:gap-x-24 2xl:px-36">
       <div className="flex flex-col gap-3">
         <Typography variant="h2" tag="h2" fontWeight="bold">
           Često postavljena pitanja
         </Typography>
-        <Typography className="text-neutrals-600 2xl:w-[28.125rem]">
+        <Typography className="text-neutrals-600">
           U ovoj sekciji pronaći ćete odgovore na najčešća pitanja o penjanju.
           Saznajte sve što vas zanima o opremi, tehnikama i savjetima za sigurno
           i uspješno penjanje!
         </Typography>
       </div>
       <Accordion type="single" collapsible onValueChange={setIsOpen}>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 lg:gap-4">
           {questions.map(({ question, answer }, index) => (
             <AccordionItem
               key={index}
               value={`item-${index}`}
-              className="rounded-lg bg-neutrals-100 px-4 py-3 lg:px-5 lg:py-6"
+              className="rounded-lg bg-neutrals-100 px-4 py-3 lg:rounded-xl lg:px-5 lg:py-6"
             >
               <AccordionTrigger className="gap-1 lg:gap-5">
                 <Typography fontWeight="bold">{question}</Typography>
