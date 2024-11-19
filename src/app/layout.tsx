@@ -3,7 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Navbar from "@/components/custom-ui/navbar/navbar";
 import Masonry from "@/components/custom-ui/masonry";
-import { birthdayImages, teambuildingImages } from "./config/masonry-config";
+import { teambuildingImages } from "./config/masonry-config";
 
 export const metadata: Metadata = {
   title: "Create Next App",
