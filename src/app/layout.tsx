@@ -2,12 +2,8 @@ import { leagueSpartan, openSans } from "@/styles/fonts";
 import "./globals.css";
 import type { Metadata } from "next";
 import Navbar from "@/components/custom-ui/navbar/navbar";
-import {
-  BenefitsCard,
-  BenefitsForAdults,
-  BenefitsForChildren,
-  BenefitsSection,
-} from "@/components/custom-ui/benefits";
+
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
