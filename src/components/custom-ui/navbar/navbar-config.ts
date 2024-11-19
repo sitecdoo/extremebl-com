@@ -1,4 +1,4 @@
-export const navigationConfig = {
+export const navbarConfig = {
   main: [
     { href: "/", label: "Početna" },
     { href: "/about", label: "O nama" },

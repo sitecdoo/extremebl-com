@@ -1,6 +1,7 @@
 import { leagueSpartan, openSans } from "@/styles/fonts";
 import "./globals.css";
 import type { Metadata } from "next";
+import Footer from "@/components/custom-ui/footer";
 import Navbar from "@/components/custom-ui/navbar/navbar";
 
 export const metadata: Metadata = {
@@ -16,12 +17,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${leagueSpartan.variable} ${openSans.variable} font-league-spartan antialiased`}
+        className={`${leagueSpartan.variable} ${openSans.variable} bg-neutrals-50 font-league-spartan antialiased`}
       >
         <Navbar />
         <div className="mx-auto flex w-full max-w-[108rem] flex-col items-center px-4 lg:px-12">
           {children}
         </div>
+        <Footer />
       </body>
     </html>
   );
