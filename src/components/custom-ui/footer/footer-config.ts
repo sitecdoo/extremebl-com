@@ -11,4 +11,10 @@ export const footerConfig = {
     { href: "/rodendani", label: "Rođendani" },
     { href: "/teambuilding", label: "Teambuilding" },
   ],
+  contact: {
+    name: "Kontakt",
+    phone: "065 779 027",
+    email: "extremeclimbing@gmail.com",
+    location: "Bulevar vojvode P. Bojovića 1, Banja Luka 78000",
+  },
 };
