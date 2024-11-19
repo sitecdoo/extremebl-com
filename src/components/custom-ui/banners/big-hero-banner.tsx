@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Typography from "../typography";
+import { Button } from "@/components/ui/button";
 
 const BigHeroBanner = () => {
   return (
@@ -37,18 +38,14 @@ const BigHeroBanner = () => {
         <Typography variant="subtitle" className="sm:mt-1">
           Kreni ka novim visinama, Pridruži se našem klubu!
         </Typography>
-        {/*Replace buttons with shadcn buttons here*/}
         <div className="mt-6 flex max-w-fit flex-col-reverse gap-4 sm:flex-row lg:mt-7 lg:gap-9">
-          <button className="w-fit rounded-60 bg-yellow-600">
-            <Typography fontWeight="bold" className="px-5 py-4 lg:px-6">
-              Penjanje za djecu
-            </Typography>
-          </button>
-          <button className="rounded-60 bg-neutrals-800">
-            <Typography fontWeight="bold" className="px-5 py-4 lg:px-6">
-              Penjanje za odrasle
-            </Typography>
-          </button>
+          <Button variant="yellow">
+            <Typography fontWeight="bold">Penjanje za djecu</Typography>
+          </Button>
+
+          <Button>
+            <Typography fontWeight="bold">Penjanje za odrasle</Typography>
+          </Button>
         </div>
       </div>
       <div />
