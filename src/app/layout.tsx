@@ -2,7 +2,6 @@ import { leagueSpartan, openSans } from "@/styles/fonts";
 import "./globals.css";
 import type { Metadata } from "next";
 import Navbar from "@/components/custom-ui/navbar/navbar";
-import RecentBlogWrapper from "@/components/custom-ui/blog/recent-blog-wrapper";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,20 +20,7 @@ export default function RootLayout({
       >
         <Navbar />
         <div className="mx-auto flex w-full max-w-[108rem] flex-col items-center gap-16 px-4 pb-10 lg:px-12">
-          {/* <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
-            {Array.from({ length: 9 }).map((_, index) => (
-              <Card
-                key={index}
-                image={"/card/basic-techniques.jpg"}
-                time="2 days ago"
-                title="Osnovne tehnike penjanja za pocetnike"
-                description="Penjanje može delovati zastrašujuće za početnike, ali uz prave tehnike, brzo ćete savladati osnove. U ovom članku istražujemo ključne veštine koje vam trebaju da biste bezbedno i efikasno započeli svoju penjačku avanturu, bilo da penjete u prirodi ili na veštačkoj steni."
-                tags={["Penjanje", "Boulder", "fleksibilnost"]}
-              />
-            ))}
-          </div> */}
-          <RecentBlogWrapper />
-          {/* {children} */}
+          {children}
         </div>
       </body>
     </html>
