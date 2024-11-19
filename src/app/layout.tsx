@@ -26,27 +26,7 @@ export default function RootLayout({
       >
         <Navbar />
         <div className="mx-auto flex w-full max-w-[108rem] flex-col items-center gap-16 px-4 pb-10 lg:px-12">
-          <BenefitsSection title="Benefiti penjanja za odrasle">
-            {BenefitsForAdults.map((data, index) => (
-              <BenefitsCard
-                key={index}
-                title={data.title}
-                description={data.description}
-                image={data.image}
-              />
-            ))}
-          </BenefitsSection>
-          <BenefitsSection title="Benefiti penjanja za djecu">
-            {BenefitsForChildren.map((data, index) => (
-              <BenefitsCard
-                key={index}
-                title={data.title}
-                description={data.description}
-                image={data.image}
-              />
-            ))}
-          </BenefitsSection>
-          {/* {children} */}
+          {children}
         </div>
       </body>
     </html>
