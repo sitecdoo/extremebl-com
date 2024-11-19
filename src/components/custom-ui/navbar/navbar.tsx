@@ -34,7 +34,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="flex items-center justify-between bg-white px-4 py-4 md:px-8 md:py-6 xl:px-12 xl:py-8">
+    <nav className="flex items-center justify-between bg-neutrals-50 px-4 py-4 md:px-8 md:py-6 xl:px-12 xl:py-8">
       {/* Logo section */}
       <div className="flex items-center space-x-4 2xl:space-x-6">
         <Link href="/">
