@@ -6,7 +6,7 @@ import { Facebook, Instagram } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { MobileMenu } from "./mobile-menu";
-import { navigationConfig } from "./navbar-config";
+import { navbarConfig } from "./navbar-config";
 import Typography from "@/components/custom-ui/typography";
 import { usePathname } from "next/navigation";
 import { Separator } from "@/components/ui/separator";
@@ -50,7 +50,7 @@ const Navbar = () => {
         </Link>
         {/* Desktop Navigation */}
         <div className="hidden items-center space-x-3 lg:flex lg:space-x-2 xl:space-x-6">
-          {navigationConfig.main.map((item) => (
+          {navbarConfig.main.map((item) => (
             <NavItem key={item.href} href={item.href}>
               <Typography
                 className={cn(
@@ -67,7 +67,7 @@ const Navbar = () => {
 
       {/* Desktop Secondary Items */}
       <div className="hidden items-center space-x-2 lg:flex xl:space-x-4">
-        {navigationConfig.secondary.map((item) => (
+        {navbarConfig.secondary.map((item) => (
           <NavItem key={item.href} href={item.href}>
             <Typography
               className={cn(
