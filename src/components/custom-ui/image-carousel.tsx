@@ -11,7 +11,7 @@ import Image from "next/image";
 const ImageCarousel = ({
   images,
 }: {
-  images: { url: string; alt: string }[];
+  images: { src: string; alt: string }[];
 }) => {
   return (
     <Carousel
@@ -24,7 +24,7 @@ const ImageCarousel = ({
         {images.map((image, index) => (
           <CarouselItem key={index}>
             <Image
-              src={image.url}
+              src={image.src}
               alt={image.alt}
               width={1340}
               height={843}
