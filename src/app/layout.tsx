@@ -2,11 +2,6 @@ import { leagueSpartan, openSans } from "@/styles/fonts";
 import "./globals.css";
 import type { Metadata } from "next";
 import Navbar from "@/components/custom-ui/navbar/navbar";
-import {
-  ListItem,
-  PriceList,
-  PricingData,
-} from "@/components/custom-ui/pricing";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +13,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const data = PricingData;
   return (
     <html lang="en">
       <body
