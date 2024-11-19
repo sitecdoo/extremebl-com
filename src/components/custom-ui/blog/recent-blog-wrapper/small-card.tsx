@@ -21,10 +21,10 @@ const SmallCard = ({
 }: SmallCardProps) => {
   return (
     <Link href={`/blog/`}>
-      <div className="group flex min-h-[30rem] min-w-60 max-w-[334px] flex-col gap-3 rounded-28 bg-neutrals-50 p-3 pb-4 hover:shadow-md lg:min-h-[33.5rem] lg:max-w-[25rem] lg:gap-4 lg:p-4 lg:pb-6">
+      <div className="rounded-28 group flex min-h-[30rem] min-w-60 max-w-[21rem] flex-col gap-3 bg-neutrals-50 p-3 pb-4 hover:shadow-md lg:min-h-[33.5rem] lg:max-w-[25rem] lg:gap-4 lg:p-4 lg:pb-6">
         <div className="relative h-44 lg:h-[12.5rem]">
           <Image
-            className="h-full rounded-18 object-cover"
+            className="rounded-18 h-full object-cover"
             src={image}
             width={498}
             height={300}
