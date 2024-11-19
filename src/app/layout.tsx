@@ -1,6 +1,7 @@
 import { leagueSpartan, openSans } from "@/styles/fonts";
 import "./globals.css";
 import type { Metadata } from "next";
+import Footer from "@/components/custom-ui/footer";
 import Navbar from "@/components/custom-ui/navbar/navbar";
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function RootLayout({
         <div className="mx-auto flex w-full max-w-[108rem] flex-col items-center px-4 pb-10 lg:px-12">
           {children}
         </div>
+        <Footer />
       </body>
     </html>
   );
