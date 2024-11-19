@@ -75,7 +75,7 @@ const Children = () => {
           omogućite im da se penju prema zvijezdama s osmijehom na licu!
         </Typography>
         <Button variant="blue" className="w-fit">
-          Kontaktiraj nas
+          <Typography fontWeight="bold">Kontaktiraj nas</Typography>
         </Button>
       </div>
     </div>
