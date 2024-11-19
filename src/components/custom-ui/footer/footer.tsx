@@ -26,6 +26,8 @@ const NavItems = ({
   </div>
 );
 
+const { company, activity, contact } = footerConfig;
+
 const Footer = () => {
   return (
     <footer className="flex w-full items-center justify-center bg-neutrals-100 px-0 py-8 sm:px-8 sm:py-24 lg:px-20 2xl:px-44 2xl:py-24">
@@ -42,14 +44,14 @@ const Footer = () => {
         <section className="flex w-full flex-col px-4 sm:max-w-[50rem] sm:gap-y-20 sm:px-0">
           <div className="flex flex-col justify-between gap-x-5 gap-y-16 py-8 sm:flex-row sm:py-0">
             <NavItems title="Kompanija">
-              {footerConfig.company.map((item) => (
+              {company.map((item) => (
                 <Link key={item.href} href={item.href}>
                   {item.label}
                 </Link>
               ))}
             </NavItems>
             <NavItems title="Aktivnosti">
-              {footerConfig.activity.map((item) => (
+              {activity.map((item) => (
                 <Link key={item.href} href={item.href}>
                   {item.label}
                 </Link>
@@ -62,29 +64,29 @@ const Footer = () => {
                 fontWeight="bold"
                 className="pb-7 sm:pb-8"
               >
-                Kontakt
+                {contact.name}
               </Typography>
               <div className="flex flex-col gap-y-7 sm:gap-y-8">
                 <div className="flex items-center gap-3">
                   <Phone className="size-6" strokeWidth={1.5} />
                   <Typography tag="p" variant="body-sm">
-                    065 779 027
+                    {contact.phone}
                   </Typography>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="size-6" strokeWidth={1.5} />
-                  <a href="mailto:extremeclimbing@gmail.com">
+                  <Link href={`mailto:${contact.email}`}>
                     <Typography tag="p" variant="body-sm">
-                      extremeclimbing@gmail.com
+                      {contact.email}
                     </Typography>
-                  </a>
+                  </Link>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="size-6">
                     <MapPin className="size-6" strokeWidth={1.5} />
                   </div>
                   <Typography tag="p" variant="body-sm" className="sm:max-w-64">
-                    Bulevar vojvode P. Bojovića 1, Banja Luka 78000
+                    {contact.location}
                   </Typography>
                 </div>
               </div>
@@ -100,12 +102,12 @@ const Footer = () => {
                 Copyright 2024 Extreme Climbing. All Rights Reserved
               </Typography>
               <div className="flex gap-x-6">
-                <a href="#">
+                <Link href="#">
                   <Facebook className="size-6 text-neutrals-400" />
-                </a>
-                <a href="#">
+                </Link>
+                <Link href="#">
                   <Instagram className="size-6 text-neutrals-400" />
-                </a>
+                </Link>
               </div>
             </div>
           </section>
