@@ -20,8 +20,8 @@ export default function RootLayout({
         className={`${leagueSpartan.variable} ${openSans.variable} font-league-spartan antialiased`}
       >
         <Navbar />
-        <div className="mx-auto flex w-full max-w-[108rem] flex-col items-center gap-16 px-4 py-10 lg:px-12">
-          {children}
+        <div className="mx-auto flex w-full max-w-[108rem] flex-col items-center gap-16 px-4 pb-10 lg:px-12">
+          {/* {children} */}
         </div>
         <Footer />
       </body>
