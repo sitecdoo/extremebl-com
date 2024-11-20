@@ -1,7 +1,7 @@
 export const navbarConfig = {
   main: [
     { href: "/", label: "Početna" },
-    { href: "/o-nama", label: "O nama" },
+    { href: "/about", label: "O nama" },
     { href: "/djeca", label: "Djeca" },
     { href: "/odrasli", label: "Odrasli" },
     { href: "/rodendani", label: "Rođendani" },

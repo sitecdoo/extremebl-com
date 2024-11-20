@@ -12,8 +12,8 @@ const HeroBanner = ({ img, title }: HeroBannerProps) => {
       <Image
         src={img}
         alt={title}
-        width={1632}
-        height={650}
+        width={4000}
+        height={2667}
         className="h-[31.25rem] min-w-72 rounded-2xl object-cover object-[65%] sm:w-full lg:h-[40.625rem] lg:rounded-40"
         priority
       />
