@@ -1,4 +1,4 @@
-export const BenefitsForChildren = [
+export const benefitsForChildren = [
   {
     title: "Razvoj motoričkih vještina",
     description:
@@ -19,7 +19,7 @@ export const BenefitsForChildren = [
   },
 ];
 
-export const BenefitsForAdults = [
+export const benefitsForAdults = [
   {
     title: "Fizička kondicija",
     description:
