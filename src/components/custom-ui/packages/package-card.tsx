@@ -31,8 +31,7 @@ const PackageCard = ({ name, price, offers }: PackageCardProps) => {
           ))}
         </div>
       </div>
-      {/* TODO: Replace with button variant */}
-      <Button className="w-fit self-center rounded-full bg-blue-500 px-5 py-4 text-neutrals-50 lg:px-6">
+      <Button className="w-fit self-center" variant="blue">
         <Typography fontWeight="bold">Rezerviši termin</Typography>
       </Button>
     </div>
