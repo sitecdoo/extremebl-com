@@ -1,42 +1,11 @@
 import { HeroBanner } from "@/components/custom-ui/banners";
-import ImageCarousel from "@/components/custom-ui/image-carousel";
 import InfoSection from "@/components/custom-ui/info-section";
 import ServicesSection from "@/components/custom-ui/services";
 import Typography from "@/components/custom-ui/typography";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-
-const info = [
-  {
-    image: "/about/who-are-we.jpg",
-    title: "Ko smo mi?",
-    description:
-      "Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn",
-  },
-  {
-    image: "/about/our-mission.jpg",
-    title: "Naša misija",
-    description:
-      "Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn",
-  },
-];
-
-const images = [
-  { url: "/about/carousel-1.jpg", alt: "ko smo mi" },
-  { url: "/about/carousel-2.jpg", alt: "ko smo mi" },
-  { url: "/about/carousel-3.jpg", alt: "ko smo mi" },
-  { url: "/about/carousel-4.jpg", alt: "ko smo mi" },
-  { url: "/about/carousel-5.jpg", alt: "ko smo mi" },
-  { url: "/about/carousel-6.jpg", alt: "ko smo mi" },
-  { url: "/about/carousel-7.jpg", alt: "ko smo mi" },
-  { url: "/about/carousel-8.jpg", alt: "ko smo mi" },
-  { url: "/about/carousel-9.jpg", alt: "ko smo mi" },
-  { url: "/about/carousel-10.jpg", alt: "ko smo mi" },
-  { url: "/about/carousel-11.jpg", alt: "ko smo mi" },
-  { url: "/about/carousel-12.jpg", alt: "ko smo mi" },
-  { url: "/about/carousel-12.jpg", alt: "ko smo mi" },
-  { url: "/about/carousel-13.jpg", alt: "ko smo mi" },
-];
+import { infoSectionData, carouselImages } from "@/app/about/config";
+import ImageCarousel from "@/components/custom-ui/image-carousel";
 
 const AboutPage = () => {
   return (
@@ -55,7 +24,7 @@ const AboutPage = () => {
         </Typography>
       </div>
       <div className="flex w-full flex-col gap-y-24 lg:gap-y-32">
-        {info.map((info, index) => (
+        {infoSectionData.map((info, index) => (
           <InfoSection
             key={index}
             image={info.image}
@@ -72,7 +41,7 @@ const AboutPage = () => {
         ))}
       </div>
       <ServicesSection />
-      <ImageCarousel images={images} />
+      <ImageCarousel images={carouselImages} />
       <div className="flex flex-col items-center gap-6 lg:gap-12">
         <Typography
           variant="h3"
