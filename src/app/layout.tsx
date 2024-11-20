@@ -1,6 +1,7 @@
 import { leagueSpartan, openSans } from "@/styles/fonts";
 import "./globals.css";
 import type { Metadata } from "next";
+import Footer from "@/components/custom-ui/footer";
 import Navbar from "@/components/custom-ui/navbar/navbar";
 import { TestimonialSection } from "@/components/custom-ui/testimonial";
 
@@ -17,13 +18,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${leagueSpartan.variable} ${openSans.variable} font-league-spartan antialiased`}
+        className={`${leagueSpartan.variable} ${openSans.variable} bg-neutrals-50 font-league-spartan antialiased`}
       >
         <Navbar />
         <div className="mx-auto flex w-full max-w-[108rem] flex-col items-center gap-16 px-4 py-10 lg:px-12">
           <TestimonialSection />
           {/* {children} */}
         </div>
+        <Footer />
       </body>
     </html>
   );

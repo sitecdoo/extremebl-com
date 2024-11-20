@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/sheet";
 import { Facebook, Instagram, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { navigationConfig } from "./navbar-config";
+import { navbarConfig } from "./navbar-config";
 import Typography from "@/components/custom-ui/typography";
 import Image from "next/image";
 import LanguageSelector from "./language-selector";
@@ -50,7 +50,7 @@ export const MobileMenu = React.memo(
               {/* Main Navigation */}
               <div>
                 <div className="flex flex-col gap-5 pb-6 pt-12">
-                  {navigationConfig.main.map((item) => (
+                  {navbarConfig.main.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
@@ -66,7 +66,7 @@ export const MobileMenu = React.memo(
 
                 {/* Secondary Navigation */}
                 <div className="flex flex-col gap-4 py-4">
-                  {navigationConfig.secondary.map((item) => (
+                  {navbarConfig.secondary.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
