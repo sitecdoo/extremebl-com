@@ -10,7 +10,7 @@ const TestimonialSection = () => {
         name="Marija Peric"
         description="Najviše mi se svidjelo kako su aktivnosti bile prilagođene našim sposobnostima, omogućujući svakom članu tima da se osjeća uključenim i podržanim. Ovo iskustvo je definitivno poboljšalo našu timsku dinamiku i preporučujemo ga svakome tko želi ojačati svoj tim kroz zabavu i avanturu!"
       />
-      <Button className="w-fit rounded-full bg-blue-500 px-5 py-4 text-neutrals-50 lg:px-6">
+      <Button className="w-fit" variant="blue">
         <Typography fontWeight="bold">Kontaktiraj nas</Typography>
       </Button>
     </div>
