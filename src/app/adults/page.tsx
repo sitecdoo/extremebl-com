@@ -5,6 +5,7 @@ import {
   BenefitsSection,
 } from "@/components/custom-ui/benefits";
 import Header from "@/components/custom-ui/header";
+import ImageCarousel from "@/components/custom-ui/image-carousel";
 import InfoSection from "@/components/custom-ui/info-section";
 import {
   ListItem,
@@ -18,10 +19,26 @@ import { Button } from "@/components/ui/button";
 const AdultsPage = () => {
   const pricingData = PricingData;
 
+  const carouselImages = [
+    { src: "/adults/adults-carousel-1.jpg", alt: "carousel image" },
+    { src: "/adults/adults-carousel-2.jpg", alt: "carousel image" },
+    { src: "/adults/adults-carousel-3.jpg", alt: "carousel image" },
+    { src: "/adults/adults-carousel-4.jpg", alt: "carousel image" },
+    { src: "/adults/adults-carousel-5.jpg", alt: "carousel image" },
+    { src: "/adults/adults-carousel-6.jpg", alt: "carousel image" },
+    { src: "/adults/adults-carousel-7.jpg", alt: "carousel image" },
+    { src: "/adults/adults-carousel-8.jpg", alt: "carousel image" },
+    { src: "/adults/adults-carousel-9.jpg", alt: "carousel image" },
+    { src: "/adults/adults-carousel-10.jpg", alt: "carousel image" },
+  ];
+
   return (
     <div className="flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
       <div className="flex w-full flex-col items-center gap-24 lg:gap-44">
-        <HeroBanner img="/about/hero-banner.jpg" title="Penjanje za odrasle" />
+        <HeroBanner
+          img="/adults/adults-banner.jpg"
+          title="Penjanje za odrasle"
+        />
         <Header
           text="Penjanje je nevjerovatna aktivnost za djecu koja poboljšava snagu,
           koordinaciju i vještine rješavanja problema. Povećava samopouzdanje,
@@ -31,7 +48,7 @@ const AdultsPage = () => {
       <div className="flex w-full flex-col gap-y-24 lg:gap-y-32">
         {/* 1 */}
         <InfoSection
-          image="/"
+          image="/adults/adults-info-1.jpg"
           title="Trening za odrasle"
           description="Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn"
         >
@@ -41,7 +58,7 @@ const AdultsPage = () => {
         </InfoSection>
         {/* 2 */}
         <InfoSection
-          image="/"
+          image="/adults/adults-info-2.jpg"
           title="Osnovni kurs"
           description="Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn"
         >
@@ -53,7 +70,7 @@ const AdultsPage = () => {
         </InfoSection>
         {/* 3 */}
         <InfoSection
-          image="/"
+          image="/adults/adults-info-3.jpg"
           title="Napredni kurs"
           description="Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn"
         >
@@ -72,7 +89,7 @@ const AdultsPage = () => {
         </InfoSection>
         {/* 4 */}
         <InfoSection
-          image="/"
+          image="/adults/adults-info-4.jpg"
           title="Izleti u prirodu"
           description="Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn"
         />
@@ -93,7 +110,7 @@ const AdultsPage = () => {
           data={pricingData.adults.date}
         />
       </PriceList>
-      {/* <ImageCarousel images={carouselImages} /> */}
+      <ImageCarousel images={carouselImages} />
       <Header
         text="Spremni za novu avanturu? Pridružite se našoj penjačkoj ekipi i
           započnite svoje penjačko putovanje danas"
