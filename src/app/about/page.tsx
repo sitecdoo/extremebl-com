@@ -31,12 +31,15 @@ const AboutPage = () => {
             title={info.title}
             description={info.description}
           >
-            <button className="mt-3 flex items-center gap-x-2 lg:mt-0">
+            <Button
+              variant="ghost"
+              className="mt-3 flex w-fit items-center gap-x-2 px-1 lg:mt-0"
+            >
               <Typography tag="span" fontWeight="bold">
                 Pročitaj više
               </Typography>
               <ArrowRight className="size-5 lg:size-8" strokeWidth={2} />
-            </button>
+            </Button>
           </InfoSection>
         ))}
       </div>
