@@ -7,7 +7,7 @@ const ContactPage = () => {
     <div className="flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
       <div className="flex w-full flex-col items-center gap-24 lg:gap-44">
         <HeroBanner img="/contact-hero-banner.jpg" title="Kontakt" />
-        <div className="flex w-full flex-col justify-start gap-14 lg:flex-row lg:gap-24 lg:px-12 xl:px-20 2xl:gap-40 2xl:px-36">
+        <div className="flex w-full flex-col justify-start gap-14 lg:flex-row lg:px-12 xl:gap-24 xl:px-20 2xl:gap-40 2xl:px-36">
           <div className="space-y-4 lg:max-w-lg">
             <Typography variant="h2" tag="h2" fontWeight="bold">
               Kontaktiraj nas
@@ -18,7 +18,7 @@ const ContactPage = () => {
               informacije.
             </Typography>
           </div>
-          <div className="flex flex-col gap-9">
+          <div className="grid gap-9 sm:grid-cols-2 lg:grid-cols-1">
             <div className="space-y-1">
               <Typography className="text-base text-neutrals-600">
                 Telefon:
@@ -50,6 +50,21 @@ const ContactPage = () => {
               <FacebookIcon className="size-9" />
               <InstagramIcon className="size-9" />
             </div>
+          </div>
+        </div>
+        <div className="w-full space-y-6 text-center lg:space-y-12">
+          <Typography variant="h2" tag="h2" fontWeight="bold">
+            Lokacija
+          </Typography>
+          <div className="h-[18rem] w-full lg:h-[43.75rem]">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.3385769172913!2d17.191234776191386!3d44.77214177107333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475e03128fa5d899%3A0x3fb89f4b18a763b0!2sBanja%20Luka!5e0!3m2!1sen!2sba!4v1709856547372!5m2!1sen!2sba"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="h-full w-full"
+            />
           </div>
         </div>
       </div>
