@@ -11,7 +11,7 @@ import Image from "next/image";
 const ImageCarousel = ({
   images,
 }: {
-  images: { url: string; alt: string }[];
+  images: { src: string; alt: string }[];
 }) => {
   return (
     <Carousel
@@ -24,12 +24,12 @@ const ImageCarousel = ({
         {images.map((image, index) => (
           <CarouselItem key={index}>
             <Image
-              src={image.url}
+              src={image.src}
               alt={image.alt}
               width={1340}
-              height={843}
+              height={842}
               priority
-              className="h-full max-h-[52.7rem] w-full rounded-2xl"
+              className="h-full max-h-[52.7rem] w-full rounded-2xl object-cover"
             />
           </CarouselItem>
         ))}
