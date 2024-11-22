@@ -4,6 +4,7 @@ import {
   benefitsForAdults,
   BenefitsSection,
 } from "@/components/custom-ui/benefits";
+import Header from "@/components/custom-ui/header";
 import InfoSection from "@/components/custom-ui/info-section";
 import {
   ListItem,
@@ -16,20 +17,16 @@ import { Button } from "@/components/ui/button";
 
 const AdultsPage = () => {
   const pricingData = PricingData;
+
   return (
     <div className="flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
       <div className="flex w-full flex-col items-center gap-24 lg:gap-44">
         <HeroBanner img="/about/hero-banner.jpg" title="Penjanje za odrasle" />
-        <Typography
-          variant="h3"
-          tag="h3"
-          fontWeight="bold"
-          className="max-w-[56rem] px-8 text-center"
-        >
-          Penjanje je nevjerovatna aktivnost za djecu koja poboljšava snagu,
+        <Header
+          text="Penjanje je nevjerovatna aktivnost za djecu koja poboljšava snagu,
           koordinaciju i vještine rješavanja problema. Povećava samopouzdanje,
-          pruža osjećaj uspjeha i podstiče timski rad.
-        </Typography>
+          pruža osjećaj uspjeha i podstiče timski rad."
+        />
       </div>
       <div className="flex w-full flex-col gap-y-24 lg:gap-y-32">
         {/* 1 */}
@@ -97,20 +94,14 @@ const AdultsPage = () => {
         />
       </PriceList>
       {/* <ImageCarousel images={carouselImages} /> */}
-      <div className="flex flex-col items-center gap-6 lg:gap-12">
-        <Typography
-          variant="h3"
-          tag="h3"
-          fontWeight="bold"
-          className="max-w-[50rem] px-8 text-center"
-        >
-          Spremni za novu avanturu? Pridružite se našoj penjačkoj ekipi i
-          započnite svoje penjačko putovanje danas
-        </Typography>
+      <Header
+        text="Spremni za novu avanturu? Pridružite se našoj penjačkoj ekipi i
+          započnite svoje penjačko putovanje danas"
+      >
         <Button variant="blue" className="w-fit">
           <Typography fontWeight="bold">Kontaktiraj nas</Typography>
         </Button>
-      </div>
+      </Header>
     </div>
   );
 };
