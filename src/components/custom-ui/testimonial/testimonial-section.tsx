@@ -16,5 +16,4 @@ const TestimonialSection = ({ description }: { description: string }) => {
     </div>
   );
 };
-
 export default TestimonialSection;
