@@ -42,7 +42,7 @@ const ContactForm = () => {
       </Typography>
       <Form {...form}>
         <form
-          className="w-full max-w-3xl space-y-5"
+          className="w-full max-w-3xl space-y-6 lg:space-y-4"
           onSubmit={form.handleSubmit(handleSubmit)}
         >
           <FormField
@@ -58,11 +58,7 @@ const ContactForm = () => {
                   />
                 </FormControl>
 
-                {errors.name ? (
-                  <FormMessage />
-                ) : (
-                  <FormDescription className="pb-5" />
-                )}
+                {errors.name ? <FormMessage /> : <FormDescription />}
               </FormItem>
             )}
           />
@@ -79,11 +75,7 @@ const ContactForm = () => {
                   />
                 </FormControl>
 
-                {errors.email ? (
-                  <FormMessage />
-                ) : (
-                  <FormDescription className="pb-5" />
-                )}
+                {errors.email ? <FormMessage /> : <FormDescription />}
               </FormItem>
             )}
           />
@@ -100,16 +92,12 @@ const ContactForm = () => {
                   />
                 </FormControl>
 
-                {errors.message ? (
-                  <FormMessage />
-                ) : (
-                  <FormDescription className="pb-5" />
-                )}
+                {errors.message ? <FormMessage /> : <FormDescription />}
               </FormItem>
             )}
           />
           <div className="flex items-center justify-end">
-            <Button variant="blue" type="submit" className="mt-4">
+            <Button variant="blue" type="submit" className="lg:mt-4">
               <Typography fontWeight="bold" tag="span">
                 Pošalji upit
               </Typography>
