@@ -1,3 +1,4 @@
+import ContactForm from "@/components/contact/contact-form";
 import { HeroBanner } from "@/components/custom-ui/banners";
 import Typography from "@/components/custom-ui/typography";
 import { FacebookIcon, InstagramIcon } from "lucide-react";
@@ -67,6 +68,7 @@ const ContactPage = () => {
             />
           </div>
         </div>
+        <ContactForm />
       </div>
     </div>
   );
