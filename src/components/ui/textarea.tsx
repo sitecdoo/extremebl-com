@@ -1,22 +1,30 @@
-import * as React from "react"
+import * as React from "react";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
+import { FieldError } from "react-hook-form";
+import { textVariants } from "../custom-ui/typography";
 
-const Textarea = React.forwardRef<
-  HTMLTextAreaElement,
-  React.ComponentProps<"textarea">
->(({ className, ...props }, ref) => {
-  return (
-    <textarea
-      className={cn(
-        "flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
-        className
-      )}
-      ref={ref}
-      {...props}
-    />
-  )
-})
-Textarea.displayName = "Textarea"
+export interface TextAreaProps
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+  error?: FieldError | undefined;
+}
 
-export { Textarea }
+const Textarea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
+  ({ className, error, ...props }, ref) => {
+    return (
+      <textarea
+        className={cn(
+          "flex h-[14.5rem] w-full border-b-2 border-input bg-transparent px-1 py-5 ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 lg:px-6",
+          textVariants({ variant: "body" }),
+          error && "focus-visible:ring-red-500",
+          className,
+        )}
+        ref={ref}
+        {...props}
+      />
+    );
+  },
+);
+Textarea.displayName = "Textarea";
+
+export { Textarea };
