@@ -1,7 +1,6 @@
 import { HeroBanner } from "@/components/custom-ui/banners";
 import Masonry from "@/components/custom-ui/masonry";
 import { PackagesSection } from "@/components/custom-ui/packages";
-import Typography from "@/components/custom-ui/typography";
 import React from "react";
 import { TestimonialSection } from "@/components/custom-ui/testimonial";
 import InfoSection from "@/components/custom-ui/info-section";
@@ -9,6 +8,7 @@ import {
   teambuildingInfoSection as infoSectionData,
   teambuildingMasonryImages as masonryImages,
 } from "./config";
+import Header from "@/components/custom-ui/header";
 
 const TeambuildingPage = () => {
   return (
@@ -18,16 +18,7 @@ const TeambuildingPage = () => {
           img="/teambuilding/teambuilding-banner.jpg"
           title="Teambuilding"
         />
-        <Typography
-          variant="h3"
-          tag="h3"
-          fontWeight="bold"
-          className="max-w-[50rem] px-8 text-center"
-        >
-          Naša penjačka sala je idealno mjesto za teambuilding jer nudi
-          jedinstvenu kombinaciju fizičkih i mentalnih izazova koji podstiču
-          timsku saradnju i komunikaciju.
-        </Typography>
+        <Header text="Naša penjačka sala je idealno mjesto za teambuilding jer nudi jedinstvenu kombinaciju fizičkih i mentalnih izazova koji podstiču timsku saradnju i komunikaciju." />
       </div>
       <div className="flex w-full flex-col gap-y-24 lg:gap-y-32">
         {infoSectionData.map((info, index) => (
