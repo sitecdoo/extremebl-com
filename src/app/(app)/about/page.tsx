@@ -4,8 +4,8 @@ import ServicesSection from "@/components/custom-ui/services";
 import Typography from "@/components/custom-ui/typography";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { infoSectionData, carouselImages } from "@/app/about/config";
 import ImageCarousel from "@/components/custom-ui/image-carousel";
+import { carouselImages, infoSectionData } from "./config";
 
 const AboutPage = () => {
   return (
