@@ -1,5 +1,5 @@
 import { leagueSpartan, openSans } from "@/styles/fonts";
-import "../globals.css";
+import "./globals.css";
 import type { Metadata } from "next";
 import Footer from "@/components/custom-ui/footer";
 import Navbar from "@/components/custom-ui/navbar/navbar";
