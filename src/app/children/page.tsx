@@ -12,6 +12,7 @@ import Typography from "@/components/custom-ui/typography";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import { carouselImages } from "./config";
+import Header from "@/components/custom-ui/header";
 
 const Children = () => {
   const data = PricingData;
@@ -19,16 +20,7 @@ const Children = () => {
     <div className="flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
       <div className="flex w-full flex-col items-center gap-24 lg:gap-44">
         <HeroBanner img="/children/hero.jpg" title="Penjanje za djecu" />
-        <Typography
-          variant="h3"
-          tag="h3"
-          fontWeight="bold"
-          className="max-w-[50rem] px-8 text-center"
-        >
-          Penjanje je nevjerovatna aktivnost za djecu koja poboljšava snagu,
-          koordinaciju i vještine rješavanja problema. Povećava samopouzdanje,
-          pruža osjećaj uspjeha i podstiče timski rad.
-        </Typography>
+        <Header text="Penjanje je nevjerovatna aktivnost za djecu koja poboljšava snagu, koordinaciju i vještine rješavanja problema. Povećava samopouzdanje, pruža osjećaj uspjeha i podstiče timski rad." />
       </div>
       <div className="flex w-full flex-col gap-y-24 lg:gap-y-32">
         <InfoSection
@@ -64,20 +56,11 @@ const Children = () => {
         />
       </PriceList>
       <ImageCarousel images={carouselImages} />
-      <div className="flex flex-col items-center gap-6 lg:gap-12">
-        <Typography
-          variant="h3"
-          tag="h3"
-          fontWeight="bold"
-          className="max-w-[50rem] px-8 text-center"
-        >
-          Zainteresirani ste za penjanje za vaše mališane? Prijavite se danas i
-          omogućite im da se penju prema zvijezdama s osmijehom na licu!
-        </Typography>
+      <Header text="Zainteresirani ste za penjanje za vaše mališane? Prijavite se danas i omogućite im da se penju prema zvijezdama s osmijehom na licu!">
         <Button variant="blue" className="w-fit">
           <Typography fontWeight="bold">Kontaktiraj nas</Typography>
         </Button>
-      </div>
+      </Header>
     </div>
   );
 };
