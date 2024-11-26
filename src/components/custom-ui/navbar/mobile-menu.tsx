@@ -3,6 +3,7 @@ import Link from "next/link";
 import {
   Sheet,
   SheetContent,
+  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -45,6 +46,7 @@ export const MobileMenu = React.memo(
                   className="h-7 w-11 md:h-9 md:w-12 xl:h-11 xl:w-16"
                 />
               </SheetTitle>
+              <SheetDescription hidden />
             </SheetHeader>
             <nav className="flex h-full flex-col justify-between px-6">
               {/* Main Navigation */}
