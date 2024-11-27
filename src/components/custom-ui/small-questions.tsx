@@ -26,28 +26,35 @@ const questions = [
 const SmallQuestions = () => {
   const [openIndex, setOpenIndex] = useState<number>(0);
   return (
-    <div className="flex flex-col items-start gap-8 self-start lg:flex-row lg:items-start lg:justify-between lg:px-12 xl:gap-28 xl:px-20 2xl:gap-40 2xl:px-36">
+    <div className="flex flex-col gap-8 self-start lg:flex-row lg:items-center lg:justify-between lg:gap-10 lg:self-center xl:gap-20 2xl:gap-40">
       <div className="space-y-4 lg:space-y-8">
         {questions.map((question, index) => {
           return (
             <div
               key={index}
               className={cn(
-                "flex w-fit cursor-pointer items-center gap-x-4",
+                "flex w-fit cursor-pointer items-center gap-x-4 xl:max-w-[453px]",
                 openIndex === index && "cursor-default",
               )}
               onClick={() => setOpenIndex(index)}
             >
               {openIndex === index ? (
-                <Minus className="size-6 rounded-full border-2 border-neutrals-800 p-1 lg:size-9" />
+                <div className="size-6 lg:size-9">
+                  <Minus className="size-6 rounded-full border-2 border-neutrals-800 p-1 lg:size-9" />
+                </div>
               ) : (
-                <Plus className="size-6 rounded-full border-2 border-neutrals-300 p-1 text-neutrals-300 lg:size-9" />
+                <div className="size-6 lg:size-9">
+                  <Plus className="size-6 rounded-full border-2 border-neutrals-300 p-1 text-neutrals-300 lg:size-9" />
+                </div>
               )}
               <Typography
                 variant="h4"
                 tag="h4"
                 fontWeight="bold"
-                className={cn(openIndex !== index && "text-neutrals-300")}
+                className={cn(
+                  "flex-wrap",
+                  openIndex !== index && "text-neutrals-300",
+                )}
               >
                 {question.text}
               </Typography>
@@ -55,7 +62,7 @@ const SmallQuestions = () => {
           );
         })}
       </div>
-      <Typography className="transition-all duration-300 ease-in-out lg:max-w-xl">
+      <Typography className="min-h-72 transition-all duration-300 ease-in-out sm:min-h-36 md:min-h-32 lg:min-h-64 lg:max-w-xl">
         {questions[openIndex].answer}
       </Typography>
     </div>

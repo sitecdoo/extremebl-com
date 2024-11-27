@@ -5,13 +5,14 @@ import { Button } from "@/components/ui/button";
 import TrainingSchedule from "@/components/custom-ui/training-schedule";
 import RecentBlogWrapper from "@/components/custom-ui/blog/recent-blog-wrapper";
 import Questions from "@/components/custom-ui/questions";
+import SmallQuestions from "@/components/custom-ui/small-questions";
 
 export default function Home() {
   return (
     <div className="flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
       <div className="flex w-full flex-col items-center gap-24 lg:gap-48">
         <BigHeroBanner />
-        <div></div>
+        <SmallQuestions />
       </div>
       <div className="flex w-full flex-col gap-y-24 lg:gap-y-32">
         <InfoSection
