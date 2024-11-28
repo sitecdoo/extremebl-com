@@ -16,6 +16,7 @@ import {
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { Textarea } from "../ui/textarea";
+import { sendEmailAction } from "./contact.actions";
 
 const ContactForm = () => {
   const formSchema = getContactSchema();
@@ -31,18 +32,14 @@ const ContactForm = () => {
 
   const errors = form.formState.errors;
 
-  const handleSubmit = async () => {
-    try {
-      const response = await fetch("/api/send", {
-        method: "POST",
-        body: JSON.stringify(form.getValues()),
-        headers: {
-          "Content-Type": "application/json", // Set the content type
-        },
-      });
-    } catch (error) {
-      console.log("something went wrong", error);
+  const handleSubmit = async (data: ContactPayload) => {
+    const result = await sendEmailAction(data);
+
+    if (result?.data) {
+      console.log("Email sent successfully");
+      form.reset();
     }
+    console.log(result?.error);
   };
 
   return (
