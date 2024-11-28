@@ -31,8 +31,18 @@ const ContactForm = () => {
 
   const errors = form.formState.errors;
 
-  const handleSubmit = (data: ContactPayload) => {
-    console.log(data);
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        body: JSON.stringify(form.getValues()),
+        headers: {
+          "Content-Type": "application/json", // Set the content type
+        },
+      });
+    } catch (error) {
+      console.log("something went wrong", error);
+    }
   };
 
   return (
