@@ -1,13 +1,20 @@
 "use server";
 
 import { Resend } from "resend";
-import { ContactPayload } from "./contact.schemas";
+import { ContactPayload, getContactSchema } from "./contact.schemas";
 import EmailTemplate from "../custom-ui/email-template";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const sendEmailAction = async (data: ContactPayload) => {
-  const { name, email, message } = data;
+  const result = getContactSchema().safeParse(data);
+
+  if (result.error) {
+    return { success: false, error: result.error.format() };
+  }
+
+  const { name, email, message } = result.data;
+
   try {
     const data = await resend.emails.send({
       from: "Acme <onboarding@resend.dev>",
