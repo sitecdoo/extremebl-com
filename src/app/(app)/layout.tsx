@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Footer from "@/components/custom-ui/footer";
 import Navbar from "@/components/custom-ui/navbar/navbar";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,6 +25,15 @@ export default function RootLayout({
           {children}
         </div>
         <Footer />
+        <Toaster
+          position="top-center"
+          toastOptions={{
+            classNames: {
+              error: "bg-red-500 border-0",
+              success: "bg-green-500 border-0",
+            },
+          }}
+        />
       </body>
     </html>
   );

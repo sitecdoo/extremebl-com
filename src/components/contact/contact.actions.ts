@@ -15,8 +15,8 @@ export const sendEmailAction = async (data: ContactPayload) => {
       subject: "Hello world",
       react: EmailTemplate({ name, email, message }),
     });
-    return data;
+    return { success: true, data };
   } catch (error) {
-    console.log(error);
+    return { success: false, error };
   }
 };

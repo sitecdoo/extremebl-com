@@ -17,6 +17,7 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { Textarea } from "../ui/textarea";
 import { sendEmailAction } from "./contact.actions";
+import { toast } from "@/utils/toast";
 
 const ContactForm = () => {
   const formSchema = getContactSchema();
@@ -35,11 +36,13 @@ const ContactForm = () => {
   const handleSubmit = async (data: ContactPayload) => {
     const result = await sendEmailAction(data);
 
-    if (result?.data) {
-      console.log("Email sent successfully");
+    if (result?.success) {
+      toast.success({ title: "Email sent successfully" });
       form.reset();
+      return;
     }
-    console.log(result?.error);
+
+    toast.error({ title: "Something went wrong" });
   };
 
   return (
