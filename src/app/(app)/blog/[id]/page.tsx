@@ -7,6 +7,7 @@ import Typography from "@/components/custom-ui/typography";
 import { HeroBanner } from "@/components/custom-ui/banners";
 import type { SerializedEditorState } from "@payloadcms/richtext-lexical/lexical";
 import Image from "next/image";
+import Link from "next/link";
 
 interface BlogPostPageProps {
   params: {
@@ -90,6 +91,15 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
                 >
                   {children}
                 </Typography>
+              );
+            },
+            link: ({ node, nodesToJSX }) => {
+              const children = nodesToJSX({ nodes: node.children });
+
+              return (
+                <Link href={node.fields.url} className="text-blue-800">
+                  {children}
+                </Link>
               );
             },
             // Lists
