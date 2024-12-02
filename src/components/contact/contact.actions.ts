@@ -19,7 +19,7 @@ export const sendEmailAction = async (data: ContactPayload) => {
     const data = await resend.emails.send({
       from: "Acme <onboarding@resend.dev>",
       to: ["andrejjurisic99@gmail.com"],
-      subject: "Hello world",
+      subject: "ExtremeBL - Contact form",
       react: EmailTemplate({ name, email, message }),
     });
     return { success: true, data };
