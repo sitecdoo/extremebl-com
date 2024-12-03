@@ -10,7 +10,7 @@ type CardProps = {
   title: string;
   description: string;
   tags: string[];
-  slug: string;
+  slug: string | number;
 };
 
 const Card = ({ image, time, title, description, tags, slug }: CardProps) => {
@@ -20,7 +20,7 @@ const Card = ({ image, time, title, description, tags, slug }: CardProps) => {
         <div className="relative h-[11.375rem] lg:h-[18.75rem]">
           <Image
             className="h-full rounded-2xl object-cover lg:rounded-18"
-            src={image}
+            src={image || ""}
             width={498}
             height={300}
             alt={`${title}-image`}

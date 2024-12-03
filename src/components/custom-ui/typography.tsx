@@ -34,7 +34,7 @@ export const textVariants = cva("", {
 
 type HTMLTextElement = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span";
 
-type TextVariantProps = VariantProps<typeof textVariants>;
+export type TextVariantProps = VariantProps<typeof textVariants>;
 
 type TypographyProps = PropsWithChildren<
   TextVariantProps & {

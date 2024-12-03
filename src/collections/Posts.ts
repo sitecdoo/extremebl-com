@@ -12,6 +12,7 @@ export const Posts: CollectionConfig = {
       type: "upload",
       relationTo: "media",
       required: true,
+      maxDepth: 5,
     },
     {
       name: "title",

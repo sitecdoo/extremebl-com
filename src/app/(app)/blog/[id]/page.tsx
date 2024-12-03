@@ -8,6 +8,11 @@ import { HeroBanner } from "@/components/custom-ui/banners";
 import type { SerializedEditorState } from "@payloadcms/richtext-lexical/lexical";
 import Image from "next/image";
 import Link from "next/link";
+import { format } from "date-fns";
+import Pill from "@/components/custom-ui/blog/pill";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import RecentBlogWrapper from "@/components/custom-ui/blog/recent-blog-wrapper";
+import { Author, Category, Media } from "@/payload-types";
 
 interface BlogPostPageProps {
   params: {
@@ -32,162 +37,205 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
 
   const { id } = await params;
   const post = await getPost(id);
+  const thumbnail = post.thumbnail as Media;
+  const author = post.author as Author;
+  const categories = post.categories as Category[];
 
   if (!post) {
     notFound();
   }
 
+  const getPosts = async () => {
+    const posts = await payload.find({
+      collection: "posts",
+      sort: "-createdAt",
+      limit: 3,
+    });
+
+    return posts;
+  };
+  const { docs } = await getPosts();
+
   return (
     <>
-      <HeroBanner img={post.thumbnail.url} title={post.title} />
-
-      <div className="flex max-w-[1082px] flex-col justify-center text-2xl">
-        <div className="flex items-center justify-center text-neutral-600">
-          <Typography variant="body-sm" fontWeight="bold">
-            Autor:
+      <HeroBanner img={thumbnail.url || ""} title={post.title} />
+      <div className="flex flex-col items-center justify-center pb-24 sm:pb-48">
+        <div className="flex max-w-[67.625rem] flex-col justify-center text-2xl">
+          <div className="flex flex-col items-center justify-center gap-2 pb-12 pt-24 text-neutral-600 sm:flex-row sm:gap-9 sm:pb-16 sm:pt-44">
+            <div className="flex">
+              <Typography variant="body-sm" fontWeight="bold">
+                Autor: <span className="font-normal"> {author.name}</span>
+              </Typography>
+            </div>
+            <div className="flex">
+              <Typography variant="body-sm" fontWeight="bold">
+                Datum objave:
+                <span className="font-normal">
+                  {" "}
+                  {format(post.createdAt, "dd.MM.yyyy")}
+                </span>
+              </Typography>
+            </div>
+          </div>
+          <Typography
+            className="pb-24 text-center text-base italic text-neutral-800 sm:pb-48 sm:text-2xl sm:leading-9"
+            tag="p"
+          >
+            {post.description}
           </Typography>
-          <Typography variant="body-sm">{post.author.name}</Typography>
+          <RichText
+            data={post.content as SerializedEditorState}
+            converters={({ defaultConverters }) => ({
+              ...defaultConverters,
+              // Basic text elements
+              paragraph: ({ node, nodesToJSX }) => {
+                const children = nodesToJSX({ nodes: node.children });
+                return (
+                  <Typography
+                    variant="body"
+                    tag="p"
+                    className="mb-12 text-neutrals-800 sm:mb-24"
+                  >
+                    {children}
+                  </Typography>
+                );
+              },
+              // Headings
+              heading: ({ node, nodesToJSX }) => {
+                const children = nodesToJSX({ nodes: node.children });
+                const tag = node.tag;
+                const variant = node.tag as "h1" | "h2" | "h3" | "h4" | "h5";
 
-          <Typography variant="body-sm" fontWeight="bold">
-            Datum objave:
-          </Typography>
-          <Typography variant="body-sm">{post.createdAt}</Typography>
+                return (
+                  <Typography
+                    variant={variant}
+                    tag={tag}
+                    fontWeight="bold"
+                    className="mb-7 text-neutrals-800"
+                  >
+                    {children}
+                  </Typography>
+                );
+              },
+              link: ({ node, nodesToJSX }) => {
+                const children = nodesToJSX({ nodes: node.children });
+
+                return (
+                  <Link href={node.fields.url} className="text-blue-800">
+                    {children}
+                  </Link>
+                );
+              },
+              // Lists
+              list: ({ node, nodesToJSX }) => {
+                const children = nodesToJSX({ nodes: node.children });
+                const ListTag = node.listType === "number" ? "ol" : "ul";
+
+                return (
+                  <ListTag className="mb-4 ml-6 list-inside text-neutrals-800">
+                    <Typography>{children}</Typography>
+                  </ListTag>
+                );
+              },
+              listitem: ({ node, nodesToJSX }) => {
+                const children = nodesToJSX({ nodes: node.children });
+                return (
+                  <li className="mb-2">
+                    <Typography variant="body">{children}</Typography>
+                  </li>
+                );
+              },
+              // Links
+
+              // Images
+              upload: ({ node }) => {
+                const image = node.value as Media;
+                return (
+                  <div className="relative my-12 max-h-[37.5rem] min-h-[22.375rem] w-full overflow-hidden rounded-xl sm:my-24 lg:min-h-[37.5rem]">
+                    <Image
+                      src={image.url || ""}
+                      alt={image.alt || "Blog post image"}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw"
+                    />
+                  </div>
+                );
+              },
+              // Blockquotes
+              quote: ({ node, nodesToJSX }) => {
+                const children = nodesToJSX({ nodes: node.children });
+                return (
+                  <blockquote className="border-l-4 border-neutrals-300 pl-4 italic">
+                    <Typography variant="body">{children}</Typography>
+                  </blockquote>
+                );
+              },
+              // Code blocks
+              codeBlock: ({ node }) => (
+                <pre className="mb-4 rounded-lg bg-gray-100 p-4">
+                  <code className="font-mono text-sm">{node.textContent}</code>
+                </pre>
+              ),
+              // Inline code
+              code: ({ node }) => (
+                <code className="rounded bg-gray-100 px-1 py-0.5 font-mono text-sm">
+                  {node.textContent}
+                </code>
+              ),
+              // Text alignment
+              // align: ({ node, nodesToJSX }) => {
+              //   const children = nodesToJSX({ nodes: node.children });
+              //   const alignmentClasses = {
+              //     left: "text-left",
+              //     center: "text-center",
+              //     right: "text-right",
+              //     justify: "text-justify",
+              //   };
+
+              //   return (
+              //     <div className={`${alignmentClasses[node.format]} mb-4`}>
+              //       {children}
+              //     </div>
+              //   );
+              // },
+              // Text formatting
+              text: ({ node, nodesToJSX }) => {
+                let className = "";
+                if (node.format & 1) className += "font-bold ";
+                if (node.format & 2) className += "italic ";
+                if (node.format & 8) className += "underline ";
+                if (node.format & 16) className += "line-through ";
+                if (node.format & 32) className += "uppercase ";
+
+                return <span className={className}>{node.text}</span>;
+              },
+            })}
+          />
+          <div className="flex flex-col justify-between gap-12 pb-24 sm:flex-row sm:gap-0">
+            <div className="mt-auto flex max-w-[33.125rem] flex-wrap items-center gap-2">
+              {categories.map((category, index) => (
+                <Pill name={category.name} variant="large" key={index} />
+              ))}
+            </div>
+            <div className="flex gap-6 sm:gap-11">
+              <Typography
+                variant="caption"
+                className="whitespace-nowrap uppercase"
+              >
+                Share on
+              </Typography>
+              <div className="flex gap-4">
+                <Facebook size="24" />
+                <Instagram size="24" />
+                <Linkedin size="24" />
+                <Twitter size="24" />
+              </div>
+            </div>
+          </div>
         </div>
-        <Typography
-          className="text-center text-2xl italic leading-9 text-neutral-800"
-          tag="p"
-        >
-          {post.description}
-        </Typography>
-        <RichText
-          data={post.content as SerializedEditorState}
-          converters={({ defaultConverters }) => ({
-            ...defaultConverters,
-            // Basic text elements
-            paragraph: ({ node, nodesToJSX }) => {
-              const children = nodesToJSX({ nodes: node.children });
-              return (
-                <Typography
-                  variant="body"
-                  tag="p"
-                  className="mb-4 text-neutrals-800"
-                >
-                  {children}
-                </Typography>
-              );
-            },
-            // Headings
-            heading: ({ node, nodesToJSX }) => {
-              const children = nodesToJSX({ nodes: node.children });
-              const tag = node.tag;
-              const variant = node.tag;
 
-              return (
-                <Typography
-                  variant={variant}
-                  tag={tag}
-                  fontWeight="bold"
-                  className="mb-4 mt-8 text-neutrals-800"
-                >
-                  {children}
-                </Typography>
-              );
-            },
-            link: ({ node, nodesToJSX }) => {
-              const children = nodesToJSX({ nodes: node.children });
-
-              return (
-                <Link href={node.fields.url} className="text-blue-800">
-                  {children}
-                </Link>
-              );
-            },
-            // Lists
-            list: ({ node, nodesToJSX }) => {
-              const children = nodesToJSX({ nodes: node.children });
-              const ListTag = node.listType === "number" ? "ol" : "ul";
-
-              return (
-                <ListTag className="mb-4 ml-6 list-inside text-neutrals-800">
-                  <Typography>{children}</Typography>
-                </ListTag>
-              );
-            },
-            listitem: ({ node, nodesToJSX }) => {
-              const children = nodesToJSX({ nodes: node.children });
-              return (
-                <li className="mb-2">
-                  <Typography variant="body">{children}</Typography>
-                </li>
-              );
-            },
-            // Links
-
-            // Images
-            upload: ({ node }) => {
-              if (!node.value?.url) return null;
-              return (
-                <div className="relative my-8 max-h-[600px] min-h-[358px] w-full overflow-hidden rounded-xl lg:min-h-[600px]">
-                  <Image
-                    src={node.value.url}
-                    alt={node.value.alt || "Blog post image"}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw"
-                  />
-                </div>
-              );
-            },
-            // Blockquotes
-            quote: ({ node, nodesToJSX }) => {
-              const children = nodesToJSX({ nodes: node.children });
-              return (
-                <blockquote className="border-l-4 border-neutrals-300 pl-4 italic">
-                  <Typography variant="body">{children}</Typography>
-                </blockquote>
-              );
-            },
-            // Code blocks
-            codeBlock: ({ node }) => (
-              <pre className="mb-4 rounded-lg bg-gray-100 p-4">
-                <code className="font-mono text-sm">{node.textContent}</code>
-              </pre>
-            ),
-            // Inline code
-            code: ({ node }) => (
-              <code className="rounded bg-gray-100 px-1 py-0.5 font-mono text-sm">
-                {node.textContent}
-              </code>
-            ),
-            // Text alignment
-            align: ({ node, nodesToJSX }) => {
-              const children = nodesToJSX({ nodes: node.children });
-              const alignmentClasses = {
-                left: "text-left",
-                center: "text-center",
-                right: "text-right",
-                justify: "text-justify",
-              };
-
-              return (
-                <div className={`${alignmentClasses[node.format]} mb-4`}>
-                  {children}
-                </div>
-              );
-            },
-            // Text formatting
-            text: ({ node, nodesToJSX }) => {
-              let className = "";
-              if (node.format & 1) className += "font-bold ";
-              if (node.format & 2) className += "italic ";
-              if (node.format & 8) className += "underline ";
-              if (node.format & 16) className += "line-through ";
-              if (node.format & 32) className += "uppercase ";
-
-              return <span className={className}>{node.text}</span>;
-            },
-          })}
-        />
+        <RecentBlogWrapper posts={docs} />
       </div>
     </>
   );
