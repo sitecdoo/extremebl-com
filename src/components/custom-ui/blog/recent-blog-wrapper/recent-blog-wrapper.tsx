@@ -2,9 +2,9 @@ import { Button } from "@/components/ui/button";
 import Typography from "../../typography";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import Card from "../card";
 import { formatDistanceToNow } from "date-fns";
 import { Category, Media, Post } from "@/payload-types";
+import SmallCard from "./small-card";
 
 interface RecentBlogWrapperProps {
   posts: Pick<
@@ -32,13 +32,13 @@ const RecentBlogWrapper = ({ posts }: RecentBlogWrapperProps) => {
           const thumbnail = post.thumbnail as Media;
           const categories = post.categories as Category[];
           return (
-            <Card
-              description={post.description}
+            <SmallCard
+              key={index}
               image={thumbnail.url || ""}
+              description={post.description}
               title={post.title}
               time={`${formatDistanceToNow(post.createdAt)} ago`}
               tags={categories.map((category) => category.name)}
-              key={index}
               slug={post.id}
             />
           );
