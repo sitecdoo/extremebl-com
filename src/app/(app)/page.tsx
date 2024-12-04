@@ -37,7 +37,7 @@ export default async function HomePage() {
         </Typography>
         <div className="space-y-2 self-start lg:space-y-9">
           <Link
-            href="https://www.instagram.com/explore/locations/397065856/penjacki-klub-extreme-climbing-club-extreme/"
+            href="https://www.instagram.com/extreme_bl/"
             className="flex w-fit items-center gap-3"
           >
             <Image
@@ -45,7 +45,7 @@ export default async function HomePage() {
               height={150}
               src="/instagram-logo.png"
               alt="Logo"
-              className="h-10 w-10 rounded-full lg:h-14 lg:w-14"
+              className="size-10 rounded-full lg:size-14"
             />
             <Typography className="text-neutrals-600 lg:text-2xl lg:leading-7 lg:text-neutrals-500">
               extremeclimbing

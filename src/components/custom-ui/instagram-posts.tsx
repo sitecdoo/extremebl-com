@@ -17,7 +17,7 @@ const InstagramPosts = ({ posts }: InstagramPostsProps) => {
   return (
     <div className="grid grid-cols-2 gap-2 sm:gap-5 lg:grid-cols-4">
       {posts &&
-        posts.map((post: InstagramPost) => (
+        posts.map((post) => (
           <div
             key={post.id}
             className="max-w-44 sm:max-w-72 lg:max-h-96 lg:max-w-96"
