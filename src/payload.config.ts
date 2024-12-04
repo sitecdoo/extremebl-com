@@ -7,7 +7,7 @@ import { buildConfig } from "payload";
 import { fileURLToPath } from "url";
 import sharp from "sharp";
 import * as dotenv from "dotenv";
-dotenv.config({ path: "../.env.local" });
+dotenv.config({ path: "../.env" });
 
 import { uploadthingStorage } from "@payloadcms/storage-uploadthing"; // Importing uploadthingStorage
 
