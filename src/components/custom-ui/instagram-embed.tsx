@@ -15,7 +15,7 @@ type InstagramEmbedProps = {
 
 const InstagramEmbed = ({ posts }: InstagramEmbedProps) => {
   return (
-    <div className="grid h-[22.5rem] grid-cols-2 gap-2 sm:h-[37.188rem] sm:gap-5 lg:h-96 lg:grid-cols-4">
+    <div className="grid grid-cols-2 gap-2 sm:gap-5 lg:grid-cols-4">
       {posts &&
         posts.map((post: InstagramPost) => (
           <div
@@ -30,6 +30,7 @@ const InstagramEmbed = ({ posts }: InstagramEmbedProps) => {
                 className="rounded-xl lg:rounded-28"
                 width={384}
                 height={384}
+                priority
               />
             ) : (
               <video controls className="rounded-xl lg:rounded-28">

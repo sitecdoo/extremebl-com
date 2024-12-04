@@ -8,11 +8,9 @@ const userId = process.env.INSTAGRAM_USER_ID;
 
 export default async function HomePage() {
   const renderError = () => (
-    <div className="flex h-[22.5rem] items-center sm:h-[37.188rem] sm:gap-5 lg:h-96">
-      <Typography variant="h4">
-        Failed to load posts. Please try again later.
-      </Typography>
-    </div>
+    <Typography variant="h4" className="text-center">
+      Failed to load posts. Please try again later.
+    </Typography>
   );
 
   const InstagramPostsWrapper = async () => {
