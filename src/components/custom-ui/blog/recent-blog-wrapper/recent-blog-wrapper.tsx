@@ -17,7 +17,6 @@ const RecentBlogWrapper = ({ posts }: RecentBlogWrapperProps) => {
   return (
     <div className="flex flex-col items-center gap-2 lg:gap-4">
       <div className="flex flex-col items-center gap-4 lg:gap-5">
-        {/* For future use */}
         {/* <Button
           variant="black"
           className="pointer-events-none py-2 lg:px-5 lg:py-2"
