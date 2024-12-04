@@ -125,7 +125,7 @@ export interface Post {
     [k: string]: unknown;
   } | null;
   author: number | Author;
-  categories?: (number | Category)[] | null;
+  categories: (number | Category)[];
   updatedAt: string;
   createdAt: string;
 }
