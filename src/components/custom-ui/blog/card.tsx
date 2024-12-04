@@ -10,16 +10,17 @@ type CardProps = {
   title: string;
   description: string;
   tags: string[];
+  slug: string | number;
 };
 
-const Card = ({ image, time, title, description, tags }: CardProps) => {
+const Card = ({ image, time, title, description, tags, slug }: CardProps) => {
   return (
-    <Link href="/blog">
-      <div className="group flex min-h-[28.75rem] min-w-60 max-w-[22.375rem] flex-col gap-3 rounded-2xl bg-neutrals-50 p-3 pb-4 hover:bg-neutrals-100 lg:min-h-[42.5rem] lg:max-w-[33.125rem] lg:gap-4 lg:rounded-28 lg:p-4 lg:pb-6">
+    <Link href={`/blog/${slug}`}>
+      <div className="group flex min-h-[28.75rem] min-w-60 max-w-[22.375rem] flex-col gap-3 rounded-2xl bg-neutrals-50 p-3 pb-4 hover:bg-neutrals-100 sm:min-h-[32.5rem] lg:min-h-[42.5rem] lg:max-w-[33.125rem] lg:gap-4 lg:rounded-28 lg:p-4 lg:pb-6">
         <div className="relative h-[11.375rem] lg:h-[18.75rem]">
           <Image
             className="h-full rounded-2xl object-cover lg:rounded-18"
-            src={image}
+            src={image || ""}
             width={498}
             height={300}
             alt={`${title}-image`}
@@ -39,7 +40,7 @@ const Card = ({ image, time, title, description, tags }: CardProps) => {
             <Clock className="size-5" />
             <Typography variant="caption">{time}</Typography>
           </div>
-          <div className="mb-4 flex flex-grow flex-col gap-2 lg:mb-8 lg:gap-3">
+          <div className="mb-4 flex flex-grow flex-col gap-2 lg:gap-3">
             {/* Title for Mobile */}
             <Typography
               variant="h5"
@@ -59,12 +60,12 @@ const Card = ({ image, time, title, description, tags }: CardProps) => {
               {title}
             </Typography>
 
-            <Typography variant="body-sm" className="line-clamp-6">
+            <Typography variant="body-sm" className="line-clamp-5">
               {description}
             </Typography>
           </div>
           <div className="mt-auto flex flex-wrap items-center gap-2">
-            {tags.map((name, index) => (
+            {tags.slice(0, 3).map((name, index) => (
               <Pill key={index} name={name} />
             ))}
           </div>
