@@ -9,8 +9,13 @@ import sharp from "sharp";
 import * as dotenv from "dotenv";
 dotenv.config({ path: "../.env" });
 
+import { uploadthingStorage } from "@payloadcms/storage-uploadthing"; // Importing uploadthingStorage
+
 import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
+import { Posts } from "./collections/Posts";
+import { Authors } from "./collections/Authors";
+import { Categories } from "./collections/Categories";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -22,7 +27,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media],
+  collections: [Users, Media, Posts, Authors, Categories],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {
@@ -37,6 +42,14 @@ export default buildConfig({
   sharp,
   plugins: [
     payloadCloudPlugin(),
-    // storage-adapter-placeholder
+    uploadthingStorage({
+      collections: {
+        media: true,
+      },
+      options: {
+        token: process.env.UPLOADTHING_TOKEN,
+        acl: "public-read",
+      },
+    }),
   ],
 });
