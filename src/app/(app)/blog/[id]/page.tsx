@@ -77,10 +77,7 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
               </Typography>
             </div>
           </div>
-          <Typography
-            className="pb-24 text-center text-base italic text-neutral-800 sm:pb-48 sm:text-2xl sm:leading-9"
-            tag="p"
-          >
+          <Typography className="pb-24 text-center text-base italic text-neutral-800 sm:pb-48 sm:text-2xl sm:leading-9">
             {post.description}
           </Typography>
           <RichText
@@ -93,7 +90,6 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
                 return (
                   <Typography
                     variant="body"
-                    tag="p"
                     className="mb-12 text-neutrals-800 sm:mb-24"
                   >
                     {children}
@@ -141,7 +137,7 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
                 const children = nodesToJSX({ nodes: node.children });
                 return (
                   <li className="mb-2">
-                    <Typography variant="body">{children}</Typography>
+                    <Typography>{children}</Typography>
                   </li>
                 );
               },
@@ -158,6 +154,7 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw"
+                      priority
                     />
                   </div>
                 );
@@ -167,22 +164,10 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
                 const children = nodesToJSX({ nodes: node.children });
                 return (
                   <blockquote className="border-l-4 border-neutrals-300 pl-4 italic">
-                    <Typography variant="body">{children}</Typography>
+                    <Typography>{children}</Typography>
                   </blockquote>
                 );
               },
-              // Code blocks
-              codeBlock: ({ node }) => (
-                <pre className="mb-4 rounded-lg bg-gray-100 p-4">
-                  <code className="font-mono text-sm">{node.textContent}</code>
-                </pre>
-              ),
-              // Inline code
-              code: ({ node }) => (
-                <code className="rounded bg-gray-100 px-1 py-0.5 font-mono text-sm">
-                  {node.textContent}
-                </code>
-              ),
               // Text alignment
               // align: ({ node, nodesToJSX }) => {
               //   const children = nodesToJSX({ nodes: node.children });
@@ -200,7 +185,7 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
               //   );
               // },
               // Text formatting
-              text: ({ node, nodesToJSX }) => {
+              text: ({ node }) => {
                 let className = "";
                 if (node.format & 1) className += "font-bold ";
                 if (node.format & 2) className += "italic ";
@@ -208,7 +193,11 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
                 if (node.format & 16) className += "line-through ";
                 if (node.format & 32) className += "uppercase ";
 
-                return <span className={className}>{node.text}</span>;
+                return (
+                  <Typography tag="span" className={className}>
+                    {node.text}
+                  </Typography>
+                );
               },
             })}
           />
@@ -218,7 +207,7 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
                 <Pill name={category.name} variant="large" key={index} />
               ))}
             </div>
-            <div className="flex gap-6 sm:gap-11">
+            <div className="flex items-center gap-6 sm:gap-11">
               <Typography
                 variant="caption"
                 className="whitespace-nowrap uppercase"
