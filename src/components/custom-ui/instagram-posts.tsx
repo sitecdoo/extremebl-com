@@ -9,11 +9,11 @@ type InstagramPost = {
   permalink: string;
 };
 
-type InstagramEmbedProps = {
+type InstagramPostsProps = {
   posts?: InstagramPost[];
 };
 
-const InstagramEmbed = ({ posts }: InstagramEmbedProps) => {
+const InstagramPosts = ({ posts }: InstagramPostsProps) => {
   return (
     <div className="grid grid-cols-2 gap-2 sm:gap-5 lg:grid-cols-4">
       {posts &&
@@ -43,4 +43,4 @@ const InstagramEmbed = ({ posts }: InstagramEmbedProps) => {
   );
 };
 
-export default InstagramEmbed;
+export default InstagramPosts;

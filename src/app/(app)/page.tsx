@@ -1,4 +1,4 @@
-import InstagramEmbed from "@/components/custom-ui/instagram-embed";
+import InstagramPosts from "@/components/custom-ui/instagram-posts";
 import Typography from "@/components/custom-ui/typography";
 import Image from "next/image";
 import Link from "next/link";
@@ -22,7 +22,7 @@ export default async function HomePage() {
         return renderError();
       }
       const posts = await data.json();
-      return <InstagramEmbed posts={posts.data} />;
+      return <InstagramPosts posts={posts.data} />;
     } catch (error) {
       console.error("Fetch error:", error);
       return renderError();
