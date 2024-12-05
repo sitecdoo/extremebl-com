@@ -1,25 +1,59 @@
+import InstagramPosts from "@/components/custom-ui/instagram-posts";
+import Typography from "@/components/custom-ui/typography";
 import Image from "next/image";
-import Typography from "../../components/custom-ui/typography";
+import Link from "next/link";
 
-export default function Home() {
+const instagramToken = process.env.INSTAGRAM_TOKEN;
+const userId = process.env.INSTAGRAM_USER_ID;
+
+export default async function HomePage() {
+  const renderError = () => (
+    <Typography variant="h4" className="text-center">
+      Failed to load posts. Please try again later.
+    </Typography>
+  );
+
+  const InstagramPostsWrapper = async () => {
+    try {
+      const data = await fetch(
+        `https://graph.instagram.com/${userId}/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink&access_token=${instagramToken}&limit=4`,
+      );
+      if (!data.ok) {
+        return renderError();
+      }
+      const posts = await data.json();
+      return <InstagramPosts posts={posts.data} />;
+    } catch (error) {
+      console.error("Fetch error:", error);
+      return renderError();
+    }
+  };
+
   return (
-    <div className="grid min-h-screen grid-rows-[20px_1fr_20px] gap-16">
-      <main className="row-start-2 flex flex-col gap-8">
-        <Image
-          className="dark:invert"
-          src="/logo.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <div>
-          <Typography variant="body">This text uses open sans font.</Typography>
-          <Typography variant="h5">
-            This text uses league spartan font.
-          </Typography>
+    <div className="flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
+      <div className="space-y-4 text-center lg:space-y-2">
+        <Typography variant="h2" tag="h2" fontWeight="bold">
+          Socijalne mreže
+        </Typography>
+        <div className="space-y-2 self-start lg:space-y-9">
+          <Link
+            href="https://www.instagram.com/extreme_bl/"
+            className="flex w-fit items-center gap-3"
+          >
+            <Image
+              width={150}
+              height={150}
+              src="/instagram-logo.png"
+              alt="Logo"
+              className="size-10 rounded-full lg:size-14"
+            />
+            <Typography className="text-neutrals-600 lg:text-2xl lg:leading-7 lg:text-neutrals-500">
+              extremeclimbing
+            </Typography>
+          </Link>
+          <InstagramPostsWrapper />
         </div>
-      </main>
+      </div>
     </div>
   );
 }
