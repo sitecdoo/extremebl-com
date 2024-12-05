@@ -4,6 +4,9 @@ import Questions from "@/components/custom-ui/questions";
 import { getPayload } from "payload";
 import React from "react";
 import config from "@payload-config";
+import { Button } from "@/components/ui/button";
+import Typography from "@/components/custom-ui/typography";
+import InstagramPostsWrapper from "@/components/custom-ui/instagram";
 
 const FAQPage = async () => {
   const payload = await getPayload({ config });
@@ -21,7 +24,13 @@ const FAQPage = async () => {
     <div className="flex w-full flex-col items-center gap-24 pb-24 lg:gap-48 lg:pb-48">
       <HeroBanner title="FAQ" img="/faq-banner.jpg" />
       <Questions />
-      <RecentBlogWrapper posts={docs} />
+      <InstagramPostsWrapper />
+      <div className="space-y-4 text-center lg:space-y-5">
+        <Button variant="black" className="py-2 lg:px-5 lg:py-2">
+          <Typography uppercase>Blog</Typography>
+        </Button>
+        <RecentBlogWrapper posts={docs} />
+      </div>
     </div>
   );
 };
