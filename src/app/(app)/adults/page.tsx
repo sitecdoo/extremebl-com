@@ -4,6 +4,7 @@ import {
   benefitsForAdults,
   BenefitsSection,
 } from "@/components/custom-ui/benefits";
+import AdultsBlobs from "@/components/custom-ui/blobs/adults-blobs";
 import Header from "@/components/custom-ui/header";
 import ImageCarousel from "@/components/custom-ui/image-carousel";
 import InfoSection from "@/components/custom-ui/info-section";
@@ -33,7 +34,8 @@ const AdultsPage = () => {
   ];
 
   return (
-    <div className="flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
+    <div className="relative flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
+      <AdultsBlobs />
       <div className="flex w-full flex-col items-center gap-24 lg:gap-44">
         <HeroBanner
           img="/adults/adults-banner.jpg"

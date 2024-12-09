@@ -13,11 +13,13 @@ import { Button } from "@/components/ui/button";
 import React from "react";
 import { carouselImages } from "./config";
 import Header from "@/components/custom-ui/header";
+import BlobsChildren from "@/components/custom-ui/blobs/blobs-children";
 
 const Children = () => {
   const data = PricingData;
   return (
-    <div className="flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
+    <div className="relative flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
+      <BlobsChildren />
       <div className="flex w-full flex-col items-center gap-24 lg:gap-44">
         <HeroBanner img="/children/hero.jpg" title="Penjanje za djecu" />
         <Header text="Penjanje je nevjerovatna aktivnost za djecu koja poboljšava snagu, koordinaciju i vještine rješavanja problema. Povećava samopouzdanje, pruža osjećaj uspjeha i podstiče timski rad." />

@@ -7,10 +7,12 @@ import { ArrowRight } from "lucide-react";
 import ImageCarousel from "@/components/custom-ui/image-carousel";
 import Header from "@/components/custom-ui/header";
 import { carouselImages, infoSectionData } from "./config";
+import AboutBlobs from "@/components/custom-ui/blobs/about-blobs";
 
 const AboutPage = () => {
   return (
-    <div className="flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
+    <div className="relative flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
+      <AboutBlobs />
       <div className="flex w-full flex-col items-center gap-24 lg:gap-44">
         <HeroBanner img="/about/hero-banner.jpg" title="O nama" />
         <Header

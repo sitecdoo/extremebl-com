@@ -9,10 +9,12 @@ import {
   teambuildingMasonryImages as masonryImages,
 } from "./config";
 import Header from "@/components/custom-ui/header";
+import TeambuildingBlobs from "@/components/custom-ui/blobs/teambuilding-blobs";
 
 const TeambuildingPage = () => {
   return (
-    <div className="flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
+    <div className="relative flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
+      <TeambuildingBlobs />
       <div className="flex w-full flex-col items-center gap-24 lg:gap-44">
         <HeroBanner
           img="/teambuilding/teambuilding-banner.jpg"
