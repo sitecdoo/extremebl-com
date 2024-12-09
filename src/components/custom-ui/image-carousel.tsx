@@ -18,7 +18,7 @@ const ImageCarousel = ({
       opts={{
         align: "start",
       }}
-      className="h-full max-h-[52.7rem] max-w-7xl"
+      className="h-full max-h-[52.7rem] max-w-[84.75rem]"
     >
       <CarouselContent className="rounded-2xl">
         {images.map((image, index) => (
