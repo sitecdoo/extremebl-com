@@ -15,12 +15,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="overflow-x-clip">
       <body
-        className={`${leagueSpartan.variable} ${openSans.variable} bg-neutrals-50 font-league-spartan antialiased`}
+        className={`${leagueSpartan.variable} ${openSans.variable} overflow-x-clip bg-neutrals-50 font-league-spartan antialiased`}
       >
         <Navbar />
-        <div className="mx-auto flex w-full max-w-[108rem] flex-col items-center px-4 lg:px-12">
+        <div className="mx-auto flex w-full max-w-[108rem] flex-col items-center overflow-clip px-4 lg:px-12 3xl:overflow-x-visible">
           {children}
         </div>
         <Footer />
