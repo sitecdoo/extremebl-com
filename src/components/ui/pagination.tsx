@@ -53,6 +53,7 @@ const PaginationLink = ({
         variant: "ghost",
         size,
       }),
+      "hover:bg-transparent hover:lg:bg-neutrals-100",
       isActive ? "text-blue-400" : "text-gray-600",
       className,
     )}
