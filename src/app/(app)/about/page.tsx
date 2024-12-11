@@ -29,7 +29,7 @@ const AboutPage = () => {
           >
             <Button
               variant="ghost"
-              className="mt-3 flex w-fit items-center gap-x-2 px-1 lg:mt-0"
+              className="flex w-fit items-center gap-x-2 px-1"
             >
               <Typography tag="span" fontWeight="bold">
                 Pročitaj više
