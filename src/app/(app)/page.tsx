@@ -1,3 +1,4 @@
+import InstagramPostsWrapper from "@/components/custom-ui/instagram";
 import Typography from "../../components/custom-ui/typography";
 import { BigHeroBanner } from "@/components/custom-ui/banners";
 import InfoSection from "@/components/custom-ui/info-section";
@@ -7,7 +8,7 @@ import RecentBlogWrapper from "@/components/custom-ui/blog/recent-blog-wrapper";
 import Questions from "@/components/custom-ui/questions";
 import SmallQuestions from "@/components/custom-ui/small-questions";
 
-export default function Home() {
+export default async function HomePage() {
   return (
     <div className="flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
       <div className="flex w-full flex-col items-center gap-24 lg:gap-48">
@@ -55,6 +56,8 @@ export default function Home() {
         </Button>
       </InfoSection>
       <RecentBlogWrapper />
+      <InstagramPostsWrapper />
+
       <Questions />
     </div>
   );
