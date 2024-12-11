@@ -45,7 +45,7 @@ const Blog = async ({
   return (
     <div className="flex flex-col items-center gap-12 pb-24 sm:pb-48">
       <HeroBanner img="/blog/blog-banner.png" title="Blog" />
-      <nav className="flex w-full justify-end py-8">
+      <nav className="flex w-full justify-end">
         <SortButton initialSortOrder="desc" />
       </nav>
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
