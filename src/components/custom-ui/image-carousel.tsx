@@ -8,11 +8,12 @@ import {
 } from "../ui/carousel";
 import Image from "next/image";
 
-const ImageCarousel = ({
-  images,
-}: {
+type ImageCarouselProps = {
   images: { src: string; alt: string }[];
-}) => {
+  children?: React.ReactNode;
+};
+
+const ImageCarousel = ({ images, children }: ImageCarouselProps) => {
   return (
     <Carousel
       opts={{
@@ -29,13 +30,14 @@ const ImageCarousel = ({
               width={1340}
               height={842}
               priority
-              className="h-full max-h-[52.7rem] w-full rounded-2xl object-cover"
+              className="h-[358px] max-h-[52.7rem] w-full rounded-2xl object-cover sm:h-full"
             />
           </CarouselItem>
         ))}
       </CarouselContent>
       <CarouselPrevious />
       <CarouselNext />
+      {children}
     </Carousel>
   );
 };
