@@ -4,13 +4,23 @@ import config from "@payload-config";
 import { Card } from "@/components/custom-ui/blog";
 import { formatDistanceToNow } from "date-fns";
 import type { Category, Media } from "@/payload-types";
+import SortButton from "@/components/custom-ui/blog/sort-button";
 
-const Blog = async () => {
+const Blog = async ({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined };
+}) => {
   const payload = await getPayload({ config });
+
+  const sortParam =
+    (await searchParams).sort === "asc" ? "createdAt" : "-createdAt";
 
   const getPosts = async () => {
     const posts = await payload.find({
       collection: "posts",
+      sort: sortParam,
+      limit: 9,
     });
 
     return posts;
@@ -18,23 +28,28 @@ const Blog = async () => {
   const { docs } = await getPosts();
 
   return (
-    <div className="grid grid-cols-1 gap-5 pb-24 sm:grid-cols-2 sm:pb-48 xl:grid-cols-3">
-      {docs.map((post, index) => {
-        const thumbnail = post.thumbnail as Media;
-        const categories = post.categories as Category[];
-        return (
-          <Card
-            description={post.description}
-            image={thumbnail.url || ""}
-            title={post.title}
-            time={`${formatDistanceToNow(post.createdAt)} ago`}
-            tags={categories.map((category) => category.name)}
-            key={index}
-            slug={post.id}
-          />
-        );
-      })}
-    </div>
+    <>
+      <nav className="flex w-full justify-end py-8">
+        <SortButton initialSortOrder="desc" />
+      </nav>
+      <div className="grid grid-cols-1 gap-5 pb-24 sm:grid-cols-2 sm:pb-48 xl:grid-cols-3">
+        {docs.map((post, index) => {
+          const thumbnail = post.thumbnail as Media;
+          const categories = post.categories as Category[];
+          return (
+            <Card
+              description={post.description}
+              image={thumbnail.url || ""}
+              title={post.title}
+              time={`${formatDistanceToNow(post.createdAt)} ago`}
+              tags={categories.map((category) => category.name)}
+              key={index}
+              slug={post.id}
+            />
+          );
+        })}
+      </div>
+    </>
   );
 };
 
