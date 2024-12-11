@@ -9,12 +9,15 @@ import {
   teambuildingMasonryImages as masonryImages,
 } from "./config";
 import Header from "@/components/custom-ui/header";
-import TeambuildingBlobs from "@/components/custom-ui/blobs/teambuilding-blobs";
+import {
+  TeambuildingBannerBlobs,
+  TeambuildingTestimonialBlobs,
+} from "@/components/custom-ui/blobs/teambuilding";
 
 const TeambuildingPage = () => {
   return (
     <div className="relative flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
-      <TeambuildingBlobs />
+      <TeambuildingBannerBlobs />
       <div className="flex w-full flex-col items-center gap-24 lg:gap-44">
         <HeroBanner
           img="/teambuilding/teambuilding-banner.jpg"
@@ -37,7 +40,9 @@ const TeambuildingPage = () => {
       <TestimonialSection
         description='"Najviše mi se svidjelo kako su aktivnosti bile prilagođene našim sposobnostima, omogućujući svakom članu tima da se osjeća uključenim
          i podržanim. Ovo iskustvo je definitivno poboljšalo našu timsku dinamiku i preporučujemo ga svakome tko želi ojačati svoj tim kroz zabavu i avanturu!"'
-      />
+      >
+        <TeambuildingTestimonialBlobs />
+      </TestimonialSection>
     </div>
   );
 };
