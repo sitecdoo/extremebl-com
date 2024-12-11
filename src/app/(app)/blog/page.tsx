@@ -7,6 +7,7 @@ import type { Category, Media } from "@/payload-types";
 import { HeroBanner } from "@/components/custom-ui/banners";
 import { getPageNumbers } from "./utils";
 import BlogPagination from "@/components/custom-ui/blog/blog-pagination";
+import { notFound } from "next/navigation";
 
 interface BlogProps {
   searchParams: { page?: string };
@@ -28,6 +29,8 @@ const Blog = async ({ searchParams }: BlogProps) => {
   };
 
   const { docs, totalPages } = await getPosts();
+
+  if (docs.length < 1) return notFound();
 
   const pageNumbers = getPageNumbers({
     totalPages: totalPages,
