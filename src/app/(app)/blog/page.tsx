@@ -14,7 +14,7 @@ interface BlogProps {
 
 const Blog = async ({ searchParams }: BlogProps) => {
   const payload = await getPayload({ config });
-  const postsPerPage = 1;
+  const postsPerPage = 9;
   const currentPage = Number((await searchParams).page) || 1;
 
   const getPosts = async () => {
