@@ -7,8 +7,21 @@ import TrainingSchedule from "@/components/custom-ui/training-schedule";
 import RecentBlogWrapper from "@/components/custom-ui/blog/recent-blog-wrapper";
 import Questions from "@/components/custom-ui/questions";
 import SmallQuestions from "@/components/custom-ui/small-questions";
+import { getPayload } from "payload";
+import config from "@payload-config";
 
 export default async function HomePage() {
+  const payload = await getPayload({ config });
+  const getPosts = async () => {
+    const posts = await payload.find({
+      collection: "posts",
+      sort: "-createdAt",
+      limit: 3,
+    });
+
+    return posts;
+  };
+  const { docs } = await getPosts();
   return (
     <div className="flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
       <div className="flex w-full flex-col items-center gap-24 lg:gap-48">
@@ -55,7 +68,7 @@ export default async function HomePage() {
           <Typography fontWeight="bold">Rezervisi termin</Typography>
         </Button>
       </InfoSection>
-      <RecentBlogWrapper />
+      <RecentBlogWrapper posts={docs} />
       <InstagramPostsWrapper />
 
       <Questions />
