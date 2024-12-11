@@ -11,23 +11,18 @@ interface RecentBlogWrapperProps {
     Post,
     "id" | "title" | "description" | "thumbnail" | "createdAt" | "categories"
   >[];
+  children?: React.ReactNode;
 }
 
-const RecentBlogWrapper = ({ posts }: RecentBlogWrapperProps) => {
+const RecentBlogWrapper = ({ posts, children }: RecentBlogWrapperProps) => {
   return (
     <div className="flex flex-col items-center gap-2 lg:gap-4">
       <div className="flex flex-col items-center gap-4 lg:gap-5">
-        {/* <Button
-          variant="black"
-          className="pointer-events-none py-2 lg:px-5 lg:py-2"
-        >
-          <Typography>Blog</Typography>
-        </Button> */}
         <Typography variant="h2" tag="h2" fontWeight="bold">
           Najnovije objave
         </Typography>
       </div>
-      <div className="mt-2 grid grid-cols-1 justify-items-center gap-3 rounded-xl bg-neutrals-100 p-3 md:grid-cols-2 md:gap-5 md:p-10 lg:mt-8 lg:grid-cols-3 lg:rounded-40 lg:px-5 xl:gap-9 xl:px-10">
+      <div className="relative mt-2 grid grid-cols-1 justify-items-center gap-3 rounded-xl bg-neutrals-100 p-3 md:grid-cols-2 md:gap-5 md:p-10 lg:mt-8 lg:grid-cols-3 lg:rounded-40 lg:px-5 xl:gap-9 xl:px-10">
         {posts.map((post, index) => {
           const thumbnail = post.thumbnail as Media;
           const categories = post.categories as Category[];
@@ -43,6 +38,7 @@ const RecentBlogWrapper = ({ posts }: RecentBlogWrapperProps) => {
             />
           );
         })}
+        {children}
       </div>
       <Link href="/blog" className="self-end">
         <Button variant="ghost" className="flex items-center gap-x-2">
