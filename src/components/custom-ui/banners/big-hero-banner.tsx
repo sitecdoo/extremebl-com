@@ -8,8 +8,8 @@ const BigHeroBanner = () => {
       <Image
         src="/hero-image.jpg"
         alt="hero-banner"
-        width={1632}
-        height={1000}
+        width={5379}
+        height={4016}
         className="h-[47rem] min-w-64 rounded-2xl object-cover object-[70%] sm:w-full lg:h-[62.5rem] lg:rounded-40 lg:object-bottom"
         priority
       />

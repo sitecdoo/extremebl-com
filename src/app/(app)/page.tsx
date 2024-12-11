@@ -1,59 +1,77 @@
-import InstagramPosts from "@/components/custom-ui/instagram-posts";
-import Typography from "@/components/custom-ui/typography";
-import Image from "next/image";
-import Link from "next/link";
-
-const instagramToken = process.env.INSTAGRAM_TOKEN;
-const userId = process.env.INSTAGRAM_USER_ID;
+import InstagramPostsWrapper from "@/components/custom-ui/instagram";
+import Typography from "../../components/custom-ui/typography";
+import { BigHeroBanner } from "@/components/custom-ui/banners";
+import InfoSection from "@/components/custom-ui/info-section";
+import { Button } from "@/components/ui/button";
+import TrainingSchedule from "@/components/custom-ui/training-schedule";
+import RecentBlogWrapper from "@/components/custom-ui/blog/recent-blog-wrapper";
+import Questions from "@/components/custom-ui/questions";
+import SmallQuestions from "@/components/custom-ui/small-questions";
+import { getPayload } from "payload";
+import config from "@payload-config";
 
 export default async function HomePage() {
-  const renderError = () => (
-    <Typography variant="h4" className="text-center">
-      Failed to load posts. Please try again later.
-    </Typography>
-  );
+  const payload = await getPayload({ config });
+  const getPosts = async () => {
+    const posts = await payload.find({
+      collection: "posts",
+      sort: "-createdAt",
+      limit: 3,
+    });
 
-  const InstagramPostsWrapper = async () => {
-    try {
-      const data = await fetch(
-        `https://graph.instagram.com/${userId}/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink&access_token=${instagramToken}&limit=4`,
-      );
-      if (!data.ok) {
-        return renderError();
-      }
-      const posts = await data.json();
-      return <InstagramPosts posts={posts.data} />;
-    } catch (error) {
-      console.error("Fetch error:", error);
-      return renderError();
-    }
+    return posts;
   };
-
+  const { docs } = await getPosts();
   return (
     <div className="flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
-      <div className="space-y-4 text-center lg:space-y-2">
-        <Typography variant="h2" tag="h2" fontWeight="bold">
-          Socijalne mreže
-        </Typography>
-        <div className="space-y-2 self-start lg:space-y-9">
-          <Link
-            href="https://www.instagram.com/extreme_bl/"
-            className="flex w-fit items-center gap-3"
-          >
-            <Image
-              width={150}
-              height={150}
-              src="/instagram-logo.png"
-              alt="Logo"
-              className="size-10 rounded-full lg:size-14"
-            />
-            <Typography className="text-neutrals-600 lg:text-2xl lg:leading-7 lg:text-neutrals-500">
-              extremeclimbing
-            </Typography>
-          </Link>
-          <InstagramPostsWrapper />
-        </div>
+      <div className="flex w-full flex-col items-center gap-24 lg:gap-48">
+        <BigHeroBanner />
+        <SmallQuestions />
       </div>
+      <div className="flex w-full flex-col gap-y-24 lg:gap-y-32">
+        <InfoSection
+          image="/climbing-for-adults.jpg"
+          title="Penjanje za odrasle"
+          description="Naše penjanje za odrasle pruža uzbudljivu priliku za sve ljubitelje avanture, bez obzira na prethodno iskustvo. Bilo da želite poboljšati svoju fizičku kondiciju, savladati nove izazove ili jednostavno uživati u društvu entuzijasta kao što ste vi, naši instruktori su tu da vam pruže podršku na svakom koraku."
+        >
+          <Button variant="black" className="w-fit">
+            <Typography fontWeight="bold">Penjanje za odrasle</Typography>
+          </Button>
+        </InfoSection>
+        <InfoSection
+          image="/climbing-for-children.jpg"
+          title="Penjanje za djecu"
+          description="Penjanje za djecu  je savršen način da mališani razviju svoje motoričke veštine, samopouzdanje i timski duh. Naši programi su prilagođeni različitim uzrastima i nivoima veština, uz stalni nadzor i podršku iskusnih instruktora. Kroz igru i zabavu, deca će naučiti osnovne tehnike penjanja, a možda čak i otkriti svoju ljubav prema ovom sportu."
+        >
+          <Button variant="yellow" className="w-fit">
+            <Typography fontWeight="bold">Penjanje za djecu</Typography>
+          </Button>
+        </InfoSection>
+      </div>
+      <TrainingSchedule />
+      <div className="hidden" />
+      <InfoSection
+        image="/birthdays/hero.jpg"
+        title="Proslava rodjendana"
+        description="Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn"
+      >
+        <Button variant="blue" className="w-fit">
+          <Typography fontWeight="bold">Rezervisi termin</Typography>
+        </Button>
+      </InfoSection>
+      <InfoSection
+        image="/teambuilding/teambuilding-banner.jpg"
+        title="Teambuilding"
+        description="Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn"
+      >
+        <Button variant="blue" className="w-fit">
+          <Typography fontWeight="bold">Rezervisi termin</Typography>
+        </Button>
+      </InfoSection>
+      <RecentBlogWrapper posts={docs} />
+      <InstagramPostsWrapper />
+
+      <Questions />
     </div>
   );
 }
