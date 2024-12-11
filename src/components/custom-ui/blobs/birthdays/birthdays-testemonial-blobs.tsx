@@ -18,7 +18,7 @@ const BirthdaysTestemonialBlobs = () => {
         />
       </svg>
       <svg
-        className="absolute -right-32 -top-64 -z-10 lg:hidden"
+        className="absolute -right-32 -top-60 -z-10 lg:hidden"
         width="208"
         height="201"
         viewBox="0 0 208 201"
