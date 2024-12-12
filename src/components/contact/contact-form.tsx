@@ -45,6 +45,8 @@ const ContactForm = () => {
     toast.error({ title: "Something went wrong" });
   };
 
+  const { isSubmitting } = form.formState;
+
   return (
     <div className="flex w-full flex-col items-center gap-6 lg:flex-row lg:items-start lg:gap-12 lg:px-12 xl:gap-20 xl:px-20 2xl:px-36">
       <Typography variant="h2" tag="h2" fontWeight="bold" className="w-fit">
@@ -62,6 +64,7 @@ const ContactForm = () => {
               <FormItem>
                 <FormControl>
                   <Input
+                    disabled={isSubmitting}
                     error={errors.name}
                     placeholder="Ime i prezime*"
                     {...field}
@@ -79,6 +82,7 @@ const ContactForm = () => {
               <FormItem>
                 <FormControl>
                   <Input
+                    disabled={isSubmitting}
                     error={errors.email}
                     placeholder="E-mail*"
                     {...field}
@@ -96,6 +100,7 @@ const ContactForm = () => {
               <FormItem>
                 <FormControl>
                   <Textarea
+                    disabled={isSubmitting}
                     error={errors.message}
                     placeholder="Poruka*"
                     {...field}
@@ -107,7 +112,12 @@ const ContactForm = () => {
             )}
           />
           <div className="flex items-center justify-end">
-            <Button variant="blue" type="submit" className="lg:mt-4">
+            <Button
+              variant="blue"
+              type="submit"
+              className="lg:mt-4"
+              disabled={isSubmitting}
+            >
               <Typography fontWeight="bold" tag="span">
                 Pošalji upit
               </Typography>
