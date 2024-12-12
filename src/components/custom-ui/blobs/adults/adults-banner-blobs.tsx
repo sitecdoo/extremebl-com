@@ -35,7 +35,7 @@ const AdultsBannerBlobs = () => {
 
       {/* Desktop */}
       <svg
-        className="absolute -left-44 -z-10 hidden translate-y-[100%] lg:block"
+        className="absolute -left-60 -z-10 hidden translate-y-[100%] lg:block"
         width="486"
         height="433"
         viewBox="0 0 486 433"
