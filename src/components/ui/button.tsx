@@ -24,6 +24,7 @@ const buttonVariants = cva(
         blue: "bg-blue-500 text-neutrals-50 hover:bg-blue-600 active:bg-blue-700",
         ghost:
           "bg-inherit text-neutrals-800 hover:bg-neutrals-100 active:bg-neutrals-200",
+        sort: "bg-neutrals-200 text-neutrals-700 sm:bg-neutrals-100",
       },
       size: {
         default: "h-10 px-4 py-2",
