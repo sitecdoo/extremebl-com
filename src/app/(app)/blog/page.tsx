@@ -8,6 +8,7 @@ import { HeroBanner } from "@/components/custom-ui/banners";
 import { getPageNumbers } from "./utils";
 import BlogPagination from "@/components/custom-ui/blog/blog-pagination";
 import { notFound } from "next/navigation";
+import BlogBannerBlobs from "@/components/custom-ui/blobs/blog";
 
 interface BlogProps {
   searchParams: { page?: string };
@@ -38,7 +39,8 @@ const Blog = async ({ searchParams }: BlogProps) => {
   });
 
   return (
-    <div className="flex flex-col items-center gap-12 pb-24 sm:pb-48">
+    <div className="relative flex w-full flex-col items-center gap-12 pb-24 sm:pb-48">
+      <BlogBannerBlobs />
       <HeroBanner img="/blog/blog-banner.png" title="Blog" />
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
         {docs.map((post) => {
