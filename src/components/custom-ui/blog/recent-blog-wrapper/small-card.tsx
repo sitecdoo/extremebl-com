@@ -10,6 +10,7 @@ type SmallCardProps = {
   title: string;
   description: string;
   tags: string[];
+  slug: string | number;
 };
 
 const SmallCard = ({
@@ -18,13 +19,14 @@ const SmallCard = ({
   title,
   description,
   tags,
+  slug,
 }: SmallCardProps) => {
   return (
-    <Link href={`/blog/`}>
-      <div className="rounded-28 group flex min-h-[30rem] min-w-60 max-w-[21rem] flex-col gap-3 bg-neutrals-50 p-3 pb-4 hover:shadow-md lg:min-h-[33.5rem] lg:max-w-[25rem] lg:gap-4 lg:p-4 lg:pb-6">
+    <Link href={`/blog/${slug}`}>
+      <div className="group flex min-h-[30rem] min-w-60 max-w-[21rem] flex-col gap-3 rounded-28 bg-neutrals-50 p-3 pb-4 hover:shadow-md lg:min-h-[33.5rem] lg:max-w-[25rem] lg:gap-4 lg:p-4 lg:pb-6">
         <div className="relative h-44 lg:h-[12.5rem]">
           <Image
-            className="rounded-18 h-full object-cover"
+            className="h-full rounded-18 object-cover"
             src={image}
             width={498}
             height={300}
@@ -45,7 +47,7 @@ const SmallCard = ({
             <Clock className="size-5" />
             <Typography variant="caption">{time}</Typography>
           </div>
-          <div className="mb-5 flex flex-grow flex-col gap-2 lg:mb-2 lg:gap-3">
+          <div className="flex flex-grow flex-col gap-2 lg:gap-3">
             <Typography
               variant="h5"
               tag="h5"
@@ -54,8 +56,10 @@ const SmallCard = ({
             >
               {title}
             </Typography>
-
-            <Typography variant="body-sm" className="line-clamp-4">
+            <Typography
+              variant="body-sm"
+              className="line-clamp-6 lg:line-clamp-4"
+            >
               {description}
             </Typography>
           </div>

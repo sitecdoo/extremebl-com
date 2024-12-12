@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Footer from "@/components/custom-ui/footer";
 import Navbar from "@/components/custom-ui/navbar/navbar";
 import { Toaster } from "@/components/ui/sonner";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,7 +23,7 @@ export default function RootLayout({
       >
         <Navbar />
         <div className="mx-auto flex w-full max-w-[108rem] flex-col items-center px-4 lg:px-12">
-          {children}
+          <NuqsAdapter>{children}</NuqsAdapter>
         </div>
         <Footer />
         <Toaster
