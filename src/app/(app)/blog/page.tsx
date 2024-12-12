@@ -4,18 +4,23 @@ import config from "@payload-config";
 import { Card } from "@/components/custom-ui/blog";
 import { formatDistanceToNow } from "date-fns";
 import type { Category, Media } from "@/payload-types";
+import SortButton from "@/components/custom-ui/blog/sort-button";
 import { HeroBanner } from "@/components/custom-ui/banners";
 import { getPageNumbers } from "./utils";
 import BlogPagination from "@/components/custom-ui/blog/blog-pagination";
 import { notFound } from "next/navigation";
 import BlogBannerBlobs from "@/components/custom-ui/blobs/blog";
 
-interface BlogProps {
-  searchParams: { page?: string };
-}
-
-const Blog = async ({ searchParams }: BlogProps) => {
+const Blog = async ({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined };
+}) => {
   const payload = await getPayload({ config });
+
+  const sortParam =
+    (await searchParams).sort === "asc" ? "createdAt" : "-createdAt";
+
   const postsPerPage = 9;
   const currentPage = Number((await searchParams).page) || 1;
 
@@ -24,24 +29,27 @@ const Blog = async ({ searchParams }: BlogProps) => {
       collection: "posts",
       limit: postsPerPage,
       page: currentPage,
+      sort: sortParam,
     });
 
     return posts;
   };
 
   const { docs, totalPages } = await getPosts();
-
-  if (docs.length < 1) return notFound();
-
   const pageNumbers = getPageNumbers({
     totalPages: totalPages,
     currentPage: currentPage,
   });
 
+  if (docs.length < 1) return notFound();
+
   return (
     <div className="relative flex w-full flex-col items-center gap-12 pb-24 sm:pb-48">
       <BlogBannerBlobs />
       <HeroBanner img="/blog/blog-banner.png" title="Blog" />
+      <nav className="flex w-full justify-end">
+        <SortButton initialSortOrder="desc" />
+      </nav>
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
         {docs.map((post) => {
           const thumbnail = post.thumbnail as Media;
