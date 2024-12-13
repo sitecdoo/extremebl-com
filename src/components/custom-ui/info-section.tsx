@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Typography from "./typography";
+import { PropsWithChildren } from "react";
 
-type InfoSectionProps = {
+type InfoSectionProps = PropsWithChildren<{
   image: string;
   title: string;
   description: string;
-  children?: React.ReactNode;
-};
+}>;
 
 const InfoSection = ({
   image,

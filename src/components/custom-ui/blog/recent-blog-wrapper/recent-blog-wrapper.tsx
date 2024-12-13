@@ -5,14 +5,14 @@ import { ArrowRight } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
 import { Category, Media, Post } from "@/payload-types";
 import SmallCard from "./small-card";
+import { PropsWithChildren } from "react";
 
-interface RecentBlogWrapperProps {
+type RecentBlogWrapperProps = PropsWithChildren<{
   posts: Pick<
     Post,
     "id" | "title" | "description" | "thumbnail" | "createdAt" | "categories"
   >[];
-  children?: React.ReactNode;
-}
+}>;
 
 const RecentBlogWrapper = ({ posts, children }: RecentBlogWrapperProps) => {
   return (

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -8,10 +8,9 @@ import {
 } from "../ui/carousel";
 import Image from "next/image";
 
-type ImageCarouselProps = {
+type ImageCarouselProps = PropsWithChildren<{
   images: { src: string; alt: string }[];
-  children?: React.ReactNode;
-};
+}>;
 
 const ImageCarousel = ({ images, children }: ImageCarouselProps) => {
   return (

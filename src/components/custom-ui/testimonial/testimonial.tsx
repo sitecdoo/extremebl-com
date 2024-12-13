@@ -1,12 +1,12 @@
+import { PropsWithChildren } from "react";
 import Typography from "../typography";
 import Image from "next/image";
 
-type TesimonialProps = {
+type TesimonialProps = PropsWithChildren<{
   image: string;
   name: string;
   description: string;
-  children?: React.ReactNode;
-};
+}>;
 
 const Testimonial = ({
   image,

@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
 import Testimonial from "./testimonial";
 import Typography from "../typography";
+import { PropsWithChildren } from "react";
 
-type TestemonialSectionProps = {
+type TestemonialSectionProps = PropsWithChildren<{
   description: string;
-  children?: React.ReactNode;
-};
+}>;
 
 const TestimonialSection = ({
   description,

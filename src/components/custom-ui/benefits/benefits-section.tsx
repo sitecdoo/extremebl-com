@@ -1,9 +1,9 @@
+import { PropsWithChildren } from "react";
 import Typography from "../typography";
 
-type BenefitsSectionProps = {
+type BenefitsSectionProps = PropsWithChildren<{
   title: string;
-  children: React.ReactNode;
-};
+}>;
 
 const BenefitsSection = ({ title, children }: BenefitsSectionProps) => {
   return (
