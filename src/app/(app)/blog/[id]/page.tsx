@@ -193,11 +193,7 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
                 if (node.format & 16) className += "line-through ";
                 if (node.format & 32) className += "uppercase ";
 
-                return (
-                  <Typography tag="span" className={className}>
-                    {node.text}
-                  </Typography>
-                );
+                return <span className={className}>{node.text}</span>;
               },
             })}
           />
