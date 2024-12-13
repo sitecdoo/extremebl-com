@@ -9,6 +9,7 @@ import { HeroBanner } from "@/components/custom-ui/banners";
 import { getPageNumbers } from "./utils";
 import BlogPagination from "@/components/custom-ui/blog/blog-pagination";
 import { notFound } from "next/navigation";
+import { FilterDropdown } from "@/components/custom-ui/blog/filter-dropdown";
 
 const Blog = async ({
   searchParams,
@@ -34,11 +35,20 @@ const Blog = async ({
     return posts;
   };
 
+  const getCategories = async () => {
+    const categories = await payload.find({
+      collection: "categories",
+    });
+    return categories;
+  };
+
   const { docs, totalPages } = await getPosts();
   const pageNumbers = getPageNumbers({
     totalPages: totalPages,
     currentPage: currentPage,
   });
+
+  const categories = (await getCategories()).docs;
 
   if (docs.length < 1) return notFound();
 
@@ -47,6 +57,7 @@ const Blog = async ({
       <HeroBanner img="/blog/blog-banner.png" title="Blog" />
       <nav className="flex w-full justify-end">
         <SortButton initialSortOrder="desc" />
+        <FilterDropdown filterOptions={categories} />
       </nav>
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
         {docs.map((post) => {
