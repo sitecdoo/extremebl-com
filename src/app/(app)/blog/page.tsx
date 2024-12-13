@@ -8,7 +8,8 @@ import SortButton from "@/components/custom-ui/blog/sort-button";
 import { HeroBanner } from "@/components/custom-ui/banners";
 import { getPageNumbers } from "./utils";
 import BlogPagination from "@/components/custom-ui/blog/blog-pagination";
-import { notFound } from "next/navigation";
+
+import { SearchFilter } from "@/components/custom-ui/blog/search-filter";
 
 const Blog = async ({
   searchParams,
@@ -20,15 +21,39 @@ const Blog = async ({
   const sortParam =
     (await searchParams).sort === "asc" ? "createdAt" : "-createdAt";
 
+  const searchParam = (await searchParams).search || "";
+
   const postsPerPage = 9;
   const currentPage = Number((await searchParams).page) || 1;
+
+  const query = {
+    limit: postsPerPage,
+    page: currentPage,
+    sort: sortParam,
+    where: {},
+  };
+
+  if (searchParam) {
+    query.where = {
+      or: [
+        {
+          title: {
+            like: searchParam,
+          },
+        },
+        {
+          description: {
+            like: searchParam,
+          },
+        },
+      ],
+    };
+  }
 
   const getPosts = async () => {
     const posts = await payload.find({
       collection: "posts",
-      limit: postsPerPage,
-      page: currentPage,
-      sort: sortParam,
+      ...query,
     });
 
     return posts;
@@ -40,12 +65,16 @@ const Blog = async ({
     currentPage: currentPage,
   });
 
-  if (docs.length < 1) return notFound();
+  // if (docs.length < 1) return notFound();
 
   return (
-    <div className="flex flex-col items-center gap-12 pb-24 sm:pb-48">
+    <div className="flex w-full flex-col items-center gap-12 pb-24 sm:pb-48">
       <HeroBanner img="/blog/blog-banner.png" title="Blog" />
-      <nav className="flex w-full justify-end">
+      <nav className="flex w-full flex-wrap items-center justify-between gap-4 sm:flex-nowrap">
+        <div className="w-full max-w-full">
+          <SearchFilter placeholder="Search..." />
+        </div>
+
         <SortButton initialSortOrder="desc" />
       </nav>
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
@@ -65,13 +94,11 @@ const Blog = async ({
           );
         })}
       </div>
-      {totalPages > 1 && (
-        <BlogPagination
-          totalPages={totalPages}
-          currentPage={currentPage}
-          pageNumbers={pageNumbers}
-        />
-      )}
+      <BlogPagination
+        totalPages={totalPages}
+        currentPage={currentPage}
+        pageNumbers={pageNumbers}
+      />
     </div>
   );
 };
