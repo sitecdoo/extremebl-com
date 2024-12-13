@@ -9,7 +9,7 @@ const inputVariants = cva(
     variants: {
       variant: {
         default:
-          "max-w-[22.5rem] rounded-md border-[1.5px] p-4 text-neutrals-700 placeholder:text-neutrals-400 focus-visible:border-neutrals-300 focus-visible:text-neutrals-600 lg:max-w-[33.1rem]",
+          "rounded-md border-[1.5px] p-4 text-neutrals-700 placeholder:text-neutrals-400 focus-visible:border-neutrals-300 focus-visible:text-neutrals-600 sm:max-w-[33.1rem]",
         form: "border-b-2 border-neutrals-100 px-1 py-5 placeholder:text-neutrals-500 lg:px-6",
       },
       inputSize: {
