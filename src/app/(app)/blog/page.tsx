@@ -10,6 +10,7 @@ import { getPageNumbers } from "./utils";
 import BlogPagination from "@/components/custom-ui/blog/blog-pagination";
 
 import { SearchFilter } from "@/components/custom-ui/blog/search-filter";
+import BlogBannerBlobs from "@/components/custom-ui/blobs/blog";
 
 const Blog = async ({
   searchParams,
@@ -68,7 +69,8 @@ const Blog = async ({
   // if (docs.length < 1) return notFound();
 
   return (
-    <div className="flex w-full flex-col items-center gap-12 pb-24 sm:pb-48">
+    <div className="relative flex w-full flex-col items-center gap-12 pb-24 sm:pb-48">
+      <BlogBannerBlobs />
       <HeroBanner img="/blog/blog-banner.png" title="Blog" />
       <nav className="flex w-full flex-wrap items-center justify-between gap-4 sm:flex-nowrap">
         <div className="w-full max-w-full">

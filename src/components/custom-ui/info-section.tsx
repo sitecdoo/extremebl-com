@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Typography from "./typography";
+import { PropsWithChildren } from "react";
 
-type InfoSectionProps = {
+type InfoSectionProps = PropsWithChildren<{
   image: string;
   title: string;
   description: string;
-  children?: React.ReactNode;
-};
+}>;
 
 const InfoSection = ({
   image,
@@ -28,7 +28,7 @@ const InfoSection = ({
         <Typography variant="h2" tag="h2" fontWeight="bold">
           {title}
         </Typography>
-        <Typography className="line-clamp-6 max-w-lg">{description}</Typography>
+        <Typography className="max-w-lg">{description}</Typography>
         {children}
       </div>
     </div>

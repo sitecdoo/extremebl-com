@@ -4,6 +4,11 @@ import {
   benefitsForAdults,
   BenefitsSection,
 } from "@/components/custom-ui/benefits";
+import {
+  AdultsBannerBlobs,
+  AdultsBenefitsBlobs,
+  AdultsCarouselBlobs,
+} from "@/components/custom-ui/blobs/adults";
 import Header from "@/components/custom-ui/header";
 import ImageCarousel from "@/components/custom-ui/image-carousel";
 import InfoSection from "@/components/custom-ui/info-section";
@@ -33,7 +38,8 @@ const AdultsPage = () => {
   ];
 
   return (
-    <div className="flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
+    <div className="relative flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
+      <AdultsBannerBlobs />
       <div className="flex w-full flex-col items-center gap-24 lg:gap-44">
         <HeroBanner
           img="/adults/adults-banner.jpg"
@@ -103,6 +109,7 @@ const AdultsPage = () => {
             image={data.image}
           />
         ))}
+        <AdultsBenefitsBlobs />
       </BenefitsSection>
       <PriceList pricingData={pricingData.adultPrices}>
         <ListItem
@@ -110,7 +117,9 @@ const AdultsPage = () => {
           data={pricingData.adults.date}
         />
       </PriceList>
-      <ImageCarousel images={carouselImages} />
+      <ImageCarousel images={carouselImages}>
+        <AdultsCarouselBlobs />
+      </ImageCarousel>
       <Header
         text="Spremni za novu avanturu? Pridružite se našoj penjačkoj ekipi i
           započnite svoje penjačko putovanje danas"
