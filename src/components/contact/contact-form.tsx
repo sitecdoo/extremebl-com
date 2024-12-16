@@ -52,6 +52,8 @@ const ContactForm = () => {
               <FormItem>
                 <FormControl>
                   <Input
+                    variant="form"
+                    inputSize="lg"
                     error={errors.name}
                     placeholder="Ime i prezime*"
                     {...field}
@@ -69,6 +71,8 @@ const ContactForm = () => {
               <FormItem>
                 <FormControl>
                   <Input
+                    variant="form"
+                    inputSize="lg"
                     error={errors.email}
                     placeholder="E-mail*"
                     {...field}

@@ -8,7 +8,7 @@ import SortButton from "@/components/custom-ui/blog/sort-button";
 import { HeroBanner } from "@/components/custom-ui/banners";
 import { getPageNumbers } from "./utils";
 import BlogPagination from "@/components/custom-ui/blog/blog-pagination";
-import { notFound } from "next/navigation";
+import { SearchFilter } from "@/components/custom-ui/blog/search-filter";
 import { FilterDropdown } from "@/components/custom-ui/blog/filter-dropdown";
 
 const Blog = async ({
@@ -21,15 +21,59 @@ const Blog = async ({
   const sortParam =
     (await searchParams).sort === "asc" ? "createdAt" : "-createdAt";
 
+  const searchParam = (await searchParams).search || "";
+  const categoryIds = (await searchParams).categoryIds || "";
+
   const postsPerPage = 9;
   const currentPage = Number((await searchParams).page) || 1;
+
+  const query = {
+    limit: postsPerPage,
+    page: currentPage,
+    sort: sortParam,
+    where: {},
+  };
+
+  const searchCondition = searchParam
+    ? {
+        or: [
+          {
+            title: {
+              like: searchParam,
+            },
+          },
+          {
+            description: {
+              like: searchParam,
+            },
+          },
+        ],
+      }
+    : null;
+
+  const categoryCondition = categoryIds
+    ? {
+        and: String(categoryIds)
+          .split(",")
+          .map((id) => id.trim())
+          .map((id) => ({
+            categories: {
+              contains: id,
+            },
+          })),
+      }
+    : null;
+
+  if (searchCondition || categoryCondition) {
+    query.where = {
+      and: [searchCondition, categoryCondition].filter(Boolean),
+    };
+  }
 
   const getPosts = async () => {
     const posts = await payload.find({
       collection: "posts",
-      limit: postsPerPage,
-      page: currentPage,
-      sort: sortParam,
+      ...query,
     });
 
     return posts;
@@ -48,16 +92,23 @@ const Blog = async ({
     currentPage: currentPage,
   });
 
-  const categories = (await getCategories()).docs;
+  console.log(docs[0].categories);
+  console.log(categoryIds);
 
-  if (docs.length < 1) return notFound();
+  const categories = (await getCategories()).docs;
+  // if (docs.length < 1) return notFound();
 
   return (
-    <div className="flex flex-col items-center gap-12 pb-24 sm:pb-48">
+    <div className="flex w-full flex-col items-center gap-12 pb-24 sm:pb-48">
       <HeroBanner img="/blog/blog-banner.png" title="Blog" />
-      <nav className="flex w-full justify-end">
-        <SortButton initialSortOrder="desc" />
-        <FilterDropdown filterOptions={categories} />
+      <nav className="flex w-full flex-wrap items-center justify-between gap-4 sm:flex-nowrap">
+        <div className="w-full max-w-full">
+          <SearchFilter placeholder="Search..." />
+        </div>
+        <div className="flex gap-2">
+          <FilterDropdown filterOptions={categories} />
+          <SortButton initialSortOrder="desc" />
+        </div>
       </nav>
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
         {docs.map((post) => {
@@ -76,13 +127,11 @@ const Blog = async ({
           );
         })}
       </div>
-      {totalPages > 1 && (
-        <BlogPagination
-          totalPages={totalPages}
-          currentPage={currentPage}
-          pageNumbers={pageNumbers}
-        />
-      )}
+      <BlogPagination
+        totalPages={totalPages}
+        currentPage={currentPage}
+        pageNumbers={pageNumbers}
+      />
     </div>
   );
 };

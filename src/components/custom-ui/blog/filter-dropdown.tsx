@@ -1,10 +1,11 @@
 "use client";
 
 import * as React from "react";
-import { Check } from "lucide-react";
+import { Check, Filter, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
+  DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
@@ -12,21 +13,20 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Category } from "@/payload-types";
 import { useSearchParams } from "next/navigation";
 import { useQueryState } from "nuqs";
+import Typography from "../typography";
+import { cn } from "@/lib/utils";
 
 interface FilterDropdownProps {
   filterOptions: Category[];
-  onFilterChange: (categoryIds: string[] | null) => void;
-  isPending?: boolean;
 }
 
-export function FilterDropdown({
-  filterOptions,
-  isPending = false,
-}: FilterDropdownProps) {
+export function FilterDropdown({ filterOptions }: FilterDropdownProps) {
   const [filters, setFilters] = useQueryState("categoryIds", {
+    defaultValue: "",
     shallow: false,
     throttleMs: 0,
   });
+  const [isOpen, setIsOpen] = React.useState(false);
   const searchParams = useSearchParams();
   const currentFilters = searchParams.get("categoryIds")?.split(",") || [];
 
@@ -34,64 +34,83 @@ export function FilterDropdown({
     setFilters(null);
   };
 
-  const toggleFilter = (filterId: string) => {
-    const newFilters = currentFilters.includes(filterId)
-      ? currentFilters.filter((id) => id !== filterId)
-      : [...currentFilters, filterId];
-
-    setFilters(newFilters.length > 0 ? newFilters.join(",") : null);
-    // onFilterChange(newFilters.length > 0 ? newFilters : null);
+  const handleCheckedChange = (itemId: string, e: Event) => {
+    // Prevent the dropdown from closing
+    e.preventDefault();
+    setFilters((prev) => {
+      if (prev.includes(itemId)) {
+        return prev.filter((id: string) => id !== itemId);
+      } else {
+        return [...prev, itemId];
+      }
+    });
   };
 
+  // const handleCheckedChange = (filterId: string, e: Event) => {
+  //   e.preventDefault();
+  //   const newFilters = currentFilters.includes(filterId)
+  //     ? currentFilters.filter((id) => id !== filterId)
+  //     : [...currentFilters, filterId];
+
+  //   setFilters(newFilters.length > 0 ? newFilters.join(",") : null);
+  //   // onFilterChange(newFilters.length > 0 ? newFilters : null);
+  // };
+
   return (
-    <DropdownMenu>
+    <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
       <DropdownMenuTrigger asChild>
         <Button
-          variant="outline"
-          className="h-10 justify-between px-3 text-left font-normal"
-          disabled={isPending}
+          className={cn(
+            "flex min-w-44 justify-between gap-2 rounded-lg sm:min-w-36 sm:px-5",
+            filters.length > 0 &&
+              "bg-blue-50 text-blue-600 hover:bg-blue-50 active:bg-blue-50 data-[state=open]:bg-blue-50 data-[state=open]:text-blue-600 lg:bg-blue-50",
+          )}
+          variant="filter"
+          size="small"
         >
-          <span>Filters {isPending && "..."}</span>
+          <Typography fontWeight="bold" className="uppercase">
+            Filteri
+          </Typography>
+          <Filter className="size-5 lg:size-5" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
-        className="w-[280px] rounded-md border bg-white p-0 shadow-md"
-        align="start"
+        className="relative min-w-96 bg-neutrals-100"
+        align="end"
       >
-        <div className="flex items-center justify-between border-b px-4 py-2">
-          <span className="text-sm font-medium">
-            {currentFilters.length} selected
-          </span>
+        <div className="mb-3 flex items-center justify-between gap-2 bg-inherit pl-4 pt-1">
+          <Typography variant="caption" className="text-neutrals-500">
+            {filters.length} selected
+          </Typography>
           <Button
             variant="ghost"
-            size="sm"
-            className="h-auto p-0 text-primary hover:bg-transparent hover:text-primary/80"
-            onClick={clearAll}
+            className="flex items-center gap-x-2 text-neutrals-800 active:bg-inherit lg:mx-4 lg:my-3 lg:p-0"
+            onClick={() => clearAll()}
           >
-            <span className="text-sm font-medium">Izbriši sve</span>
+            <Typography fontWeight="bold" variant="body-sm">
+              Izbriši sve
+            </Typography>
+            <Trash2 className="size-4" strokeWidth={2.5} />
           </Button>
         </div>
-        <ScrollArea className="max-h-[300px]">
-          <div className="p-0">
-            {filterOptions.map((option) => (
-              <Button
-                key={option.id}
-                className="relative flex w-full cursor-pointer items-center justify-between rounded-sm px-3 py-3 hover:bg-accent data-[state=selected]:bg-accent/50"
-                data-state={
-                  currentFilters.includes(option.id.toString())
-                    ? "selected"
-                    : "default"
-                }
-                onClick={() => toggleFilter(option.id.toString())}
-              >
-                <span className="text-sm">{option.name}</span>
-                {currentFilters.includes(option.id.toString()) && (
-                  <Check className="h-4 w-4 text-primary" />
-                )}
-              </Button>
-            ))}
-          </div>
+        <ScrollArea className="flex h-96">
+          {filterOptions.map((item) => (
+            <DropdownMenuCheckboxItem
+              className={cn(
+                "mr-4 mt-1 h-12 rounded-lg bg-neutrals-50 text-neutrals-500 first:mt-0 data-[highlighted]:bg-blue-50 data-[highlighted]:text-blue-600",
+                filters.includes(String(item.id)) && "bg-blue-50 text-blue-600",
+              )}
+              key={item.id}
+              checked={filters.includes(String(item.id))}
+              onSelect={(e) => handleCheckedChange(String(item.id), e)}
+            >
+              <Typography fontWeight="bold" className="lg:text-base">
+                {item.name}
+              </Typography>
+            </DropdownMenuCheckboxItem>
+          ))}
         </ScrollArea>
+        <div className="absolute bottom-2 right-1 -z-10 h-96 w-[0.563rem] rounded-60 bg-white" />
       </DropdownMenuContent>
     </DropdownMenu>
   );
