@@ -18,8 +18,12 @@ import { Button } from "../ui/button";
 import { Textarea } from "../ui/textarea";
 import { sendEmailAction } from "./contact.actions";
 import { toast } from "@/utils/toast";
+import { useChallenge } from "@/lib/hooks/use-challenge";
+import AltchaWidget from "../custom-ui/altcha-widget";
 
 const ContactForm = () => {
+  const { isVerifying, getSolution } = useChallenge();
+
   const formSchema = getContactSchema();
 
   const form = useForm<ContactPayload>({
@@ -34,11 +38,18 @@ const ContactForm = () => {
   const errors = form.formState.errors;
 
   const handleSubmit = async (data: ContactPayload) => {
-    const result = await sendEmailAction(data);
+    const altchaPayload = await getSolution();
+
+    if (!altchaPayload) {
+      toast.error({ title: "Captcha verification failed" });
+      return;
+    }
+
+    const result = await sendEmailAction(data, altchaPayload);
 
     if (result?.success) {
-      toast.success({ title: "Email sent successfully" });
       form.reset();
+      toast.success({ title: "Email sent successfully" });
       return;
     }
 
@@ -112,16 +123,18 @@ const ContactForm = () => {
             )}
           />
           <div className="flex items-center justify-end">
-            <Button
-              variant="blue"
-              type="submit"
-              className="lg:mt-4"
-              disabled={isSubmitting}
-            >
-              <Typography fontWeight="bold" tag="span">
-                Pošalji upit
-              </Typography>
-            </Button>
+            <AltchaWidget isVerifying={isVerifying}>
+              <Button
+                variant="blue"
+                type="submit"
+                className="lg:mt-4"
+                disabled={isSubmitting || isVerifying}
+              >
+                <Typography fontWeight="bold" tag="span">
+                  Pošalji upit
+                </Typography>
+              </Button>
+            </AltchaWidget>
           </div>
         </form>
       </Form>
