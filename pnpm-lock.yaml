@@ -47,6 +47,9 @@ importers:
       '@radix-ui/react-slot':
         specifier: 1.1.0
         version: 1.1.0(@types/react@18.3.12)(react@19.0.0-rc-65a56d0e-20241020)
+      altcha-lib:
+        specifier: 1.1.1
+        version: 1.1.1
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
@@ -2194,6 +2197,9 @@ packages:
 
   ajv@8.17.1:
     resolution: {integrity: sha512-B/gBuNg5SiMTrPkC+A2+cW0RszwxYmn6VYxB/inlBStS5nx6xHIt/ehKRhIMhqusl7a8LjQoZnjCs5vhwxOQ1g==}
+
+  altcha-lib@1.1.1:
+    resolution: {integrity: sha512-dqL3ekjujIrFeHlb/YJLnb+Rc+GL6nK9dNt73ixQKRWIcA6tcWjEYCNZhHobwfnDMJYTmbMvJjYtCymTKnCYrQ==}
 
   amazon-cognito-identity-js@6.3.12:
     resolution: {integrity: sha512-s7NKDZgx336cp+oDeUtB2ZzT8jWJp/v2LWuYl+LQtMEODe22RF1IJ4nRiDATp+rp1pTffCZcm44Quw4jx2bqNg==}
@@ -7542,6 +7548,8 @@ snapshots:
       fast-uri: 3.0.3
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
+
+  altcha-lib@1.1.1: {}
 
   amazon-cognito-identity-js@6.3.12:
     dependencies:
