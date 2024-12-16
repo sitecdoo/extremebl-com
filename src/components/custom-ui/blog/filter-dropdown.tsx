@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Check, Filter, Trash2 } from "lucide-react";
+import { Filter, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
