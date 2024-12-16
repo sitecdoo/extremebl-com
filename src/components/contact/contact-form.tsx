@@ -76,6 +76,8 @@ const ContactForm = () => {
                 <FormControl>
                   <Input
                     disabled={isSubmitting}
+                    variant="form"
+                    inputSize="lg"
                     error={errors.name}
                     placeholder="Ime i prezime*"
                     {...field}
@@ -94,6 +96,8 @@ const ContactForm = () => {
                 <FormControl>
                   <Input
                     disabled={isSubmitting}
+                    variant="form"
+                    inputSize="lg"
                     error={errors.email}
                     placeholder="E-mail*"
                     {...field}

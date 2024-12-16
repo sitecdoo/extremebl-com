@@ -13,6 +13,9 @@ const config: Config = {
         "league-spartan": ["var(--font-league-spartan)"],
         "open-sans": ["var(--font-sans)"],
       },
+      screens: {
+        "3xl": "1728px",
+      },
       lineHeight: {
         "11": "2.625rem",
         "12": "3.125rem",
