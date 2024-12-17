@@ -9,6 +9,10 @@ import Questions from "@/components/custom-ui/questions";
 import SmallQuestions from "@/components/custom-ui/small-questions";
 import { getPayload } from "payload";
 import config from "@payload-config";
+import {
+  HomeBannerBlobs,
+  HomePostsBlobs,
+} from "@/components/custom-ui/blobs/home";
 
 export default async function HomePage() {
   const payload = await getPayload({ config });
@@ -23,7 +27,8 @@ export default async function HomePage() {
   };
   const { docs } = await getPosts();
   return (
-    <div className="flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
+    <div className="relative flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
+      <HomeBannerBlobs />
       <div className="flex w-full flex-col items-center gap-24 lg:gap-48">
         <BigHeroBanner />
         <SmallQuestions />
@@ -68,7 +73,17 @@ export default async function HomePage() {
           <Typography fontWeight="bold">Rezervisi termin</Typography>
         </Button>
       </InfoSection>
-      <RecentBlogWrapper posts={docs} />
+      <div className="flex flex-col items-center gap-4 lg:gap-5">
+        <Button
+          variant="black"
+          className="pointer-events-none py-2 lg:px-5 lg:py-2"
+        >
+          <Typography>Blog</Typography>
+        </Button>
+        <RecentBlogWrapper posts={docs}>
+          <HomePostsBlobs />
+        </RecentBlogWrapper>
+      </div>
       <InstagramPostsWrapper />
 
       <Questions />

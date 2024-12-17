@@ -13,11 +13,17 @@ import { Button } from "@/components/ui/button";
 import React from "react";
 import { carouselImages } from "./config";
 import Header from "@/components/custom-ui/header";
+import {
+  ChildrenBannerBlobs,
+  ChildrenBenefitsBlobs,
+  ChildrenCarouselBlobs,
+} from "@/components/custom-ui/blobs/children";
 
 const Children = () => {
   const data = PricingData;
   return (
-    <div className="flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
+    <div className="relative flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
+      <ChildrenBannerBlobs />
       <div className="flex w-full flex-col items-center gap-24 lg:gap-44">
         <HeroBanner img="/children/hero.jpg" title="Penjanje za djecu" />
         <Header text="Penjanje je nevjerovatna aktivnost za djecu koja poboljšava snagu, koordinaciju i vještine rješavanja problema. Povećava samopouzdanje, pruža osjećaj uspjeha i podstiče timski rad." />
@@ -44,6 +50,7 @@ const Children = () => {
             image={data.image}
           />
         ))}
+        <ChildrenBenefitsBlobs />
       </BenefitsSection>
       <PriceList pricingData={data.childrenPrices}>
         <ListItem
@@ -55,7 +62,9 @@ const Children = () => {
           data={data.olderChildren.date}
         />
       </PriceList>
-      <ImageCarousel images={carouselImages} />
+      <ImageCarousel images={carouselImages}>
+        <ChildrenCarouselBlobs />
+      </ImageCarousel>
       <Header text="Zainteresirani ste za penjanje za vaše mališane? Prijavite se danas i omogućite im da se penju prema zvijezdama s osmijehom na licu!">
         <Button variant="blue" className="w-fit">
           <Typography fontWeight="bold">Kontaktiraj nas</Typography>

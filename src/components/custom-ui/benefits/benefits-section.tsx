@@ -1,9 +1,9 @@
+import { PropsWithChildren } from "react";
 import Typography from "../typography";
 
-type BenefitsSectionProps = {
+type BenefitsSectionProps = PropsWithChildren<{
   title: string;
-  children: React.ReactNode;
-};
+}>;
 
 const BenefitsSection = ({ title, children }: BenefitsSectionProps) => {
   return (
@@ -16,7 +16,7 @@ const BenefitsSection = ({ title, children }: BenefitsSectionProps) => {
       >
         {title}
       </Typography>
-      <div className="flex w-full justify-center rounded-[16px] bg-neutrals-100 px-0 sm:w-fit sm:px-24 lg:w-full lg:rounded-40 lg:px-0">
+      <div className="relative flex w-full justify-center rounded-[16px] bg-neutrals-100 px-0 sm:w-fit sm:px-24 lg:w-full lg:rounded-40 lg:px-0">
         <div className="grid w-fit grid-cols-1 justify-between gap-0 lg:grid-cols-3 lg:py-20 xl:gap-8 2xl:gap-16">
           {children}
         </div>

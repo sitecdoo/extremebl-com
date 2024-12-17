@@ -6,7 +6,7 @@ interface MasonryProps {
 
 function Masonry({ images }: MasonryProps) {
   return (
-    <div className="flex h-full w-full flex-col p-4 md:h-[76rem]">
+    <div className="flex h-full w-full flex-col md:h-[76rem]">
       {/* Mobile Layout */}
       <div className="grid gap-4 md:hidden">
         <div className="relative aspect-[4/3]">

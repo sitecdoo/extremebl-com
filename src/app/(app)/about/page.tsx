@@ -7,10 +7,15 @@ import { ArrowRight } from "lucide-react";
 import ImageCarousel from "@/components/custom-ui/image-carousel";
 import Header from "@/components/custom-ui/header";
 import { carouselImages, infoSectionData } from "./config";
+import {
+  AboutBannerBlobs,
+  AboutCarouselBlobs,
+} from "@/components/custom-ui/blobs/about";
 
 const AboutPage = () => {
   return (
-    <div className="flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
+    <div className="relative flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
+      <AboutBannerBlobs />
       <div className="flex w-full flex-col items-center gap-24 lg:gap-44">
         <HeroBanner img="/about/hero-banner.jpg" title="O nama" />
         <Header
@@ -40,7 +45,9 @@ const AboutPage = () => {
         ))}
       </div>
       <ServicesSection />
-      <ImageCarousel images={carouselImages} />
+      <ImageCarousel images={carouselImages}>
+        <AboutCarouselBlobs />
+      </ImageCarousel>
       <Header
         text="Posvećeni smo promociji sportskog penjanja kroz edukaciju, sigurnost i
           avanturu za sve ljubitelje ovog sporta."

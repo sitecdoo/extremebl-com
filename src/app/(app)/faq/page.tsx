@@ -7,6 +7,7 @@ import config from "@payload-config";
 import { Button } from "@/components/ui/button";
 import Typography from "@/components/custom-ui/typography";
 import InstagramPostsWrapper from "@/components/custom-ui/instagram";
+import FAQBannerBlobs from "@/components/custom-ui/blobs/faq";
 
 const FAQPage = async () => {
   const payload = await getPayload({ config });
@@ -21,7 +22,8 @@ const FAQPage = async () => {
   };
   const { docs } = await getPosts();
   return (
-    <div className="flex w-full flex-col items-center gap-24 pb-24 lg:gap-48 lg:pb-48">
+    <div className="relative flex w-full flex-col items-center gap-24 pb-24 lg:gap-48 lg:pb-48">
+      <FAQBannerBlobs />
       <HeroBanner title="FAQ" img="/faq-banner.jpg" />
       <Questions />
       <InstagramPostsWrapper />
