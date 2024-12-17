@@ -9,7 +9,7 @@ import { HeroBanner } from "@/components/custom-ui/banners";
 import { getPageNumbers } from "./utils";
 import BlogPagination from "@/components/custom-ui/blog/blog-pagination";
 import { SearchFilter } from "@/components/custom-ui/blog/search-filter";
-import { FilterDropdown } from "@/components/custom-ui/blog/filter-dropdown";
+import FilterWrapper from "@/components/custom-ui/blog/filter-wrapper";
 
 const Blog = async ({
   searchParams,
@@ -53,7 +53,7 @@ const Blog = async ({
 
   const categoryCondition = categoryIds
     ? {
-        and: String(categoryIds)
+        or: String(categoryIds)
           .split(",")
           .map((id) => id.trim())
           .map((id) => ({
@@ -92,9 +92,6 @@ const Blog = async ({
     currentPage: currentPage,
   });
 
-  console.log(docs[0].categories);
-  console.log(categoryIds);
-
   const categories = (await getCategories()).docs;
   // if (docs.length < 1) return notFound();
 
@@ -106,7 +103,7 @@ const Blog = async ({
           <SearchFilter placeholder="Search..." />
         </div>
         <div className="flex gap-2">
-          <FilterDropdown filterOptions={categories} />
+          <FilterWrapper filterOptions={categories} />
           <SortButton initialSortOrder="desc" />
         </div>
       </nav>

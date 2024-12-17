@@ -65,7 +65,7 @@ const Card = ({ image, time, title, description, tags, slug }: CardProps) => {
             </Typography>
           </div>
           <div className="mt-auto flex flex-wrap items-center gap-2">
-            {tags.slice(0, 3).map((name, index) => (
+            {tags.map((name, index) => (
               <Pill key={index} name={name} />
             ))}
           </div>
