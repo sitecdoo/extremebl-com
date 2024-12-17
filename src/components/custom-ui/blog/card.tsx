@@ -14,6 +14,8 @@ type CardProps = {
 };
 
 const Card = ({ image, time, title, description, tags, slug }: CardProps) => {
+  const visibleTags = tags.slice(0, 3);
+  const remainingCount = Math.max(tags.length - 3, 0);
   return (
     <Link href={`/blog/${slug}`}>
       <div className="group flex min-h-[28.75rem] min-w-60 max-w-[22.375rem] flex-col gap-3 rounded-2xl bg-neutrals-50 p-3 pb-4 hover:bg-neutrals-100 sm:min-h-[32.5rem] lg:min-h-[42.5rem] lg:max-w-[33.125rem] lg:gap-4 lg:rounded-28 lg:p-4 lg:pb-6">
@@ -65,9 +67,10 @@ const Card = ({ image, time, title, description, tags, slug }: CardProps) => {
             </Typography>
           </div>
           <div className="mt-auto flex flex-wrap items-center gap-2">
-            {tags.map((name, index) => (
+            {visibleTags.map((name, index) => (
               <Pill key={index} name={name} />
             ))}
+            {remainingCount > 0 && <Pill name={`+${remainingCount}`} />}
           </div>
         </div>
       </div>
