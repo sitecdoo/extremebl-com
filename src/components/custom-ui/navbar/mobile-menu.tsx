@@ -23,6 +23,11 @@ interface MobileMenuProps {
 
 export const MobileMenu = React.memo(
   ({ isOpen, onOpenChange, onClose }: MobileMenuProps) => {
+    React.useEffect(() => {
+      if (isOpen == true)
+        document.body.setAttribute("data-scroll-no-lock", "true");
+      else document.body.removeAttribute("data-scroll-no-lock");
+    }, [isOpen]);
     return (
       <div className="lg:hidden">
         <Sheet open={isOpen} onOpenChange={onOpenChange}>
