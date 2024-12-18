@@ -1,33 +1,27 @@
 "use client";
 
-import * as React from "react";
 import Link from "next/link";
 import { Facebook, Instagram } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { MobileMenu } from "./mobile-menu";
 import { navbarConfig } from "./navbar-config";
 import Typography from "@/components/custom-ui/typography";
 import { usePathname } from "next/navigation";
 import { Separator } from "@/components/ui/separator";
 import LanguageSelector from "./language-selector";
+import MobileMenu from "./mobile-menu";
+import { ReactNode, useCallback, useState } from "react";
 
-const NavItem = ({
-  href,
-  children,
-}: {
-  href: string;
-  children: React.ReactNode;
-}) => (
+const NavItem = ({ href, children }: { href: string; children: ReactNode }) => (
   <Link href={href} className="rounded-60 text-neutrals-800 hover:bg-[#F8F7F2]">
     {children}
   </Link>
 );
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const handleMobileMenuClose = React.useCallback(() => {
+  const handleMobileMenuClose = useCallback(() => {
     setIsOpen(false);
   }, []);
 
