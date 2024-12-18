@@ -8,8 +8,8 @@ import SortButton from "@/components/custom-ui/blog/sort-button";
 import { HeroBanner } from "@/components/custom-ui/banners";
 import { getPageNumbers } from "./utils";
 import BlogPagination from "@/components/custom-ui/blog/blog-pagination";
-
 import { SearchFilter } from "@/components/custom-ui/blog/search-filter";
+import FilterWrapper from "@/components/custom-ui/blog/filter-wrapper";
 import BlogBannerBlobs from "@/components/custom-ui/blobs/blog";
 
 const Blog = async ({
@@ -23,6 +23,7 @@ const Blog = async ({
     (await searchParams).sort === "asc" ? "createdAt" : "-createdAt";
 
   const searchParam = (await searchParams).search || "";
+  const categoryIds = (await searchParams).categoryIds || "";
 
   const postsPerPage = 9;
   const currentPage = Number((await searchParams).page) || 1;
@@ -34,20 +35,39 @@ const Blog = async ({
     where: {},
   };
 
-  if (searchParam) {
+  const searchCondition = searchParam
+    ? {
+        or: [
+          {
+            title: {
+              like: searchParam,
+            },
+          },
+          {
+            description: {
+              like: searchParam,
+            },
+          },
+        ],
+      }
+    : null;
+
+  const categoryCondition = categoryIds
+    ? {
+        or: String(categoryIds)
+          .split(",")
+          .map((id) => id.trim())
+          .map((id) => ({
+            categories: {
+              contains: id,
+            },
+          })),
+      }
+    : null;
+
+  if (searchCondition || categoryCondition) {
     query.where = {
-      or: [
-        {
-          title: {
-            like: searchParam,
-          },
-        },
-        {
-          description: {
-            like: searchParam,
-          },
-        },
-      ],
+      and: [searchCondition, categoryCondition].filter(Boolean),
     };
   }
 
@@ -60,13 +80,20 @@ const Blog = async ({
     return posts;
   };
 
+  const getCategories = async () => {
+    const categories = await payload.find({
+      collection: "categories",
+    });
+    return categories;
+  };
+
   const { docs, totalPages } = await getPosts();
   const pageNumbers = getPageNumbers({
     totalPages: totalPages,
     currentPage: currentPage,
   });
 
-  // if (docs.length < 1) return notFound();
+  const categories = (await getCategories()).docs;
 
   return (
     <div className="relative flex w-full flex-col items-center gap-12 pb-24 sm:pb-48">
@@ -76,8 +103,10 @@ const Blog = async ({
         <div className="w-full max-w-full">
           <SearchFilter placeholder="Search..." />
         </div>
-
-        <SortButton initialSortOrder="desc" />
+        <div className="flex w-full gap-2 sm:w-auto">
+          <FilterWrapper filterOptions={categories} />
+          <SortButton initialSortOrder="desc" />
+        </div>
       </nav>
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
         {docs.map((post) => {

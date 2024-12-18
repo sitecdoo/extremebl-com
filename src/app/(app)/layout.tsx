@@ -16,15 +16,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="overflow-x-clip">
+    <html lang="en">
       <body
-        className={`${leagueSpartan.variable} ${openSans.variable} overflow-x-clip bg-neutrals-50 font-league-spartan antialiased`}
+        className={`${leagueSpartan.variable} ${openSans.variable} bg-neutrals-50 font-league-spartan antialiased`}
       >
-        <Navbar />
-        <div className="mx-auto flex w-full max-w-[108rem] flex-col items-center overflow-clip px-4 lg:px-12 3xl:overflow-x-visible">
-          <NuqsAdapter>{children}</NuqsAdapter>
+        <div className="relative overflow-x-clip">
+          <Navbar />
+          <div className="mx-auto flex w-full max-w-[108rem] flex-col items-center overflow-clip px-4 lg:px-12 3xl:overflow-x-visible">
+            <NuqsAdapter>{children}</NuqsAdapter>
+          </div>
+          <Footer />
         </div>
-        <Footer />
       </body>
     </html>
   );
