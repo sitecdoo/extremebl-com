@@ -11,6 +11,13 @@ import BlogPagination from "@/components/custom-ui/blog/blog-pagination";
 
 import { SearchFilter } from "@/components/custom-ui/blog/search-filter";
 import BlogBannerBlobs from "@/components/custom-ui/blobs/blog";
+import { generatePageTitle } from "@/utils/generate-page-title";
+
+export async function generateMetadata() {
+  return {
+    title: generatePageTitle("Blog"),
+  };
+}
 
 const Blog = async ({
   searchParams,

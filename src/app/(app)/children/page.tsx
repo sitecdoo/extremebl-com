@@ -18,6 +18,13 @@ import {
   ChildrenBenefitsBlobs,
   ChildrenCarouselBlobs,
 } from "@/components/custom-ui/blobs/children";
+import { generatePageTitle } from "@/utils/generate-page-title";
+
+export async function generateMetadata() {
+  return {
+    title: generatePageTitle("Children"),
+  };
+}
 
 const Children = () => {
   const data = PricingData;

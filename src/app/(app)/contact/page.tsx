@@ -2,7 +2,14 @@ import ContactForm from "@/components/contact/contact-form";
 import { HeroBanner } from "@/components/custom-ui/banners";
 import ContactBannerBlobs from "@/components/custom-ui/blobs/contact";
 import Typography from "@/components/custom-ui/typography";
+import { generatePageTitle } from "@/utils/generate-page-title";
 import { FacebookIcon, InstagramIcon } from "lucide-react";
+
+export async function generateMetadata() {
+  return {
+    title: generatePageTitle("Contact"),
+  };
+}
 
 const ContactPage = () => {
   return (
