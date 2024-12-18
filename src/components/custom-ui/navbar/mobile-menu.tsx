@@ -39,7 +39,7 @@ const MobileMenu = ({ isOpen, onOpenChange, onClose }: MobileMenuProps) => {
         </SheetTrigger>
         <SheetContent
           side="right"
-          className="h-full w-full border-none bg-blue-400"
+          className="h-full w-full overflow-y-auto border-none bg-blue-400"
         >
           <SheetHeader>
             <SheetTitle>
