@@ -14,6 +14,7 @@ import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import RecentBlogWrapper from "@/components/custom-ui/blog/recent-blog-wrapper";
 import { Author, Category, Media } from "@/payload-types";
 import PostBannerBlobs from "@/components/custom-ui/blobs/post";
+import { generatePageTitle } from "@/utils/generate-page-title";
 
 interface BlogPostPageProps {
   params: {
@@ -21,6 +22,19 @@ interface BlogPostPageProps {
   };
 }
 
+export async function generateMetadata({ params }: BlogPostPageProps) {
+  const { id } = await params;
+  const payload = await getPayload({ config });
+
+  const data = await payload.findByID({
+    collection: "posts",
+    id: id,
+  });
+
+  return {
+    title: generatePageTitle(data.title),
+  };
+}
 const BlogPost = async ({ params }: BlogPostPageProps) => {
   const payload = await getPayload({ config });
 
