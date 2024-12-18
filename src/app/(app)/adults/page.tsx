@@ -20,6 +20,13 @@ import {
 import RectangleWrapper from "@/components/custom-ui/rectangle-wrapper";
 import Typography from "@/components/custom-ui/typography";
 import { Button } from "@/components/ui/button";
+import { generatePageTitle } from "@/utils/generate-page-title";
+
+export async function generateMetadata() {
+  return {
+    title: generatePageTitle("Adults"),
+  };
+}
 
 const AdultsPage = () => {
   const pricingData = PricingData;

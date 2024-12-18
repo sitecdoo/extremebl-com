@@ -13,6 +13,11 @@ import {
   HomeBannerBlobs,
   HomePostsBlobs,
 } from "@/components/custom-ui/blobs/home";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Extreme",
+};
 
 export default async function HomePage() {
   const payload = await getPayload({ config });

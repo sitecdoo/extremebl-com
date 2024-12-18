@@ -11,6 +11,13 @@ import {
   AboutBannerBlobs,
   AboutCarouselBlobs,
 } from "@/components/custom-ui/blobs/about";
+import { generatePageTitle } from "@/utils/generate-page-title";
+
+export async function generateMetadata() {
+  return {
+    title: generatePageTitle("About"),
+  };
+}
 
 const AboutPage = () => {
   return (

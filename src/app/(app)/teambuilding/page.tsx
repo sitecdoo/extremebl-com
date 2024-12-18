@@ -13,6 +13,13 @@ import {
   TeambuildingBannerBlobs,
   TeambuildingTestimonialBlobs,
 } from "@/components/custom-ui/blobs/teambuilding";
+import { generatePageTitle } from "@/utils/generate-page-title";
+
+export async function generateMetadata() {
+  return {
+    title: generatePageTitle("Teambuilding"),
+  };
+}
 
 const TeambuildingPage = () => {
   return (
