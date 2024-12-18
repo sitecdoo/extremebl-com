@@ -1,4 +1,4 @@
-export const teambuildingInfoSection = [
+export const infoSectionData = [
   {
     image: "/teambuilding/info-section-1.jpg",
     title: "Profesionalni instruktori",
@@ -19,7 +19,7 @@ export const teambuildingInfoSection = [
   },
 ];
 
-export const teambuildingMasonryImages = [
+export const masonryImages = [
   {
     src: "/teambuilding/masonry-1.webp",
     alt: "Climber on the wall",
