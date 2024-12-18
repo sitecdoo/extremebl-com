@@ -11,6 +11,13 @@ import {
   AboutCarouselBlobs,
 } from "@/components/custom-ui/blobs/about";
 import { carouselImages, infoSectionData } from "@/content/about";
+import { generatePageTitle } from "@/utils/generate-page-title";
+
+export async function generateMetadata() {
+  return {
+    title: generatePageTitle("About"),
+  };
+}
 
 const AboutPage = () => {
   return (

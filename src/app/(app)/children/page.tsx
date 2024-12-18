@@ -19,6 +19,14 @@ import {
   pricingData,
 } from "@/content/children";
 
+import { generatePageTitle } from "@/utils/generate-page-title";
+
+export async function generateMetadata() {
+  return {
+    title: generatePageTitle("Children"),
+  };
+}
+
 const Children = () => {
   return (
     <div className="relative flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">

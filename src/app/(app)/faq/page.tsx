@@ -8,6 +8,13 @@ import { Button } from "@/components/ui/button";
 import Typography from "@/components/custom-ui/typography";
 import InstagramPostsWrapper from "@/components/custom-ui/instagram";
 import FAQBannerBlobs from "@/components/custom-ui/blobs/faq";
+import { generatePageTitle } from "@/utils/generate-page-title";
+
+export async function generateMetadata() {
+  return {
+    title: generatePageTitle("FAQ"),
+  };
+}
 
 const FAQPage = async () => {
   const payload = await getPayload({ config });

@@ -10,6 +10,13 @@ import {
   BirthdaysTestemonialBlobs,
 } from "@/components/custom-ui/blobs/birthdays";
 import { masonryImages, infoSectionData } from "@/content/birthdays";
+import { generatePageTitle } from "@/utils/generate-page-title";
+
+export async function generateMetadata() {
+  return {
+    title: generatePageTitle("Birthdays"),
+  };
+}
 
 const Birthdays = () => {
   return (
