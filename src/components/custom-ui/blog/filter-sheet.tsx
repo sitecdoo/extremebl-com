@@ -79,7 +79,7 @@ const FilterSheet = ({
                         ? "border-blue-500 bg-blue-50 text-blue-500 hover:bg-blue-50 active:bg-blue-50"
                         : "border-neutrals-200 text-neutrals-500 hover:bg-neutrals-100 active:bg-neutrals-100",
                     )}
-                    onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+                    onClick={(e) =>
                       handleChange(item.id, e as unknown as Event)
                     }
                   >

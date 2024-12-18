@@ -94,7 +94,6 @@ const Blog = async ({
   });
 
   const categories = (await getCategories()).docs;
-  // if (docs.length < 1) return notFound();
 
   return (
     <div className="relative flex w-full flex-col items-center gap-12 pb-24 sm:pb-48">

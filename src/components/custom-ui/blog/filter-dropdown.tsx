@@ -87,7 +87,7 @@ export function FilterDropdown({
           </ScrollArea>
           <div
             className={cn(
-              "absolute bottom-2 right-1 -z-10 h-96 w-[0.563rem] rounded-60 bg-white",
+              "absolute bottom-2 right-1 -z-10 h-64 w-[0.563rem] rounded-60 bg-white",
               filterOptions.length <= 5 && "hidden",
             )}
           />

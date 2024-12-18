@@ -22,7 +22,7 @@ export default function RootLayout({
       >
         <div className="relative overflow-x-clip">
           <Navbar />
-          <div className="3xl:overflow-x-visible mx-auto flex w-full max-w-[108rem] flex-col items-center overflow-clip px-4 lg:px-12">
+          <div className="mx-auto flex w-full max-w-[108rem] flex-col items-center overflow-clip px-4 lg:px-12 3xl:overflow-x-visible">
             <NuqsAdapter>{children}</NuqsAdapter>
           </div>
           <Footer />
