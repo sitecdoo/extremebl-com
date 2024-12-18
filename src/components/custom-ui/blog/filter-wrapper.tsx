@@ -39,7 +39,7 @@ const FilterWrapper = ({ filterOptions }: { filterOptions: Category[] }) => {
   const trigger = (
     <Button
       className={cn(
-        "flex min-w-44 justify-between gap-2 rounded-lg sm:min-w-36 sm:px-5",
+        "flex w-full justify-between gap-2 rounded-lg sm:px-5",
         filters.length > 0 &&
           "bg-blue-50 text-blue-600 hover:bg-blue-50 active:bg-blue-50 data-[state=open]:bg-blue-50 data-[state=open]:text-blue-600 lg:bg-blue-50",
       )}
@@ -53,7 +53,7 @@ const FilterWrapper = ({ filterOptions }: { filterOptions: Category[] }) => {
     </Button>
   );
   return (
-    <>
+    <div className="w-full">
       <FilterSheet
         filters={filters}
         clearAll={clearAll}
@@ -70,7 +70,7 @@ const FilterWrapper = ({ filterOptions }: { filterOptions: Category[] }) => {
       >
         {trigger}
       </FilterDropdown>
-    </>
+    </div>
   );
 };
 export default FilterWrapper;

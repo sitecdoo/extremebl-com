@@ -13,14 +13,15 @@ const SortButton = ({ initialSortOrder }: SortButtonProps) => {
   const [sortOrder, setSortOrder] = useQueryState("sort", {
     defaultValue: initialSortOrder,
     shallow: false,
-    throttleMs: 1000,
+    throttleMs: 500,
   });
 
   return (
-    <div className="flex flex-col">
+    <div className="flex w-full flex-col sm:max-w-44">
       <Button
         variant="sort"
-        className="flex min-w-44 justify-between rounded-lg px-4 py-3 sm:min-w-52 sm:px-5"
+        size="small"
+        className="flex w-full justify-between gap-3 rounded-lg sm:px-5"
         onClick={() => {
           const order = sortOrder === "desc" ? "asc" : "desc";
           setSortOrder(order);

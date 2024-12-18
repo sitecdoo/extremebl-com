@@ -104,7 +104,7 @@ const Blog = async ({
         <div className="w-full max-w-full">
           <SearchFilter placeholder="Search..." />
         </div>
-        <div className="flex gap-2">
+        <div className="flex w-full gap-2 sm:w-auto">
           <FilterWrapper filterOptions={categories} />
           <SortButton initialSortOrder="desc" />
         </div>
