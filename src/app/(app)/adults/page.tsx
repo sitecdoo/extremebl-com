@@ -12,14 +12,11 @@ import {
 import Header from "@/components/custom-ui/header";
 import ImageCarousel from "@/components/custom-ui/image-carousel";
 import InfoSection from "@/components/custom-ui/info-section";
-import {
-  ListItem,
-  PriceList,
-  PricingData,
-} from "@/components/custom-ui/pricing";
+import { ListItem, PriceList } from "@/components/custom-ui/pricing";
 import RectangleWrapper from "@/components/custom-ui/rectangle-wrapper";
 import Typography from "@/components/custom-ui/typography";
 import { Button } from "@/components/ui/button";
+import { carouselImages, pricingData } from "@/content/adults";
 import { generatePageTitle } from "@/utils/generate-page-title";
 
 export async function generateMetadata() {
@@ -29,21 +26,6 @@ export async function generateMetadata() {
 }
 
 const AdultsPage = () => {
-  const pricingData = PricingData;
-
-  const carouselImages = [
-    { src: "/adults/adults-carousel-1.jpg", alt: "carousel image" },
-    { src: "/adults/adults-carousel-2.jpg", alt: "carousel image" },
-    { src: "/adults/adults-carousel-3.jpg", alt: "carousel image" },
-    { src: "/adults/adults-carousel-4.jpg", alt: "carousel image" },
-    { src: "/adults/adults-carousel-5.jpg", alt: "carousel image" },
-    { src: "/adults/adults-carousel-6.jpg", alt: "carousel image" },
-    { src: "/adults/adults-carousel-7.jpg", alt: "carousel image" },
-    { src: "/adults/adults-carousel-8.jpg", alt: "carousel image" },
-    { src: "/adults/adults-carousel-9.jpg", alt: "carousel image" },
-    { src: "/adults/adults-carousel-10.jpg", alt: "carousel image" },
-  ];
-
   return (
     <div className="relative flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
       <AdultsBannerBlobs />
@@ -118,10 +100,10 @@ const AdultsPage = () => {
         ))}
         <AdultsBenefitsBlobs />
       </BenefitsSection>
-      <PriceList pricingData={pricingData.adultPrices}>
+      <PriceList pricingData={pricingData.prices}>
         <ListItem
-          title={pricingData.adults.title}
-          data={pricingData.adults.date}
+          title={pricingData.schedule.title}
+          data={pricingData.schedule.date}
         />
       </PriceList>
       <ImageCarousel images={carouselImages}>

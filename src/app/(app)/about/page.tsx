@@ -6,11 +6,11 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import ImageCarousel from "@/components/custom-ui/image-carousel";
 import Header from "@/components/custom-ui/header";
-import { carouselImages, infoSectionData } from "./config";
 import {
   AboutBannerBlobs,
   AboutCarouselBlobs,
 } from "@/components/custom-ui/blobs/about";
+import { carouselImages, infoSectionData } from "@/content/about";
 import { generatePageTitle } from "@/utils/generate-page-title";
 
 export async function generateMetadata() {

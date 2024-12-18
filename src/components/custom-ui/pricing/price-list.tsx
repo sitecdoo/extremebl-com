@@ -1,9 +1,8 @@
 import Typography from "../typography";
-import { PricingBoxData } from "./pricing-data";
 import PricingBox from "./pricing-box";
 
 type PriceListProps = {
-  pricingData: PricingBoxData[];
+  pricingData: { text: string; price: string }[];
   children: React.ReactNode;
 };
 

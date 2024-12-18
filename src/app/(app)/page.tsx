@@ -90,7 +90,6 @@ export default async function HomePage() {
         </RecentBlogWrapper>
       </div>
       <InstagramPostsWrapper />
-
       <Questions />
     </div>
   );
