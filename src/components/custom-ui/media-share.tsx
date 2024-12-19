@@ -2,16 +2,18 @@
 
 import { Facebook } from "lucide-react";
 import { FacebookShareButton } from "next-share";
+import { usePathname } from "next/navigation";
 
 type MediaShareProps = {
-  id: string;
   title: string;
 };
 
-const MediaShare = ({ id, title }: MediaShareProps) => {
+const MediaShare = ({ title }: MediaShareProps) => {
+  const pathname = usePathname();
+
   return (
     <FacebookShareButton
-      url={`https://extremebl-com.vercel.app/blog/${id}}`}
+      url={`https://extremebl-com.vercel.app${pathname}`}
       quote={title}
     >
       <Facebook size="24" />

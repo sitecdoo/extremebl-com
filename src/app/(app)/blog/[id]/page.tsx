@@ -227,7 +227,7 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
               Share on
             </Typography>
             <div className="flex gap-4">
-              <MediaShare id={id} title={post.title} />
+              <MediaShare title={post.title} />
               <Instagram size="24" />
               <Linkedin size="24" />
               <TwitterIcon size="24" />
