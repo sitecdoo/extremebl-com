@@ -32,8 +32,23 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     id: id,
   });
 
+  const thumbnail = data.thumbnail as Media;
+
   return {
     title: generatePageTitle(data.title),
+    description: data.description,
+    openGraph: {
+      title: data.title,
+      description: data.description,
+      images: [
+        {
+          url: thumbnail.url,
+          width: 1200,
+          height: 630,
+          alt: thumbnail.alt || data.title,
+        },
+      ],
+    },
   };
 }
 const BlogPost = async ({ params }: BlogPostPageProps) => {
