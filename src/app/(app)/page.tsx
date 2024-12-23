@@ -83,7 +83,7 @@ export default async function HomePage() {
           variant="black"
           className="pointer-events-none py-2 lg:px-5 lg:py-2"
         >
-          <Typography>Blog</Typography>
+          <Typography uppercase>Blog</Typography>
         </Button>
         <RecentBlogWrapper posts={docs}>
           <HomePostsBlobs />
