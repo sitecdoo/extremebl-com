@@ -35,6 +35,21 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     title: generatePageTitle(data.title),
   };
 }
+
+export async function generateStaticParams() {
+  const payload = await getPayload({ config });
+  const { docs } = await payload.find({
+    collection: "posts",
+    limit: 1000, // Adjust based on your needs
+  });
+
+  return docs.map((post) => ({
+    id: String(post.id),
+  }));
+}
+
+export const revalidate = 3600;
+
 const BlogPost = async ({ params }: BlogPostPageProps) => {
   const payload = await getPayload({ config });
 
