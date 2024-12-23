@@ -24,16 +24,17 @@ const Blog = async ({
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) => {
-  const payload = await getPayload({ config });
+  const [payload, params] = await Promise.all([
+    getPayload({ config }),
+    searchParams,
+  ]);
 
-  const sortParam =
-    (await searchParams).sort === "asc" ? "createdAt" : "-createdAt";
-
-  const searchParam = (await searchParams).search || "";
-  const categoryIds = (await searchParams).categoryIds || "";
+  const sortParam = params.sort === "asc" ? "createdAt" : "-createdAt";
+  const searchParam = params.search || "";
+  const categoryIds = params.categoryIds || "";
+  const currentPage = Number(params.page) || 1;
 
   const postsPerPage = 9;
-  const currentPage = Number((await searchParams).page) || 1;
 
   const query = {
     limit: postsPerPage,
@@ -81,6 +82,13 @@ const Blog = async ({
   const getPosts = async () => {
     const posts = await payload.find({
       collection: "posts",
+      select: {
+        createdAt: true,
+        title: true,
+        description: true,
+        thumbnail: true,
+        categories: true,
+      },
       ...query,
     });
 
@@ -90,17 +98,26 @@ const Blog = async ({
   const getCategories = async () => {
     const categories = await payload.find({
       collection: "categories",
+      select: {
+        id: true,
+        name: true,
+      },
     });
     return categories;
   };
 
-  const { docs, totalPages } = await getPosts();
+  const [postsResponse, categoriesResponse] = await Promise.all([
+    getPosts(),
+    getCategories(),
+  ]);
+
+  const { docs, totalPages } = postsResponse;
+  const categories = categoriesResponse.docs;
+
   const pageNumbers = getPageNumbers({
     totalPages: totalPages,
     currentPage: currentPage,
   });
-
-  const categories = (await getCategories()).docs;
 
   return (
     <div className="relative flex w-full flex-col items-center gap-12 pb-24 sm:pb-48">
