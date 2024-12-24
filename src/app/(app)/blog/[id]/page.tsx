@@ -41,7 +41,8 @@ export async function generateStaticParams() {
   const payload = await getPayload({ config });
   const { docs } = await payload.find({
     collection: "posts",
-    limit: 1000, // Adjust based on your needs
+    sort: "-createdAt",
+    limit: 20,
   });
 
   return docs.map((post) => ({
