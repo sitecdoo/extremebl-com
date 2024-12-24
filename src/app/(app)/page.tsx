@@ -66,7 +66,7 @@ export default async function HomePage() {
         description="Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn"
       >
         <Button variant="blue" className="w-fit">
-          <Typography fontWeight="bold">Rezervisi termin</Typography>
+          <Typography fontWeight="bold">Rezerviši termin</Typography>
         </Button>
       </InfoSection>
       <InfoSection
@@ -75,7 +75,7 @@ export default async function HomePage() {
         description="Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn"
       >
         <Button variant="blue" className="w-fit">
-          <Typography fontWeight="bold">Rezervisi termin</Typography>
+          <Typography fontWeight="bold">Rezerviši termin</Typography>
         </Button>
       </InfoSection>
       <div className="flex flex-col items-center gap-4 lg:gap-5">
