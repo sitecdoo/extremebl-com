@@ -12,6 +12,7 @@ import { SearchFilter } from "@/components/custom-ui/blog/search-filter";
 import FilterWrapper from "@/components/custom-ui/blog/filter-wrapper";
 import BlogBannerBlobs from "@/components/custom-ui/blobs/blog";
 import { generatePageTitle } from "@/utils/generate-page-title";
+import { unstable_cache } from "next/cache";
 
 export async function generateMetadata() {
   return {
@@ -79,32 +80,43 @@ const Blog = async ({
     };
   }
 
-  const getPosts = async () => {
-    const posts = await payload.find({
-      collection: "posts",
-      select: {
-        createdAt: true,
-        title: true,
-        description: true,
-        thumbnail: true,
-        categories: true,
-      },
-      ...query,
-    });
+  const getPosts = unstable_cache(
+    async () => {
+      return await payload.find({
+        collection: "posts",
+        select: {
+          createdAt: true,
+          title: true,
+          description: true,
+          thumbnail: true,
+          categories: true,
+        },
+        ...query,
+      });
+    },
+    [
+      "posts",
+      sortParam,
+      String(searchParam),
+      String(categoryIds),
+      String(currentPage),
+    ],
+    { revalidate: 3600, tags: ["posts"] },
+  );
 
-    return posts;
-  };
-
-  const getCategories = async () => {
-    const categories = await payload.find({
-      collection: "categories",
-      select: {
-        id: true,
-        name: true,
-      },
-    });
-    return categories;
-  };
+  const getCategories = unstable_cache(
+    async () => {
+      return await payload.find({
+        collection: "categories",
+        select: {
+          id: true,
+          name: true,
+        },
+      });
+    },
+    ["categories"],
+    { revalidate: 3600, tags: ["categories"] },
+  );
 
   const [postsResponse, categoriesResponse] = await Promise.all([
     getPosts(),

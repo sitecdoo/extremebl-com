@@ -15,6 +15,7 @@ import RecentBlogWrapper from "@/components/custom-ui/blog/recent-blog-wrapper";
 import { Author, Category, Media } from "@/payload-types";
 import PostBannerBlobs from "@/components/custom-ui/blobs/post";
 import { generatePageTitle } from "@/utils/generate-page-title";
+import { unstable_cache } from "next/cache";
 
 interface BlogPostPageProps {
   params: {
@@ -50,11 +51,10 @@ export async function generateStaticParams() {
 
 export const revalidate = 3600;
 
-const BlogPost = async ({ params }: BlogPostPageProps) => {
-  const payload = await getPayload({ config });
-
-  const getPost = async (id: string) => {
+const getPost = unstable_cache(
+  async (id: string) => {
     try {
+      const payload = await getPayload({ config });
       const post = await payload.findByID({
         collection: "posts",
         id: id,
@@ -63,28 +63,37 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
     } catch (error) {
       notFound();
     }
-  };
+  },
+  ["post"],
+  { revalidate: 3600, tags: ["posts"] },
+);
 
-  const { id } = await params;
-  const post = await getPost(id);
-  const thumbnail = post.thumbnail as Media;
-  const author = post.author as Author;
-  const categories = post.categories as Category[];
-
-  if (!post) {
-    notFound();
-  }
-
-  const getPosts = async () => {
+const getRecentPosts = unstable_cache(
+  async () => {
+    const payload = await getPayload({ config });
     const posts = await payload.find({
       collection: "posts",
       sort: "-createdAt",
       limit: 3,
     });
-
     return posts;
-  };
-  const { docs } = await getPosts();
+  },
+  ["recent-posts"],
+  { revalidate: 3600, tags: ["posts"] },
+);
+
+const BlogPost = async ({ params }: BlogPostPageProps) => {
+  const { id } = await params;
+  const post = await getPost(id);
+  const { docs } = await getRecentPosts();
+
+  if (!post) {
+    notFound();
+  }
+
+  const thumbnail = post.thumbnail as Media;
+  const author = post.author as Author;
+  const categories = post.categories as Category[];
 
   return (
     <div className="relative flex w-full flex-col items-center justify-center pb-24 sm:pb-48">
