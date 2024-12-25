@@ -1,6 +1,4 @@
 import React from "react";
-import { getPayload } from "payload";
-import config from "@payload-config";
 import { Card } from "@/components/custom-ui/blog";
 import { formatDistanceToNow } from "date-fns";
 import type { Category, Media } from "@/payload-types";
@@ -12,7 +10,7 @@ import { SearchFilter } from "@/components/custom-ui/blog/search-filter";
 import FilterWrapper from "@/components/custom-ui/blog/filter-wrapper";
 import BlogBannerBlobs from "@/components/custom-ui/blobs/blog";
 import { generatePageTitle } from "@/utils/generate-page-title";
-import { unstable_cache } from "next/cache";
+import { getCategories, getPosts } from "@/db/queries";
 
 export async function generateMetadata() {
   return {
@@ -25,10 +23,7 @@ const Blog = async ({
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) => {
-  const [payload, params] = await Promise.all([
-    getPayload({ config }),
-    searchParams,
-  ]);
+  const params = await searchParams;
 
   const sortParam = params.sort === "asc" ? "createdAt" : "-createdAt";
   const searchParam = params.search || "";
@@ -80,46 +75,8 @@ const Blog = async ({
     };
   }
 
-  const getPosts = unstable_cache(
-    async () => {
-      return await payload.find({
-        collection: "posts",
-        select: {
-          createdAt: true,
-          title: true,
-          description: true,
-          thumbnail: true,
-          categories: true,
-        },
-        ...query,
-      });
-    },
-    [
-      "posts",
-      sortParam,
-      String(searchParam),
-      String(categoryIds),
-      String(currentPage),
-    ],
-    { revalidate: 3600, tags: ["posts"] },
-  );
-
-  const getCategories = unstable_cache(
-    async () => {
-      return await payload.find({
-        collection: "categories",
-        select: {
-          id: true,
-          name: true,
-        },
-      });
-    },
-    ["categories"],
-    { revalidate: 3600, tags: ["categories"] },
-  );
-
   const [postsResponse, categoriesResponse] = await Promise.all([
-    getPosts(),
+    getPosts({ query }),
     getCategories(),
   ]);
 

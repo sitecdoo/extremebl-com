@@ -15,7 +15,7 @@ import RecentBlogWrapper from "@/components/custom-ui/blog/recent-blog-wrapper";
 import { Author, Category, Media } from "@/payload-types";
 import PostBannerBlobs from "@/components/custom-ui/blobs/post";
 import { generatePageTitle } from "@/utils/generate-page-title";
-import { unstable_cache } from "next/cache";
+import { getPost, getRecentPosts } from "@/db/queries";
 
 interface BlogPostPageProps {
   params: {
@@ -25,13 +25,7 @@ interface BlogPostPageProps {
 
 export async function generateMetadata({ params }: BlogPostPageProps) {
   const { id } = await params;
-  const payload = await getPayload({ config });
-
-  const data = await payload.findByID({
-    collection: "posts",
-    id: id,
-  });
-
+  const data = await getPost(id);
   return {
     title: generatePageTitle(data.title),
   };
@@ -52,37 +46,6 @@ export async function generateStaticParams() {
 
 export const revalidate = 3600;
 
-const getPost = unstable_cache(
-  async (id: string) => {
-    try {
-      const payload = await getPayload({ config });
-      const post = await payload.findByID({
-        collection: "posts",
-        id: id,
-      });
-      return post;
-    } catch (error) {
-      notFound();
-    }
-  },
-  ["post"],
-  { revalidate: 3600, tags: ["posts"] },
-);
-
-const getRecentPosts = unstable_cache(
-  async () => {
-    const payload = await getPayload({ config });
-    const posts = await payload.find({
-      collection: "posts",
-      sort: "-createdAt",
-      limit: 3,
-    });
-    return posts;
-  },
-  ["recent-posts"],
-  { revalidate: 3600, tags: ["posts"] },
-);
-
 const BlogPost = async ({ params }: BlogPostPageProps) => {
   const { id } = await params;
   const post = await getPost(id);
@@ -91,7 +54,6 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
   if (!post) {
     notFound();
   }
-
   const thumbnail = post.thumbnail as Media;
   const author = post.author as Author;
   const categories = post.categories as Category[];
