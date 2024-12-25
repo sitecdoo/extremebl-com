@@ -36,9 +36,9 @@ const Blog = async ({
   const currentPage = Number((await searchParams).page) || 1;
 
   const query = {
-    limit: postsPerPage,
     page: currentPage,
     sort: sortParam,
+    limit: postsPerPage,
     where: {},
   };
 
@@ -61,14 +61,11 @@ const Blog = async ({
 
   const categoryCondition = categoryIds
     ? {
-        or: String(categoryIds)
-          .split(",")
-          .map((id) => id.trim())
-          .map((id) => ({
-            categories: {
-              contains: id,
-            },
-          })),
+        categories: {
+          in: String(categoryIds)
+            .split(",")
+            .map((id) => Number(id.trim())),
+        },
       }
     : null;
 

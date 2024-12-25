@@ -1,14 +1,15 @@
+"use client";
+
 import React from "react";
 import {
   Pagination,
   PaginationContent,
   PaginationEllipsis,
   PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
 } from "@/components/ui/pagination";
-import Typography from "@/components/custom-ui/typography";
+import { parseAsInteger, useQueryState } from "nuqs";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface BlogPaginationProps {
   currentPage: number;
@@ -16,52 +17,42 @@ interface BlogPaginationProps {
   pageNumbers: (string | number)[];
 }
 
-const BlogPagination = ({
-  currentPage,
-  totalPages,
-  pageNumbers,
-}: BlogPaginationProps) => {
+const BlogPagination = ({ currentPage, totalPages }: BlogPaginationProps) => {
+  const [page, setPage] = useQueryState(
+    "page",
+    parseAsInteger
+      .withOptions({
+        shallow: false,
+        throttleMs: 500,
+      })
+      .withDefault(1),
+  );
+
   return (
-    <Pagination className="flex justify-start">
+    <Pagination>
       <PaginationContent>
-        {currentPage !== 1 && (
+        {currentPage > 1 && (
           <PaginationItem>
-            <PaginationPrevious
-              href={`/blog?page=${currentPage - 1}`}
-              aria-disabled={currentPage === 1}
-              className={
-                currentPage === 1 ? "pointer-events-none opacity-50" : ""
-              }
-            />
+            <Button onClick={() => setPage(currentPage - 1)}>
+              <ChevronLeft />
+            </Button>
           </PaginationItem>
         )}
-
-        {pageNumbers.map((pageNumber, i) => (
-          <PaginationItem key={i}>
-            {pageNumber === "..." ? (
-              <PaginationEllipsis />
-            ) : (
-              <PaginationLink
-                href={`/blog?page=${pageNumber}`}
-                isActive={currentPage === pageNumber}
-              >
-                <Typography variant="body" fontWeight="bold">
-                  {pageNumber}
-                </Typography>
-              </PaginationLink>
-            )}
+        {Array.from({ length: totalPages }).map((_, index) => (
+          <PaginationItem key={index}>
+            <Button onClick={() => setPage(index + 1)}>{index + 1}</Button>
           </PaginationItem>
         ))}
-
         <PaginationItem>
-          <PaginationNext
-            href={`/blog?page=${currentPage + 1}`}
-            aria-disabled={currentPage === totalPages}
-            className={
-              currentPage === totalPages ? "pointer-events-none opacity-50" : ""
-            }
-          />
+          <PaginationEllipsis />
         </PaginationItem>
+        {totalPages !== currentPage && (
+          <PaginationItem>
+            <Button onClick={() => setPage(currentPage + 1)}>
+              <ChevronRight />
+            </Button>
+          </PaginationItem>
+        )}
       </PaginationContent>
     </Pagination>
   );
