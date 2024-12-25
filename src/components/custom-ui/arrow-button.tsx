@@ -11,10 +11,7 @@ const ArrowButton = () => {
       <Typography tag="span" fontWeight="bold">
         Pročitaj više
       </Typography>
-      <ArrowRight
-        className="size-5 transition-transform duration-300 group-hover:-rotate-45 lg:size-8"
-        strokeWidth={2}
-      />
+      <ArrowRight className="size-5 transition-transform duration-300 group-hover:-rotate-45 lg:size-8" />
     </Button>
   );
 };
