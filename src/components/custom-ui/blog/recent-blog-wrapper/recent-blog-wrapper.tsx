@@ -1,11 +1,10 @@
-import { Button } from "@/components/ui/button";
 import Typography from "../../typography";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
 import { Category, Media, Post } from "@/payload-types";
 import SmallCard from "./small-card";
 import { PropsWithChildren } from "react";
+import ArrowButton from "../../arrow-button";
 
 type RecentBlogWrapperProps = PropsWithChildren<{
   posts: Pick<
@@ -41,10 +40,7 @@ const RecentBlogWrapper = ({ posts, children }: RecentBlogWrapperProps) => {
         {children}
       </div>
       <Link href="/blog" className="self-end">
-        <Button variant="ghost" className="flex items-center gap-x-2">
-          <Typography fontWeight="bold">Vidi sve postove</Typography>
-          <ArrowRight className="size-5 text-neutrals-900" />
-        </Button>
+        <ArrowButton />
       </Link>
     </div>
   );
