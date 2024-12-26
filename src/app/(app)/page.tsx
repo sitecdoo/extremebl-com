@@ -42,6 +42,7 @@ export default async function HomePage() {
           image="/climbing-for-children.jpg"
           title="Penjanje za djecu"
           description="Penjanje za djecu  je savršen način da mališani razviju svoje motoričke veštine, samopouzdanje i timski duh. Naši programi su prilagođeni različitim uzrastima i nivoima veština, uz stalni nadzor i podršku iskusnih instruktora. Kroz igru i zabavu, deca će naučiti osnovne tehnike penjanja, a možda čak i otkriti svoju ljubav prema ovom sportu."
+          smPosition
         >
           <Button variant="yellow" className="w-fit">
             <Typography fontWeight="bold">Penjanje za djecu</Typography>

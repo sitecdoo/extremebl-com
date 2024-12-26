@@ -68,6 +68,7 @@ const AdultsPage = () => {
           image="/adults/adults-info-3.jpg"
           title="Napredni kurs"
           description="Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn"
+          position="object-right"
         >
           <div className="space-y-6">
             <div className="space-y-2">
