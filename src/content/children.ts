@@ -25,21 +25,6 @@ export const pricingData = {
   ],
 };
 
-export const infoSectionData = [
-  {
-    image: "/children/info-section-1.jpg",
-    title: "Djeca mlađeg uzrasta",
-    description:
-      "Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn",
-  },
-  {
-    image: "/children/info-section-2.jpg",
-    title: "Djeca starijeg uzrasta",
-    description:
-      "Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn",
-  },
-];
-
 export const carouselImages = [
   { src: "/children/carousel-1.jpg", alt: "Children stretching at the gym" },
   { src: "/children/carousel-2.jpg", alt: "Child climbing the gym wall" },
