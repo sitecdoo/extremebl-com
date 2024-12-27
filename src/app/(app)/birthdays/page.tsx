@@ -33,7 +33,8 @@ const Birthdays = () => {
             image={info.image}
             title={info.title}
             description={info.description}
-            smPosition
+            xPosition={info.xPosition}
+            yPosition={info.yPosition}
           />
         ))}
       </div>

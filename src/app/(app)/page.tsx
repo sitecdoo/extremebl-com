@@ -33,6 +33,7 @@ export default async function HomePage() {
           image="/climbing-for-adults.jpg"
           title="Penjanje za odrasle"
           description="Naše penjanje za odrasle pruža uzbudljivu priliku za sve ljubitelje avanture, bez obzira na prethodno iskustvo. Bilo da želite poboljšati svoju fizičku kondiciju, savladati nove izazove ili jednostavno uživati u društvu entuzijasta kao što ste vi, naši instruktori su tu da vam pruže podršku na svakom koraku."
+          yPosition={60}
         >
           <Button variant="black" className="w-fit">
             <Typography fontWeight="bold">Penjanje za odrasle</Typography>
@@ -42,7 +43,7 @@ export default async function HomePage() {
           image="/climbing-for-children.jpg"
           title="Penjanje za djecu"
           description="Penjanje za djecu  je savršen način da mališani razviju svoje motoričke veštine, samopouzdanje i timski duh. Naši programi su prilagođeni različitim uzrastima i nivoima veština, uz stalni nadzor i podršku iskusnih instruktora. Kroz igru i zabavu, deca će naučiti osnovne tehnike penjanja, a možda čak i otkriti svoju ljubav prema ovom sportu."
-          smPosition
+          yPosition={30}
         >
           <Button variant="yellow" className="w-fit">
             <Typography fontWeight="bold">Penjanje za djecu</Typography>

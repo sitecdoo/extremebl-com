@@ -13,7 +13,11 @@ import {
   ChildrenBenefitsBlobs,
   ChildrenCarouselBlobs,
 } from "@/components/custom-ui/blobs/children";
-import { carouselImages, pricingData } from "@/content/children";
+import {
+  carouselImages,
+  infoSectionData,
+  pricingData,
+} from "@/content/children";
 import { generatePageTitle } from "@/utils/generate-page-title";
 
 export async function generateMetadata() {
@@ -31,26 +35,20 @@ const Children = () => {
         <Header text="Penjanje je nevjerovatna aktivnost za djecu koja poboljšava snagu, koordinaciju i vještine rješavanja problema. Povećava samopouzdanje, pruža osjećaj uspjeha i podstiče timski rad." />
       </div>
       <div className="flex w-full flex-col gap-y-24 lg:gap-y-32">
-        <InfoSection
-          image="/children/info-section-1.jpg"
-          title="Djeca mlađeg uzrasta"
-          description="Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn"
-          position="object-top"
-        >
-          <Button variant="yellow" className="w-fit">
-            <Typography fontWeight="bold">Prijavi se</Typography>
-          </Button>
-        </InfoSection>
-        <InfoSection
-          image="/children/info-section-2.jpg"
-          title="Djeca starijeg uzrasta"
-          description="Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn"
-          smPosition
-        >
-          <Button variant="yellow" className="w-fit">
-            <Typography fontWeight="bold">Prijavi se</Typography>
-          </Button>
-        </InfoSection>
+        {infoSectionData.map((info, index) => (
+          <InfoSection
+            key={index}
+            image={info.image}
+            title={info.title}
+            description={info.description}
+            xPosition={info.xPosition}
+            yPosition={info.yPosition}
+          >
+            <Button variant="yellow" className="w-fit">
+              <Typography fontWeight="bold">Prijavi se</Typography>
+            </Button>
+          </InfoSection>
+        ))}
       </div>
       <BenefitsSection title="Benefiti penjanja za djecu">
         {benefitsForChildren.map((data, index) => (
