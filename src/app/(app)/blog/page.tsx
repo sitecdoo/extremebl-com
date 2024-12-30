@@ -1,6 +1,4 @@
 import React from "react";
-import { getPayload } from "payload";
-import config from "@payload-config";
 import { Card } from "@/components/custom-ui/blog";
 import { formatDistanceToNow } from "date-fns";
 import type { Category, Media } from "@/payload-types";
@@ -12,6 +10,8 @@ import { SearchFilter } from "@/components/custom-ui/blog/search-filter";
 import FilterWrapper from "@/components/custom-ui/blog/filter-wrapper";
 import BlogBannerBlobs from "@/components/custom-ui/blobs/blog";
 import { generatePageTitle } from "@/utils/generate-page-title";
+import { getCategories, getPosts } from "@/db/queries";
+import EmptyState from "@/components/custom-ui/empty-state";
 
 export async function generateMetadata() {
   return {
@@ -24,16 +24,14 @@ const Blog = async ({
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) => {
-  const payload = await getPayload({ config });
+  const params = await searchParams;
 
-  const sortParam =
-    (await searchParams).sort === "asc" ? "createdAt" : "-createdAt";
-
-  const searchParam = (await searchParams).search || "";
-  const categoryIds = (await searchParams).categoryIds || "";
+  const sortParam = params.sort === "asc" ? "createdAt" : "-createdAt";
+  const searchParam = params.search || "";
+  const categoryIds = params.categoryIds || "";
+  const currentPage = Number(params.page) || 1;
 
   const postsPerPage = 9;
-  const currentPage = Number((await searchParams).page) || 1;
 
   const query = {
     limit: postsPerPage,
@@ -78,29 +76,18 @@ const Blog = async ({
     };
   }
 
-  const getPosts = async () => {
-    const posts = await payload.find({
-      collection: "posts",
-      ...query,
-    });
+  const [postsResponse, categoriesResponse] = await Promise.all([
+    getPosts({ query }),
+    getCategories(),
+  ]);
 
-    return posts;
-  };
+  const { docs, totalPages } = postsResponse;
+  const categories = categoriesResponse.docs;
 
-  const getCategories = async () => {
-    const categories = await payload.find({
-      collection: "categories",
-    });
-    return categories;
-  };
-
-  const { docs, totalPages } = await getPosts();
   const pageNumbers = getPageNumbers({
     totalPages: totalPages,
     currentPage: currentPage,
   });
-
-  const categories = (await getCategories()).docs;
 
   return (
     <div className="relative flex w-full flex-col items-center gap-12 pb-24 sm:pb-48">
@@ -115,28 +102,34 @@ const Blog = async ({
           <SortButton initialSortOrder="desc" />
         </div>
       </nav>
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
-        {docs.map((post) => {
-          const thumbnail = post.thumbnail as Media;
-          const categories = post.categories as Category[];
-          return (
-            <Card
-              description={post.description}
-              image={thumbnail.url || ""}
-              title={post.title}
-              time={`${formatDistanceToNow(post.createdAt)} ago`}
-              tags={categories.map((category) => category.name)}
-              key={post.id}
-              slug={post.id}
-            />
-          );
-        })}
-      </div>
-      <BlogPagination
-        totalPages={totalPages}
-        currentPage={currentPage}
-        pageNumbers={pageNumbers}
-      />
+      {docs.length === 0 ? (
+        <EmptyState />
+      ) : (
+        <>
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+            {docs.map((post) => {
+              const thumbnail = post.thumbnail as Media;
+              const categories = post.categories as Category[];
+              return (
+                <Card
+                  description={post.description}
+                  image={thumbnail.url || ""}
+                  title={post.title}
+                  time={`${formatDistanceToNow(post.createdAt)} ago`}
+                  tags={categories.map((category) => category.name)}
+                  key={post.id}
+                  slug={post.id}
+                />
+              );
+            })}
+          </div>
+          <BlogPagination
+            totalPages={totalPages}
+            currentPage={currentPage}
+            pageNumbers={pageNumbers}
+          />
+        </>
+      )}
     </div>
   );
 };

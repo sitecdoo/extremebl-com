@@ -7,13 +7,12 @@ import TrainingSchedule from "@/components/custom-ui/training-schedule";
 import RecentBlogWrapper from "@/components/custom-ui/blog/recent-blog-wrapper";
 import Questions from "@/components/custom-ui/questions";
 import SmallQuestions from "@/components/custom-ui/small-questions";
-import { getPayload } from "payload";
-import config from "@payload-config";
 import {
   HomeBannerBlobs,
   HomePostsBlobs,
 } from "@/components/custom-ui/blobs/home";
 import { Metadata } from "next";
+import { getRecentPosts } from "@/db/queries";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -21,17 +20,8 @@ export const metadata: Metadata = {
 };
 
 export default async function HomePage() {
-  const payload = await getPayload({ config });
-  const getPosts = async () => {
-    const posts = await payload.find({
-      collection: "posts",
-      sort: "-createdAt",
-      limit: 3,
-    });
+  const { docs } = await getRecentPosts();
 
-    return posts;
-  };
-  const { docs } = await getPosts();
   return (
     <div className="relative flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
       <HomeBannerBlobs />

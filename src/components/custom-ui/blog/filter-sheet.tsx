@@ -46,7 +46,7 @@ const FilterSheet = ({
                 <ArrowLeft className="size-6" />
               </SheetClose>
               <Button
-                variant="ghost"
+                variant="transparent"
                 className="flex items-center gap-x-2 p-0 text-neutrals-800 hover:bg-transparent active:bg-inherit"
                 onClick={clearAll}
               >
