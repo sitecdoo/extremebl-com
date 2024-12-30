@@ -33,6 +33,7 @@ const AdultsPage = () => {
         <HeroBanner
           img="/adults/adults-banner.jpg"
           title="Penjanje za odrasle"
+          position="object-top"
         />
         <Header
           text="Penjanje je nevjerovatna aktivnost za djecu koja poboljšava snagu,

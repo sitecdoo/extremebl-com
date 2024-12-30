@@ -3,7 +3,6 @@ import InfoSection from "@/components/custom-ui/info-section";
 import ServicesSection from "@/components/custom-ui/services";
 import Typography from "@/components/custom-ui/typography";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import ImageCarousel from "@/components/custom-ui/image-carousel";
 import Header from "@/components/custom-ui/header";
 import {
@@ -12,6 +11,7 @@ import {
 } from "@/components/custom-ui/blobs/about";
 import { carouselImages, infoSectionData } from "@/content/about";
 import { generatePageTitle } from "@/utils/generate-page-title";
+import ArrowButton from "@/components/custom-ui/arrow-button";
 
 export async function generateMetadata() {
   return {
@@ -39,15 +39,7 @@ const AboutPage = () => {
             title={info.title}
             description={info.description}
           >
-            <Button
-              variant="ghost"
-              className="flex w-fit items-center gap-x-2 px-1"
-            >
-              <Typography tag="span" fontWeight="bold">
-                Pročitaj više
-              </Typography>
-              <ArrowRight className="size-5 lg:size-8" strokeWidth={2} />
-            </Button>
+            <ArrowButton />
           </InfoSection>
         ))}
       </div>

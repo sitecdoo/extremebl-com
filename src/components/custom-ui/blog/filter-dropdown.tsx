@@ -57,11 +57,15 @@ export function FilterDropdown({
               {filters.length} selected
             </Typography>
             <Button
-              variant="ghost"
+              variant="transparent"
               className="flex items-center gap-x-2 text-neutrals-800 active:bg-inherit lg:mx-4 lg:my-3 lg:p-0"
               onClick={clearAll}
             >
-              <Typography fontWeight="bold" variant="body-sm">
+              <Typography
+                fontWeight="bold"
+                variant="caption"
+                className="text-sm"
+              >
                 Izbriši sve
               </Typography>
               <Trash2 className="size-4" strokeWidth={2.5} />

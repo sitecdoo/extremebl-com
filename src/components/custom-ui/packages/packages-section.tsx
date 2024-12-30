@@ -6,7 +6,10 @@ import Typography from "../typography";
 const PackagesSection = () => {
   const data = packageData;
   return (
-    <div className="flex w-full flex-col items-center gap-y-5 lg:gap-y-16">
+    <div
+      className="flex w-full scroll-m-20 flex-col items-center gap-y-5 lg:scroll-m-28 lg:gap-y-16"
+      id="packages"
+    >
       <Typography tag="h2" variant="h2" fontWeight="bold">
         Paketi
       </Typography>
