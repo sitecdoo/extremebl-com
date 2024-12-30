@@ -32,7 +32,7 @@ const MobileMenu = ({ isOpen, onOpenChange, onClose }: MobileMenuProps) => {
     <div className="lg:hidden">
       <Sheet open={isOpen} onOpenChange={onOpenChange}>
         <SheetTrigger asChild>
-          <Button variant="ghost" className="flex size-6 p-0">
+          <Button variant="transparent" className="flex size-6 p-0">
             <Menu size={24} />
             <span className="sr-only">Open menu</span>
           </Button>
