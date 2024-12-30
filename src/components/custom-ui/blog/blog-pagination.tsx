@@ -34,6 +34,12 @@ const BlogPagination = ({
       .withDefault(1),
   );
 
+  const handlePageChange = async (newPage: number) => {
+    await setPage(newPage);
+    const blogSection = document.getElementById("scroll-to-post");
+    blogSection?.scrollIntoView();
+  };
+
   return (
     <Pagination className="flex justify-start">
       <PaginationContent>
@@ -48,7 +54,7 @@ const BlogPagination = ({
                 currentPage === 1 ? "pointer-events-none opacity-50" : "",
               )}
               variant="ghost"
-              onClick={() => setPage(currentPage - 1)}
+              onClick={() => handlePageChange(currentPage - 1)}
             >
               <ArrowLeft className="size-6" />
             </Button>
@@ -68,7 +74,7 @@ const BlogPagination = ({
                     ? "text-blue-400"
                     : "text-gray-600",
                 )}
-                onClick={() => setPage(Number(pageNumber))}
+                onClick={() => handlePageChange(Number(pageNumber))}
               >
                 <Typography variant="body" fontWeight="bold">
                   {pageNumber}
@@ -90,7 +96,7 @@ const BlogPagination = ({
                   ? "pointer-events-none opacity-50"
                   : "",
               )}
-              onClick={() => setPage(currentPage + 1)}
+              onClick={() => handlePageChange(currentPage + 1)}
             >
               <ArrowRight className="size-6" />
             </Button>

@@ -89,7 +89,10 @@ const Blog = async ({
     <div className="relative flex w-full flex-col items-center gap-12 pb-24 sm:pb-48">
       <BlogBannerBlobs />
       <HeroBanner img="/blog/blog-banner.png" title="Blog" />
-      <nav className="flex w-full flex-wrap items-center justify-between gap-4 sm:flex-nowrap">
+      <nav
+        id="scroll-to-post"
+        className="flex w-full scroll-m-5 flex-wrap items-center justify-between gap-4 sm:flex-nowrap"
+      >
         <div className="w-full max-w-full">
           <SearchFilter placeholder="Search..." />
         </div>
