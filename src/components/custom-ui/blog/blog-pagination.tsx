@@ -48,7 +48,6 @@ const BlogPagination = ({
             <Button
               aria-disabled={currentPage === 1}
               aria-label="Go to previous page"
-              size="default"
               className={cn(
                 "gap-1 px-1 sm:px-2.5",
                 currentPage === 1 ? "pointer-events-none opacity-50" : "",
@@ -87,7 +86,6 @@ const BlogPagination = ({
           <PaginationItem>
             <Button
               aria-label="Go to next page"
-              size="default"
               variant="ghost"
               aria-disabled={currentPage === totalPages}
               className={cn(
