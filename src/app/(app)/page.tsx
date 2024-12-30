@@ -13,6 +13,7 @@ import {
 } from "@/components/custom-ui/blobs/home";
 import { Metadata } from "next";
 import { getRecentPosts } from "@/db/queries";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Extreme",
@@ -34,18 +35,22 @@ export default async function HomePage() {
           title="Penjanje za odrasle"
           description="Naše penjanje za odrasle pruža uzbudljivu priliku za sve ljubitelje avanture, bez obzira na prethodno iskustvo. Bilo da želite poboljšati svoju fizičku kondiciju, savladati nove izazove ili jednostavno uživati u društvu entuzijasta kao što ste vi, naši instruktori su tu da vam pruže podršku na svakom koraku."
         >
-          <Button variant="black" className="w-fit">
-            <Typography fontWeight="bold">Penjanje za odrasle</Typography>
-          </Button>
+          <Link href="/adults">
+            <Button variant="black" className="w-fit">
+              <Typography fontWeight="bold">Penjanje za odrasle</Typography>
+            </Button>
+          </Link>
         </InfoSection>
         <InfoSection
           image="/climbing-for-children.jpg"
           title="Penjanje za djecu"
           description="Penjanje za djecu  je savršen način da mališani razviju svoje motoričke veštine, samopouzdanje i timski duh. Naši programi su prilagođeni različitim uzrastima i nivoima veština, uz stalni nadzor i podršku iskusnih instruktora. Kroz igru i zabavu, deca će naučiti osnovne tehnike penjanja, a možda čak i otkriti svoju ljubav prema ovom sportu."
         >
-          <Button variant="yellow" className="w-fit">
-            <Typography fontWeight="bold">Penjanje za djecu</Typography>
-          </Button>
+          <Link href="/children">
+            <Button variant="yellow" className="w-fit">
+              <Typography fontWeight="bold">Penjanje za djecu</Typography>
+            </Button>
+          </Link>
         </InfoSection>
       </div>
       <TrainingSchedule />
@@ -55,25 +60,29 @@ export default async function HomePage() {
         title="Proslava rodjendana"
         description="Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn"
       >
-        <Button variant="blue" className="w-fit">
-          <Typography fontWeight="bold">Rezervisi termin</Typography>
-        </Button>
+        <Link href="/birthdays#packages">
+          <Button variant="blue" className="w-fit">
+            <Typography fontWeight="bold">Rezerviši termin</Typography>
+          </Button>
+        </Link>
       </InfoSection>
       <InfoSection
         image="/teambuilding/teambuilding-banner.jpg"
         title="Teambuilding"
         description="Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn"
       >
-        <Button variant="blue" className="w-fit">
-          <Typography fontWeight="bold">Rezervisi termin</Typography>
-        </Button>
+        <Link href="/teambuilding#packages">
+          <Button variant="blue" className="w-fit">
+            <Typography fontWeight="bold">Rezerviši termin</Typography>
+          </Button>
+        </Link>
       </InfoSection>
       <div className="flex flex-col items-center gap-4 lg:gap-5">
         <Button
           variant="black"
           className="pointer-events-none py-2 lg:px-5 lg:py-2"
         >
-          <Typography>Blog</Typography>
+          <Typography uppercase>Blog</Typography>
         </Button>
         <RecentBlogWrapper posts={docs}>
           <HomePostsBlobs />

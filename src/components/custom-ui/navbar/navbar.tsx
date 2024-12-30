@@ -13,7 +13,10 @@ import MobileMenu from "./mobile-menu";
 import { ReactNode, useCallback, useState } from "react";
 
 const NavItem = ({ href, children }: { href: string; children: ReactNode }) => (
-  <Link href={href} className="rounded-60 text-neutrals-800 hover:bg-[#F8F7F2]">
+  <Link
+    href={href}
+    className="rounded-60 text-neutrals-800 hover:bg-neutrals-75"
+  >
     {children}
   </Link>
 );
