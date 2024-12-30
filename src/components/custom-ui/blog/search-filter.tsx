@@ -45,7 +45,7 @@ const SearchFilter = ({ placeholder }: SearchFilterProps) => {
       <Search className="absolute left-3 top-4 size-4 text-neutrals-400 lg:size-6" />
       {query && (
         <Button
-          variant="ghost"
+          variant="transparent"
           className="absolute right-2 top-4 h-fit bg-inherit p-0 hover:bg-inherit hover:text-neutrals-400 active:bg-inherit lg:right-0 lg:top-0"
           onClick={() => setQuery(null)}
         >
