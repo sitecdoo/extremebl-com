@@ -3,7 +3,7 @@ import Typography from "./typography";
 
 const EmptyState = () => {
   return (
-    <div className="flex flex-col items-center justify-center gap-5">
+    <div className="mb-6 mt-16 flex flex-col items-center justify-center gap-5 sm:mb-0 lg:mt-11">
       <Image
         src="/blog/empty-state.svg"
         alt="no results"
