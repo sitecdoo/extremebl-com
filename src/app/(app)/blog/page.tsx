@@ -32,13 +32,6 @@ const Blog = async ({
 
   const postsPerPage = 9;
 
-  const query = {
-    page: currentPage,
-    sort: sortParam,
-    limit: postsPerPage,
-    where: {},
-  };
-
   const searchCondition = searchParam
     ? {
         or: [
@@ -65,6 +58,13 @@ const Blog = async ({
         },
       }
     : null;
+
+  const query = {
+    page: currentPage,
+    sort: sortParam,
+    limit: postsPerPage,
+    where: {},
+  };
 
   if (searchCondition || categoryCondition) {
     query.where = {
