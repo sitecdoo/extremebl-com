@@ -31,24 +31,78 @@ export const infoSectionData = [
     title: "Djeca mlađeg uzrasta",
     description:
       "Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn",
+    xPosition: 50,
+    yPosition: 10,
   },
   {
     image: "/children/info-section-2.jpg",
     title: "Djeca starijeg uzrasta",
     description:
       "Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn",
+    xPosition: 50,
+    yPosition: 30,
   },
 ];
 
 export const carouselImages = [
-  { src: "/children/carousel-1.jpg", alt: "Children stretching at the gym" },
-  { src: "/children/carousel-2.jpg", alt: "Child climbing the gym wall" },
-  { src: "/children/carousel-3.jpg", alt: "Child climbing the gym wall" },
-  { src: "/children/carousel-4.jpg", alt: "Child climbing the gym wall" },
-  { src: "/children/carousel-5.jpg", alt: "Children group photo at the gym" },
-  { src: "/children/carousel-6.jpg", alt: "Children climbing the gym wall" },
-  { src: "/children/carousel-7.jpg", alt: "Child climbing the gym wall" },
-  { src: "/children/carousel-8.jpg", alt: "Children stretching at the gym" },
-  { src: "/children/carousel-9.jpg", alt: "Children stretching at the gym" },
-  { src: "/children/carousel-10.jpg", alt: "Child climbing the wall" },
+  {
+    src: "/children/carousel-1.jpg",
+    alt: "Children stretching at the gym",
+    xPosition: 65,
+    yPosition: 50,
+  },
+  {
+    src: "/children/carousel-2.jpg",
+    alt: "Child climbing the gym wall",
+    xPosition: 100,
+    yPosition: 50,
+  },
+  {
+    src: "/children/carousel-3.jpg",
+    alt: "Child climbing the gym wall",
+    xPosition: 50,
+    yPosition: 40,
+  },
+  {
+    src: "/children/carousel-4.jpg",
+    alt: "Child climbing the gym wall",
+    xPosition: 50,
+    yPosition: 50,
+  },
+  {
+    src: "/children/carousel-5.jpg",
+    alt: "Children group photo at the gym",
+    xPosition: 40,
+    yPosition: 50,
+  },
+  {
+    src: "/children/carousel-6.jpg",
+    alt: "Children climbing the gym wall",
+    xPosition: 50,
+    yPosition: 50,
+  },
+  {
+    src: "/children/carousel-7.jpg",
+    alt: "Child climbing the gym wall",
+    xPosition: 50,
+    yPosition: 50,
+  },
+  {
+    src: "/children/carousel-8.jpg",
+    alt: "Children stretching at the gym",
+    xPosition: 50,
+    yPosition: 50,
+  },
+  {
+    src: "/children/carousel-9.jpg",
+    alt: "Children stretching at the gym",
+    xPosition: 50,
+    yPosition: 50,
+  },
+  {
+    src: "/children/carousel-10.jpg",
+    alt: "Child climbing the wall",
+    xPosition: 50,
+    yPosition: 40,
+  },
 ];

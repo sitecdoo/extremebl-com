@@ -3,7 +3,7 @@ const HomeBannerBlobs = () => {
     <>
       {/* Mobile */}
       <svg
-        className="absolute -left-32 -z-10 translate-y-[407%] lg:hidden"
+        className="absolute -left-32 -z-10 translate-y-[350%] lg:hidden"
         width="196"
         height="163"
         viewBox="0 0 196 163"

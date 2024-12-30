@@ -11,6 +11,7 @@ import FilterWrapper from "@/components/custom-ui/blog/filter-wrapper";
 import BlogBannerBlobs from "@/components/custom-ui/blobs/blog";
 import { generatePageTitle } from "@/utils/generate-page-title";
 import { getCategories, getPosts } from "@/db/queries";
+import EmptyState from "@/components/custom-ui/empty-state";
 
 export async function generateMetadata() {
   return {
@@ -101,28 +102,34 @@ const Blog = async ({
           <SortButton initialSortOrder="desc" />
         </div>
       </nav>
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
-        {docs.map((post) => {
-          const thumbnail = post.thumbnail as Media;
-          const categories = post.categories as Category[];
-          return (
-            <Card
-              description={post.description}
-              image={thumbnail.url || ""}
-              title={post.title}
-              time={`${formatDistanceToNow(post.createdAt)} ago`}
-              tags={categories.map((category) => category.name)}
-              key={post.id}
-              slug={post.id}
-            />
-          );
-        })}
-      </div>
-      <BlogPagination
-        totalPages={totalPages}
-        currentPage={currentPage}
-        pageNumbers={pageNumbers}
-      />
+      {docs.length === 0 ? (
+        <EmptyState />
+      ) : (
+        <>
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+            {docs.map((post) => {
+              const thumbnail = post.thumbnail as Media;
+              const categories = post.categories as Category[];
+              return (
+                <Card
+                  description={post.description}
+                  image={thumbnail.url || ""}
+                  title={post.title}
+                  time={`${formatDistanceToNow(post.createdAt)} ago`}
+                  tags={categories.map((category) => category.name)}
+                  key={post.id}
+                  slug={post.id}
+                />
+              );
+            })}
+          </div>
+          <BlogPagination
+            totalPages={totalPages}
+            currentPage={currentPage}
+            pageNumbers={pageNumbers}
+          />
+        </>
+      )}
     </div>
   );
 };

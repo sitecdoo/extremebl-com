@@ -32,7 +32,7 @@ const LanguageSelector = () => {
           <span className="sr-only">Toggle language</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent>
+      <DropdownMenuContent onCloseAutoFocus={(e) => e.preventDefault()}>
         <DropdownMenuItem>English</DropdownMenuItem>
         <DropdownMenuItem>Srpski</DropdownMenuItem>
       </DropdownMenuContent>
