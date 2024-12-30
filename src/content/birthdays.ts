@@ -4,18 +4,24 @@ export const infoSectionData = [
     title: "Profesionalni instruktori",
     description:
       "Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn",
+    xPosition: 60,
+    yPosition: 50,
   },
   {
     image: "/birthdays/info-section-2.jpg",
     title: "Sigurna oprema",
     description:
       "Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn",
+    xPosition: 50,
+    yPosition: 15,
   },
   {
     image: "/birthdays/info-section-3.jpg",
     title: "Zabava za sve uzraste",
     description:
       "Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn",
+    xPosition: 60,
+    yPosition: 50,
   },
 ];
 

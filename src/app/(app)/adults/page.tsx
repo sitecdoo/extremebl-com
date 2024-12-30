@@ -57,6 +57,7 @@ const AdultsPage = () => {
           image="/adults/adults-info-2.jpg"
           title="Osnovni kurs"
           description="Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn"
+          xPosition={85}
         >
           <div className="space-y-4">
             <Typography fontWeight="bold">Naredni termini</Typography>
@@ -69,6 +70,7 @@ const AdultsPage = () => {
           image="/adults/adults-info-3.jpg"
           title="Napredni kurs"
           description="Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn"
+          xPosition={100}
         >
           <div className="space-y-6">
             <div className="space-y-2">
@@ -88,6 +90,7 @@ const AdultsPage = () => {
           image="/adults/adults-info-4.jpg"
           title="Izleti u prirodu"
           description="Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn"
+          xPosition={20}
         />
       </div>
       <BenefitsSection title="Benefiti penjanja za odrasle">

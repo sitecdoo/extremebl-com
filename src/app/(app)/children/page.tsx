@@ -18,7 +18,6 @@ import {
   infoSectionData,
   pricingData,
 } from "@/content/children";
-
 import { generatePageTitle } from "@/utils/generate-page-title";
 
 export async function generateMetadata() {
@@ -42,6 +41,8 @@ const Children = () => {
             image={info.image}
             title={info.title}
             description={info.description}
+            xPosition={info.xPosition}
+            yPosition={info.yPosition}
           >
             <Button variant="yellow" className="w-fit">
               <Typography fontWeight="bold">Prijavi se</Typography>
