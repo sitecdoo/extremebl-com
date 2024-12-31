@@ -19,9 +19,20 @@ const FilterWrapper = ({ filterOptions }: { filterOptions: Category[] }) => {
       })
       .withDefault([]),
   );
+  const [page, setPage] = useQueryState(
+    "page",
+    parseAsInteger
+      .withOptions({
+        shallow: false,
+        throttleMs: 500,
+      })
+      .withDefault(1),
+  );
 
   const handleChange = (itemId: number, e: Event) => {
     e.preventDefault();
+    // Reset page to 1 when changing filters
+    setPage(1);
 
     setFilters((prev) => {
       if (prev.includes(itemId)) {

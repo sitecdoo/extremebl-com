@@ -4,30 +4,53 @@ import { unstable_cache } from "next/cache";
 import { cache } from "react";
 import { notFound } from "next/navigation";
 
-type Query = {
-  query: {
-    limit: number;
-    page: number;
-    sort: string;
-    where: {};
-  };
-};
-
 const getPosts = cache(
   unstable_cache(
-    async ({ query }: Query) => {
+    async ({ query }) => {
       const payload = await getPayload({ config });
-      return await payload.find({
+
+      const whereClause = query.where?.and?.length
+        ? {
+            or: query.where.and
+              .map((condition: any) => {
+                if (condition?.categories?.in) {
+                  return condition.categories.in.map((categoryId: number) => ({
+                    categories: {
+                      equals: categoryId,
+                    },
+                  }));
+                }
+                if (condition?.or) {
+                  return condition.or;
+                }
+                return condition;
+              })
+              .flat()
+              .filter(Boolean),
+          }
+        : undefined;
+
+      const totalCount = await payload.find({
         collection: "posts",
-        select: {
-          createdAt: true,
-          title: true,
-          description: true,
-          thumbnail: true,
-          categories: true,
-        },
-        ...query,
+        where: whereClause,
+        limit: 0,
       });
+
+      const response = await payload.find({
+        collection: "posts",
+        pagination: true,
+        limit: query.limit || 9,
+        page: query.page || 1,
+        sort: query.sort || "-createdAt",
+        where: whereClause,
+        depth: 1,
+      });
+      return {
+        ...response,
+        docs: response.docs,
+        totalDocs: totalCount.docs.length,
+        totalPages: Math.ceil(totalCount.docs.length / (query.limit || 9)),
+      };
     },
     ["posts"],
     { revalidate: 3600, tags: ["posts"] },
