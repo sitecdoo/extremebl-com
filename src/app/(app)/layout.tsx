@@ -30,7 +30,6 @@ export default function RootLayout({
           </div>
           <Footer />
         </div>
-        <Footer />
         <Toaster
           position="top-center"
           toastOptions={{
