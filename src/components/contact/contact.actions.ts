@@ -4,6 +4,7 @@ import { Resend } from "resend";
 import { ContactPayload, getContactSchema } from "./contact.schemas";
 import { createChallenge, verifySolution } from "altcha-lib";
 import { Payload } from "altcha-lib/types";
+import EmailTemplate from "../custom-ui/email-template";
 
 const hmacKey = process.env.ALTCHA_SECRET_KEY;
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -30,18 +31,18 @@ export const sendEmailAction = async (
     return { success: false };
   }
 
-  try {
-    // const data = await resend.emails.send({
-    //   from: "Acme <onboarding@resend.dev>",
-    //   to: ["andrejjurisic99@gmail.com"],
-    //   subject: "ExtremeBL - Contact form",
-    //   react: EmailTemplate({ name, email, message }),
-    // });
+  const emailData = await resend.emails.send({
+    from: "Acme <onboarding@resend.dev>",
+    to: "andrejjurisic99@gmail.com",
+    subject: "ExtremeBL - Contact form",
+    react: EmailTemplate({ name, email, message }),
+  });
 
-    return { success: true, data };
-  } catch (error) {
-    return { success: false, error };
+  if (emailData.error) {
+    return { success: false };
   }
+
+  return { success: true };
 };
 
 export const createChallengeAction = async () => {
