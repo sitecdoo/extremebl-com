@@ -118,10 +118,10 @@ const ContactForm = () => {
                     disabled={isSubmitting}
                     error={errors.message}
                     placeholder="Poruka*"
+                    style={{ resize: "none" }}
                     {...field}
                   />
                 </FormControl>
-
                 {errors.message ? <FormMessage /> : <FormDescription />}
               </FormItem>
             )}
