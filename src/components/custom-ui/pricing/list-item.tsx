@@ -4,10 +4,7 @@ import { Separator } from "@/components/ui/separator";
 
 type ListItemProps = {
   title: string;
-  data: {
-    day: string;
-    time: string;
-  }[];
+  data: { day: string; time: string }[];
 };
 
 const ListItem = ({ title, data }: ListItemProps) => {

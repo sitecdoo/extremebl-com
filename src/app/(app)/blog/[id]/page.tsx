@@ -14,6 +14,8 @@ import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import RecentBlogWrapper from "@/components/custom-ui/blog/recent-blog-wrapper";
 import { Author, Category, Media } from "@/payload-types";
 import PostBannerBlobs from "@/components/custom-ui/blobs/post";
+import { generatePageTitle } from "@/utils/generate-page-title";
+import { getPost, getRecentPosts } from "@/db/queries";
 
 interface BlogPostPageProps {
   params: {
@@ -21,41 +23,40 @@ interface BlogPostPageProps {
   };
 }
 
-const BlogPost = async ({ params }: BlogPostPageProps) => {
-  const payload = await getPayload({ config });
-
-  const getPost = async (id: string) => {
-    try {
-      const post = await payload.findByID({
-        collection: "posts",
-        id: id,
-      });
-      return post;
-    } catch (error) {
-      notFound();
-    }
+export async function generateMetadata({ params }: BlogPostPageProps) {
+  const { id } = await params;
+  const data = await getPost(id);
+  return {
+    title: generatePageTitle(data.title),
   };
+}
 
+export async function generateStaticParams() {
+  const payload = await getPayload({ config });
+  const { docs } = await payload.find({
+    collection: "posts",
+    sort: "-createdAt",
+    limit: 20,
+  });
+
+  return docs.map((post) => ({
+    id: String(post.id),
+  }));
+}
+
+export const revalidate = 3600;
+
+const BlogPost = async ({ params }: BlogPostPageProps) => {
   const { id } = await params;
   const post = await getPost(id);
-  const thumbnail = post.thumbnail as Media;
-  const author = post.author as Author;
-  const categories = post.categories as Category[];
+  const { docs } = await getRecentPosts();
 
   if (!post) {
     notFound();
   }
-
-  const getPosts = async () => {
-    const posts = await payload.find({
-      collection: "posts",
-      sort: "-createdAt",
-      limit: 3,
-    });
-
-    return posts;
-  };
-  const { docs } = await getPosts();
+  const thumbnail = post.thumbnail as Media;
+  const author = post.author as Author;
+  const categories = post.categories as Category[];
 
   return (
     <div className="relative flex w-full flex-col items-center justify-center pb-24 sm:pb-48">

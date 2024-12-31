@@ -83,6 +83,7 @@ const config: Config = {
           300: "#ADACA9",
           200: "#DCD9D1",
           100: "#ECEAE5",
+          75: "#F3F2ED",
           50: "#FAF9F6",
         },
         blue: {

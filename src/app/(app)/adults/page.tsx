@@ -12,31 +12,20 @@ import {
 import Header from "@/components/custom-ui/header";
 import ImageCarousel from "@/components/custom-ui/image-carousel";
 import InfoSection from "@/components/custom-ui/info-section";
-import {
-  ListItem,
-  PriceList,
-  PricingData,
-} from "@/components/custom-ui/pricing";
+import { ListItem, PriceList } from "@/components/custom-ui/pricing";
 import RectangleWrapper from "@/components/custom-ui/rectangle-wrapper";
 import Typography from "@/components/custom-ui/typography";
 import { Button } from "@/components/ui/button";
+import { carouselImages, pricingData } from "@/content/adults";
+import { generatePageTitle } from "@/utils/generate-page-title";
+
+export async function generateMetadata() {
+  return {
+    title: generatePageTitle("Adults"),
+  };
+}
 
 const AdultsPage = () => {
-  const pricingData = PricingData;
-
-  const carouselImages = [
-    { src: "/adults/adults-carousel-1.jpg", alt: "carousel image" },
-    { src: "/adults/adults-carousel-2.jpg", alt: "carousel image" },
-    { src: "/adults/adults-carousel-3.jpg", alt: "carousel image" },
-    { src: "/adults/adults-carousel-4.jpg", alt: "carousel image" },
-    { src: "/adults/adults-carousel-5.jpg", alt: "carousel image" },
-    { src: "/adults/adults-carousel-6.jpg", alt: "carousel image" },
-    { src: "/adults/adults-carousel-7.jpg", alt: "carousel image" },
-    { src: "/adults/adults-carousel-8.jpg", alt: "carousel image" },
-    { src: "/adults/adults-carousel-9.jpg", alt: "carousel image" },
-    { src: "/adults/adults-carousel-10.jpg", alt: "carousel image" },
-  ];
-
   return (
     <div className="relative flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
       <AdultsBannerBlobs />
@@ -44,6 +33,7 @@ const AdultsPage = () => {
         <HeroBanner
           img="/adults/adults-banner.jpg"
           title="Penjanje za odrasle"
+          position="object-top"
         />
         <Header
           text="Penjanje je nevjerovatna aktivnost za djecu koja poboljšava snagu,
@@ -67,6 +57,7 @@ const AdultsPage = () => {
           image="/adults/adults-info-2.jpg"
           title="Osnovni kurs"
           description="Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn"
+          xPosition={85}
         >
           <div className="space-y-4">
             <Typography fontWeight="bold">Naredni termini</Typography>
@@ -79,6 +70,7 @@ const AdultsPage = () => {
           image="/adults/adults-info-3.jpg"
           title="Napredni kurs"
           description="Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn"
+          xPosition={100}
         >
           <div className="space-y-6">
             <div className="space-y-2">
@@ -98,6 +90,7 @@ const AdultsPage = () => {
           image="/adults/adults-info-4.jpg"
           title="Izleti u prirodu"
           description="Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn"
+          xPosition={20}
         />
       </div>
       <BenefitsSection title="Benefiti penjanja za odrasle">
@@ -111,10 +104,10 @@ const AdultsPage = () => {
         ))}
         <AdultsBenefitsBlobs />
       </BenefitsSection>
-      <PriceList pricingData={pricingData.adultPrices}>
+      <PriceList pricingData={pricingData.prices}>
         <ListItem
-          title={pricingData.adults.title}
-          data={pricingData.adults.date}
+          title={pricingData.schedule.title}
+          data={pricingData.schedule.date}
         />
       </PriceList>
       <ImageCarousel images={carouselImages}>

@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, X } from "lucide-react";
-import { useQueryState } from "nuqs";
+import { parseAsInteger, useQueryState } from "nuqs";
 
 type SearchFilterProps = {
   placeholder: string;
@@ -14,9 +14,19 @@ const SearchFilter = ({ placeholder }: SearchFilterProps) => {
     shallow: false,
     throttleMs: 500,
   });
+  const [page, setPage] = useQueryState(
+    "page",
+    parseAsInteger
+      .withOptions({
+        shallow: false,
+        throttleMs: 500,
+      })
+      .withDefault(1),
+  );
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
+    setPage(1);
     if (value) {
       setQuery(value);
     } else {
@@ -35,7 +45,7 @@ const SearchFilter = ({ placeholder }: SearchFilterProps) => {
       <Search className="absolute left-3 top-4 size-4 text-neutrals-400 lg:size-6" />
       {query && (
         <Button
-          variant="ghost"
+          variant="transparent"
           className="absolute right-2 top-4 h-fit bg-inherit p-0 hover:bg-inherit hover:text-neutrals-400 active:bg-inherit lg:right-0 lg:top-0"
           onClick={() => setQuery(null)}
         >

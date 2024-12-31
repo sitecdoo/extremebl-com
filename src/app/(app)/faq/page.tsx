@@ -1,26 +1,23 @@
 import { HeroBanner } from "@/components/custom-ui/banners";
 import RecentBlogWrapper from "@/components/custom-ui/blog/recent-blog-wrapper";
 import Questions from "@/components/custom-ui/questions";
-import { getPayload } from "payload";
 import React from "react";
-import config from "@payload-config";
 import { Button } from "@/components/ui/button";
 import Typography from "@/components/custom-ui/typography";
 import InstagramPostsWrapper from "@/components/custom-ui/instagram";
 import FAQBannerBlobs from "@/components/custom-ui/blobs/faq";
+import { generatePageTitle } from "@/utils/generate-page-title";
+import { getRecentPosts } from "@/db/queries";
+
+export async function generateMetadata() {
+  return {
+    title: generatePageTitle("FAQ"),
+  };
+}
 
 const FAQPage = async () => {
-  const payload = await getPayload({ config });
-  const getPosts = async () => {
-    const posts = await payload.find({
-      collection: "posts",
-      sort: "-createdAt",
-      limit: 3,
-    });
+  const { docs } = await getRecentPosts();
 
-    return posts;
-  };
-  const { docs } = await getPosts();
   return (
     <div className="relative flex w-full flex-col items-center gap-24 pb-24 lg:gap-48 lg:pb-48">
       <FAQBannerBlobs />

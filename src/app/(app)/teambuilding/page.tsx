@@ -4,15 +4,19 @@ import { PackagesSection } from "@/components/custom-ui/packages";
 import React from "react";
 import { TestimonialSection } from "@/components/custom-ui/testimonial";
 import InfoSection from "@/components/custom-ui/info-section";
-import {
-  teambuildingInfoSection as infoSectionData,
-  teambuildingMasonryImages as masonryImages,
-} from "./config";
+import { infoSectionData, masonryImages } from "@/content/teambuilding";
 import Header from "@/components/custom-ui/header";
 import {
   TeambuildingBannerBlobs,
   TeambuildingTestimonialBlobs,
 } from "@/components/custom-ui/blobs/teambuilding";
+import { generatePageTitle } from "@/utils/generate-page-title";
+
+export async function generateMetadata() {
+  return {
+    title: generatePageTitle("Teambuilding"),
+  };
+}
 
 const TeambuildingPage = () => {
   return (
