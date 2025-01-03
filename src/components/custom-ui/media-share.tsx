@@ -18,13 +18,6 @@ const MediaShare = ({ id }: MediaShareProps) => {
       <FacebookShareButton url={`https://extremebl-com.vercel.app/blog/${id}`}>
         <Facebook size="24" />
       </FacebookShareButton>
-      {/* <Link
-        href={`https://instagram.com//share?text=Check out this post: https://extremebl-com.vercel.app/blog/${id}`}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Instagram size="24" />
-      </Link> */}
       <LinkedinShareButton url={`https://extremebl-com.vercel.app/blog/${id}`}>
         <Linkedin size="24" />
       </LinkedinShareButton>
