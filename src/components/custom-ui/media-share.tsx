@@ -1,24 +1,37 @@
 "use client";
 
-import { Facebook } from "lucide-react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Facebook, Linkedin } from "lucide-react";
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  TwitterIcon,
+  TwitterShareButton,
+} from "next-share";
 
 type MediaShareProps = {
-  title: string;
+  id: string;
 };
 
-const MediaShare = ({ title }: MediaShareProps) => {
-  const pathname = usePathname();
-
+const MediaShare = ({ id }: MediaShareProps) => {
   return (
-    <Link
-      href={`https://www.facebook.com/share.php?u=https://extremebl-com.vercel.app${pathname}`}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <Facebook size="24" />
-    </Link>
+    <div className="flex items-center gap-4">
+      <FacebookShareButton url={`https://extremebl-com.vercel.app/blog/${id}`}>
+        <Facebook size="24" />
+      </FacebookShareButton>
+      {/* <Link
+        href={`https://instagram.com//share?text=Check out this post: https://extremebl-com.vercel.app/blog/${id}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Instagram size="24" />
+      </Link> */}
+      <LinkedinShareButton url={`https://extremebl-com.vercel.app/blog/${id}`}>
+        <Linkedin size="24" />
+      </LinkedinShareButton>
+      <TwitterShareButton url={`https://extremebl-com.vercel.app/blog/${id}`}>
+        <TwitterIcon size="24" borderRadius={8} />
+      </TwitterShareButton>
+    </div>
   );
 };
 

@@ -10,7 +10,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { format } from "date-fns";
 import Pill from "@/components/custom-ui/blog/pill";
-import { Instagram, Linkedin, TwitterIcon } from "lucide-react";
 import RecentBlogWrapper from "@/components/custom-ui/blog/recent-blog-wrapper";
 import { Author, Category, Media } from "@/payload-types";
 import PostBannerBlobs from "@/components/custom-ui/blobs/post";
@@ -241,12 +240,7 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
             >
               Share on
             </Typography>
-            <div className="flex gap-4">
-              <MediaShare title={post.title} />
-              <Instagram size="24" />
-              <Linkedin size="24" />
-              <TwitterIcon size="24" />
-            </div>
+            <MediaShare id={id} />
           </div>
         </div>
       </div>
