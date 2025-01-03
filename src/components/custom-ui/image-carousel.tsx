@@ -9,7 +9,7 @@ import {
 import Image from "next/image";
 
 type ImageCarouselProps = PropsWithChildren<{
-  images: { src: string; alt: string }[];
+  images: { src: string; alt: string; xPosition: number; yPosition: number }[];
 }>;
 
 const ImageCarousel = ({ images, children }: ImageCarouselProps) => {
@@ -30,6 +30,9 @@ const ImageCarousel = ({ images, children }: ImageCarouselProps) => {
               height={842}
               priority
               className="h-[358px] max-h-[52.7rem] w-full rounded-2xl object-cover sm:h-full"
+              style={{
+                objectPosition: `${image.xPosition}% ${image.yPosition}%`,
+              }}
             />
           </CarouselItem>
         ))}

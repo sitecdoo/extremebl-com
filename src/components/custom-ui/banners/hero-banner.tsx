@@ -1,12 +1,14 @@
 import Image from "next/image";
 import Typography from "../typography";
+import { cn } from "@/lib/utils";
 
 type HeroBannerProps = {
   img: string;
   title: string;
+  position?: "object-top" | "object-left" | "object-right" | "object-bottom";
 };
 
-const HeroBanner = ({ img, title }: HeroBannerProps) => {
+const HeroBanner = ({ img, title, position }: HeroBannerProps) => {
   return (
     <section className="relative w-full">
       <Image
@@ -14,7 +16,10 @@ const HeroBanner = ({ img, title }: HeroBannerProps) => {
         alt={title}
         width={4000}
         height={2667}
-        className="h-[31.25rem] min-w-72 rounded-2xl object-cover object-[65%] sm:w-full lg:h-[40.625rem] lg:rounded-40"
+        className={cn(
+          "h-[31.25rem] min-w-72 rounded-2xl object-cover sm:w-full lg:h-[40.625rem] lg:rounded-40",
+          position && position,
+        )}
         priority
       />
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-dark-500/0 to-dark-500/30 lg:rounded-40" />
