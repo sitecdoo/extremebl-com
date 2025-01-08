@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Footer from "@/components/custom-ui/footer";
 import Navbar from "@/components/custom-ui/navbar/navbar";
+import { Toaster } from "@/components/ui/sonner";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import NextTopLoader from "nextjs-toploader";
 
@@ -29,6 +30,15 @@ export default function RootLayout({
           </div>
           <Footer />
         </div>
+        <Toaster
+          position="top-center"
+          toastOptions={{
+            classNames: {
+              error: "bg-red-500 border-0",
+              success: "bg-green-500 border-0",
+            },
+          }}
+        />
       </body>
     </html>
   );
