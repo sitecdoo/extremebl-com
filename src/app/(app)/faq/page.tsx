@@ -25,7 +25,10 @@ const FAQPage = async () => {
       <Questions />
       <InstagramPostsWrapper />
       <div className="space-y-4 text-center lg:space-y-5">
-        <Button variant="black" className="py-2 lg:px-5 lg:py-2">
+        <Button
+          variant="black"
+          className="pointer-events-none py-2 lg:px-5 lg:py-2"
+        >
           <Typography uppercase>Blog</Typography>
         </Button>
         <RecentBlogWrapper posts={docs} />
