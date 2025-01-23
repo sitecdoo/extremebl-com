@@ -1,16 +1,14 @@
-"use client";
-
 import Link from "next/link";
 import { Facebook, Instagram } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { navbarConfig } from "./navbar-config";
 import Typography from "@/components/custom-ui/typography";
-import { usePathname } from "next/navigation";
 import { Separator } from "@/components/ui/separator";
-import LanguageSelector from "./language-selector";
 import MobileMenu from "./mobile-menu";
-import { ReactNode, useCallback, useState } from "react";
+import { ReactNode } from "react";
+import { LanguageBar } from "./language-bar";
+import { LANGUAGES } from "@/utils/dictionary";
 
 const NavItem = ({ href, children }: { href: string; children: ReactNode }) => (
   <Link
@@ -22,13 +20,7 @@ const NavItem = ({ href, children }: { href: string; children: ReactNode }) => (
 );
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleMobileMenuClose = useCallback(() => {
-    setIsOpen(false);
-  }, []);
-
-  const pathname = usePathname();
+  // const pathname = usePathname();
 
   return (
     <nav className="flex items-center justify-between bg-neutrals-50 px-4 py-4 md:px-8 md:py-6 xl:px-12 xl:py-8">
@@ -52,7 +44,7 @@ const Navbar = () => {
               <Typography
                 className={cn(
                   "rounded-60 px-3 py-2 text-base lg:text-base xl:text-base 2xl:px-5 2xl:text-xl",
-                  pathname === item.href && "bg-neutrals-100",
+                  // pathname === item.href && "bg-neutrals-100",
                 )}
               >
                 {item.label}
@@ -69,7 +61,7 @@ const Navbar = () => {
             <Typography
               className={cn(
                 "rounded-60 px-2 py-2 text-base lg:text-base xl:px-3 xl:text-base 2xl:px-5 2xl:text-xl",
-                pathname === item.href && "bg-neutrals-100",
+                // pathname === item.href && "bg-neutrals-100",
               )}
             >
               {item.label}
@@ -83,15 +75,11 @@ const Navbar = () => {
           <Instagram className="size-4 xl:size-6" />
         </NavItem>
         <Separator orientation="vertical" className="h-5 bg-neutrals-800" />
-        <LanguageSelector />
+        <LanguageBar languages={LANGUAGES} />
       </div>
 
       {/* Mobile Menu */}
-      <MobileMenu
-        isOpen={isOpen}
-        onOpenChange={setIsOpen}
-        onClose={handleMobileMenuClose}
-      />
+      <MobileMenu languages={LANGUAGES} />
     </nav>
   );
 };

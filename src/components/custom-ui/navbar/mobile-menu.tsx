@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
   Sheet,
@@ -13,15 +15,16 @@ import { navbarConfig } from "./navbar-config";
 import Typography from "@/components/custom-ui/typography";
 import Image from "next/image";
 import LanguageSelector from "./language-selector";
-import { useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { Languages } from "@/utils/dictionary";
 
-interface MobileMenuProps {
-  isOpen: boolean;
-  onOpenChange: (open: boolean) => void;
-  onClose: () => void;
-}
+const MobileMenu = ({ languages }: { languages: Languages }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
-const MobileMenu = ({ isOpen, onOpenChange, onClose }: MobileMenuProps) => {
+  const onClose = useCallback(() => {
+    setIsOpen(false);
+  }, []);
+
   useEffect(() => {
     if (isOpen == true)
       document.body.setAttribute("data-scroll-no-lock", "true");
@@ -30,7 +33,7 @@ const MobileMenu = ({ isOpen, onOpenChange, onClose }: MobileMenuProps) => {
 
   return (
     <div className="lg:hidden">
-      <Sheet open={isOpen} onOpenChange={onOpenChange}>
+      <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger asChild>
           <Button variant="transparent" className="flex size-6 p-0">
             <Menu size={24} />
@@ -100,7 +103,7 @@ const MobileMenu = ({ isOpen, onOpenChange, onClose }: MobileMenuProps) => {
                   </Link>
                 </div>
               </div>
-              <LanguageSelector />
+              <LanguageSelector languages={languages} />
             </div>
           </nav>
         </SheetContent>

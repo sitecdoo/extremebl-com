@@ -1,5 +1,4 @@
 import InstagramPostsWrapper from "@/components/custom-ui/instagram";
-import Typography from "../../components/custom-ui/typography";
 import { BigHeroBanner } from "@/components/custom-ui/banners";
 import InfoSection from "@/components/custom-ui/info-section";
 import { Button } from "@/components/ui/button";
@@ -14,6 +13,7 @@ import {
 import { Metadata } from "next";
 import { getRecentPosts } from "@/db/queries";
 import Link from "next/link";
+import Typography from "@/components/custom-ui/typography";
 
 export const metadata: Metadata = {
   title: "Extreme",

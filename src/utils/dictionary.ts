@@ -6,6 +6,7 @@ import sr from "@/translations/sr.json";
 export const LANGUAGE_COOKIE = "LOCALE";
 export const LANGUAGES = ["sr", "en"] as const;
 
+export type Languages = typeof LANGUAGES;
 export type Language = (typeof LANGUAGES)[number];
 
 const dictionaries = {
