@@ -1,12 +1,12 @@
 import LanguageSelector from "./language-selector";
-import { Languages, getLanguage } from "@/utils/dictionary";
+import { Language, Languages } from "@/utils/dictionary";
 
 type LanguageBarProps = {
   languages: Languages;
+  currentLanguage: Language;
 };
 
-const LanguageBar = async ({ languages }: LanguageBarProps) => {
-  const currentLanguage = await getLanguage();
+const LanguageBar = ({ languages, currentLanguage }: LanguageBarProps) => {
   return (
     <div className="mr-2 space-x-2 p-0">
       <LanguageSelector

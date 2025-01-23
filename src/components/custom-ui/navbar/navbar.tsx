@@ -8,7 +8,7 @@ import { Separator } from "@/components/ui/separator";
 import MobileMenu from "./mobile-menu";
 import { ReactNode } from "react";
 import { LanguageBar } from "./language-bar";
-import { LANGUAGES } from "@/utils/dictionary";
+import { getLanguage, LANGUAGES } from "@/utils/dictionary";
 
 const NavItem = ({ href, children }: { href: string; children: ReactNode }) => (
   <Link
@@ -19,8 +19,9 @@ const NavItem = ({ href, children }: { href: string; children: ReactNode }) => (
   </Link>
 );
 
-const Navbar = () => {
+const Navbar = async () => {
   // const pathname = usePathname();
+  const currentLanguage = await getLanguage();
 
   return (
     <nav className="flex items-center justify-between bg-neutrals-50 px-4 py-4 md:px-8 md:py-6 xl:px-12 xl:py-8">
@@ -75,11 +76,11 @@ const Navbar = () => {
           <Instagram className="size-4 xl:size-6" />
         </NavItem>
         <Separator orientation="vertical" className="h-5 bg-neutrals-800" />
-        <LanguageBar languages={LANGUAGES} />
+        <LanguageBar languages={LANGUAGES} currentLanguage={currentLanguage} />
       </div>
 
       {/* Mobile Menu */}
-      <MobileMenu languages={LANGUAGES} />
+      <MobileMenu languages={LANGUAGES} currentLanguage={currentLanguage} />
     </nav>
   );
 };

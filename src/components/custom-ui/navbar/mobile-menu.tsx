@@ -16,9 +16,15 @@ import Typography from "@/components/custom-ui/typography";
 import Image from "next/image";
 import LanguageSelector from "./language-selector";
 import { useCallback, useEffect, useState } from "react";
-import { Languages } from "@/utils/dictionary";
+import { Language, Languages } from "@/utils/dictionary";
 
-const MobileMenu = ({ languages }: { languages: Languages }) => {
+const MobileMenu = ({
+  languages,
+  currentLanguage,
+}: {
+  languages: Languages;
+  currentLanguage: Language;
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const onClose = useCallback(() => {
@@ -103,7 +109,10 @@ const MobileMenu = ({ languages }: { languages: Languages }) => {
                   </Link>
                 </div>
               </div>
-              <LanguageSelector languages={languages} />
+              <LanguageSelector
+                languages={languages}
+                currentLanguage={currentLanguage}
+              />
             </div>
           </nav>
         </SheetContent>
