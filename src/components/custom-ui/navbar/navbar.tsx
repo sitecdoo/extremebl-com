@@ -1,18 +1,15 @@
-"use client";
-
 import Link from "next/link";
 import { Facebook, Instagram } from "lucide-react";
-import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { navbarConfig } from "./navbar-config";
-import Typography from "@/components/custom-ui/typography";
-import { usePathname } from "next/navigation";
 import { Separator } from "@/components/ui/separator";
-import LanguageSelector from "./language-selector";
 import MobileMenu from "./mobile-menu";
-import { ReactNode, useCallback, useState } from "react";
+import { ReactNode } from "react";
+import { LanguageBar } from "./language-bar";
+import { getLanguage, LANGUAGES } from "@/utils/dictionary";
+import NavItem from "./nav-item";
 
-const NavItem = ({ href, children }: { href: string; children: ReactNode }) => (
+const NavLink = ({ href, children }: { href: string; children: ReactNode }) => (
   <Link
     href={href}
     className="rounded-60 text-neutrals-800 hover:bg-neutrals-75"
@@ -21,14 +18,8 @@ const NavItem = ({ href, children }: { href: string; children: ReactNode }) => (
   </Link>
 );
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleMobileMenuClose = useCallback(() => {
-    setIsOpen(false);
-  }, []);
-
-  const pathname = usePathname();
+const Navbar = async () => {
+  const currentLanguage = await getLanguage();
 
   return (
     <nav className="flex items-center justify-between bg-neutrals-50 px-4 py-4 md:px-8 md:py-6 xl:px-12 xl:py-8">
@@ -48,50 +39,26 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <div className="hidden items-center space-x-3 lg:flex lg:space-x-2 xl:space-x-6">
           {navbarConfig.main.map((item) => (
-            <NavItem key={item.href} href={item.href}>
-              <Typography
-                className={cn(
-                  "rounded-60 px-3 py-2 text-base lg:text-base xl:text-base 2xl:px-5 2xl:text-xl",
-                  pathname === item.href && "bg-neutrals-100",
-                )}
-              >
-                {item.label}
-              </Typography>
-            </NavItem>
+            <NavItem key={item.href} href={item.href} name={item.label} />
           ))}
         </div>
       </div>
-
       {/* Desktop Secondary Items */}
       <div className="hidden items-center space-x-2 lg:flex xl:space-x-4">
         {navbarConfig.secondary.map((item) => (
-          <NavItem key={item.href} href={item.href}>
-            <Typography
-              className={cn(
-                "rounded-60 px-2 py-2 text-base lg:text-base xl:px-3 xl:text-base 2xl:px-5 2xl:text-xl",
-                pathname === item.href && "bg-neutrals-100",
-              )}
-            >
-              {item.label}
-            </Typography>
-          </NavItem>
+          <NavItem key={item.href} href={item.href} name={item.label} />
         ))}
-        <NavItem href="https://www.facebook.com/extremebl/">
+        <NavLink href="https://www.facebook.com/extremebl/">
           <Facebook className="size-4 xl:size-6" />
-        </NavItem>
-        <NavItem href="https://www.instagram.com/extreme_bl/">
+        </NavLink>
+        <NavLink href="https://www.instagram.com/extreme_bl/">
           <Instagram className="size-4 xl:size-6" />
-        </NavItem>
+        </NavLink>
         <Separator orientation="vertical" className="h-5 bg-neutrals-800" />
-        <LanguageSelector />
+        <LanguageBar languages={LANGUAGES} currentLanguage={currentLanguage} />
       </div>
-
       {/* Mobile Menu */}
-      <MobileMenu
-        isOpen={isOpen}
-        onOpenChange={setIsOpen}
-        onClose={handleMobileMenuClose}
-      />
+      <MobileMenu languages={LANGUAGES} currentLanguage={currentLanguage} />
     </nav>
   );
 };
