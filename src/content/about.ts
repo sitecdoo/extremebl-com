@@ -9,7 +9,7 @@ export const infoSectionData = [
     image: "/about/our-mission.jpg",
     title: "Naša misija",
     description:
-      "Tekst je u izradi, posjeti link kasnije.",
+      "Naša misija je popularizacija i unapređenje sportskog penjanja na prirodnim i vještačkim stijenama kroz organizaciju treninga, kurseva, takmičenja, festivala i penjačkih putovanja, te kroz izgradnju i održavanje penjačke infrastukture.",
   },
 ];
 

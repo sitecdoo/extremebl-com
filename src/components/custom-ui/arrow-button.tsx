@@ -9,7 +9,7 @@ const ArrowButton = () => {
       className="flex w-fit items-center gap-x-2 px-0 lg:px-0"
     >
       <Typography tag="span" fontWeight="bold">
-        Pročitaj više
+        Pročitajte više
       </Typography>
       <ArrowRight className="size-5 transition-transform duration-300 group-hover:-rotate-45 lg:size-8" />
     </Button>
