@@ -3,7 +3,7 @@ export const infoSectionData = [
     image: "/birthdays/info-section-1.jpg",
     title: "Profesionalni instruktori",
     description:
-      "Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn",
+      "Naši profesionalni instruktori nisu samo iskusni penjači, već i sjajni animatori koji će učiniti svaki rođendan još zabavnijim. Kroz igru i avanturu, djecu vode kroz sigurno i uzbudljivo penjačko iskustvo, pomažući im da savladaju osnovne tehnike dok se istovremeno odlično zabavljaju.",
     xPosition: 60,
     yPosition: 50,
   },
@@ -11,7 +11,7 @@ export const infoSectionData = [
     image: "/birthdays/info-section-2.jpg",
     title: "Sigurna oprema",
     description:
-      "Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn",
+      "Koristimo provjerenu i kvalitetnu penjačku opremu koja osigurava maksimalnu sigurnost tokom penjanja. Sva užad, pojasevi i penjačke sprave redovno se pregledaju i održavaju, a naši instruktori vode računa da se oprema pravilno koristi, omogućavajući bezbrižno i sigurno iskustvo za sve učesnike.",
     xPosition: 50,
     yPosition: 15,
   },
@@ -19,7 +19,7 @@ export const infoSectionData = [
     image: "/birthdays/info-section-3.jpg",
     title: "Zabava za sve uzraste",
     description:
-      "Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn",
+      "Penjački rođendani su idealna zabava za djecu svih uzrasta – od najmlađih avanturista do starijih mališana željnih izazova! Naši instruktori prilagođavaju igre i smjerove kako bi svaki učesnik, bez obzira na godine ili iskustvo, mogao uživati u sigurnoj i uzbudljivoj avanturi ispunjenoj smijehom i druženjem.",
     xPosition: 60,
     yPosition: 50,
   },

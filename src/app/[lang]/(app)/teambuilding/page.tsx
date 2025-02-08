@@ -43,7 +43,7 @@ const TeambuildingPage = () => {
       <Masonry images={masonryImages} />
       <TestimonialSection
         description='"Najviše mi se svidjelo kako su aktivnosti bile prilagođene našim sposobnostima, omogućujući svakom članu tima da se osjeća uključenim
-         i podržanim. Ovo iskustvo je definitivno poboljšalo našu timsku dinamiku i preporučujemo ga svakome tko želi ojačati svoj tim kroz zabavu i avanturu!"'
+         i podržanim. Ovo iskustvo je definitivno poboljšalo našu timsku dinamiku i preporučujemo ga svakome ko želi ojačati svoj tim kroz zabavu i avanturu!"'
       >
         <TeambuildingTestimonialBlobs />
       </TestimonialSection>

@@ -35,7 +35,7 @@ export const benefitsForAdults = [
   {
     title: "Društvena povezanost",
     description:
-      "Penjanje je često timska aktivnost koja potiče suradnju i komunikaciju među članovima. Pomaže u izgradnji zajednice i jačanju međuljudskih veza.",
+      "Penjanje je često timska aktivnost koja potiče saradnju i komunikaciju među članovima. Pomaže u izgradnji zajednice i jačanju međuljudskih veza.",
     image: "/icons/cognitive-icon.svg",
   },
 ];

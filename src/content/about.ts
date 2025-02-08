@@ -1,15 +1,15 @@
 export const infoSectionData = [
   {
     image: "/about/who-are-we.jpg",
-    title: "Ko smo mi?",
+    title: "Istorijat",
     description:
-      "Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn",
+      "Tekst je u izradi, posjeti link kasnije.",
   },
   {
     image: "/about/our-mission.jpg",
     title: "Naša misija",
     description:
-      "Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn",
+      "Tekst je u izradi, posjeti link kasnije.",
   },
 ];
 

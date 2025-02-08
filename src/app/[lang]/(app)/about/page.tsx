@@ -26,9 +26,7 @@ const AboutPage = () => {
       <div className="flex w-full flex-col items-center gap-24 lg:gap-44">
         <HeroBanner img="/about/hero-banner.jpg" title="O nama" />
         <Header
-          text="Sportsko penjanje je oblik penjanja po stijenama ili umjetnim
-          stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na
-          fizičku snagu"
+          text="Mi smo jedan od najstarijih penjačkih klubova u Bosni i Hercegovini, osnovan 2001. godine. Pored naše odlično opremljene penjačke sale, organizatori smo Pecka Rock Climbing i Drill & Chill Climbing and Highlining festivala, mnoštva kurseva, takmičenja, putovanja i kampovanje, te smo uredili preko 500 penjačkih smjerova."
         />
       </div>
       <div className="flex w-full flex-col gap-y-24 lg:gap-y-32">
@@ -52,7 +50,7 @@ const AboutPage = () => {
           avanturu za sve ljubitelje ovog sporta."
       >
         <Button variant="blue" className="w-fit">
-          <Typography fontWeight="bold">Kontaktiraj nas</Typography>
+          <Typography fontWeight="bold">Kontaktirajte nas</Typography>
         </Button>
       </Header>
     </div>

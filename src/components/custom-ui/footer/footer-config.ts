@@ -13,8 +13,8 @@ export const footerConfig = {
   ],
   contact: {
     name: "Kontakt",
-    phone: "065 779 027",
-    email: "extremeclimbing@gmail.com",
+    phone: "+387 65 779 027",
+    email: "extremebl@gmail.com",
     location: "Bulevar vojvode P. Bojovića 1, Banja Luka 78000",
   },
 };

@@ -45,7 +45,7 @@ const Children = () => {
             yPosition={info.yPosition}
           >
             <Button variant="yellow" className="w-fit">
-              <Typography fontWeight="bold">Prijavi se</Typography>
+              <Typography fontWeight="bold">Upišite dijete</Typography>
             </Button>
           </InfoSection>
         ))}
@@ -69,9 +69,9 @@ const Children = () => {
       <ImageCarousel images={carouselImages}>
         <ChildrenCarouselBlobs />
       </ImageCarousel>
-      <Header text="Zainteresirani ste za penjanje za vaše mališane? Prijavite se danas i omogućite im da se penju prema zvijezdama s osmijehom na licu!">
+      <Header text="Zainteresovani ste za penjanje za vaše mališane? Kontaktirajte nas na +387 65 303 034 (poziv, SMS, Viber, WhatsApp) da dogovorimo probni trening.">
         <Button variant="blue" className="w-fit">
-          <Typography fontWeight="bold">Kontaktiraj nas</Typography>
+          <Typography fontWeight="bold">Kontaktirajte nas</Typography>
         </Button>
       </Header>
     </div>

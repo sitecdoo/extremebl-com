@@ -33,24 +33,24 @@ export default async function HomePage() {
         <InfoSection
           image="/climbing-for-adults.jpg"
           title="Penjanje za odrasle"
-          description="Naše penjanje za odrasle pruža uzbudljivu priliku za sve ljubitelje avanture, bez obzira na prethodno iskustvo. Bilo da želite poboljšati svoju fizičku kondiciju, savladati nove izazove ili jednostavno uživati u društvu entuzijasta kao što ste vi, naši instruktori su tu da vam pruže podršku na svakom koraku."
+          description="Naše penjanje za odrasle pruža uzbudljivu priliku za sve ljubitelje avanture, bez obzira na prethodno iskustvo. Bilo da želiš poboljšati svoju fizičku kondiciju, savladati nove izazove ili jednostavno uživati u društvu entuzijasta kao što si ti, naši instruktori su tu da ti pruže podršku na svakom koraku."
           yPosition={60}
         >
           <Link href="/adults">
             <Button variant="black" className="w-fit">
-              <Typography fontWeight="bold">Penjanje za odrasle</Typography>
+              <Typography fontWeight="bold">Saznajte više</Typography>
             </Button>
           </Link>
         </InfoSection>
         <InfoSection
           image="/climbing-for-children.jpg"
           title="Penjanje za djecu"
-          description="Penjanje za djecu  je savršen način da mališani razviju svoje motoričke veštine, samopouzdanje i timski duh. Naši programi su prilagođeni različitim uzrastima i nivoima veština, uz stalni nadzor i podršku iskusnih instruktora. Kroz igru i zabavu, deca će naučiti osnovne tehnike penjanja, a možda čak i otkriti svoju ljubav prema ovom sportu."
+          description="Penjanje za djecu  je savršen način da mališani razviju svoje motoričke veštine, samopouzdanje i timski duh. Naši programi su prilagođeni različitim uzrastima i nivoima vještina, uz stalni nadzor i podršku iskusnih instruktora. Kroz igru i zabavu, djeca će naučiti osnovne tehnike penjanja, a možda čak i otkriti svoju ljubav prema ovom sportu."
           yPosition={30}
         >
           <Link href="/children">
             <Button variant="yellow" className="w-fit">
-              <Typography fontWeight="bold">Penjanje za djecu</Typography>
+              <Typography fontWeight="bold">Saznajte više</Typography>
             </Button>
           </Link>
         </InfoSection>
@@ -59,23 +59,23 @@ export default async function HomePage() {
       <div className="hidden" />
       <InfoSection
         image="/birthdays/hero.jpg"
-        title="Proslava rodjendana"
-        description="Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn"
+        title="Proslava rođendana"
+        description="Proslavite rođendan vašeg djeteta na jedinstven i uzbudljiv način! Naša penjačka sala nudi savršeno okruženje za nezaboravnu rođendansku proslavu uz profesionalne instruktore, sigurnu opremu i zabavu za sve uzraste."
       >
-        <Link href="/birthdays#packages">
+        <Link href="/birthdays">
           <Button variant="blue" className="w-fit">
-            <Typography fontWeight="bold">Rezerviši termin</Typography>
+            <Typography fontWeight="bold">Saznajte više</Typography>
           </Button>
         </Link>
       </InfoSection>
       <InfoSection
         image="/teambuilding/teambuilding-banner.jpg"
         title="Teambuilding"
-        description="Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn"
+        description="Naša penjačka sala je idealno mjesto za teambuilding jer nudi jedinstvenu kombinaciju fizičkih i mentalnih izazova koji podstiču timsku saradnju i komunikaciju. Uz to nudimo profesionalne instruktore, sigurnu opremu i neograničen broj ideja kojima ćete uvijek iznenaditi vaš tim."
       >
-        <Link href="/teambuilding#packages">
+        <Link href="/teambuilding">
           <Button variant="blue" className="w-fit">
-            <Typography fontWeight="bold">Rezerviši termin</Typography>
+            <Typography fontWeight="bold">Saznajte više</Typography>
           </Button>
         </Link>
       </InfoSection>
