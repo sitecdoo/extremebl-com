@@ -20,7 +20,7 @@ const ContactPage = () => {
         <div className="flex w-full flex-col justify-start gap-14 lg:flex-row lg:px-12 xl:gap-24 xl:px-20 2xl:gap-40 2xl:px-36">
           <div className="space-y-4 lg:max-w-lg">
             <Typography variant="h2" tag="h2" fontWeight="bold">
-              Kontaktiraj nas
+              Kontaktirajte nas
             </Typography>
             <Typography className="text-base text-neutrals-600">
               Imate pitanja ili trebate dodatne informacije? Slobodno nas
@@ -34,7 +34,9 @@ const ContactPage = () => {
                 Telefon:
               </Typography>
               <Typography className="text-base" fontWeight="bold">
-                +387 65 222 222
+                +387 65 779 027 - generalni kontakt
+                <br />
+                +387 65 303 034 - dječiji treninzi
               </Typography>
             </div>
             <div className="space-y-1">
@@ -42,7 +44,7 @@ const ContactPage = () => {
                 E-mail:
               </Typography>
               <Typography className="text-base" fontWeight="bold">
-                extremeclimbing@gmail.com
+                extremebl@gmail.com
               </Typography>
             </div>
             <div className="space-y-1">
@@ -50,10 +52,12 @@ const ContactPage = () => {
                 Adresa:
               </Typography>
               <Typography className="text-base" fontWeight="bold">
-                Marka Markovica 4<br />
+                Bulevar vojvode Petra Bojovića 1<br />
                 78 000
                 <br />
                 Banja Luka
+                <br />
+                Bosna i Hercegovina
               </Typography>
             </div>
             <div className="flex items-center gap-5">

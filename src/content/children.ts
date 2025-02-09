@@ -1,17 +1,17 @@
 export const pricingData = {
   schedules: [
     {
-      title: "Trening za djecu mladjeg uzrasta",
+      title: "Trening za djecu mlađeg uzrasta",
       date: [
-        { day: "Ponedjeljak", time: "18:30 - 19:30h" },
-        { day: "Petak", time: "18:30 - 19:30h" },
+        { day: "Ponedjeljak", time: "19:00 - 20:00h" },
+        { day: "Petak", time: "19:00 - 20:00h" },
       ],
     },
     {
       title: "Trening za djecu starijeg uzrasta",
       date: [
-        { day: "Ponedjeljak", time: "19:00 - 20:00h" },
-        { day: "Petak", time: "19:00 - 20:00h" },
+        { day: "Ponedjeljak", time: "19:30 - 21:00h" },
+        { day: "Petak", time: "19:30 - 21:00h" },
       ],
     },
   ],
@@ -20,7 +20,7 @@ export const pricingData = {
     { text: "Mjesečna članarina", price: "50 KM" },
     {
       text: "Mjesečna članarina (dvoje djece iz iste porodice)",
-      price: "250 KM",
+      price: "80 KM",
     },
   ],
 };
@@ -30,7 +30,7 @@ export const infoSectionData = [
     image: "/children/info-section-1.jpg",
     title: "Djeca mlađeg uzrasta",
     description:
-      "Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn",
+      "Sportsko penjanje za djecu od 6 do 10 godina razvija snagu, koordinaciju i samopouzdanje. Uz stručne trenere i sigurnu opremu, trening je prilagođen igri i postepenom učenju.",
     xPosition: 50,
     yPosition: 10,
   },
@@ -38,7 +38,7 @@ export const infoSectionData = [
     image: "/children/info-section-2.jpg",
     title: "Djeca starijeg uzrasta",
     description:
-      "Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn",
+      "Sportsko penjanje za djecu od 10 godina i više jača izdržljivost, tehniku i mentalnu snagu. Treninzi su zahtjevniji, uz fokus na usavršavanje pokreta, dok stručni treneri i sigurna oprema omogućavaju bezbjedno napredovanje.",
     xPosition: 50,
     yPosition: 30,
   },

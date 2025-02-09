@@ -32,7 +32,7 @@ const PackageCard = ({ name, price, offers }: PackageCardProps) => {
         </div>
       </div>
       <Button className="w-fit self-center" variant="blue">
-        <Typography fontWeight="bold">Rezerviši termin</Typography>
+        <Typography fontWeight="bold">Rezervišite termin</Typography>
       </Button>
     </div>
   );

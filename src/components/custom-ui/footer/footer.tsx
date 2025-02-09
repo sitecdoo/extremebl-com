@@ -43,7 +43,7 @@ const Footer = () => {
         </Link>
         <section className="flex w-full flex-col px-4 sm:max-w-[50rem] sm:gap-y-20 sm:px-0">
           <div className="flex flex-col justify-between gap-x-5 gap-y-16 py-8 sm:flex-row sm:py-0">
-            <NavItems title="Kompanija">
+            <NavItems title="Info">
               {company.map((item) => (
                 <Link key={item.href} href={item.href}>
                   {item.label}

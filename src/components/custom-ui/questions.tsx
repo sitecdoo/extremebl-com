@@ -12,34 +12,39 @@ import { useState } from "react";
 
 const questions = [
   {
-    question: "Šta je penjanje?",
+    question: "Šta je sportsko penjanje?",
     answer:
-      "Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači ",
+      "Sportsko penjanje sve je popularniji oblik rekreacije i sporta, odnedavno i olimpijski sport, privlačan ljudima širom svijeta. Može se izvoditi na prirodnim ili vještačkim stijenama, a postoje dva glavna načina penjanja – bouldering, koji se odvija na nižim stijenama bez užeta, i penjanje na visokoj stijeni, koje uključuje korištenje sigurnosne opreme poput užadi. Cilj je uspješno popeti zadani smjer, savladavajući sve njegove prepreke (tzv. 'detalje'). Ovaj sport je dostupan ljudima svih starosnih doba, od djece do starijih osoba.",
   },
   {
     question: "Da li je sportsko penjanje sigurno?",
     answer:
-      "Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači ",
+      "Sportsko penjanje je sigurno uz ispravnu opremu i poštovanje sigurnosnih pravila. Osiguranje užetom, pojasevi i strunjače smanjuju rizik od povreda. Većina nesreća dešava se zbog nepažnje ili loše tehnike, ali uz obuku i odgovorno penjanje, ovaj sport je bezbjedan i koristan za tijelo i um.",
   },
   {
-    question: "Da li je potrebno prethodno iskustvo za sportsko penjanje?",
+    question: "Da li je potrebno prethodno iskustvo za bavljenje sportskim penjanje?",
     answer:
-      "Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači ",
+      "Ne, prethodno iskustvo nije potrebno za bavljenje sportskim penjanjem. Početnici mogu započeti uz stručni nadzor na vještačkim stijenama ili na uređenim prirodnim penjalištima. Osnovne tehnike, sigurnosna pravila i korištenje opreme brzo se uče, a smjerovi različite težine omogućavaju postepeni napredak.",
   },
   {
     question: "Koje su fizičke prednosti sportskog penjanja?",
     answer:
-      "Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači ",
+      "Sportsko penjanje jača cijelo tijelo, poboljšava koordinaciju i povećava izdržljivost. Aktivira mišiće ruku, nogu, leđa i core-a, razvijajući snagu i fleksibilnost, zbog čega ga često nazivaju modernom gimnastikom. Takođe, poboljšava ravnotežu, motoriku i svjesnost o pokretima, dok ponavljani pokreti i kontrolisano disanje doprinose boljoj kondiciji i otpornosti na umor.",
   },
   {
-    question: "Koliko koštaju časovi sportskog penjanja?",
+    question: "Kako da počnem trenirati sportsko penjanje?",
     answer:
-      "Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači ",
+      "Dovoljno je da dođeš na probni trening za odrasle, a nakon toga možeš nastaviti dolaziti na treninge. Obično prva dva mjeseca samo penješ, a potom organizujemo osnovni kurs na kojem ćeš naučiti kako da koristiš penjačku užad i opremu.",
   },
-  {
-    question: "Da li je sportsko penjanje prikladno za decu?",
+    {
+    question: "Sa koliko godina djeca mogu početi sa sportskim penjanjem?",
     answer:
-      "Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači ",
+      "Djeca mogu početi da se bave sportskim penjanjem već od šeste godine, zavisno od njihove motoričke razvijenosti i koordinacije. Uz stručni nadzor i prilagođene smjerove, penjanje im pomaže u razvoju snage, ravnoteže i samopouzdanja, dok istovremeno kroz igru uče osnovne tehnike i sigurnosna pravila.",
+  },
+      {
+    question: "Kako upisati dijete na sportsko penjanje?",
+    answer:
+      "Dovoljno je da nas kontaktirate na +387 65 303 034 putem poziva, SMS-a, Viber-a ili WhatsApp-a kako bismo dogovorili probni trening.",
   },
 ];
 
@@ -53,9 +58,7 @@ const Questions = () => {
           Često postavljena pitanja
         </Typography>
         <Typography className="text-neutrals-600">
-          U ovoj sekciji pronaći ćete odgovore na najčešća pitanja o penjanju.
-          Saznajte sve što vas zanima o opremi, tehnikama i savjetima za sigurno
-          i uspješno penjanje!
+          U ovoj sekciji pronaći ćete odgovore na najčešća pitanja o penjanju kao i načinima da se priključite i počnete sa treningom!
         </Typography>
       </div>
       <Accordion type="single" collapsible onValueChange={setIsOpen}>

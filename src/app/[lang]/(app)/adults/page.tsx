@@ -36,43 +36,45 @@ const AdultsPage = () => {
           position="object-top"
         />
         <Header
-          text="Penjanje je nevjerovatna aktivnost za djecu koja poboljšava snagu,
-          koordinaciju i vještine rješavanja problema. Povećava samopouzdanje,
-          pruža osjećaj uspjeha i podstiče timski rad."
+          text="Penjanje za odrasle pruža uzbudljivu priliku za sve ljubitelje avanture, bez obzira na prethodno iskustvo. Bilo da želiš poboljšati svoju fizičku kondiciju, savladati nove izazove ili jednostavno uživati u kampovanju i boravku u prirodi."
         />
       </div>
       <div className="flex w-full flex-col gap-y-24 lg:gap-y-32">
         {/* 1 */}
         <InfoSection
           image="/adults/adults-info-1.jpg"
-          title="Trening za odrasle"
-          description="Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn"
+          title="Trening"
+          description="Možeš trenirati samostalno u slobodnim terminima ili se pridružiti grupnim treninzima pod vodstvom trenera. Tokom slobodnih termina, dežurna osoba ti može pomoći u organizaciji treninga i pružiti savjete. Da bi se priključio/la dovoljno je da dođeš na jedan od treninga za odrasle."
         >
           <Button variant="black" className="w-fit">
-            <Typography fontWeight="bold">Prijavi se</Typography>
+            <Typography fontWeight="bold">Pogledaj raspord treninga</Typography>
           </Button>
         </InfoSection>
         {/* 2 */}
         <InfoSection
           image="/adults/adults-info-2.jpg"
           title="Osnovni kurs"
-          description="Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn"
+          description="Ovaj vikend kurs je namenjen početnicima i omogućava im da nauče da samostalno penju i osiguravaju na 'top rope'. Kada vremenski uslovi dozvole, kurs se održava na prirodnim stijenama."
           xPosition={85}
         >
           <div className="space-y-4">
             <Typography fontWeight="bold">Naredni termini</Typography>
-            <RectangleWrapper text="01.11. - 30.11" />
-            <RectangleWrapper text="01.11. - 30.11" />
+            <RectangleWrapper text="29.03. - 30.03" />
+            <RectangleWrapper text="26.04. - 27.04" />
           </div>
         </InfoSection>
         {/* 3 */}
         <InfoSection
           image="/adults/adults-info-3.jpg"
           title="Napredni kurs"
-          description="Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn"
+          description="Ovaj kurs je namenjen penjačima koji već imaju iskustva u penjanju na 'top rope' i žele da nauče da penju i osiguravaju na vođenje. Kurs traje mjesec dana i održava se dva puta sedmično. Ako vremenski uslovi dozvole, dio časova se održava na prirodnoj stijeni."
           xPosition={100}
         >
-          <div className="space-y-6">
+          <div className="space-y-4">
+            <Typography fontWeight="bold">Naredni termini</Typography>
+            <RectangleWrapper text="01.04. - 30.04" />
+          </div>
+          {/* <div className="space-y-6">
             <div className="space-y-2">
               <Typography fontWeight="bold">
                 Trenutno nema dostupnih termina
@@ -83,13 +85,13 @@ const AdultsPage = () => {
               </Typography>
             </div>
             <RectangleWrapper text="Waiting lista" />
-          </div>
+          </div> */}
         </InfoSection>
         {/* 4 */}
         <InfoSection
           image="/adults/adults-info-4.jpg"
           title="Izleti u prirodu"
-          description="Sportsko penjanje je oblik penjanja po stijenama ili umjetnim stijenama u kontroliranom okruženju, gdje se penjači oslanjaju na fizičku snagu, tehniku i izdržljivost kako bi savladali različite penjačke rute. Ova aktivnost uključuje korištenje sigurnosn"
+          description="Već sa prvim dolaskom na trening stičeš pravo odlaska na izlete u prirodu. Oni se obično dešavaju vikendom, 1-2 puta mjesečno. Najčešće obilazimo okolna penjališta, ali ponekad organizujemo i putovanja u druge gradove i zemlje."
           xPosition={20}
         />
       </div>

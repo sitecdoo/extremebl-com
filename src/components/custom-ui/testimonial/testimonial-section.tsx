@@ -15,13 +15,13 @@ const TestimonialSection = ({
     <div className="flex w-full flex-col items-center gap-6 sm:px-10 md:px-16 lg:gap-12 lg:px-20 xl:px-36">
       <Testimonial
         image="/marija-peric.jpg"
-        name="Marija Peric"
+        name="Ognjenka Jovičić"
         description={description}
       >
         {children}
       </Testimonial>
       <Button className="w-fit" variant="blue">
-        <Typography fontWeight="bold">Kontaktiraj nas</Typography>
+        <Typography fontWeight="bold">Kontaktirajte nas</Typography>
       </Button>
     </div>
   );
