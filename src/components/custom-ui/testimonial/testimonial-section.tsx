@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import Testimonial from "./testimonial";
 import Typography from "../typography";
 import { PropsWithChildren } from "react";
+import Link from "next/link";
 
 type TestemonialSectionProps = PropsWithChildren<{
   description: string;
@@ -20,9 +21,11 @@ const TestimonialSection = ({
       >
         {children}
       </Testimonial>
-      <Button className="w-fit" variant="blue">
-        <Typography fontWeight="bold">Kontaktirajte nas</Typography>
-      </Button>
+      <Link href="/contact">
+        <Button variant="blue" className="w-fit">
+          <Typography fontWeight="bold">Kontaktirajte nas</Typography>
+        </Button>
+      </Link>
     </div>
   );
 };

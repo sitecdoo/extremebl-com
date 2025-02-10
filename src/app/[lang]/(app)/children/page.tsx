@@ -19,6 +19,7 @@ import {
   pricingData,
 } from "@/content/children";
 import { generatePageTitle } from "@/utils/generate-page-title";
+import Link from "next/link";
 
 export async function generateMetadata() {
   return {
@@ -70,9 +71,11 @@ const Children = () => {
         <ChildrenCarouselBlobs />
       </ImageCarousel>
       <Header text="Zainteresovani ste za penjanje za vaše mališane? Kontaktirajte nas na +387 65 303 034 (poziv, SMS, Viber, WhatsApp) da dogovorimo probni trening.">
-        <Button variant="blue" className="w-fit">
-          <Typography fontWeight="bold">Kontaktirajte nas</Typography>
-        </Button>
+        <Link href="/contact">
+          <Button variant="blue" className="w-fit">
+            <Typography fontWeight="bold">Kontaktirajte nas</Typography>
+          </Button>
+        </Link>
       </Header>
     </div>
   );

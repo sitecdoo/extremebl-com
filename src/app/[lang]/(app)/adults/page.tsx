@@ -18,6 +18,7 @@ import Typography from "@/components/custom-ui/typography";
 import { Button } from "@/components/ui/button";
 import { carouselImages, pricingData } from "@/content/adults";
 import { generatePageTitle } from "@/utils/generate-page-title";
+import Link from "next/link";
 
 export async function generateMetadata() {
   return {
@@ -35,9 +36,7 @@ const AdultsPage = () => {
           title="Penjanje za odrasle"
           position="object-top"
         />
-        <Header
-          text="Penjanje za odrasle pruža uzbudljivu priliku za sve ljubitelje avanture, bez obzira na prethodno iskustvo. Bilo da želiš poboljšati svoju fizičku kondiciju, savladati nove izazove ili jednostavno uživati u kampovanju i boravku u prirodi."
-        />
+        <Header text="Penjanje za odrasle pruža uzbudljivu priliku za sve ljubitelje avanture, bez obzira na prethodno iskustvo. Bilo da želiš poboljšati svoju fizičku kondiciju, savladati nove izazove ili jednostavno uživati u kampovanju i boravku u prirodi." />
       </div>
       <div className="flex w-full flex-col gap-y-24 lg:gap-y-32">
         {/* 1 */}
@@ -119,9 +118,11 @@ const AdultsPage = () => {
         text="Spremni za novu avanturu? Pridružite se našoj penjačkoj ekipi i
           započnite svoje penjačko putovanje danas"
       >
-        <Button variant="blue" className="w-fit">
-          <Typography fontWeight="bold">Kontaktiraj nas</Typography>
-        </Button>
+        <Link href="/contact">
+          <Button variant="blue" className="w-fit">
+            <Typography fontWeight="bold">Kontaktiraj nas</Typography>
+          </Button>
+        </Link>
       </Header>
     </div>
   );
