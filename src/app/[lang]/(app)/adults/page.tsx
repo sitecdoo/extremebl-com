@@ -58,8 +58,14 @@ const AdultsPage = () => {
         >
           <div className="space-y-4">
             <Typography fontWeight="bold">Naredni termini</Typography>
-            <RectangleWrapper text="29.03. - 30.03" />
-            <RectangleWrapper text="26.04. - 27.04" />
+            <RectangleWrapper
+              text="29.03. - 30.03"
+              href="https://forms.gle/jPSnH41XGEf4c25S9"
+            />
+            <RectangleWrapper
+              text="26.04. - 27.04"
+              href="https://forms.gle/wPscJjUauwjdAWM98"
+            />
           </div>
         </InfoSection>
         {/* 3 */}
@@ -71,7 +77,10 @@ const AdultsPage = () => {
         >
           <div className="space-y-4">
             <Typography fontWeight="bold">Naredni termini</Typography>
-            <RectangleWrapper text="01.04. - 30.04" />
+            <RectangleWrapper
+              text="01.04. - 30.04"
+              href="https://forms.gle/hiHBh7zCgZpjs4Eu7"
+            />
           </div>
           {/* <div className="space-y-6">
             <div className="space-y-2">
