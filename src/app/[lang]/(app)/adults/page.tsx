@@ -14,6 +14,7 @@ import ImageCarousel from "@/components/custom-ui/image-carousel";
 import InfoSection from "@/components/custom-ui/info-section";
 import { ListItem, PriceList } from "@/components/custom-ui/pricing";
 import RectangleWrapper from "@/components/custom-ui/rectangle-wrapper";
+import ScrollToButton from "@/components/custom-ui/scroll-to-button";
 import Typography from "@/components/custom-ui/typography";
 import { Button } from "@/components/ui/button";
 import { carouselImages, pricingData } from "@/content/adults";
@@ -45,9 +46,11 @@ const AdultsPage = () => {
           title="Trening"
           description="Možeš trenirati samostalno u slobodnim terminima ili se pridružiti grupnim treninzima pod vodstvom trenera. Tokom slobodnih termina, dežurna osoba ti može pomoći u organizaciji treninga i pružiti savjete. Da bi se priključio/la dovoljno je da dođeš na jedan od treninga za odrasle."
         >
-          <Button variant="black" className="w-fit">
-            <Typography fontWeight="bold">Pogledaj raspord treninga</Typography>
-          </Button>
+          <ScrollToButton
+            elementId="pricing"
+            text="Pogledaj raspored treninga"
+            variant="black"
+          />
         </InfoSection>
         {/* 2 */}
         <InfoSection
