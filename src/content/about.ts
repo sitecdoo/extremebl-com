@@ -2,8 +2,7 @@ export const infoSectionData = [
   {
     image: "/about/who-are-we.jpg",
     title: "Istorijat",
-    description:
-      "Tekst je u izradi, posjeti link kasnije.",
+    description: "Tekst je u izradi, posjeti link kasnije.",
   },
   {
     image: "/about/our-mission.jpg",
@@ -85,11 +84,5 @@ export const carouselImages = [
     alt: "ko smo mi",
     xPosition: 50,
     yPosition: 50,
-  },
-  {
-    src: "/about/carousel-13.jpg",
-    alt: "ko smo mi",
-    xPosition: 0,
-    yPosition: 65,
   },
 ];
