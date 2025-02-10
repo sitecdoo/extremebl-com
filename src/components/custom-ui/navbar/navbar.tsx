@@ -12,6 +12,8 @@ import NavItem from "./nav-item";
 const NavLink = ({ href, children }: { href: string; children: ReactNode }) => (
   <Link
     href={href}
+    target="_blank"
+    rel="noopener noreferrer"
     className="rounded-60 text-neutrals-800 hover:bg-neutrals-75"
   >
     {children}

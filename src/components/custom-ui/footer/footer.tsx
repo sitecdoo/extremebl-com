@@ -102,10 +102,18 @@ const Footer = () => {
                 Copyright 2024 Extreme Climbing. All Rights Reserved
               </Typography>
               <div className="flex gap-x-6">
-                <Link href="https://www.facebook.com/extremebl/">
+                <Link
+                  href="https://www.facebook.com/extremebl/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Facebook className="size-6 text-neutrals-400" />
                 </Link>
-                <Link href="https://www.instagram.com/extreme_bl/">
+                <Link
+                  href="https://www.instagram.com/extreme_bl/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Instagram className="size-6 text-neutrals-400" />
                 </Link>
               </div>
