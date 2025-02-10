@@ -6,19 +6,19 @@ import Link from "next/link";
 
 type TestemonialSectionProps = PropsWithChildren<{
   description: string;
+  name: string;
+  image: string;
 }>;
 
 const TestimonialSection = ({
   description,
+  name,
+  image,
   children,
 }: TestemonialSectionProps) => {
   return (
     <div className="flex w-full flex-col items-center gap-6 sm:px-10 md:px-16 lg:gap-12 lg:px-20 xl:px-36">
-      <Testimonial
-        image="/marija-peric.jpg"
-        name="Ognjenka Jovičić"
-        description={description}
-      >
+      <Testimonial image={image} name={name} description={description}>
         {children}
       </Testimonial>
       <Link href="/contact">

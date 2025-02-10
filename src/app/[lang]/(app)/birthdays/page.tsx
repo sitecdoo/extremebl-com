@@ -40,7 +40,11 @@ const Birthdays = () => {
       </div>
       <PackagesSection />
       <Masonry images={masonryImages} />
-      <TestimonialSection description="“Ja sam oduševljena. Instruktori su za čistu desetku, nevjerovatni motivatori... Proslavili smo 14 rođendan i slavljenica kaže da joj je to bio najbolji rođendan!”">
+      <TestimonialSection
+        description="“Ja sam oduševljena. Instruktori su za čistu desetku, nevjerovatni motivatori... Proslavili smo 14 rođendan i slavljenica kaže da joj je to bio najbolji rođendan!”"
+        name="Ognjenka Jovičić"
+        image="/testemonial/ognjenka-jovicic.png"
+      >
         <BirthdaysTestemonialBlobs />
       </TestimonialSection>
     </div>
