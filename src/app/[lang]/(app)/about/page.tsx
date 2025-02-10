@@ -29,16 +29,18 @@ const AboutPage = () => {
         <Header text="Mi smo jedan od najstarijih penjačkih klubova u Bosni i Hercegovini, osnovan 2001. godine. Pored naše odlično opremljene penjačke sale, organizatori smo Pecka Rock Climbing i Drill & Chill Climbing and Highlining festivala, mnoštva kurseva, takmičenja, putovanja i kampovanje, te smo uredili preko 500 penjačkih smjerova." />
       </div>
       <div className="flex w-full flex-col gap-y-24 lg:gap-y-32">
-        {infoSectionData.map((info, index) => (
-          <InfoSection
-            key={index}
-            image={info.image}
-            title={info.title}
-            description={info.description}
-          >
-            <ArrowButton />
-          </InfoSection>
-        ))}
+        <InfoSection
+          image={infoSectionData[0].image}
+          title={infoSectionData[0].title}
+          description={infoSectionData[0].description}
+        >
+          <ArrowButton />
+        </InfoSection>
+        <InfoSection
+          image={infoSectionData[1].image}
+          title={infoSectionData[1].title}
+          description={infoSectionData[1].description}
+        />
       </div>
       <ServicesSection />
       <ImageCarousel images={carouselImages}>
