@@ -7,6 +7,7 @@ import { infoSectionData, masonryImages } from "@/content/teambuilding";
 import Header from "@/components/custom-ui/header";
 import {
   TeambuildingBannerBlobs,
+  TeambuildingBenefitsBlobs,
   TeambuildingTestimonialBlobs,
 } from "@/components/custom-ui/blobs/teambuilding";
 import { generatePageTitle } from "@/utils/generate-page-title";
@@ -52,6 +53,7 @@ const TeambuildingPage = () => {
             image={data.image}
           />
         ))}
+        <TeambuildingBenefitsBlobs />
       </BenefitsSection>
       <Masonry images={masonryImages} />
       <TestimonialSection
