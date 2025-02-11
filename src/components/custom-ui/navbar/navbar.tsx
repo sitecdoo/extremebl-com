@@ -14,7 +14,7 @@ const NavLink = ({ href, children }: { href: string; children: ReactNode }) => (
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="rounded-60 text-neutrals-800 hover:bg-neutrals-75"
+    className="rounded-60 text-neutrals-800 hover:bg-neutrals-75 xl:p-2"
   >
     {children}
   </Link>
@@ -24,29 +24,27 @@ const Navbar = async () => {
   const currentLanguage = await getLanguage();
 
   return (
-    <nav className="flex items-center justify-between bg-neutrals-50 px-4 py-4 md:px-8 md:py-6 xl:px-12 xl:py-8">
+    <nav className="flex items-center justify-between bg-neutrals-50 px-4 py-4 md:px-8 md:py-6 lg:px-6 xl:px-12 xl:py-8">
       {/* Logo section */}
-      <div className="flex items-center space-x-4 2xl:space-x-6">
+      <div className="flex items-center space-x-4 xl:space-x-6 2xl:space-x-10">
         <Link href="/">
-          <div className="flex items-center space-x-2">
-            <Image
-              width="70"
-              height="48"
-              alt="extreme logo"
-              src="/navbar-logo.svg"
-              className="h-7 w-11 md:h-9 md:w-12 xl:h-11 xl:w-16"
-            />
-          </div>
+          <Image
+            width="70"
+            height="48"
+            alt="extreme logo"
+            src="/navbar-logo.svg"
+            className="h-7 w-11 md:h-9 md:w-12 xl:h-11 xl:w-16 2xl:h-14 2xl:w-20"
+          />
         </Link>
         {/* Desktop Navigation */}
-        <div className="hidden items-center space-x-3 lg:flex lg:space-x-2 xl:space-x-6">
+        <div className="hidden items-center space-x-3 lg:flex lg:space-x-2 xl:space-x-6 2xl:space-x-4">
           {navbarConfig.main.map((item) => (
             <NavItem key={item.href} href={item.href} name={item.label} />
           ))}
         </div>
       </div>
       {/* Desktop Secondary Items */}
-      <div className="hidden items-center space-x-2 lg:flex xl:space-x-4">
+      <div className="hidden items-center space-x-2 lg:flex xl:space-x-2">
         {navbarConfig.secondary.map((item) => (
           <NavItem key={item.href} href={item.href} name={item.label} />
         ))}
