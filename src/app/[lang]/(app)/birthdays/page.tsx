@@ -7,12 +7,12 @@ import { TestimonialSection } from "@/components/custom-ui/testimonial";
 import Header from "@/components/custom-ui/header";
 import {
   BirthdaysBannerBlobs,
+  BirthdaysPackagesBlobs,
   BirthdaysTestemonialBlobs,
 } from "@/components/custom-ui/blobs/birthdays";
 import { masonryImages, infoSectionData } from "@/content/birthdays";
 import { generatePageTitle } from "@/utils/generate-page-title";
 import NotesSection from "@/components/custom-ui/notes";
-import BirthdaysPackagesBlobs from "@/components/custom-ui/blobs/birthdays/birthdays-packages-blobs";
 
 export async function generateMetadata() {
   return {
