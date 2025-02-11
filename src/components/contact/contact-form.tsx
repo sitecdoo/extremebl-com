@@ -30,6 +30,7 @@ const ContactForm = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
+      phone: "",
       email: "",
       message: "",
     },
@@ -105,6 +106,28 @@ const ContactForm = () => {
                 </FormControl>
 
                 {errors.email ? <FormMessage /> : <FormDescription />}
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="phone"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Input
+                    type="number"
+                    className="[appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                    disabled={isSubmitting}
+                    variant="form"
+                    inputSize="lg"
+                    error={errors.phone}
+                    placeholder="Broj telefona*"
+                    {...field}
+                  />
+                </FormControl>
+
+                {errors.phone ? <FormMessage /> : <FormDescription />}
               </FormItem>
             )}
           />

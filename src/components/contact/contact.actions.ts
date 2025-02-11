@@ -19,7 +19,7 @@ export const sendEmailAction = async (
     return { success: false, error: result.error.format() };
   }
 
-  const { name, email, message } = result.data;
+  const { name, email, message, phone } = result.data;
 
   if (!hmacKey) {
     return { success: false };
@@ -35,7 +35,7 @@ export const sendEmailAction = async (
     from: "Acme <onboarding@resend.dev>",
     to: "andrejjurisic99@gmail.com",
     subject: "ExtremeBL - Contact form",
-    react: EmailTemplate({ name, email, message }),
+    react: EmailTemplate({ name, email, message, phone }),
   });
 
   if (emailData.error) {
