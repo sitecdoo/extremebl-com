@@ -13,7 +13,7 @@ const PackagesSection = () => {
       <Typography tag="h2" variant="h2" fontWeight="bold">
         Paketi
       </Typography>
-      <div className="flex w-full justify-center rounded-20 px-10 md:bg-[#F7F7F7]">
+      <div className="flex w-full justify-center">
         <div className="grid grid-cols-1 justify-items-center gap-5 md:grid-cols-2 lg:gap-8 xl:grid-cols-3">
           {data.map((item, index) => (
             <PackageCard
@@ -21,6 +21,7 @@ const PackagesSection = () => {
               name={item.name}
               price={item.price}
               offers={item.offers}
+              className={`${index === 2 && "md:col-span-2 md:justify-self-center xl:col-span-1"}`}
             />
           ))}
         </div>
