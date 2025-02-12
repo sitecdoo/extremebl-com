@@ -8,7 +8,10 @@ type PriceListProps = {
 
 const PriceList = ({ pricingData, children }: PriceListProps) => {
   return (
-    <div className="flex w-full flex-col items-center justify-center gap-4 md:gap-12 md:px-8 lg:px-12 xl:px-20 2xl:px-36">
+    <div
+      className="flex w-full scroll-mt-20 flex-col items-center justify-center gap-4 md:gap-12 md:px-8 lg:px-12 xl:px-20 2xl:px-36"
+      id="pricing"
+    >
       <Typography variant="h2" tag="h2" fontWeight="bold" className="w-full">
         Cjenovnik
       </Typography>

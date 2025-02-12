@@ -42,8 +42,10 @@ const TeambuildingPage = () => {
       <PackagesSection />
       <Masonry images={masonryImages} />
       <TestimonialSection
-        description='"Najviše mi se svidjelo kako su aktivnosti bile prilagođene našim sposobnostima, omogućujući svakom članu tima da se osjeća uključenim
-         i podržanim. Ovo iskustvo je definitivno poboljšalo našu timsku dinamiku i preporučujemo ga svakome ko želi ojačati svoj tim kroz zabavu i avanturu!"'
+        description="Najviše mi se svidjelo kako su aktivnosti bile prilagođene našim sposobnostima, omogućujući svakom članu tima da se osjeća uključenim
+         i podržanim. Ovo iskustvo je definitivno poboljšalo našu timsku dinamiku i preporučujemo ga svakome ko želi ojačati svoj tim kroz zabavu i avanturu!"
+        name="Mirjana Simić"
+        image="/testemonial/mirjana-simic.png"
       >
         <TeambuildingTestimonialBlobs />
       </TestimonialSection>
