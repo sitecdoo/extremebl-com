@@ -8,7 +8,7 @@ type LanguageBarProps = {
 
 const LanguageBar = ({ languages, currentLanguage }: LanguageBarProps) => {
   return (
-    <div className="mr-2 space-x-2 p-0">
+    <div className="rounded-full hover:lg:bg-neutrals-75 xl:px-1">
       <LanguageSelector
         languages={languages}
         currentLanguage={currentLanguage}

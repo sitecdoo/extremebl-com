@@ -19,6 +19,8 @@ import {
   pricingData,
 } from "@/content/children";
 import { generatePageTitle } from "@/utils/generate-page-title";
+import Link from "next/link";
+import ScrollToButton from "@/components/custom-ui/scroll-to-button";
 
 export async function generateMetadata() {
   return {
@@ -44,9 +46,11 @@ const Children = () => {
             xPosition={info.xPosition}
             yPosition={info.yPosition}
           >
-            <Button variant="yellow" className="w-fit">
-              <Typography fontWeight="bold">Upišite dijete</Typography>
-            </Button>
+            <ScrollToButton
+              elementId="contact"
+              text="Upišite dijete"
+              variant="yellow"
+            />
           </InfoSection>
         ))}
       </div>
@@ -69,11 +73,15 @@ const Children = () => {
       <ImageCarousel images={carouselImages}>
         <ChildrenCarouselBlobs />
       </ImageCarousel>
-      <Header text="Zainteresovani ste za penjanje za vaše mališane? Kontaktirajte nas na +387 65 303 034 (poziv, SMS, Viber, WhatsApp) da dogovorimo probni trening.">
-        <Button variant="blue" className="w-fit">
-          <Typography fontWeight="bold">Kontaktirajte nas</Typography>
-        </Button>
-      </Header>
+      <div id="contact" className="scroll-mt-48">
+        <Header text="Zainteresovani ste za penjanje za vaše mališane? Kontaktirajte nas na +387 65 303 034 (poziv, SMS, Viber, WhatsApp) da dogovorimo probni trening.">
+          <Link href="/contact">
+            <Button variant="blue" className="w-fit">
+              <Typography fontWeight="bold">Kontaktirajte nas</Typography>
+            </Button>
+          </Link>
+        </Header>
+      </div>
     </div>
   );
 };

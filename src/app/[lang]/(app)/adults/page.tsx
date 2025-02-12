@@ -14,10 +14,12 @@ import ImageCarousel from "@/components/custom-ui/image-carousel";
 import InfoSection from "@/components/custom-ui/info-section";
 import { ListItem, PriceList } from "@/components/custom-ui/pricing";
 import RectangleWrapper from "@/components/custom-ui/rectangle-wrapper";
+import ScrollToButton from "@/components/custom-ui/scroll-to-button";
 import Typography from "@/components/custom-ui/typography";
 import { Button } from "@/components/ui/button";
 import { carouselImages, pricingData } from "@/content/adults";
 import { generatePageTitle } from "@/utils/generate-page-title";
+import Link from "next/link";
 
 export async function generateMetadata() {
   return {
@@ -35,9 +37,7 @@ const AdultsPage = () => {
           title="Penjanje za odrasle"
           position="object-top"
         />
-        <Header
-          text="Penjanje za odrasle pruža uzbudljivu priliku za sve ljubitelje avanture, bez obzira na prethodno iskustvo. Bilo da želiš poboljšati svoju fizičku kondiciju, savladati nove izazove ili jednostavno uživati u kampovanju i boravku u prirodi."
-        />
+        <Header text="Penjanje za odrasle pruža uzbudljivu priliku za sve ljubitelje avanture, bez obzira na prethodno iskustvo. Bilo da želiš poboljšati svoju fizičku kondiciju, savladati nove izazove ili jednostavno uživati u kampovanju i boravku u prirodi." />
       </div>
       <div className="flex w-full flex-col gap-y-24 lg:gap-y-32">
         {/* 1 */}
@@ -46,9 +46,11 @@ const AdultsPage = () => {
           title="Trening"
           description="Možeš trenirati samostalno u slobodnim terminima ili se pridružiti grupnim treninzima pod vodstvom trenera. Tokom slobodnih termina, dežurna osoba ti može pomoći u organizaciji treninga i pružiti savjete. Da bi se priključio/la dovoljno je da dođeš na jedan od treninga za odrasle."
         >
-          <Button variant="black" className="w-fit">
-            <Typography fontWeight="bold">Pogledaj raspord treninga</Typography>
-          </Button>
+          <ScrollToButton
+            elementId="pricing"
+            text="Pogledaj raspored treninga"
+            variant="black"
+          />
         </InfoSection>
         {/* 2 */}
         <InfoSection
@@ -59,8 +61,14 @@ const AdultsPage = () => {
         >
           <div className="space-y-4">
             <Typography fontWeight="bold">Naredni termini</Typography>
-            <RectangleWrapper text="29.03. - 30.03" />
-            <RectangleWrapper text="26.04. - 27.04" />
+            <RectangleWrapper
+              text="29.03. - 30.03"
+              href="https://forms.gle/jPSnH41XGEf4c25S9"
+            />
+            <RectangleWrapper
+              text="26.04. - 27.04"
+              href="https://forms.gle/wPscJjUauwjdAWM98"
+            />
           </div>
         </InfoSection>
         {/* 3 */}
@@ -72,7 +80,10 @@ const AdultsPage = () => {
         >
           <div className="space-y-4">
             <Typography fontWeight="bold">Naredni termini</Typography>
-            <RectangleWrapper text="01.04. - 30.04" />
+            <RectangleWrapper
+              text="01.04. - 30.04"
+              href="https://forms.gle/hiHBh7zCgZpjs4Eu7"
+            />
           </div>
           {/* <div className="space-y-6">
             <div className="space-y-2">
@@ -119,9 +130,11 @@ const AdultsPage = () => {
         text="Spremni za novu avanturu? Pridružite se našoj penjačkoj ekipi i
           započnite svoje penjačko putovanje danas"
       >
-        <Button variant="blue" className="w-fit">
-          <Typography fontWeight="bold">Kontaktiraj nas</Typography>
-        </Button>
+        <Link href="/contact">
+          <Button variant="blue" className="w-fit">
+            <Typography fontWeight="bold">Kontaktiraj nas</Typography>
+          </Button>
+        </Link>
       </Header>
     </div>
   );
