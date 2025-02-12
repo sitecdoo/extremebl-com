@@ -20,12 +20,9 @@ import { sendEmailAction } from "./contact.actions";
 import { toast } from "@/utils/toast";
 import { useChallenge } from "@/lib/hooks/use-challenge";
 import AltchaWidget from "../custom-ui/altcha-widget";
-import { useSearchParams } from "next/navigation";
 
-const ContactForm = () => {
+const ContactForm = ({ packageNumber }: { packageNumber?: string }) => {
   const { isVerifying, getSolution } = useChallenge();
-
-  const packageNumber = useSearchParams().get("paket");
 
   const formSchema = getContactSchema();
 

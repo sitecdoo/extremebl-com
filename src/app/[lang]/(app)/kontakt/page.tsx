@@ -1,3 +1,4 @@
+import ContactForm from "@/components/contact/contact-form";
 import { HeroBanner } from "@/components/custom-ui/banners";
 import ContactBannerBlobs from "@/components/custom-ui/blobs/contact";
 import Typography from "@/components/custom-ui/typography";
@@ -11,7 +12,13 @@ export async function generateMetadata() {
   };
 }
 
-const ContactPage = () => {
+type ContacPageProps = {
+  searchParams: {
+    paket: string;
+  };
+};
+
+const ContactPage = ({ searchParams }: ContacPageProps) => {
   return (
     <div className="relative flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
       <ContactBannerBlobs />
@@ -91,6 +98,7 @@ const ContactPage = () => {
               referrerPolicy="no-referrer-when-downgrade"
               className="h-full w-full"
             />
+            <ContactForm packageNumber={searchParams.paket} />
           </div>
         </div>
       </div>
