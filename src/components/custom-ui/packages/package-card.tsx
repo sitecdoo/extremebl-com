@@ -39,7 +39,7 @@ const PackageCard = ({ name, price, offers, className }: PackageCardProps) => {
           ))}
         </div>
       </div>
-      <Link href={`contact?paket=${name.slice(-1)}`}>
+      <Link href={`kontakt?paket=${name.slice(-1)}`}>
         <Button className="w-fit self-center" variant="blue">
           <Typography fontWeight="bold">Rezervišite termin</Typography>
         </Button>

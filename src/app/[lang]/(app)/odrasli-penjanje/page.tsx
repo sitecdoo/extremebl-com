@@ -130,7 +130,7 @@ const AdultsPage = () => {
         text="Spremni za novu avanturu? Pridružite se našoj penjačkoj ekipi i
           započnite svoje penjačko putovanje danas"
       >
-        <Link href="/contact">
+        <Link href="/kontakt">
           <Button variant="blue" className="w-fit">
             <Typography fontWeight="bold">Kontaktiraj nas</Typography>
           </Button>

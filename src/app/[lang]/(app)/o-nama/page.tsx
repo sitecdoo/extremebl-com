@@ -50,7 +50,7 @@ const AboutPage = () => {
         text="Posvećeni smo promociji sportskog penjanja kroz edukaciju, sigurnost i
           avanturu za sve ljubitelje ovog sporta."
       >
-        <Link href="/contact">
+        <Link href="/kontakt">
           <Button variant="blue" className="w-fit">
             <Typography fontWeight="bold">Kontaktirajte nas</Typography>
           </Button>
