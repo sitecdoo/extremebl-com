@@ -5,6 +5,7 @@ import Typography from "@/components/custom-ui/typography";
 import { generatePageTitle } from "@/utils/generate-page-title";
 import { FacebookIcon, InstagramIcon } from "lucide-react";
 import Link from "next/link";
+import { Suspense } from "react";
 
 export async function generateMetadata() {
   return {
@@ -94,7 +95,9 @@ const ContactPage = () => {
             />
           </div>
         </div>
-        <ContactForm />
+        <Suspense>
+          <ContactForm />
+        </Suspense>
       </div>
     </div>
   );
