@@ -1,12 +1,12 @@
 export const navbarConfig = {
   main: [
     { href: "/", label: "Početna" },
-    { href: "/about", label: "O nama" },
-    { href: "/children", label: "Djeca" },
-    { href: "/adults", label: "Odrasli" },
-    { href: "/birthdays", label: "Rođendani" },
+    { href: "/o-nama", label: "O nama" },
+    { href: "/djeca-penjanje", label: "Djeca" },
+    { href: "/odrasli-penjanje", label: "Odrasli" },
+    { href: "/rodjendani", label: "Rođendani" },
     { href: "/teambuilding", label: "Teambuilding" },
-    { href: "/contact", label: "Kontakt" },
+    { href: "/kontakt", label: "Kontakt" },
   ],
   secondary: [
     { href: "/blog", label: "Blog" },
