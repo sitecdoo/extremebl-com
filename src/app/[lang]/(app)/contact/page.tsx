@@ -4,6 +4,7 @@ import ContactBannerBlobs from "@/components/custom-ui/blobs/contact";
 import Typography from "@/components/custom-ui/typography";
 import { generatePageTitle } from "@/utils/generate-page-title";
 import { FacebookIcon, InstagramIcon } from "lucide-react";
+import Link from "next/link";
 
 export async function generateMetadata() {
   return {
@@ -61,8 +62,20 @@ const ContactPage = () => {
               </Typography>
             </div>
             <div className="flex items-center gap-5">
-              <FacebookIcon className="size-9" />
-              <InstagramIcon className="size-9" />
+              <Link
+                href="https://www.facebook.com/extremebl/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FacebookIcon className="size-9" />
+              </Link>
+              <Link
+                href="https://www.instagram.com/extreme_bl/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <InstagramIcon className="size-9" />
+              </Link>
             </div>
           </div>
         </div>
