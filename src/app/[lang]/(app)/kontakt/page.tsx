@@ -1,11 +1,10 @@
-import ContactForm from "@/components/contact/contact-form";
+import ContactFormWrapper from "@/components/contact/contact-form-wrapper";
 import { HeroBanner } from "@/components/custom-ui/banners";
 import ContactBannerBlobs from "@/components/custom-ui/blobs/contact";
 import Typography from "@/components/custom-ui/typography";
 import { generatePageTitle } from "@/utils/generate-page-title";
 import { FacebookIcon, InstagramIcon } from "lucide-react";
 import Link from "next/link";
-import { Suspense } from "react";
 
 export async function generateMetadata() {
   return {
@@ -95,9 +94,7 @@ const ContactPage = () => {
             />
           </div>
         </div>
-        <Suspense>
-          <ContactForm />
-        </Suspense>
+        <ContactFormWrapper />
       </div>
     </div>
   );
