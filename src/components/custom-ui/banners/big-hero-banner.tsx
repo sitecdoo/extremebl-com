@@ -41,12 +41,12 @@ const BigHeroBanner = () => {
           Kreni ka novim visinama, Pridruži se našem klubu!
         </Typography>
         <div className="mt-6 flex max-w-fit flex-col-reverse gap-4 sm:flex-row lg:mt-7 lg:gap-9">
-          <Link href="/children">
+          <Link href="/djeca-penjanje">
             <Button variant="yellow">
               <Typography fontWeight="bold">Penjanje za djecu</Typography>
             </Button>
           </Link>
-          <Link href="/adults">
+          <Link href="/odrasli-penjanje">
             <Button>
               <Typography fontWeight="bold">Penjanje za odrasle</Typography>
             </Button>
