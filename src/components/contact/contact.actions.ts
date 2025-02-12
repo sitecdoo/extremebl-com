@@ -35,7 +35,7 @@ export const sendEmailAction = async (
     from: "ExtremeBL <onboarding@resend.dev>",
     to: "andrejjurisic99@gmail.com",
     subject: packageNumber
-      ? `ROĐENDAN | PAKET ${packageNumber}`
+      ? `ROĐENDAN | Paket ${packageNumber}`
       : "ExtremeBL - Contact form",
     react: EmailTemplate({ name, email, message, phone }),
   });
