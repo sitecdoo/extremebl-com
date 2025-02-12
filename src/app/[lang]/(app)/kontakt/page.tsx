@@ -1,4 +1,3 @@
-import ContactFormWrapper from "@/components/contact/contact-form-wrapper";
 import { HeroBanner } from "@/components/custom-ui/banners";
 import ContactBannerBlobs from "@/components/custom-ui/blobs/contact";
 import Typography from "@/components/custom-ui/typography";
@@ -94,7 +93,6 @@ const ContactPage = () => {
             />
           </div>
         </div>
-        <ContactFormWrapper />
       </div>
     </div>
   );
