@@ -39,3 +39,24 @@ export const benefitsForAdults = [
     image: "/icons/cognitive-icon.svg",
   },
 ];
+
+export const benefitsForTeambuilding = [
+  {
+    title: "Jačanje timske saradnje",
+    description:
+      "Penjanje zahtijeva međusobnu podršku i povjerenje među članovima tima. Kroz osiguravanje i zajedničko savladavanje izazova, tim se povezuje i razvija efikasniju komunikaciju.",
+    image: "/icons/cooperation.svg",
+  },
+  {
+    title: "Prevazilaženje granica",
+    description:
+      "Suočavanje s visinama i fizičkim izazovima pomaže učesnicima da izađu iz zone komfora. Ovaj proces gradi mentalnu otpornost i jača samopouzdanje, što se prenosi i na poslovne izazove.",
+    image: "/icons/over-limit.svg",
+  },
+  {
+    title: "Zajednički uspjesi",
+    description:
+      "Penjanje donosi uzbuđenje i osjećaj postignuća, a dijeljenje tih trenutaka jača odnose među kolegama. Opuštena atmosfera i fizička aktivnost podstiču dobro raspoloženje i motivaciju u timu.",
+    image: "/icons/succeed-together.svg",
+  },
+];

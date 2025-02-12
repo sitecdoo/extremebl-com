@@ -1,14 +1,14 @@
 export const footerConfig = {
   company: [
-    { href: "/about", label: "O nama" },
-    { href: "/contact", label: "Kontakt" },
+    { href: "/o-nama", label: "O nama" },
+    { href: "/kontakt", label: "Kontakt" },
     { href: "/blog", label: "Blog" },
     { href: "/faq", label: "FAQ" },
   ],
   activity: [
-    { href: "/adults", label: "Odrasli" },
-    { href: "/children", label: "Djeca" },
-    { href: "/birthdays", label: "Rođendani" },
+    { href: "/odrasli-penjanje", label: "Odrasli" },
+    { href: "/djeca-penjanje", label: "Djeca" },
+    { href: "/rodjendani", label: "Rođendani" },
     { href: "/teambuilding", label: "Teambuilding" },
   ],
   contact: {

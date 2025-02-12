@@ -1,6 +1,5 @@
 import { HeroBanner } from "@/components/custom-ui/banners";
 import Masonry from "@/components/custom-ui/masonry";
-import { PackagesSection } from "@/components/custom-ui/packages";
 import React from "react";
 import { TestimonialSection } from "@/components/custom-ui/testimonial";
 import InfoSection from "@/components/custom-ui/info-section";
@@ -8,9 +7,15 @@ import { infoSectionData, masonryImages } from "@/content/teambuilding";
 import Header from "@/components/custom-ui/header";
 import {
   TeambuildingBannerBlobs,
+  TeambuildingBenefitsBlobs,
   TeambuildingTestimonialBlobs,
 } from "@/components/custom-ui/blobs/teambuilding";
 import { generatePageTitle } from "@/utils/generate-page-title";
+import {
+  BenefitsCard,
+  benefitsForTeambuilding,
+  BenefitsSection,
+} from "@/components/custom-ui/benefits";
 
 export async function generateMetadata() {
   return {
@@ -39,7 +44,17 @@ const TeambuildingPage = () => {
           />
         ))}
       </div>
-      <PackagesSection />
+      <BenefitsSection title="Zašto je penjanje savršen Teambuilding?">
+        {benefitsForTeambuilding.map((data, index) => (
+          <BenefitsCard
+            key={index}
+            title={data.title}
+            description={data.description}
+            image={data.image}
+          />
+        ))}
+        <TeambuildingBenefitsBlobs />
+      </BenefitsSection>
       <Masonry images={masonryImages} />
       <TestimonialSection
         description="Najviše mi se svidjelo kako su aktivnosti bile prilagođene našim sposobnostima, omogućujući svakom članu tima da se osjeća uključenim

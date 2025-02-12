@@ -36,7 +36,7 @@ export default async function HomePage() {
           description="Naše penjanje za odrasle pruža uzbudljivu priliku za sve ljubitelje avanture, bez obzira na prethodno iskustvo. Bilo da želiš poboljšati svoju fizičku kondiciju, savladati nove izazove ili jednostavno uživati u društvu entuzijasta kao što si ti, naši instruktori su tu da ti pruže podršku na svakom koraku."
           yPosition={60}
         >
-          <Link href="/adults">
+          <Link href="/odrasli-penjanje">
             <Button variant="black" className="w-fit">
               <Typography fontWeight="bold">Saznajte više</Typography>
             </Button>
@@ -48,7 +48,7 @@ export default async function HomePage() {
           description="Penjanje za djecu  je savršen način da mališani razviju svoje motoričke veštine, samopouzdanje i timski duh. Naši programi su prilagođeni različitim uzrastima i nivoima vještina, uz stalni nadzor i podršku iskusnih instruktora. Kroz igru i zabavu, djeca će naučiti osnovne tehnike penjanja, a možda čak i otkriti svoju ljubav prema ovom sportu."
           yPosition={30}
         >
-          <Link href="/children">
+          <Link href="/djeca-penjanje">
             <Button variant="yellow" className="w-fit">
               <Typography fontWeight="bold">Saznajte više</Typography>
             </Button>
@@ -62,7 +62,7 @@ export default async function HomePage() {
         title="Proslava rođendana"
         description="Proslavite rođendan vašeg djeteta na jedinstven i uzbudljiv način! Naša penjačka sala nudi savršeno okruženje za nezaboravnu rođendansku proslavu uz profesionalne instruktore, sigurnu opremu i zabavu za sve uzraste."
       >
-        <Link href="/birthdays">
+        <Link href="/rodjendani">
           <Button variant="blue" className="w-fit">
             <Typography fontWeight="bold">Saznajte više</Typography>
           </Button>

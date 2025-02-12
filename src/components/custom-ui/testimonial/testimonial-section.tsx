@@ -21,7 +21,7 @@ const TestimonialSection = ({
       <Testimonial image={image} name={name} description={description}>
         {children}
       </Testimonial>
-      <Link href="/contact">
+      <Link href="/kontakt">
         <Button variant="blue" className="w-fit">
           <Typography fontWeight="bold">Kontaktirajte nas</Typography>
         </Button>

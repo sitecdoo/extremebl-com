@@ -7,10 +7,12 @@ import { TestimonialSection } from "@/components/custom-ui/testimonial";
 import Header from "@/components/custom-ui/header";
 import {
   BirthdaysBannerBlobs,
+  BirthdaysPackagesBlobs,
   BirthdaysTestemonialBlobs,
 } from "@/components/custom-ui/blobs/birthdays";
 import { masonryImages, infoSectionData } from "@/content/birthdays";
 import { generatePageTitle } from "@/utils/generate-page-title";
+import NotesSection from "@/components/custom-ui/notes";
 
 export async function generateMetadata() {
   return {
@@ -38,7 +40,11 @@ const Birthdays = () => {
           />
         ))}
       </div>
-      <PackagesSection />
+      <div className="relative space-y-9 lg:space-y-16">
+        <PackagesSection />
+        <NotesSection />
+        <BirthdaysPackagesBlobs />
+      </div>
       <Masonry images={masonryImages} />
       <TestimonialSection
         description="“Ja sam oduševljena. Instruktori su za čistu desetku, nevjerovatni motivatori... Proslavili smo 14 rođendan i slavljenica kaže da joj je to bio najbolji rođendan!”"
