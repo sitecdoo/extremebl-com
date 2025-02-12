@@ -2,6 +2,7 @@ import { Check } from "lucide-react";
 import Typography from "../typography";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 type PackageCardProps = {
   name: string;
@@ -38,9 +39,11 @@ const PackageCard = ({ name, price, offers, className }: PackageCardProps) => {
           ))}
         </div>
       </div>
-      <Button className="w-fit self-center" variant="blue">
-        <Typography fontWeight="bold">Rezervišite termin</Typography>
-      </Button>
+      <Link href={`contact?paket=${name.slice(-1)}`}>
+        <Button className="w-fit self-center" variant="blue">
+          <Typography fontWeight="bold">Rezervišite termin</Typography>
+        </Button>
+      </Link>
     </div>
   );
 };

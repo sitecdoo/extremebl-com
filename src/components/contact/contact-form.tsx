@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import { useEffect } from "react";
 import { ContactPayload, getContactSchema } from "./contact.schemas";
 import Typography from "../custom-ui/typography";
 import { useForm } from "react-hook-form";
@@ -20,9 +20,12 @@ import { sendEmailAction } from "./contact.actions";
 import { toast } from "@/utils/toast";
 import { useChallenge } from "@/lib/hooks/use-challenge";
 import AltchaWidget from "../custom-ui/altcha-widget";
+import { useSearchParams } from "next/navigation";
 
 const ContactForm = () => {
   const { isVerifying, getSolution } = useChallenge();
+
+  const packageNumber = useSearchParams().get("paket");
 
   const formSchema = getContactSchema();
 
@@ -31,10 +34,20 @@ const ContactForm = () => {
     defaultValues: {
       name: "",
       phone: "",
+      packageNumber: packageNumber ?? undefined,
       email: "",
       message: "",
     },
   });
+
+  useEffect(() => {
+    if (packageNumber) {
+      const formElement = document.getElementById("form");
+      if (formElement) {
+        formElement.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [packageNumber]);
 
   const errors = form.formState.errors;
 
@@ -60,7 +73,10 @@ const ContactForm = () => {
   const { isSubmitting } = form.formState;
 
   return (
-    <div className="flex w-full flex-col items-center gap-6 lg:flex-row lg:items-start lg:gap-12 lg:px-12 xl:gap-20 xl:px-20 2xl:px-36">
+    <div
+      className="flex w-full scroll-mt-20 flex-col items-center gap-6 lg:scroll-mt-40 lg:flex-row lg:items-start lg:gap-12 lg:px-12 xl:gap-20 xl:px-20 2xl:px-36"
+      id="form"
+    >
       <Typography variant="h2" tag="h2" fontWeight="bold" className="w-fit">
         Napiši nam poruku
       </Typography>
