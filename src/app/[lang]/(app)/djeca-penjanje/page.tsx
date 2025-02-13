@@ -75,7 +75,9 @@ const Children = () => {
       </ImageCarousel>
       <div id="contact" className="scroll-mt-48">
         <Header text="Zainteresovani ste za penjanje za vaše mališane? Kontaktirajte nas na +387 65 303 034 (poziv, SMS, Viber, WhatsApp) da dogovorimo probni trening.">
-          <Link href="/kontakt">
+          <Link
+            href={`kontakt?subject=${encodeURIComponent("djeca-penjanje".replace(/ /g, "-"))}`}
+          >
             <Button variant="blue" className="w-fit">
               <Typography fontWeight="bold">Kontaktirajte nas</Typography>
             </Button>
