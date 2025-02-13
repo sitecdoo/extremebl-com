@@ -125,11 +125,6 @@ const ContactForm = () => {
               </FormItem>
             )}
           />
-          <input
-            type="hidden"
-            name="packageNumber"
-            value={packageNumber || ""}
-          />
           <FormField
             control={form.control}
             name="phone"
