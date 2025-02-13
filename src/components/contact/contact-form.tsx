@@ -20,9 +20,12 @@ import { sendEmailAction } from "./contact.actions";
 import { toast } from "@/utils/toast";
 import { useChallenge } from "@/lib/hooks/use-challenge";
 import AltchaWidget from "../custom-ui/altcha-widget";
+import { useSearchParams } from "next/navigation";
 
-const ContactForm = ({ packageNumber }: { packageNumber?: string }) => {
+const ContactForm = () => {
   const { isVerifying, getSolution } = useChallenge();
+
+  const packageNumber = useSearchParams().get("paket");
 
   const formSchema = getContactSchema();
 
@@ -121,6 +124,11 @@ const ContactForm = ({ packageNumber }: { packageNumber?: string }) => {
                 {errors.email ? <FormMessage /> : <FormDescription />}
               </FormItem>
             )}
+          />
+          <input
+            type="hidden"
+            name="packageNumber"
+            value={packageNumber || ""}
           />
           <FormField
             control={form.control}

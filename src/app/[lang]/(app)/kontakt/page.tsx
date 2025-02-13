@@ -5,6 +5,7 @@ import Typography from "@/components/custom-ui/typography";
 import { generatePageTitle } from "@/utils/generate-page-title";
 import { FacebookIcon, InstagramIcon } from "lucide-react";
 import Link from "next/link";
+import { Suspense } from "react";
 
 export async function generateMetadata() {
   return {
@@ -12,13 +13,7 @@ export async function generateMetadata() {
   };
 }
 
-type ContacPageProps = {
-  searchParams: {
-    paket: string;
-  };
-};
-
-const ContactPage = ({ searchParams }: ContacPageProps) => {
+const ContactPage = () => {
   return (
     <div className="relative flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
       <ContactBannerBlobs />
@@ -98,9 +93,11 @@ const ContactPage = ({ searchParams }: ContacPageProps) => {
               referrerPolicy="no-referrer-when-downgrade"
               className="h-full w-full"
             />
-            <ContactForm packageNumber={searchParams.paket} />
           </div>
         </div>
+        <Suspense>
+          <ContactForm />
+        </Suspense>
       </div>
     </div>
   );
