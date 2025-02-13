@@ -130,7 +130,9 @@ const AdultsPage = () => {
         text="Spremni za novu avanturu? Pridružite se našoj penjačkoj ekipi i
           započnite svoje penjačko putovanje danas"
       >
-        <Link href="/kontakt">
+        <Link
+          href={`kontakt?subject=${encodeURIComponent("odrasli-penjanje".replace(/ /g, "-"))}`}
+        >
           <Button variant="blue" className="w-fit">
             <Typography fontWeight="bold">Kontaktiraj nas</Typography>
           </Button>

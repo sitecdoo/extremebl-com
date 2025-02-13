@@ -19,7 +19,7 @@ export const sendEmailAction = async (
     return { success: false, error: result.error.format() };
   }
 
-  const { name, email, message, phone, packageNumber } = result.data;
+  const { name, email, message, phone, subject } = result.data;
 
   if (!hmacKey) {
     return { success: false };
@@ -31,12 +31,13 @@ export const sendEmailAction = async (
     return { success: false };
   }
 
+  const subjectPrefix = subject?.includes("paket") ? `Rođendan | ` : "";
+  const emailSubject = `${subjectPrefix}${subject ? subject.replace(/-/g, " ").replace(/^./, (char) => char.toUpperCase()) : "ExtremeBL - Contact form"}`;
+
   const emailData = await resend.emails.send({
     from: "ExtremeBL <onboarding@resend.dev>",
     to: "andrejjurisic99@gmail.com",
-    subject: packageNumber
-      ? `ROĐENDAN | Paket ${packageNumber}`
-      : "ExtremeBL - Contact form",
+    subject: emailSubject,
     react: EmailTemplate({ name, email, message, phone }),
   });
 

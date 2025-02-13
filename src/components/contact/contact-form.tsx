@@ -25,7 +25,7 @@ import { useSearchParams } from "next/navigation";
 const ContactForm = () => {
   const { isVerifying, getSolution } = useChallenge();
 
-  const packageNumber = useSearchParams().get("paket");
+  const subject = useSearchParams().get("subject");
 
   const formSchema = getContactSchema();
 
@@ -34,20 +34,20 @@ const ContactForm = () => {
     defaultValues: {
       name: "",
       phone: "",
-      packageNumber: packageNumber ?? undefined,
+      subject: subject ?? undefined,
       email: "",
       message: "",
     },
   });
 
   useEffect(() => {
-    if (packageNumber) {
+    if (subject) {
       const formElement = document.getElementById("form");
       if (formElement) {
         formElement.scrollIntoView({ behavior: "smooth" });
       }
     }
-  }, [packageNumber]);
+  }, [subject]);
 
   const errors = form.formState.errors;
 
