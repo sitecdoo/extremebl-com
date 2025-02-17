@@ -1,17 +1,3 @@
-export const infoSectionData = [
-  {
-    image: "/about/who-are-we.jpg",
-    title: "Istorijat",
-    description: "Tekst je u izradi, posjeti link kasnije.",
-  },
-  {
-    image: "/about/our-mission.jpg",
-    title: "Naša misija",
-    description:
-      "Naša misija je popularizacija i unapređenje sportskog penjanja na prirodnim i vještačkim stijenama kroz organizaciju treninga, kurseva, takmičenja, festivala i penjačkih putovanja, te kroz izgradnju i održavanje penjačke infrastukture.",
-  },
-];
-
 export const carouselImages = [
   {
     src: "/about/carousel-1.jpg",
