@@ -14,9 +14,9 @@ import { Dictionary } from "@/utils/dictionary";
 const Questions = ({ dict }: { dict: Dictionary["faq"] }) => {
   const [open, setIsOpen] = useState("");
 
-  const questions = dict.questions.map((question) => ({
-    question: question.question,
-    answer: question.answer,
+  const questions = Object.entries(dict.questions).map(([key]) => ({
+    question: dict.questions[key as keyof typeof dict.questions],
+    answer: dict.answers[key as keyof typeof dict.answers],
   }));
 
   return (

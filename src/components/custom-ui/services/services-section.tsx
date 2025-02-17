@@ -5,33 +5,33 @@ import ServiceCard from "./serviceCard";
 const ServicesSection = ({ dict }: { dict: Dictionary["services"] }) => {
   const servicesData = [
     {
-      title: dict.about[0].title,
-      description: dict.about[0].description,
+      title: dict.coursesTitle,
+      description: dict.coursesDescription,
       image: "/icons/karabiner-icon.svg",
     },
     {
-      title: dict.about[1].title,
-      description: dict.about[1].description,
+      title: dict.equipmentTitle,
+      description: dict.equipmentDescription,
       image: "/icons/helmet-icon.svg",
     },
     {
-      title: dict.about[2].title,
-      description: dict.about[2].description,
+      title: dict.birthdayTitle,
+      description: dict.birthdayDescription,
       image: "/icons/birthday-icon.svg",
     },
     {
-      title: dict.about[3].title,
-      description: dict.about[3].description,
+      title: dict.teambuildingTitle,
+      description: dict.teambuildingDescription,
       image: "/icons/teambuilding-icon.svg",
     },
     {
-      title: dict.about[4].title,
-      description: dict.about[4].description,
+      title: dict.outdoorTitle,
+      description: dict.outdoorDescription,
       image: "/icons/trip-icon.svg",
     },
     {
-      title: dict.about[5].title,
-      description: dict.about[5].description,
+      title: dict.trainingTitle,
+      description: dict.trainingDescription,
       image: "/icons/course-icon.svg",
     },
   ];

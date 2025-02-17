@@ -76,7 +76,7 @@ const FilterWrapper = ({ filterOptions, dict }: FilterWrapperProps) => {
         clearAll={clearAll}
         filterOptions={filterOptions}
         handleChange={handleChange}
-        buttonText={dict.delete}
+        dict={dict}
       >
         {trigger}
       </FilterSheet>
@@ -85,7 +85,7 @@ const FilterWrapper = ({ filterOptions, dict }: FilterWrapperProps) => {
         clearAll={clearAll}
         filterOptions={filterOptions}
         handleChange={handleChange}
-        text={dict.filter}
+        dict={dict}
       >
         {trigger}
       </FilterDropdown>

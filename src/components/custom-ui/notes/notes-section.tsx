@@ -5,21 +5,21 @@ import Notes from "./notes";
 const NotesSection = ({ dict }: { dict: Dictionary["notes"] }) => {
   const data = [
     {
-      statment: dict.info[0].statment,
-      text: dict.info[0].text,
+      statment: dict.traditional,
+      text: dict.traditionalText,
     },
     {
-      statment: dict.info[1].statment,
-      text: dict.info[1].text,
+      statment: dict.noCafe,
+      text: dict.noCafeText,
     },
     {
-      statment: dict.info[2].statment,
-      text: dict.info[2].text,
+      statment: dict.noFridge,
+      text: dict.noFridgeText,
     },
     {
-      intro: dict.info[3].intro,
-      statment: dict.info[3].statment,
-      text: dict.info[3].text,
+      intro: dict.noShoes,
+      statment: dict.cleanShoes,
+      text: dict.warnning,
     },
   ];
 

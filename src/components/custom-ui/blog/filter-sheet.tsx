@@ -15,13 +15,14 @@ import { cn } from "@/lib/utils";
 import Typography from "../typography";
 import { Button } from "@/components/ui/button";
 import { Category } from "@/payload-types";
+import { Dictionary } from "@/utils/dictionary";
 
 type FilterSheetProps = PropsWithChildren<{
   filters: number[];
   clearAll: () => void;
   filterOptions: Category[];
   handleChange: (itemId: number, e: Event) => void;
-  buttonText: string;
+  dict: Dictionary["blog"];
 }>;
 
 const FilterSheet = ({
@@ -30,7 +31,7 @@ const FilterSheet = ({
   clearAll,
   filterOptions,
   handleChange,
-  buttonText,
+  dict,
 }: FilterSheetProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -53,7 +54,7 @@ const FilterSheet = ({
                 onClick={clearAll}
               >
                 <Typography fontWeight="bold" className="text-base">
-                  {buttonText}
+                  {dict.delete}
                 </Typography>
                 <Trash2 className="size-5" />
               </Button>
@@ -68,7 +69,7 @@ const FilterSheet = ({
                 fontWeight="bold"
                 className="text-neutrals-700"
               >
-                Odaberi kategoriju
+                {dict.category}
               </Typography>
               <div className="flex flex-wrap gap-3">
                 {filterOptions.map((item) => (
@@ -98,7 +99,7 @@ const FilterSheet = ({
               onClick={() => setIsOpen(false)}
             >
               <Typography fontWeight="bold" className="text-base">
-                Pogledaj Blogpostove
+                {dict.button}
               </Typography>
             </Button>
           </nav>
