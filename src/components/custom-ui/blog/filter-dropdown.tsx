@@ -19,6 +19,7 @@ type FilterDropdownProps = PropsWithChildren<{
   handleChange: (itemId: number, e: Event) => void;
   clearAll: () => void;
   filters: number[];
+  text: string;
 }>;
 
 export function FilterDropdown({
@@ -26,6 +27,7 @@ export function FilterDropdown({
   handleChange,
   clearAll,
   filters,
+  text,
 }: FilterDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -43,7 +45,7 @@ export function FilterDropdown({
             size="small"
           >
             <Typography fontWeight="bold" className="uppercase">
-              Filteri
+              {text}
             </Typography>
             <Filter className="size-5 lg:size-5" />
           </Button>

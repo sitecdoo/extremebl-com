@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Facebook, Instagram } from "lucide-react";
 import Image from "next/image";
-import { navbarConfig } from "./navbar-config";
+import { getNavigationItems } from "./navbar-config";
 import { Separator } from "@/components/ui/separator";
 import MobileMenu from "./mobile-menu";
 import { ReactNode } from "react";
@@ -23,6 +23,8 @@ const NavLink = ({ href, children }: { href: string; children: ReactNode }) => (
 const Navbar = async () => {
   const currentLanguage = await getLanguage();
 
+  const navigation = await getNavigationItems();
+
   return (
     <nav className="flex items-center justify-between bg-neutrals-50 px-4 py-4 md:px-8 md:py-6 lg:px-6 xl:px-12 xl:py-8">
       {/* Logo section */}
@@ -38,14 +40,14 @@ const Navbar = async () => {
         </Link>
         {/* Desktop Navigation */}
         <div className="hidden items-center space-x-3 lg:flex lg:space-x-2 xl:space-x-6 2xl:space-x-4">
-          {navbarConfig.main.map((item) => (
+          {navigation.main.map((item) => (
             <NavItem key={item.href} href={item.href} name={item.label} />
           ))}
         </div>
       </div>
       {/* Desktop Secondary Items */}
       <div className="hidden items-center space-x-2 lg:flex xl:space-x-2">
-        {navbarConfig.secondary.map((item) => (
+        {navigation.secondary.map((item) => (
           <NavItem key={item.href} href={item.href} name={item.label} />
         ))}
         <NavLink href="https://www.facebook.com/extremebl/">
@@ -58,7 +60,11 @@ const Navbar = async () => {
         <LanguageBar languages={LANGUAGES} currentLanguage={currentLanguage} />
       </div>
       {/* Mobile Menu */}
-      <MobileMenu languages={LANGUAGES} currentLanguage={currentLanguage} />
+      <MobileMenu
+        languages={LANGUAGES}
+        currentLanguage={currentLanguage}
+        navigation={navigation}
+      />
     </nav>
   );
 };

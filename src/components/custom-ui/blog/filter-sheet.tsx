@@ -21,6 +21,7 @@ type FilterSheetProps = PropsWithChildren<{
   clearAll: () => void;
   filterOptions: Category[];
   handleChange: (itemId: number, e: Event) => void;
+  buttonText: string;
 }>;
 
 const FilterSheet = ({
@@ -29,6 +30,7 @@ const FilterSheet = ({
   clearAll,
   filterOptions,
   handleChange,
+  buttonText,
 }: FilterSheetProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -51,7 +53,7 @@ const FilterSheet = ({
                 onClick={clearAll}
               >
                 <Typography fontWeight="bold" className="text-base">
-                  Izbriši sve
+                  {buttonText}
                 </Typography>
                 <Trash2 className="size-5" />
               </Button>

@@ -21,8 +21,9 @@ import { toast } from "@/utils/toast";
 import { useChallenge } from "@/lib/hooks/use-challenge";
 import AltchaWidget from "../custom-ui/altcha-widget";
 import { useSearchParams } from "next/navigation";
+import { Dictionary } from "@/utils/dictionary";
 
-const ContactForm = () => {
+const ContactForm = ({ dict }: { dict: Dictionary["contact"] }) => {
   const { isVerifying, getSolution } = useChallenge();
 
   const subject = useSearchParams().get("subject");
@@ -78,7 +79,7 @@ const ContactForm = () => {
       id="form"
     >
       <Typography variant="h2" tag="h2" fontWeight="bold" className="w-fit">
-        Napiši nam poruku
+        {dict.formTitle}
       </Typography>
       <Form {...form}>
         <form
@@ -96,7 +97,7 @@ const ContactForm = () => {
                     variant="form"
                     inputSize="lg"
                     error={errors.name}
-                    placeholder="Ime i prezime*"
+                    placeholder={dict.name}
                     {...field}
                   />
                 </FormControl>
@@ -138,7 +139,7 @@ const ContactForm = () => {
                     variant="form"
                     inputSize="lg"
                     error={errors.phone}
-                    placeholder="Broj telefona*"
+                    placeholder={dict.phoneNumber}
                     {...field}
                   />
                 </FormControl>
@@ -156,7 +157,7 @@ const ContactForm = () => {
                   <Textarea
                     disabled={isSubmitting}
                     error={errors.message}
-                    placeholder="Poruka*"
+                    placeholder={dict.message}
                     style={{ resize: "none" }}
                     {...field}
                   />
@@ -174,7 +175,7 @@ const ContactForm = () => {
                 disabled={isSubmitting || isVerifying}
               >
                 <Typography fontWeight="bold" tag="span">
-                  Pošalji upit
+                  {dict.send}
                 </Typography>
               </Button>
             </AltchaWidget>

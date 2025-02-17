@@ -1,8 +1,8 @@
 import Typography from "../typography";
 
-const renderError = () => (
+const renderError = (text: string) => (
   <Typography variant="h4" className="pt-9 text-center">
-    Failed to load posts. Please try again later.
+    {text}
   </Typography>
 );
 

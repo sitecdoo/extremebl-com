@@ -6,9 +6,14 @@ import Link from "next/link";
 type RectangleWrapperProps = {
   text: string;
   href: string;
+  buttonText: string;
 };
 
-const RectangleWrapper = ({ text, href }: RectangleWrapperProps) => {
+const RectangleWrapper = ({
+  text,
+  href,
+  buttonText,
+}: RectangleWrapperProps) => {
   return (
     <div className="flex items-center justify-between rounded-md bg-neutrals-100 px-4 py-3">
       <Typography fontWeight="bold">{text}</Typography>
@@ -19,7 +24,7 @@ const RectangleWrapper = ({ text, href }: RectangleWrapperProps) => {
             variant="body-sm"
             className="lg:text-base"
           >
-            Prijavi se
+            {buttonText}
           </Typography>
         </Button>
       </Link>

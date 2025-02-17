@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import Typography from "../typography";
-import { footerConfig } from "./footer-config";
+import { getFooterItems } from "./footer-config";
+import { getDictionary } from "@/utils/dictionary";
 
 const NavItems = ({
   title,
@@ -16,7 +17,7 @@ const NavItems = ({
       tag="p"
       variant="body-sm"
       fontWeight="bold"
-      className="pb-7 sm:pb-8"
+      className="pb-7 md:pb-8"
     >
       {title}
     </Typography>
@@ -26,13 +27,15 @@ const NavItems = ({
   </div>
 );
 
-const { company, activity, contact } = footerConfig;
+const Footer = async () => {
+  const dict = await getDictionary();
+  const navigation = await getFooterItems();
+  const { company, activity, contact } = navigation;
 
-const Footer = () => {
   return (
-    <footer className="flex w-full items-center justify-center bg-neutrals-100 px-0 py-8 sm:px-8 sm:py-24 lg:px-20 2xl:px-44 2xl:py-24">
-      <div className="flex h-full w-full flex-col items-center justify-between gap-x-10 sm:min-h-[22.5rem] sm:max-w-[90rem] sm:flex-row sm:items-start">
-        <Link href="/" className="h-40 w-48 sm:h-fit sm:w-fit">
+    <footer className="flex w-full items-center justify-center bg-neutrals-100 px-0 py-8 md:px-8 md:py-24 lg:px-20 2xl:px-44 2xl:py-24">
+      <div className="flex h-full w-full flex-col items-center justify-between gap-x-10 md:min-h-[22.5rem] md:max-w-[90rem] md:flex-row md:items-start">
+        <Link href="/" className="h-40 w-48 md:h-fit md:w-fit">
           <Image
             src="/logo-footer.svg"
             alt="logo-footer"
@@ -41,16 +44,16 @@ const Footer = () => {
             priority
           />
         </Link>
-        <section className="flex w-full flex-col px-4 sm:max-w-[50rem] sm:gap-y-20 sm:px-0">
-          <div className="flex flex-col justify-between gap-x-5 gap-y-16 py-8 sm:flex-row sm:py-0">
-            <NavItems title="Info">
+        <section className="flex w-full flex-col px-4 md:max-w-[50rem] md:gap-y-20 md:px-0">
+          <div className="flex flex-col justify-between gap-x-5 gap-y-16 py-8 md:flex-row md:py-0">
+            <NavItems title={dict.footer.info}>
               {company.map((item) => (
                 <Link key={item.href} href={item.href}>
                   {item.label}
                 </Link>
               ))}
             </NavItems>
-            <NavItems title="Aktivnosti">
+            <NavItems title={dict.footer.activities}>
               {activity.map((item) => (
                 <Link key={item.href} href={item.href}>
                   {item.label}
@@ -62,11 +65,11 @@ const Footer = () => {
                 tag="p"
                 variant="body-sm"
                 fontWeight="bold"
-                className="pb-7 sm:pb-8"
+                className="pb-7 md:pb-8"
               >
                 {contact.name}
               </Typography>
-              <div className="flex flex-col gap-y-7 sm:gap-y-8">
+              <div className="flex flex-col gap-y-7 md:gap-y-8">
                 <div className="flex items-center gap-3">
                   <Phone className="size-6" strokeWidth={1.5} />
                   <Typography tag="p" variant="body-sm">
@@ -85,7 +88,7 @@ const Footer = () => {
                   <div className="size-6">
                     <MapPin className="size-6" strokeWidth={1.5} />
                   </div>
-                  <Typography tag="p" variant="body-sm" className="sm:max-w-64">
+                  <Typography tag="p" variant="body-sm" className="md:max-w-64">
                     {contact.location}
                   </Typography>
                 </div>
@@ -93,7 +96,7 @@ const Footer = () => {
             </div>
           </div>
           <section>
-            <div className="flex items-center justify-between border-t-[0.5px] border-t-neutrals-300 pt-5 sm:pt-6">
+            <div className="flex items-center justify-between border-t-[0.5px] border-t-neutrals-300 pt-5 md:pt-6">
               <Typography
                 tag="p"
                 variant="caption"

@@ -3,8 +3,13 @@ import Typography from "../typography";
 import { Button } from "@/components/ui/button";
 import { MoveDown } from "lucide-react";
 import Link from "next/link";
+import { Dictionary } from "@/utils/dictionary";
 
-const BigHeroBanner = () => {
+const BigHeroBanner = ({
+  dict,
+}: {
+  dict: Pick<Dictionary, "heroBanner" | "buttons">;
+}) => {
   return (
     <section className="relative w-full">
       <Image
@@ -23,9 +28,9 @@ const BigHeroBanner = () => {
           tag="h3"
           fontWeight="extrabold"
           uppercase
-          className="hidden lg:block"
+          className="hidden w-[50rem] lg:block"
         >
-          Započni avanturu
+          {dict.heroBanner.title}
         </Typography>
         {/*Banner title for mobile to fit on small screens*/}
         <Typography
@@ -35,20 +40,24 @@ const BigHeroBanner = () => {
           uppercase
           className="lg:hidden"
         >
-          Započni avanturu
+          {dict.heroBanner.title}
         </Typography>
         <Typography variant="subtitle" className="sm:mt-1">
-          Kreni ka novim visinama, Pridruži se našem klubu!
+          {dict.heroBanner.description}
         </Typography>
         <div className="mt-6 flex max-w-fit flex-col-reverse gap-4 sm:flex-row lg:mt-7 lg:gap-9">
           <Link href="/djeca-penjanje">
             <Button variant="yellow">
-              <Typography fontWeight="bold">Penjanje za djecu</Typography>
+              <Typography fontWeight="bold">
+                {dict.buttons.climbingForChildren}
+              </Typography>
             </Button>
           </Link>
           <Link href="/odrasli-penjanje">
             <Button>
-              <Typography fontWeight="bold">Penjanje za odrasle</Typography>
+              <Typography fontWeight="bold">
+                {dict.buttons.climbingForAdults}
+              </Typography>
             </Button>
           </Link>
         </div>

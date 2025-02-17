@@ -4,28 +4,26 @@ import { useState } from "react";
 import Typography from "./typography";
 import { Minus, Plus } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Dictionary } from "@/utils/dictionary";
 
-const questions = [
-  {
-    text: "Šta je penjanje",
-    answer:
-      "Sportsko penjanje sve je popularniji oblik rekreacije i sporta, odnedavno i olimpijski sport, privlačan ljudima širom svijeta. Može se izvoditi na prirodnim ili vještačkim stijenama, a postoje dva glavna načina penjanja – bouldering, koji se odvija na nižim stijenama bez užeta, i penjanje na visokoj stijeni, koje uključuje korištenje sigurnosne opreme poput užadi. Cilj je uspješno popeti zadani smjer, savladavajući sve njegove prepreke (tzv. 'detalje'). Ovaj sport je dostupan ljudima svih starosnih doba, od djece do starijih osoba.",
-  },
-  {
-    text: "Koji su benefiti penjanja?",
-    answer:
-      "Sportsko penjanje je dinamična i uzbudljiva aktivnost koja donosi brojne koristi za tijelo i um, pružajući fizički izazov, ali i priliku za druženje, putovanja i boravak u prirodi. Osim što pomaže početnicima da prevladaju strah, poboljšava koordinaciju, fokus te jača snagu i izdržljivost cijelog tijela – često ga nazivaju modernom gimnastikom. Kod djece doprinosi razvoju fine i grube motorike, poboljšavajući ravnotežu i svjesnost o pokretima. Penjanje takođe podstiče proizvodnju hormona koji smanjuju stres i povećavaju osjećaj zadovoljstva i ispunjenosti.",
-  },
-  {
-    text: "Da li svako može penjati?",
-    answer:
-      "Da, sportsko penjanje je aktivnost kojom se može baviti gotovo svako, bez obzira na uzrast i nivo fizičke spremnosti. Penjački smjerovi dolaze u različitim težinama, tako da uvijek postoji nešto prilagođeno početnicima, ali i izazovi za iskusnije penjače. Ipak, osobe s određenim zdravstvenim stanjima, poput problema sa srcem, zglobovima ili balansom, trebalo bi da se konsultuju s ljekarom prije nego što počnu.",
-  },
-];
-
-const SmallQuestions = () => {
+const SmallQuestions = ({ dict }: { dict: Dictionary["smallQuestions"] }) => {
   const [openIndex, setOpenIndex] = useState<number>(0);
   const [isVisible, setIsVisible] = useState<boolean>(true);
+
+  const questions = [
+    {
+      text: dict.question1,
+      answer: dict.answer1,
+    },
+    {
+      text: dict.question2,
+      answer: dict.answer2,
+    },
+    {
+      text: dict.question3,
+      answer: dict.answer3,
+    },
+  ];
 
   const handleClick = (index: number) => {
     if (openIndex === index) {
@@ -47,7 +45,7 @@ const SmallQuestions = () => {
             <div
               key={index}
               className={cn(
-                "flex w-fit cursor-pointer items-center gap-x-4 xl:max-w-[28.5rem]",
+                "flex w-fit cursor-pointer items-start gap-x-4 xl:max-w-[28.5rem]",
                 openIndex === index && "cursor-default",
               )}
               onClick={() => handleClick(index)}

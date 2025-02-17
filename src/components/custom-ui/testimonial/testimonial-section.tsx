@@ -11,6 +11,7 @@ type TestemonialSectionProps = PropsWithChildren<{
   description: string;
   name: string;
   image: string;
+  text: string;
 }>;
 
 const TestimonialSection = ({
@@ -18,6 +19,7 @@ const TestimonialSection = ({
   name,
   image,
   children,
+  text,
 }: TestemonialSectionProps) => {
   const pathname = usePathname();
   const routePathanme = pathname.split("/")[2];
@@ -29,7 +31,7 @@ const TestimonialSection = ({
       </Testimonial>
       <Link href={`kontakt?subject=${encodeURIComponent(routePathanme)}`}>
         <Button variant="blue" className="w-fit">
-          <Typography fontWeight="bold">Kontaktirajte nas</Typography>
+          <Typography fontWeight="bold">{text}</Typography>
         </Button>
       </Link>
     </div>

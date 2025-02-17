@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Typography from "./typography";
+import { Dictionary } from "@/utils/dictionary";
 
-const EmptyState = () => {
+const EmptyState = ({ dict }: { dict: Dictionary["blog"] }) => {
   return (
     <div className="mb-6 mt-16 flex flex-col items-center justify-center gap-5 sm:mb-0 lg:mt-11">
       <Image
@@ -18,11 +19,10 @@ const EmptyState = () => {
           fontWeight="bold"
           className="text-center text-neutrals-900"
         >
-          Nema rezultata za vašu pretragu!
+          {dict.emptyTitle}
         </Typography>
         <Typography className="max-w-96 text-center text-neutrals-700">
-          Pokušajte promjeniti filtere ili pretražiti koristeći drugačije
-          ključne reči.
+          {dict.emptyDescription}
         </Typography>
       </div>
     </div>
