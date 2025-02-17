@@ -1,8 +1,4 @@
 {
-  "global": {
-    "latestPosts": "Latest posts"
-  },
-
   "navigation": {
     "home": "Home",
     "about": "About",
@@ -70,7 +66,16 @@
     "sort": "Sort",
     "delete": "Clear All",
     "emptyTitle": "No results for your search!",
-    "emptyDescription": "Try adjusting the filters or searching with different keywords."
+    "emptyDescription": "Try adjusting the filters or searching with different keywords.",
+    "category": "Select category",
+    "button": "View blog posts"
+  },
+
+  "blogPost": {
+    "latestPosts": "Latest posts",
+    "author": "Author",
+    "date": "Publication Date",
+    "share": "Share on"
   },
 
   "heroBanner": {
@@ -99,90 +104,54 @@
   },
 
   "infoSection": {
-    "homePage": [
-      {
-        "title": "Climbing for adults",
-        "description": "Our adult climbing program offers an exciting opportunity for adventure enthusiasts, regardless of previous experience. Whether you want to improve your fitness, conquer new challenges, or simply enjoy the company of like-minded people, our instructors are here to support you every step of the way."
-      },
-      {
-        "title": "Climbing for children",
-        "description": "Climbing for children is a perfect way for kids to develop motor skills, confidence, and team spirit. Our programs are tailored to different age groups and skill levels, with constant supervision and support from experienced instructors. Through play and fun, children will learn the basic climbing techniques and might even discover a love for this sport."
-      },
-      {
-        "title": "Birthday celebrations",
-        "description": "Celebrate your child's birthday in a unique and exciting way! Our climbing hall offers the perfect setting for an unforgettable birthday celebration with professional instructors, safe equipment, and fun for all ages."
-      },
-      {
-        "title": "Teambuilding",
-        "description": "Our climbing hall is an ideal place for teambuilding as it offers a unique combination of physical and mental challenges that encourage teamwork and communication. We also provide professional instructors, safe equipment, and unlimited ideas to always surprise your team."
-      }
-    ],
-    "about": [
-      {
-        "title": "History",
-        "description": "The text is under construction, visit the link later."
-      },
-      {
-        "title": "Our mission",
-        "description": "Our mission is to popularize and advance sport climbing on natural and artificial rocks through the organization of training, courses, competitions, festivals, and climbing trips, as well as through the construction and maintenance of climbing infrastructure."
-      }
-    ],
-    "children": [
-      {
-        "title": "Younger Children",
-        "description": "Sport climbing for children aged 6 to 10 develops strength, coordination, and confidence. With experienced trainers and safe equipment, the training is designed to be playful and promotes gradual learning."
-      },
-      {
-        "title": "Older Children",
-        "description": "Sport climbing for children aged 10 and above enhances endurance, technique, and mental strength. The training sessions are more challenging, focusing on refining movements, while experienced trainers and safe equipment ensure safe progression."
-      }
-    ],
-    "adults": [
-      {
-        "title": "Training",
-        "description": "You can train independently during free times or join group sessions led by a coach. During free times, the supervising person can assist in organizing your training and offer advice. To join, simply attend one of the adult training sessions."
-      },
-      {
-        "title": "Basic Course",
-        "description": "This weekend course is designed for beginners, allowing them to learn how to climb and belay on 'top rope'. If weather conditions permit, the course is held on natural rocks."
-      },
-      {
-        "title": "Advanced Course",
-        "description": "This course is intended for climbers who already have experience with 'top rope' climbing and want to learn how to lead climb and belay. The course lasts for a month and takes place twice a week. If weather conditions allow, some lessons are held on natural rocks."
-      },
-      {
-        "title": "Nature Trips",
-        "description": "From the very first training session, you gain the right to join trips into nature. These trips usually take place on weekends, 1-2 times a month. We most often visit local climbing spots, but occasionally we also organize trips to other cities and countries."
-      }
-    ],
-    "birthdays": [
-      {
-        "title": "Professional Instructors",
-        "description": "Our professional instructors are not only experienced climbers but also excellent animators who make every birthday even more fun. Through games and adventure, they guide children through a safe and exciting climbing experience, helping them master basic techniques while having a great time."
-      },
-      {
-        "title": "Safe Equipment",
-        "description": "We use proven and high-quality climbing equipment that ensures maximum safety during climbing. All ropes, harnesses, and climbing gear are regularly inspected and maintained, and our instructors ensure the proper use of the equipment, providing a carefree and safe experience for all participants."
-      },
-      {
-        "title": "Fun for All Ages",
-        "description": "Climbing birthday parties are the perfect fun for children of all ages – from the youngest adventurers to older kids craving challenges! Our instructors tailor games and routes to ensure that every participant, regardless of age or experience, can enjoy a safe and exciting adventure filled with laughter and socializing."
-      }
-    ],
-    "teambuilding": [
-      {
-        "title": "Professional Instructors",
-        "description": "Our professional instructors are not only experienced climbers but also great motivators who will make your team building dynamic and fun. Through team challenges and climbing tasks, they guide participants through a safe and exciting experience, encouraging cooperation, communication, and strengthening team spirit in a relaxed and inspiring atmosphere."
-      },
-      {
-        "title": "Safe Equipment",
-        "description": "We use proven and high-quality climbing equipment that ensures maximum safety during climbing. All ropes, harnesses, and climbing devices are regularly inspected and maintained, and our instructors ensure that the equipment is used properly, allowing for a carefree and safe experience for all participants."
-      },
-      {
-        "title": "Various Activities",
-        "description": "In our climbing gym, we offer a variety of team building activities, including team climbing challenges, fun competitive games, trust exercises, and problem-solving through climbing. All activities are tailored to different experience levels and designed to strengthen cooperation, communication, and team spirit."
-      }
-    ]
+    "homePage": {
+      "adultsTitle": "Climbing for adults",
+      "adultsDescription": "Our adult climbing program offers an exciting opportunity for adventure enthusiasts, regardless of previous experience. Whether you want to improve your fitness, conquer new challenges, or simply enjoy the company of like-minded people, our instructors are here to support you every step of the way.",
+      "childrenTitle": "Climbing for children",
+      "childrenDescription": "Climbing for children is a perfect way for kids to develop motor skills, confidence, and team spirit. Our programs are tailored to different age groups and skill levels, with constant supervision and support from experienced instructors. Through play and fun, children will learn the basic climbing techniques and might even discover a love for this sport.",
+      "birthdayTitle": "Birthday celebrations",
+      "birthdayDescription": "Celebrate your child's birthday in a unique and exciting way! Our climbing hall offers the perfect setting for an unforgettable birthday celebration with professional instructors, safe equipment, and fun for all ages.",
+      "teambuildingTitle": "Teambuilding",
+      "teambuildingDescription": "Our climbing hall is an ideal place for teambuilding as it offers a unique combination of physical and mental challenges that encourage teamwork and communication. We also provide professional instructors, safe equipment, and unlimited ideas to always surprise your team."
+    },
+    "about": {
+      "history": "History",
+      "historyDescription": "The text is under construction, visit the link later.",
+      "ourMission": "Our mission",
+      "ourMissionDescription": "Our mission is to popularize and advance sport climbing on natural and artificial rocks through the organization of training, courses, competitions, festivals, and climbing trips, as well as through the construction and maintenance of climbing infrastructure."
+    },
+    "children": {
+      "youngerChildrenTitle": "Younger Children",
+      "youngerChildrenDescription": "Sport climbing for children aged 6 to 10 develops strength, coordination, and confidence. With experienced trainers and safe equipment, the training is designed to be playful and promotes gradual learning.",
+      "olderChildrenTitle": "Older Children",
+      "olderChildrenDescription": "Sport climbing for children aged 10 and above enhances endurance, technique, and mental strength. The training sessions are more challenging, focusing on refining movements, while experienced trainers and safe equipment ensure safe progression."
+    },
+    "adults": {
+      "trainingTitle": "Training",
+      "trainingDescription": "You can train independently during free times or join group sessions led by a coach. During free times, the supervising person can assist in organizing your training and offer advice. To join, simply attend one of the adult training sessions.",
+      "basicCourseTitle": "Basic Course",
+      "basicCourseDescription": "This weekend course is designed for beginners, allowing them to learn how to climb and belay on 'top rope'. If weather conditions permit, the course is held on natural rocks.",
+      "advancedCourseTitle": "Advanced Course",
+      "advancedCourseDescription": "This course is intended for climbers who already have experience with 'top rope' climbing and want to learn how to lead climb and belay. The course lasts for a month and takes place twice a week. If weather conditions allow, some lessons are held on natural rocks.",
+      "fieldTripTitle": "Nature Trips",
+      "fieldTripDescription": "From the very first training session, you gain the right to join trips into nature. These trips usually take place on weekends, 1-2 times a month. We most often visit local climbing spots, but occasionally we also organize trips to other cities and countries."
+    },
+    "birthdays": {
+      "instructorsTitle": "Professional Instructors",
+      "instructorsDescription": "Our professional instructors are not only experienced climbers but also excellent animators who make every birthday even more fun. Through games and adventure, they guide children through a safe and exciting climbing experience, helping them master basic techniques while having a great time.",
+      "saftyTitle": "Safe Equipment",
+      "saftyDescription": "We use proven and high-quality climbing equipment that ensures maximum safety during climbing. All ropes, harnesses, and climbing gear are regularly inspected and maintained, and our instructors ensure the proper use of the equipment, providing a carefree and safe experience for all participants.",
+      "funTitle": "Fun for All Ages",
+      "funDescription": "Climbing birthday parties are the perfect fun for children of all ages – from the youngest adventurers to older kids craving challenges! Our instructors tailor games and routes to ensure that every participant, regardless of age or experience, can enjoy a safe and exciting adventure filled with laughter and socializing."
+    },
+    "teambuilding": {
+      "instructorsTitle": "Professional Instructors",
+      "instructorsDescription": "Our professional instructors are not only experienced climbers but also great motivators who will make your team building dynamic and fun. Through team challenges and climbing tasks, they guide participants through a safe and exciting experience, encouraging cooperation, communication, and strengthening team spirit in a relaxed and inspiring atmosphere.",
+      "saftyTitle": "Safe Equipment",
+      "saftyDescription": "We use proven and high-quality climbing equipment that ensures maximum safety during climbing. All ropes, harnesses, and climbing devices are regularly inspected and maintained, and our instructors ensure that the equipment is used properly, allowing for a carefree and safe experience for all participants.",
+      "activitiesTitle": "Various Activities",
+      "activitiesDescription": "In our climbing gym, we offer a variety of team building activities, including team climbing challenges, fun competitive games, trust exercises, and problem-solving through climbing. All activities are tailored to different experience levels and designed to strengthen cooperation, communication, and team spirit."
+    }
   },
 
   "trainingSchedule": {
@@ -229,205 +198,123 @@
   "faq": {
     "title": "Frequently asked questions",
     "description": "In this section, you will find answers to the most common questions about climbing and ways to join and start training!",
-    "questions": [
-      {
-        "question": "What is sports climbing?",
-        "answer": "Sports climbing is an increasingly popular form of recreation and sport, recently recognized as an Olympic sport, attracting people from all over the world. It can be performed on natural or artificial rocks, and there are two main types of climbing – bouldering, which takes place on lower rocks without ropes, and roped climbing, which involves using safety equipment like ropes. The goal is to successfully climb the given route, overcoming all its obstacles (known as 'problems'). This sport is accessible to people of all ages, from children to older adults."
-      },
-      {
-        "question": "Is sports climbing safe?",
-        "answer": "Sports climbing is safe when using proper equipment and following safety rules. Rope protection, harnesses, and mats reduce the risk of injury. Most accidents occur due to inattention or poor technique, but with training and responsible climbing, this sport is safe and beneficial for the body and mind."
-      },
-      {
-        "question": "Do you need prior experience to engage in sports climbing?",
-        "answer": "No, prior experience is not required to start sports climbing. Beginners can begin under professional supervision on artificial rocks or well-maintained natural climbing sites. Basic techniques, safety rules, and equipment usage are quickly learned, and routes of varying difficulty allow for gradual progress."
-      },
-      {
-        "question": "What are the physical benefits of sports climbing?",
-        "answer": "Sports climbing strengthens the whole body, improves coordination, and increases endurance. It activates muscles in the arms, legs, back, and core, developing strength and flexibility, which is why it's often called modern gymnastics. It also enhances balance, motor skills, and body awareness, while repetitive movements and controlled breathing contribute to better fitness and resistance to fatigue."
-      },
-      {
-        "question": "How can I start training for sports climbing?",
-        "answer": "You can start by attending a trial session for adults, and after that, you can continue with regular training. Usually, the first two months involve just climbing, after which we organize a beginner's course where you'll learn how to use climbing ropes and equipment."
-      },
-      {
-        "question": "At what age can children start sports climbing?",
-        "answer": "Children can start sports climbing as early as six years old, depending on their motor development and coordination. With professional supervision and adapted routes, climbing helps them develop strength, balance, and confidence, while simultaneously learning basic techniques and safety rules through play."
-      },
-      {
-        "question": "How can I enroll my child in sports climbing?",
-        "answer": "You can simply contact us at +387 65 303 034 via call, SMS, Viber, or WhatsApp to arrange a trial session."
-      }
-    ]
+    "questions": {
+      "sportsClimbing": "What is sports climbing?",
+      "safety": "Is sports climbing safe?",
+      "experience": "Do you need prior experience to engage in sports climbing?",
+      "physical": "What are the physical benefits of sports climbing?",
+      "starting": "How can I start training for sports climbing?",
+      "age": "At what age can children start sports climbing?",
+      "enrollment": "How can I enroll my child in sports climbing?"
+    },
+    "answers": {
+      "sportsClimbing": "Sports climbing is an increasingly popular form of recreation and sport, recently recognized as an Olympic sport, attracting people from all over the world. It can be performed on natural or artificial rocks, and there are two main types of climbing – bouldering, which takes place on lower rocks without ropes, and roped climbing, which involves using safety equipment like ropes. The goal is to successfully climb the given route, overcoming all its obstacles (known as 'problems'). This sport is accessible to people of all ages, from children to older adults.",
+      "safety": "Sports climbing is safe when using proper equipment and following safety rules. Rope protection, harnesses, and mats reduce the risk of injury. Most accidents occur due to inattention or poor technique, but with training and responsible climbing, this sport is safe and beneficial for the body and mind.",
+      "experience": "No, prior experience is not required to start sports climbing. Beginners can begin under professional supervision on artificial rocks or well-maintained natural climbing sites. Basic techniques, safety rules, and equipment usage are quickly learned, and routes of varying difficulty allow for gradual progress.",
+      "physical": "Sports climbing strengthens the whole body, improves coordination, and increases endurance. It activates muscles in the arms, legs, back, and core, developing strength and flexibility, which is why it's often called modern gymnastics. It also enhances balance, motor skills, and body awareness, while repetitive movements and controlled breathing contribute to better fitness and resistance to fatigue.",
+      "starting": "You can start by attending a trial session for adults, and after that, you can continue with regular training. Usually, the first two months involve just climbing, after which we organize a beginner's course where you'll learn how to use climbing ropes and equipment.",
+      "age": "Children can start sports climbing as early as six years old, depending on their motor development and coordination. With professional supervision and adapted routes, climbing helps them develop strength, balance, and confidence, while simultaneously learning basic techniques and safety rules through play.",
+      "enrollment": "You can simply contact us at +387 65 303 034 via call, SMS, Viber, or WhatsApp to arrange a trial session."
+    }
   },
 
   "services": {
     "title": "We offer services",
-    "about": [
-      {
-        "title": "Climbing courses",
-        "description": "We organize basic and advanced sport climbing courses. Our instructors are professionals with years of experience."
-      },
-      {
-        "title": "Equipment rental",
-        "description": "If you don’t have your own equipment, you can rent everything you need for safe climbing from us."
-      },
-      {
-        "title": "Birthday celebrations",
-        "description": "Celebrate your child's birthday in a unique and exciting way with expert instructors and safe equipment."
-      },
-      {
-        "title": "Teambuilding",
-        "description": "We organize teambuilding programs for companies and organizations, tailored to your needs and goals."
-      },
-      {
-        "title": "Outdoor excursions",
-        "description": "We organize climbing trips and excursions for all climbing and adventure enthusiasts."
-      },
-      {
-        "title": "Training for children and adults",
-        "description": "We organize regular training sessions for children and adults, adapted to different age groups and skill levels."
-      }
-    ]
+    "coursesTitle": "Climbing courses",
+    "coursesDescription": "We organize basic and advanced sport climbing courses. Our instructors are professionals with years of experience.",
+    "equipmentTitle": "Equipment rental",
+    "equipmentDescription": "If you don’t have your own equipment, you can rent everything you need for safe climbing from us.",
+    "birthdayTitle": "Birthday celebrations",
+    "birthdayDescription": "Celebrate your child's birthday in a unique and exciting way with expert instructors and safe equipment.",
+    "teambuildingTitle": "Teambuilding",
+    "teambuildingDescription": "We organize teambuilding programs for companies and organizations, tailored to your needs and goals.",
+    "outdoorTitle": "Outdoor excursions",
+    "outdoorDescription": "We organize climbing trips and excursions for all climbing and adventure enthusiasts.",
+    "trainingTitle": "Training for children and adults",
+    "trainingDescription": "We organize regular training sessions for children and adults, adapted to different age groups and skill levels."
   },
 
   "priceList": {
     "title": "Price List",
-    "childrenSchedules": [
-      {
-        "title": "Training for Younger Children",
-        "day": ["Monday", "Friday"]
-      },
-      {
-        "title": "Training for Older Children",
-        "day": ["Monday", "Friday"]
-      }
-    ],
-    "childrenPrices": [
-      "Trial Session",
-      "Monthly Membership",
-      "Monthly Membership (two children from the same family)"
-    ],
-    "adultsSchedules": [
-      {
-        "title": "Adult Training",
-        "day": ["Tuesday", "Wednesday", "Thursday", "Sunday"]
-      }
-    ],
-    "adultsPrices": [
-      "Day pass / Trial session",
-      "Monthly membership",
-      "10 entries",
-      "Half-year membership",
-      "Annual membership"
-    ]
+    "children": {
+      "youngerTitle": "Training for Younger Children",
+      "olderTitle": "Training for Older Children",
+      "monday": "Monday",
+      "friday": "Friday",
+      "trial": "Trial Session",
+      "monthly": "Monthly Membership",
+      "twoChildren": "Monthly Membership (two children from the same family)"
+    },
+    "adults": {
+      "title": "Adult Training",
+      "tuesday": "Utorak",
+      "wednesday": "Srijeda",
+      "thursday": "Četvrtak",
+      "sunday": "Nedjelja",
+      "dailyPass": "Day pass / Trial session",
+      "monthly": "Monthly membership",
+      "entries": "10 entries",
+      "halfYear": "Half-year membership",
+      "annual": "Annual membership"
+    }
   },
 
   "benefits": {
     "titleChildren": "Climbing Benefits for Children",
     "titleAdults": "Climbing Benefits of Adults",
     "titleTeambuilding": "Why is climbing the perfect Teambuilding?",
-    "children": [
-      {
-        "title": "Development of Motor Skills",
-        "description": "Climbing helps children develop fine and gross motor skills, improving coordination, balance, and strength. Through various movements and grips, children become more aware of their bodies and how to use them."
-      },
-      {
-        "title": "Confidence and Independence",
-        "description": "Each climb presents a small challenge, and overcoming it boosts a child's confidence and sense of independence. Climbing allows children to take initiative and make decisions on their own, which is crucial for their personal development."
-      },
-      {
-        "title": "Cognitive Skill Development",
-        "description": "Climbing encourages children to think and plan, enhancing their problem-solving skills and spatial awareness. As they choose the best route to the top, children learn to analyze situations and make quick decisions."
-      }
-    ],
-    "adults": [
-      {
-        "title": "Physical Fitness",
-        "description": "Climbing is an excellent full-body workout that improves strength, flexibility, and endurance. It activates multiple muscle groups and helps burn calories."
-      },
-      {
-        "title": "Mental Strength",
-        "description": "Climbing requires concentration, strategic thinking, and quick decision-making. This activity reduces stress and improves mental resilience."
-      },
-      {
-        "title": "Social Connection",
-        "description": "Climbing is often a team activity that encourages collaboration and communication among participants. It helps build a community and strengthens interpersonal bonds."
-      }
-    ],
-    "teambuilding": [
-      {
-        "title": "Strengthening Team Collaboration",
-        "description": "Climbing requires mutual support and trust among team members. Through belaying and overcoming challenges together, the team bonds and develops more effective communication."
-      },
-      {
-        "title": "Overcoming Boundaries",
-        "description": "Facing heights and physical challenges helps participants step out of their comfort zones. This process builds mental resilience and boosts confidence, which translates into tackling business challenges."
-      },
-      {
-        "title": "Shared Successes",
-        "description": "Climbing brings excitement and a sense of achievement, and sharing these moments strengthens relationships among colleagues. A relaxed atmosphere and physical activity promote good spirits and motivation within the team."
-      }
-    ]
+    "children": {
+      "developmentTitle": "Development of Motor Skills",
+      "developmentDescription": "Climbing helps children develop fine and gross motor skills, improving coordination, balance, and strength. Through various movements and grips, children become more aware of their bodies and how to use them.",
+      "independenceTitle": "Confidence and Independence",
+      "independenceDescription": "Each climb presents a small challenge, and overcoming it boosts a child's confidence and sense of independence. Climbing allows children to take initiative and make decisions on their own, which is crucial for their personal development.",
+      "cognitiveTitle": "Cognitive Skill Development",
+      "cognitiveDescription": "Climbing encourages children to think and plan, enhancing their problem-solving skills and spatial awareness. As they choose the best route to the top, children learn to analyze situations and make quick decisions."
+    },
+    "adults": {
+      "fitnessTitle": "Physical Fitness",
+      "fitnessDescription": "Climbing is an excellent full-body workout that improves strength, flexibility, and endurance. It activates multiple muscle groups and helps burn calories.",
+      "mentalTitle": "Mental Strength",
+      "mentalDescription": "Climbing requires concentration, strategic thinking, and quick decision-making. This activity reduces stress and improves mental resilience.",
+      "socialTitle": "Social Connection",
+      "socialDescription": "Climbing is often a team activity that encourages collaboration and communication among participants. It helps build a community and strengthens interpersonal bonds."
+    },
+    "teambuilding": {
+      "teamworkTitle": "Strengthening Team Collaboration",
+      "teamworkDescription": "Climbing requires mutual support and trust among team members. Through belaying and overcoming challenges together, the team bonds and develops more effective communication.",
+      "limitTitle": "Overcoming Boundaries",
+      "limitDescription": "Facing heights and physical challenges helps participants step out of their comfort zones. This process builds mental resilience and boosts confidence, which translates into tackling business challenges.",
+      "successTitle": "Shared Successes",
+      "successDescription": "Climbing brings excitement and a sense of achievement, and sharing these moments strengthens relationships among colleagues. A relaxed atmosphere and physical activity promote good spirits and motivation within the team."
+    }
   },
 
   "packages": {
     "title": "Packages",
     "button": "Reserve a time",
-    "card": [
-      {
-        "name": "package 1",
-        "offers": [
-          "Up to 12 children",
-          "2 instructors",
-          "2-2.5 hours",
-          "Party space",
-          "Climbing equipment"
-        ]
-      },
-      {
-        "name": "package 2",
-        "offers": [
-          "Up to 18 children",
-          "3 instructors",
-          "2-2.5 hours",
-          "Party space",
-          "Climbing equipment"
-        ]
-      },
-      {
-        "name": "package 3",
-        "offers": [
-          "Up to 12 children",
-          "4 instructors",
-          "2-2.5 hours",
-          "Party space",
-          "Climbing equipment"
-        ]
-      }
-    ]
+    "packageOne": "package 1",
+    "packageTwo": "package 2",
+    "packageThree": "package 3",
+    "twelveChildren": "Up to 12 children",
+    "twoTrainers": "2 instructors",
+    "twoFiveHours": "2-2.5 hours",
+    "space": "Party space",
+    "equipment": "Climbing equipment",
+    "eighteenChildren": "Up to 18 children",
+    "threeTrainers": "3 instructors",
+    "fourTrainers": "4 instructors"
   },
 
   "notes": {
     "title": "Notes:",
-    "info": [
-      {
-        "statment": "We do not offer a traditional playroom",
-        "text": "- parents are responsible for food, drinks, cups, cutlery, and other supplies. Only the birthday child's parents can be present for photography or serving."
-      },
-      {
-        "statment": "There is no cafe or designated area for parents.",
-        "text": "The celebration is focused exclusively on the children and their activity in the climbing gym."
-      },
-      {
-        "statment": "We do not have a refrigerator for the cake,",
-        "text": "so we recommend bringing it shortly before serving, especially during warmer months."
-      },
-      {
-        "intro": "If the child does not want to use the climbing shoes from the gym, ",
-        "statment": "they must bring clean sneakers intended for indoor use.",
-        "text": "Please remind parents to inform their guests about this in advance."
-      }
-    ]
+    "traditional": "We do not offer a traditional playroom ",
+    "traditionalText": "- parents are responsible for food, drinks, cups, cutlery, and other supplies. Only the birthday child's parents can be present for photography or serving.",
+    "noCafe": "There is no cafe or designated area for parents.",
+    "noCafeText": "The celebration is focused exclusively on the children and their activity in the climbing gym.",
+    "noFridge": "We do not have a refrigerator for the cake,",
+    "noFridgeText": "so we recommend bringing it shortly before serving, especially during warmer months.",
+    "noShoes": "If the child does not want to use the climbing shoes from the gym, ",
+    "cleanShoes": "they must bring clean sneakers intended for indoor use.",
+    "warnning": "Please remind parents to inform their guests about this in advance."
   }
 }
