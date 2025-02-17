@@ -26,18 +26,18 @@ const TeambuildingPage = async () => {
 
   const benefitsData = [
     {
-      title: dict.benefits.teambuilding[0].title,
-      description: dict.benefits.teambuilding[0].description,
+      title: dict.benefits.teambuilding.teamworkTitle,
+      description: dict.benefits.teambuilding.teamworkDescription,
       image: "/icons/cooperation.svg",
     },
     {
-      title: dict.benefits.teambuilding[1].title,
-      description: dict.benefits.teambuilding[1].description,
+      title: dict.benefits.teambuilding.limitTitle,
+      description: dict.benefits.teambuilding.limitDescription,
       image: "/icons/over-limit.svg",
     },
     {
-      title: dict.benefits.teambuilding[2].title,
-      description: dict.benefits.teambuilding[2].description,
+      title: dict.benefits.teambuilding.successTitle,
+      description: dict.benefits.teambuilding.successDescription,
       image: "/icons/succeed-together.svg",
     },
   ];
@@ -45,18 +45,18 @@ const TeambuildingPage = async () => {
   const infoSectionData = [
     {
       image: "/teambuilding/info-section-1.jpg",
-      title: dict.infoSection.teambuilding[0].title,
-      description: dict.infoSection.teambuilding[0].description,
+      title: dict.infoSection.teambuilding.instructorsTitle,
+      description: dict.infoSection.teambuilding.instructorsDescription,
     },
     {
       image: "/teambuilding/info-section-2.jpg",
-      title: dict.infoSection.teambuilding[1].title,
-      description: dict.infoSection.teambuilding[1].description,
+      title: dict.infoSection.teambuilding.saftyTitle,
+      description: dict.infoSection.teambuilding.saftyDescription,
     },
     {
       image: "/teambuilding/info-section-3.jpg",
-      title: dict.infoSection.teambuilding[2].title,
-      description: dict.infoSection.teambuilding[2].description,
+      title: dict.infoSection.teambuilding.activitiesTitle,
+      description: dict.infoSection.teambuilding.activitiesDescription,
     },
   ];
 

@@ -30,49 +30,49 @@ const AdultsPage = async () => {
 
   const pricingData = {
     schedule: {
-      title: dict.priceList.adultsSchedules[0].title,
+      title: dict.priceList.adults.title,
       date: [
         {
-          day: dict.priceList.adultsSchedules[0].day[0],
+          day: dict.priceList.adults.tuesday,
           time: "19:00 - 22:00h",
         },
         {
-          day: dict.priceList.adultsSchedules[0].day[1],
+          day: dict.priceList.adults.wednesday,
           time: "19:00 - 22:00h",
         },
         {
-          day: dict.priceList.adultsSchedules[0].day[2],
+          day: dict.priceList.adults.thursday,
           time: "19:00 - 22:00h",
         },
         {
-          day: dict.priceList.adultsSchedules[0].day[3],
+          day: dict.priceList.adults.sunday,
           time: "19:00 - 22:00h",
         },
       ],
     },
     prices: [
-      { text: dict.priceList.adultsPrices[0], price: "10 KM" },
-      { text: dict.priceList.adultsPrices[1], price: "45 KM" },
-      { text: dict.priceList.adultsPrices[2], price: "70 KM" },
-      { text: dict.priceList.adultsPrices[3], price: "240 KM" },
-      { text: dict.priceList.adultsPrices[4], price: "420 KM" },
+      { text: dict.priceList.adults.dailyPass, price: "10 KM" },
+      { text: dict.priceList.adults.monthly, price: "45 KM" },
+      { text: dict.priceList.adults.entries, price: "70 KM" },
+      { text: dict.priceList.adults.halfYear, price: "240 KM" },
+      { text: dict.priceList.adults.annual, price: "420 KM" },
     ],
   };
 
   const benefitsData = [
     {
-      title: dict.benefits.adults[0].title,
-      description: dict.benefits.adults[0].description,
+      title: dict.benefits.adults.fitnessTitle,
+      description: dict.benefits.adults.fitnessDescription,
       image: "/icons/motor-skill-icon.svg",
     },
     {
-      title: dict.benefits.adults[1].title,
-      description: dict.benefits.adults[1].description,
+      title: dict.benefits.adults.mentalTitle,
+      description: dict.benefits.adults.mentalDescription,
       image: "/icons/confidence-icon.svg",
     },
     {
-      title: dict.benefits.adults[2].title,
-      description: dict.benefits.adults[2].description,
+      title: dict.benefits.adults.socialTitle,
+      description: dict.benefits.adults.socialDescription,
       image: "/icons/cognitive-icon.svg",
     },
   ];
@@ -92,8 +92,8 @@ const AdultsPage = async () => {
         {/* 1 */}
         <InfoSection
           image="/adults/adults-info-1.jpg"
-          title={dict.infoSection.adults[0].title}
-          description={dict.infoSection.adults[0].description}
+          title={dict.infoSection.adults.trainingTitle}
+          description={dict.infoSection.adults.trainingDescription}
         >
           <ScrollToButton
             elementId="pricing"
@@ -104,8 +104,8 @@ const AdultsPage = async () => {
         {/* 2 */}
         <InfoSection
           image="/adults/adults-info-2.jpg"
-          title={dict.infoSection.adults[1].title}
-          description={dict.infoSection.adults[1].description}
+          title={dict.infoSection.adults.basicCourseTitle}
+          description={dict.infoSection.adults.basicCourseDescription}
           xPosition={85}
         >
           <div className="space-y-4">
@@ -127,8 +127,8 @@ const AdultsPage = async () => {
         {/* 3 */}
         <InfoSection
           image="/adults/adults-info-3.jpg"
-          title={dict.infoSection.adults[2].title}
-          description={dict.infoSection.adults[2].description}
+          title={dict.infoSection.adults.advancedCourseTitle}
+          description={dict.infoSection.adults.advancedCourseDescription}
           xPosition={100}
         >
           <div className="space-y-4">
@@ -145,8 +145,8 @@ const AdultsPage = async () => {
         {/* 4 */}
         <InfoSection
           image="/adults/adults-info-4.jpg"
-          title={dict.infoSection.adults[3].title}
-          description={dict.infoSection.adults[3].description}
+          title={dict.infoSection.adults.fieldTripTitle}
+          description={dict.infoSection.adults.fieldTripDescription}
           xPosition={20}
         />
       </div>

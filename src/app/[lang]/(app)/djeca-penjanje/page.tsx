@@ -31,15 +31,15 @@ const Children = async () => {
   const infoSectionData = [
     {
       image: "/children/info-section-1.jpg",
-      title: dict.infoSection.children[0].title,
-      description: dict.infoSection.children[0].description,
+      title: dict.infoSection.children.youngerChildrenTitle,
+      description: dict.infoSection.children.youngerChildrenDescription,
       xPosition: 50,
       yPosition: 10,
     },
     {
       image: "/children/info-section-2.jpg",
-      title: dict.infoSection.children[1].title,
-      description: dict.infoSection.children[1].description,
+      title: dict.infoSection.children.olderChildrenTitle,
+      description: dict.infoSection.children.olderChildrenDescription,
       xPosition: 50,
       yPosition: 30,
     },
@@ -48,37 +48,37 @@ const Children = async () => {
   const pricingData = {
     schedules: [
       {
-        title: dict.priceList.childrenSchedules[0].title,
+        title: dict.priceList.children.youngerTitle,
         date: [
           {
-            day: dict.priceList.childrenSchedules[0].day[0],
+            day: dict.priceList.children.monday,
             time: "19:00 - 20:00h",
           },
           {
-            day: dict.priceList.childrenSchedules[0].day[1],
+            day: dict.priceList.children.friday,
             time: "19:00 - 20:00h",
           },
         ],
       },
       {
-        title: dict.priceList.childrenSchedules[1].title,
+        title: dict.priceList.children.olderTitle,
         date: [
           {
-            day: dict.priceList.childrenSchedules[1].day[0],
+            day: dict.priceList.children.monday,
             time: "19:30 - 21:00h",
           },
           {
-            day: dict.priceList.childrenSchedules[1].day[1],
+            day: dict.priceList.children.friday,
             time: "19:30 - 21:00h",
           },
         ],
       },
     ],
     prices: [
-      { text: dict.priceList.childrenPrices[0], price: "10 KM" },
-      { text: dict.priceList.childrenPrices[1], price: "50 KM" },
+      { text: dict.priceList.children.trial, price: "10 KM" },
+      { text: dict.priceList.children.monthly, price: "50 KM" },
       {
-        text: dict.priceList.childrenPrices[2],
+        text: dict.priceList.children.twoChildren,
         price: "80 KM",
       },
     ],
@@ -86,18 +86,18 @@ const Children = async () => {
 
   const benefitsData = [
     {
-      title: dict.benefits.children[0].title,
-      description: dict.benefits.children[0].description,
+      title: dict.benefits.children.developmentTitle,
+      description: dict.benefits.children.developmentDescription,
       image: "/icons/motor-skill-icon.svg",
     },
     {
-      title: dict.benefits.children[1].title,
-      description: dict.benefits.children[1].description,
+      title: dict.benefits.children.independenceTitle,
+      description: dict.benefits.children.independenceDescription,
       image: "/icons/confidence-icon.svg",
     },
     {
-      title: dict.benefits.children[2].title,
-      description: dict.benefits.children[2].description,
+      title: dict.benefits.children.cognitiveTitle,
+      description: dict.benefits.children.cognitiveDescription,
       image: "/icons/cognitive-icon.svg",
     },
   ];

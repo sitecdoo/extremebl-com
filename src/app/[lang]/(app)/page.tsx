@@ -36,8 +36,8 @@ export default async function HomePage() {
       <div className="flex w-full flex-col gap-y-24 lg:gap-y-32">
         <InfoSection
           image="/climbing-for-adults.jpg"
-          title={dict.infoSection.homePage[0].title}
-          description={dict.infoSection.homePage[0].description}
+          title={dict.infoSection.homePage.adultsTitle}
+          description={dict.infoSection.homePage.adultsDescription}
           yPosition={60}
         >
           <Link href="/odrasli-penjanje">
@@ -50,8 +50,8 @@ export default async function HomePage() {
         </InfoSection>
         <InfoSection
           image="/climbing-for-children.jpg"
-          title={dict.infoSection.homePage[1].title}
-          description={dict.infoSection.homePage[1].description}
+          title={dict.infoSection.homePage.childrenTitle}
+          description={dict.infoSection.homePage.childrenDescription}
           yPosition={30}
         >
           <Link href="/djeca-penjanje">
@@ -67,8 +67,8 @@ export default async function HomePage() {
       <div className="hidden" />
       <InfoSection
         image="/birthdays/hero.jpg"
-        title={dict.infoSection.homePage[2].title}
-        description={dict.infoSection.homePage[2].description}
+        title={dict.infoSection.homePage.birthdayTitle}
+        description={dict.infoSection.homePage.birthdayDescription}
       >
         <Link href="/rodjendani">
           <Button variant="blue" className="w-fit">
@@ -78,8 +78,8 @@ export default async function HomePage() {
       </InfoSection>
       <InfoSection
         image="/teambuilding/teambuilding-banner.jpg"
-        title={dict.infoSection.homePage[3].title}
-        description={dict.infoSection.homePage[3].description}
+        title={dict.infoSection.homePage.teambuildingTitle}
+        description={dict.infoSection.homePage.teambuildingDescription}
       >
         <Link href="/teambuilding">
           <Button variant="blue" className="w-fit">
@@ -96,7 +96,7 @@ export default async function HomePage() {
         </Button>
         <RecentBlogWrapper
           posts={docs}
-          dict={{ buttons: dict.buttons, global: dict.global }}
+          dict={{ buttons: dict.buttons, blogPost: dict.blogPost }}
         >
           <HomePostsBlobs />
         </RecentBlogWrapper>

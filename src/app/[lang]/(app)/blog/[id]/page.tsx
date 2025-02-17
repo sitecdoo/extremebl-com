@@ -83,12 +83,13 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
         <div className="flex flex-col items-center justify-center gap-2 pb-12 pt-24 text-neutral-600 sm:flex-row sm:gap-9 sm:pb-16 sm:pt-44">
           <div className="flex">
             <Typography variant="body-sm" fontWeight="bold">
-              Autor: <span className="font-normal"> {author.name}</span>
+              {dict.blogPost.author}:{" "}
+              <span className="font-normal"> {author.name}</span>
             </Typography>
           </div>
           <div className="flex">
             <Typography variant="body-sm" fontWeight="bold">
-              Datum objave:
+              {dict.blogPost.date}:
               <span className="font-normal">
                 {" "}
                 {format(post.createdAt, "dd.MM.yyyy")}
@@ -227,7 +228,7 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
               variant="caption"
               className="whitespace-nowrap uppercase"
             >
-              Share on
+              {dict.blogPost.share}
             </Typography>
             <MediaShare id={id} />
           </div>
@@ -236,7 +237,7 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
 
       <RecentBlogWrapper
         posts={docs}
-        dict={{ buttons: dict.buttons, global: dict.global }}
+        dict={{ buttons: dict.buttons, blogPost: dict.blogPost }}
       />
     </div>
   );

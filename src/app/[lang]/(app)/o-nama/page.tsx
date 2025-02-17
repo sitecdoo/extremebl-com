@@ -28,13 +28,13 @@ const AboutPage = async () => {
   const infoSectionData = [
     {
       image: "/about/who-are-we.jpg",
-      title: dict.infoSection.about[0].title,
-      description: dict.infoSection.about[0].description,
+      title: dict.infoSection.about.history,
+      description: dict.infoSection.about.historyDescription,
     },
     {
       image: "/about/our-mission.jpg",
-      title: dict.infoSection.about[1].title,
-      description: dict.infoSection.about[1].description,
+      title: dict.infoSection.about.ourMission,
+      description: dict.infoSection.about.ourMissionDescription,
     },
   ];
 

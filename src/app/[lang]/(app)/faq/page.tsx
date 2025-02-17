@@ -35,7 +35,7 @@ const FAQPage = async () => {
         </Button>
         <RecentBlogWrapper
           posts={docs}
-          dict={{ buttons: dict.buttons, global: dict.global }}
+          dict={{ buttons: dict.buttons, blogPost: dict.blogPost }}
         />
       </div>
     </div>

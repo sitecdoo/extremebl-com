@@ -28,22 +28,22 @@ const Birthdays = async () => {
   const infoSectionData = [
     {
       image: "/birthdays/info-section-1.jpg",
-      title: dict.infoSection.birthdays[0].title,
-      description: dict.infoSection.birthdays[0].description,
+      title: dict.infoSection.birthdays.instructorsTitle,
+      description: dict.infoSection.birthdays.instructorsDescription,
       xPosition: 60,
       yPosition: 50,
     },
     {
       image: "/birthdays/info-section-2.jpg",
-      title: dict.infoSection.birthdays[1].title,
-      description: dict.infoSection.birthdays[1].description,
+      title: dict.infoSection.birthdays.saftyTitle,
+      description: dict.infoSection.birthdays.saftyDescription,
       xPosition: 50,
       yPosition: 15,
     },
     {
       image: "/birthdays/info-section-3.jpg",
-      title: dict.infoSection.birthdays[2].title,
-      description: dict.infoSection.birthdays[2].description,
+      title: dict.infoSection.birthdays.funTitle,
+      description: dict.infoSection.birthdays.funDescription,
       xPosition: 60,
       yPosition: 50,
     },
