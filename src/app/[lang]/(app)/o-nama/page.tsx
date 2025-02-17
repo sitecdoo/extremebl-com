@@ -9,24 +9,41 @@ import {
   AboutBannerBlobs,
   AboutCarouselBlobs,
 } from "@/components/custom-ui/blobs/about";
-import { carouselImages, infoSectionData } from "@/content/about";
+import { carouselImages } from "@/content/about";
 import { generatePageTitle } from "@/utils/generate-page-title";
 import ArrowButton from "@/components/custom-ui/arrow-button";
 import Link from "next/link";
+import { getDictionary } from "@/utils/dictionary";
 
 export async function generateMetadata() {
+  const dict = await getDictionary();
   return {
-    title: generatePageTitle("About"),
+    title: generatePageTitle(dict.navigation.about),
   };
 }
 
-const AboutPage = () => {
+const AboutPage = async () => {
+  const dict = await getDictionary();
+
+  const infoSectionData = [
+    {
+      image: "/about/who-are-we.jpg",
+      title: dict.infoSection.about[0].title,
+      description: dict.infoSection.about[0].description,
+    },
+    {
+      image: "/about/our-mission.jpg",
+      title: dict.infoSection.about[1].title,
+      description: dict.infoSection.about[1].description,
+    },
+  ];
+
   return (
     <div className="relative flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
       <AboutBannerBlobs />
       <div className="flex w-full flex-col items-center gap-24 lg:gap-44">
-        <HeroBanner img="/about/hero-banner.jpg" title="O nama" />
-        <Header text="Mi smo jedan od najstarijih penjačkih klubova u Bosni i Hercegovini, osnovan 2001. godine. Pored naše odlično opremljene penjačke sale, organizatori smo Pecka Rock Climbing i Drill & Chill Climbing and Highlining festivala, mnoštva kurseva, takmičenja, putovanja i kampovanje, te smo uredili preko 500 penjačkih smjerova." />
+        <HeroBanner img="/about/hero-banner.jpg" title={dict.about.banner} />
+        <Header text={dict.about.header} />
       </div>
       <div className="flex w-full flex-col gap-y-24 lg:gap-y-32">
         <InfoSection
@@ -34,7 +51,7 @@ const AboutPage = () => {
           title={infoSectionData[0].title}
           description={infoSectionData[0].description}
         >
-          <ArrowButton />
+          <ArrowButton dict={dict.buttons} />
         </InfoSection>
         <InfoSection
           image={infoSectionData[1].image}
@@ -42,17 +59,14 @@ const AboutPage = () => {
           description={infoSectionData[1].description}
         />
       </div>
-      <ServicesSection />
+      <ServicesSection dict={dict.services} />
       <ImageCarousel images={carouselImages}>
         <AboutCarouselBlobs />
       </ImageCarousel>
-      <Header
-        text="Posvećeni smo promociji sportskog penjanja kroz edukaciju, sigurnost i
-          avanturu za sve ljubitelje ovog sporta."
-      >
+      <Header text={dict.about.testimonial}>
         <Link href="/kontakt">
           <Button variant="blue" className="w-fit">
-            <Typography fontWeight="bold">Kontaktirajte nas</Typography>
+            <Typography fontWeight="bold">{dict.buttons.contactUs}</Typography>
           </Button>
         </Link>
       </Header>

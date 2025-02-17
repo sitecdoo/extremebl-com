@@ -16,6 +16,7 @@ import PostBannerBlobs from "@/components/custom-ui/blobs/post";
 import { generatePageTitle } from "@/utils/generate-page-title";
 import MediaShare from "@/components/custom-ui/media-share";
 import { getPost, getRecentPosts } from "@/db/queries";
+import { getDictionary } from "@/utils/dictionary";
 
 interface BlogPostPageProps {
   params: {
@@ -65,6 +66,7 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
   const { id } = await params;
   const post = await getPost(id);
   const { docs } = await getRecentPosts();
+  const dict = await getDictionary();
 
   if (!post) {
     notFound();
@@ -232,7 +234,10 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
         </div>
       </div>
 
-      <RecentBlogWrapper posts={docs} />
+      <RecentBlogWrapper
+        posts={docs}
+        dict={{ buttons: dict.buttons, global: dict.global }}
+      />
     </div>
   );
 };

@@ -12,6 +12,7 @@ import BlogBannerBlobs from "@/components/custom-ui/blobs/blog";
 import { generatePageTitle } from "@/utils/generate-page-title";
 import { getCategories, getPosts } from "@/db/queries";
 import EmptyState from "@/components/custom-ui/empty-state";
+import { getDictionary } from "@/utils/dictionary";
 
 export async function generateMetadata() {
   return {
@@ -25,6 +26,7 @@ const Blog = async ({
   searchParams: { [key: string]: string | string[] | undefined };
 }) => {
   const params = await searchParams;
+  const dict = await getDictionary();
 
   const sortParam = params.sort === "asc" ? "createdAt" : "-createdAt";
   const searchParam = params.search || "";
@@ -95,15 +97,15 @@ const Blog = async ({
         className="flex w-full scroll-m-5 flex-wrap items-center justify-between gap-4 sm:flex-nowrap"
       >
         <div className="w-full max-w-full">
-          <SearchFilter placeholder="Search..." />
+          <SearchFilter placeholder={dict.blog.search} />
         </div>
         <div className="flex w-full gap-2 sm:w-auto">
-          <FilterWrapper filterOptions={categories} />
-          <SortButton initialSortOrder="desc" />
+          <FilterWrapper filterOptions={categories} dict={dict.blog} />
+          <SortButton initialSortOrder="desc" text={dict.blog.sort} />
         </div>
       </nav>
       {docs.length === 0 ? (
-        <EmptyState />
+        <EmptyState dict={dict.blog} />
       ) : (
         <>
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">

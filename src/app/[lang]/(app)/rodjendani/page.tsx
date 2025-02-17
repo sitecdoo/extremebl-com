@@ -10,23 +10,54 @@ import {
   BirthdaysPackagesBlobs,
   BirthdaysTestemonialBlobs,
 } from "@/components/custom-ui/blobs/birthdays";
-import { masonryImages, infoSectionData } from "@/content/birthdays";
+import { masonryImages } from "@/content/birthdays";
 import { generatePageTitle } from "@/utils/generate-page-title";
 import NotesSection from "@/components/custom-ui/notes";
+import { getDictionary } from "@/utils/dictionary";
 
 export async function generateMetadata() {
+  const dict = await getDictionary();
   return {
-    title: generatePageTitle("Birthdays"),
+    title: generatePageTitle(dict.navigation.birthdays),
   };
 }
 
-const Birthdays = () => {
+const Birthdays = async () => {
+  const dict = await getDictionary();
+
+  const infoSectionData = [
+    {
+      image: "/birthdays/info-section-1.jpg",
+      title: dict.infoSection.birthdays[0].title,
+      description: dict.infoSection.birthdays[0].description,
+      xPosition: 60,
+      yPosition: 50,
+    },
+    {
+      image: "/birthdays/info-section-2.jpg",
+      title: dict.infoSection.birthdays[1].title,
+      description: dict.infoSection.birthdays[1].description,
+      xPosition: 50,
+      yPosition: 15,
+    },
+    {
+      image: "/birthdays/info-section-3.jpg",
+      title: dict.infoSection.birthdays[2].title,
+      description: dict.infoSection.birthdays[2].description,
+      xPosition: 60,
+      yPosition: 50,
+    },
+  ];
+
   return (
     <div className="relative flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
       <BirthdaysBannerBlobs />
       <div className="flex w-full flex-col items-center gap-24 lg:gap-44">
-        <HeroBanner img="/birthdays/hero.jpg" title="Rođendani" />
-        <Header text="Proslavite rođendan vašeg deteta na jedinstven i uzbudljiv način! Naša penjačka sala nudi savršeno okruženje za nezaboravnu rođendansku proslavu." />
+        <HeroBanner
+          img="/birthdays/hero.jpg"
+          title={dict.navigation.birthdays}
+        />
+        <Header text={dict.birthdays.header} />
       </div>
       <div className="flex w-full flex-col gap-y-24 lg:gap-y-32">
         {infoSectionData.map((info, index) => (
@@ -41,15 +72,16 @@ const Birthdays = () => {
         ))}
       </div>
       <div className="relative space-y-9 lg:space-y-16">
-        <PackagesSection />
-        <NotesSection />
+        <PackagesSection dict={dict.packages} />
+        <NotesSection dict={dict.notes} />
         <BirthdaysPackagesBlobs />
       </div>
       <Masonry images={masonryImages} />
       <TestimonialSection
-        description="“Ja sam oduševljena. Instruktori su za čistu desetku, nevjerovatni motivatori... Proslavili smo 14 rođendan i slavljenica kaže da joj je to bio najbolji rođendan!”"
+        description={dict.birthdays.testimonial}
         name="Ognjenka Jovičić"
         image="/testemonial/ognjenka-jovicic.png"
+        text={dict.buttons.contactUs}
       >
         <BirthdaysTestemonialBlobs />
       </TestimonialSection>

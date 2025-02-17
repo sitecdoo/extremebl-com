@@ -2,43 +2,47 @@ import ContactForm from "@/components/contact/contact-form";
 import { HeroBanner } from "@/components/custom-ui/banners";
 import ContactBannerBlobs from "@/components/custom-ui/blobs/contact";
 import Typography from "@/components/custom-ui/typography";
+import { getDictionary } from "@/utils/dictionary";
 import { generatePageTitle } from "@/utils/generate-page-title";
 import { FacebookIcon, InstagramIcon } from "lucide-react";
 import Link from "next/link";
 import { Suspense } from "react";
 
 export async function generateMetadata() {
+  const dict = await getDictionary();
   return {
-    title: generatePageTitle("Contact"),
+    title: generatePageTitle(dict.navigation.contact),
   };
 }
 
-const ContactPage = () => {
+const ContactPage = async () => {
+  const dict = await getDictionary();
   return (
     <div className="relative flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
       <ContactBannerBlobs />
       <div className="flex w-full flex-col items-center gap-24 lg:gap-44">
-        <HeroBanner img="/contact-hero-banner.jpg" title="Kontakt" />
+        <HeroBanner
+          img="/contact-hero-banner.jpg"
+          title={dict.navigation.contact}
+        />
         <div className="flex w-full flex-col justify-start gap-14 lg:flex-row lg:px-12 xl:gap-24 xl:px-20 2xl:gap-40 2xl:px-36">
           <div className="space-y-4 lg:max-w-lg">
             <Typography variant="h2" tag="h2" fontWeight="bold">
-              Kontaktirajte nas
+              {dict.contact.title}
             </Typography>
             <Typography className="text-base text-neutrals-600">
-              Imate pitanja ili trebate dodatne informacije? Slobodno nas
-              kontaktirajte! Tu smo da vam pomognemo i pružimo sve potrebne
-              informacije.
+              {dict.contact.description}
             </Typography>
           </div>
           <div className="grid gap-9 sm:grid-cols-2 lg:grid-cols-1">
             <div className="space-y-1">
               <Typography className="text-base text-neutrals-600">
-                Telefon:
+                {dict.contact.phone}:
               </Typography>
               <Typography className="text-base" fontWeight="bold">
-                +387 65 779 027 - generalni kontakt
+                +387 65 779 027 - {dict.contact.generalContact}
                 <br />
-                +387 65 303 034 - dječiji treninzi
+                +387 65 303 034 - {dict.contact.childrenContact}
               </Typography>
             </div>
             <div className="space-y-1">
@@ -51,7 +55,7 @@ const ContactPage = () => {
             </div>
             <div className="space-y-1">
               <Typography className="text-base text-neutrals-600">
-                Adresa:
+                {dict.contact.address}:
               </Typography>
               <Typography className="text-base" fontWeight="bold">
                 Bulevar vojvode Petra Bojovića 1<br />
@@ -82,7 +86,7 @@ const ContactPage = () => {
         </div>
         <div className="w-full space-y-6 text-center lg:space-y-12">
           <Typography variant="h2" tag="h2" fontWeight="bold">
-            Lokacija
+            {dict.contact.location}
           </Typography>
           <div className="h-[18rem] w-full lg:h-[43.75rem]">
             <iframe
@@ -96,7 +100,7 @@ const ContactPage = () => {
           </div>
         </div>
         <Suspense>
-          <ContactForm />
+          <ContactForm dict={dict.contact} />
         </Suspense>
       </div>
     </div>
