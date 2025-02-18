@@ -12,7 +12,7 @@ type RecentBlogWrapperProps = PropsWithChildren<{
     Post,
     "id" | "title" | "description" | "thumbnail" | "createdAt" | "categories"
   >[];
-  dict: Pick<Dictionary, "buttons" | "blogPost">;
+  dict: Pick<Dictionary, "global" | "blogPost">;
 }>;
 
 const RecentBlogWrapper = ({
@@ -46,7 +46,7 @@ const RecentBlogWrapper = ({
         {children}
       </div>
       <Link href="/blog" className="self-end">
-        <ArrowButton dict={dict.buttons} />
+        <ArrowButton dict={dict.global} />
       </Link>
     </div>
   );

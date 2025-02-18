@@ -30,32 +30,20 @@ const AdultsPage = async () => {
 
   const pricingData = {
     schedule: {
-      title: dict.priceList.adults.title,
+      title: dict.priceList.adultTraining,
       date: [
-        {
-          day: dict.priceList.adults.tuesday,
-          time: "19:00 - 22:00h",
-        },
-        {
-          day: dict.priceList.adults.wednesday,
-          time: "19:00 - 22:00h",
-        },
-        {
-          day: dict.priceList.adults.thursday,
-          time: "19:00 - 22:00h",
-        },
-        {
-          day: dict.priceList.adults.sunday,
-          time: "19:00 - 22:00h",
-        },
+        { day: dict.days.tuesday, time: "19:00 - 22:00h" },
+        { day: dict.days.wednesday, time: "19:00 - 22:00h" },
+        { day: dict.days.thursday, time: "19:00 - 22:00h" },
+        { day: dict.days.sunday, time: "19:00 - 22:00h" },
       ],
     },
     prices: [
-      { text: dict.priceList.adults.dailyPass, price: "10 KM" },
-      { text: dict.priceList.adults.monthly, price: "45 KM" },
-      { text: dict.priceList.adults.entries, price: "70 KM" },
-      { text: dict.priceList.adults.halfYear, price: "240 KM" },
-      { text: dict.priceList.adults.annual, price: "420 KM" },
+      { text: dict.priceList.dailyPass, price: "10 KM" },
+      { text: dict.priceList.monthly, price: "45 KM" },
+      { text: dict.priceList.entries, price: "70 KM" },
+      { text: dict.priceList.halfYear, price: "240 KM" },
+      { text: dict.priceList.annual, price: "420 KM" },
     ],
   };
 
@@ -97,7 +85,7 @@ const AdultsPage = async () => {
         >
           <ScrollToButton
             elementId="pricing"
-            text={dict.buttons.trainingSchedule}
+            text={dict.global.trainingSchedule}
             variant="black"
           />
         </InfoSection>
@@ -115,12 +103,12 @@ const AdultsPage = async () => {
             <RectangleWrapper
               text="29.03. - 30.03"
               href="https://forms.gle/jPSnH41XGEf4c25S9"
-              buttonText={dict.buttons.signUp}
+              buttonText={dict.global.signUp}
             />
             <RectangleWrapper
               text="26.04. - 27.04"
               href="https://forms.gle/wPscJjUauwjdAWM98"
-              buttonText={dict.buttons.signUp}
+              buttonText={dict.global.signUp}
             />
           </div>
         </InfoSection>
@@ -138,7 +126,7 @@ const AdultsPage = async () => {
             <RectangleWrapper
               text="01.04. - 30.04"
               href="https://forms.gle/hiHBh7zCgZpjs4Eu7"
-              buttonText={dict.buttons.signUp}
+              buttonText={dict.global.signUp}
             />
           </div>
         </InfoSection>
@@ -175,7 +163,7 @@ const AdultsPage = async () => {
           href={`kontakt?subject=${encodeURIComponent("odrasli-penjanje".replace(/ /g, "-"))}`}
         >
           <Button variant="blue" className="w-fit">
-            <Typography fontWeight="bold">{dict.buttons.contactUs}</Typography>
+            <Typography fontWeight="bold">{dict.global.contactUs}</Typography>
           </Button>
         </Link>
       </Header>

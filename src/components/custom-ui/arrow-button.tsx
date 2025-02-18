@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 import Typography from "./typography";
 import { Dictionary } from "@/utils/dictionary";
 
-const ArrowButton = ({ dict }: { dict: Dictionary["buttons"] }) => {
+const ArrowButton = ({ dict }: { dict: Dictionary["global"] }) => {
   return (
     <Button
       variant="ghost"

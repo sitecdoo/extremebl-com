@@ -12,16 +12,16 @@ const SmallQuestions = ({ dict }: { dict: Dictionary["smallQuestions"] }) => {
 
   const questions = [
     {
-      text: dict.question1,
-      answer: dict.answer1,
+      text: dict.whatIsQuestion,
+      answer: dict.whatIsAnswer,
     },
     {
-      text: dict.question2,
-      answer: dict.answer2,
+      text: dict.benefitsQuestion,
+      answer: dict.benefitsAnswer,
     },
     {
-      text: dict.question3,
-      answer: dict.answer3,
+      text: dict.canAnyoneQuestion,
+      answer: dict.canAnyoneAnswer,
     },
   ];
 

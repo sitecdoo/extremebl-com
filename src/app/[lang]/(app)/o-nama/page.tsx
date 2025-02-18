@@ -51,7 +51,7 @@ const AboutPage = async () => {
           title={infoSectionData[0].title}
           description={infoSectionData[0].description}
         >
-          <ArrowButton dict={dict.buttons} />
+          <ArrowButton dict={dict.global} />
         </InfoSection>
         <InfoSection
           image={infoSectionData[1].image}
@@ -66,7 +66,7 @@ const AboutPage = async () => {
       <Header text={dict.about.testimonial}>
         <Link href="/kontakt">
           <Button variant="blue" className="w-fit">
-            <Typography fontWeight="bold">{dict.buttons.contactUs}</Typography>
+            <Typography fontWeight="bold">{dict.global.contactUs}</Typography>
           </Button>
         </Link>
       </Header>

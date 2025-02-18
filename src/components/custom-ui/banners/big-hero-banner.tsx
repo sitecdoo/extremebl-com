@@ -8,7 +8,7 @@ import { Dictionary } from "@/utils/dictionary";
 const BigHeroBanner = ({
   dict,
 }: {
-  dict: Pick<Dictionary, "heroBanner" | "buttons">;
+  dict: Pick<Dictionary, "heroBanner" | "global">;
 }) => {
   return (
     <section className="relative w-full">
@@ -49,14 +49,14 @@ const BigHeroBanner = ({
           <Link href="/djeca-penjanje">
             <Button variant="yellow">
               <Typography fontWeight="bold">
-                {dict.buttons.climbingForChildren}
+                {dict.global.climbingForChildren}
               </Typography>
             </Button>
           </Link>
           <Link href="/odrasli-penjanje">
             <Button>
               <Typography fontWeight="bold">
-                {dict.buttons.climbingForAdults}
+                {dict.global.climbingForAdults}
               </Typography>
             </Button>
           </Link>

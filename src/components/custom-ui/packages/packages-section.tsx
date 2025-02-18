@@ -57,7 +57,7 @@ const PackagesSection = ({ dict }: { dict: Dictionary["packages"] }) => {
               price={item.price}
               offers={item.offers}
               className={`${index === 2 && "md:col-span-2 md:justify-self-center xl:col-span-1"}`}
-              text={dict.button}
+              text={dict.reserve}
             />
           ))}
         </div>

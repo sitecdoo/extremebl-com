@@ -96,7 +96,7 @@ const TeambuildingPage = async () => {
         description={dict.teambuilding.testimonial}
         name="Mirjana Simić"
         image="/testemonial/mirjana-simic.png"
-        text={dict.buttons.contactUs}
+        text={dict.global.contactUs}
       >
         <TeambuildingTestimonialBlobs />
       </TestimonialSection>

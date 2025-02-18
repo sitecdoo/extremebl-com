@@ -29,7 +29,7 @@ export default async function HomePage() {
       <HomeBannerBlobs />
       <div className="flex w-full flex-col items-center gap-24 lg:gap-48">
         <BigHeroBanner
-          dict={{ buttons: dict.buttons, heroBanner: dict.heroBanner }}
+          dict={{ global: dict.global, heroBanner: dict.heroBanner }}
         />
         <SmallQuestions dict={dict.smallQuestions} />
       </div>
@@ -42,9 +42,7 @@ export default async function HomePage() {
         >
           <Link href="/odrasli-penjanje">
             <Button variant="black" className="w-fit">
-              <Typography fontWeight="bold">
-                {dict.buttons.learnMore}
-              </Typography>
+              <Typography fontWeight="bold">{dict.global.learnMore}</Typography>
             </Button>
           </Link>
         </InfoSection>
@@ -56,14 +54,12 @@ export default async function HomePage() {
         >
           <Link href="/djeca-penjanje">
             <Button variant="yellow" className="w-fit">
-              <Typography fontWeight="bold">
-                {dict.buttons.learnMore}
-              </Typography>
+              <Typography fontWeight="bold">{dict.global.learnMore}</Typography>
             </Button>
           </Link>
         </InfoSection>
       </div>
-      <TrainingSchedule dict={dict.trainingSchedule} />
+      <TrainingSchedule dict={{ schedule: dict.schedule, days: dict.days }} />
       <div className="hidden" />
       <InfoSection
         image="/birthdays/hero.jpg"
@@ -72,7 +68,7 @@ export default async function HomePage() {
       >
         <Link href="/rodjendani">
           <Button variant="blue" className="w-fit">
-            <Typography fontWeight="bold">{dict.buttons.learnMore}</Typography>
+            <Typography fontWeight="bold">{dict.global.learnMore}</Typography>
           </Button>
         </Link>
       </InfoSection>
@@ -83,7 +79,7 @@ export default async function HomePage() {
       >
         <Link href="/teambuilding">
           <Button variant="blue" className="w-fit">
-            <Typography fontWeight="bold">{dict.buttons.learnMore}</Typography>
+            <Typography fontWeight="bold">{dict.global.learnMore}</Typography>
           </Button>
         </Link>
       </InfoSection>
@@ -96,7 +92,7 @@ export default async function HomePage() {
         </Button>
         <RecentBlogWrapper
           posts={docs}
-          dict={{ buttons: dict.buttons, blogPost: dict.blogPost }}
+          dict={{ global: dict.global, blogPost: dict.blogPost }}
         >
           <HomePostsBlobs />
         </RecentBlogWrapper>

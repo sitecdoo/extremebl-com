@@ -7,49 +7,49 @@ import { Dictionary } from "@/utils/dictionary";
 const TrainingSchedule = ({
   dict,
 }: {
-  dict: Dictionary["trainingSchedule"];
+  dict: Pick<Dictionary, "schedule" | "days">;
 }) => {
   const schedule = {
-    [dict.monday.title]: {
+    [dict.days.monday]: {
       activities: [
-        { name: dict.monday.schedule1, time: "19:00 - 20:00h" },
-        { name: dict.monday.schedule2, time: "19:30 - 21:00h" },
+        { name: dict.schedule.youngerChildren, time: "19:00 - 20:00h" },
+        { name: dict.schedule.olderChildren, time: "19:30 - 21:00h" },
       ],
     },
-    [dict.tuesday.title]: {
-      activities: [{ name: dict.thursday.schedule1, time: "19:00 - 22:00h" }],
+    [dict.days.tuesday]: {
+      activities: [{ name: dict.schedule.adultsFree, time: "19:00 - 22:00h" }],
     },
-    [dict.wednesday.title]: {
+    [dict.days.wednesday]: {
       activities: [
-        { name: dict.wednesday.schedule1, time: "19:00 - 22:00h" },
-        { name: dict.wednesday.schedule2, time: "19:00 - 22:00h" },
+        { name: dict.schedule.adultsGroup, time: "19:00 - 22:00h" },
+        { name: dict.schedule.adultsFree, time: "19:00 - 22:00h" },
       ],
     },
-    [dict.thursday.title]: {
-      activities: [{ name: dict.thursday.schedule1, time: "19:00 - 22:00h" }],
+    [dict.days.thursday]: {
+      activities: [{ name: dict.schedule.adultsFree, time: "19:00 - 22:00h" }],
     },
-    [dict.friday.title]: {
+    [dict.days.friday]: {
       activities: [
-        { name: dict.friday.schedule1, time: "19:00 - 20:00h" },
-        { name: dict.friday.schedule2, time: "19:30 - 21:00h" },
+        { name: dict.schedule.youngerChildren, time: "19:00 - 20:00h" },
+        { name: dict.schedule.olderChildren, time: "19:30 - 21:00h" },
       ],
     },
-    [dict.saturday.title]: {
-      activities: [{ name: dict.saturday.schedule1, time: "" }],
+    [dict.days.saturday]: {
+      activities: [{ name: dict.schedule.nonWorking, time: "" }],
     },
-    [dict.sunday.title]: {
+    [dict.days.sunday]: {
       activities: [
-        { name: dict.sunday.schedule1, time: "19:00 - 22:00h" },
-        { name: dict.sunday.schedule2, time: "19:00 - 22:00h" },
+        { name: dict.schedule.adultsGroup, time: "19:00 - 22:00h" },
+        { name: dict.schedule.adultsFree, time: "19:00 - 22:00h" },
       ],
     },
   };
 
   const colorMap: Record<string, string> = {
-    [dict.monday.schedule1]: "bg-yellow-400",
-    [dict.monday.schedule2]: "bg-orange-400",
-    [dict.wednesday.schedule1]: "bg-purple-400",
-    [dict.thursday.schedule1]: "bg-blue-100",
+    [dict.schedule.youngerChildren]: "bg-yellow-400",
+    [dict.schedule.olderChildren]: "bg-orange-400",
+    [dict.schedule.adultsGroup]: "bg-purple-400",
+    [dict.schedule.adultsFree]: "bg-blue-100",
   };
 
   return (
@@ -60,7 +60,7 @@ const TrainingSchedule = ({
         fontWeight="bold"
         className="text-center"
       >
-        {dict.title}
+        {dict.schedule.title}
       </Typography>
       <div className="grid grid-flow-row gap-6 rounded-2xl bg-neutrals-100 p-2 sm:grid-cols-4 sm:p-3 xl:grid-cols-7 xl:p-16">
         {Object.entries(schedule).map(([day, { activities }]) => (

@@ -237,7 +237,7 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
 
       <RecentBlogWrapper
         posts={docs}
-        dict={{ buttons: dict.buttons, blogPost: dict.blogPost }}
+        dict={{ global: dict.global, blogPost: dict.blogPost }}
       />
     </div>
   );

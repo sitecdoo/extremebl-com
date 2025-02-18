@@ -81,7 +81,7 @@ const Birthdays = async () => {
         description={dict.birthdays.testimonial}
         name="Ognjenka Jovičić"
         image="/testemonial/ognjenka-jovicic.png"
-        text={dict.buttons.contactUs}
+        text={dict.global.contactUs}
       >
         <BirthdaysTestemonialBlobs />
       </TestimonialSection>

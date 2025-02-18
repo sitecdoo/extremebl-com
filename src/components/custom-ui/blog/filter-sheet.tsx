@@ -99,7 +99,7 @@ const FilterSheet = ({
               onClick={() => setIsOpen(false)}
             >
               <Typography fontWeight="bold" className="text-base">
-                {dict.button}
+                {dict.view}
               </Typography>
             </Button>
           </nav>

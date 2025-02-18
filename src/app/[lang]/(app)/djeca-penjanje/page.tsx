@@ -48,39 +48,24 @@ const Children = async () => {
   const pricingData = {
     schedules: [
       {
-        title: dict.priceList.children.youngerTitle,
+        title: dict.priceList.youngerTraining,
         date: [
-          {
-            day: dict.priceList.children.monday,
-            time: "19:00 - 20:00h",
-          },
-          {
-            day: dict.priceList.children.friday,
-            time: "19:00 - 20:00h",
-          },
+          { day: dict.days.monday, time: "19:00 - 20:00h" },
+          { day: dict.days.friday, time: "19:00 - 20:00h" },
         ],
       },
       {
-        title: dict.priceList.children.olderTitle,
+        title: dict.priceList.olderTraining,
         date: [
-          {
-            day: dict.priceList.children.monday,
-            time: "19:30 - 21:00h",
-          },
-          {
-            day: dict.priceList.children.friday,
-            time: "19:30 - 21:00h",
-          },
+          { day: dict.days.monday, time: "19:30 - 21:00h" },
+          { day: dict.days.friday, time: "19:30 - 21:00h" },
         ],
       },
     ],
     prices: [
-      { text: dict.priceList.children.trial, price: "10 KM" },
-      { text: dict.priceList.children.monthly, price: "50 KM" },
-      {
-        text: dict.priceList.children.twoChildren,
-        price: "80 KM",
-      },
+      { text: dict.priceList.trial, price: "10 KM" },
+      { text: dict.priceList.monthly, price: "50 KM" },
+      { text: dict.priceList.twoChildren, price: "80 KM" },
     ],
   };
 
@@ -121,7 +106,7 @@ const Children = async () => {
           >
             <ScrollToButton
               elementId="contact"
-              text={dict.buttons.signInChildren}
+              text={dict.global.signInChildren}
               variant="yellow"
             />
           </InfoSection>
@@ -152,9 +137,7 @@ const Children = async () => {
             href={`kontakt?subject=${encodeURIComponent("djeca-penjanje".replace(/ /g, "-"))}`}
           >
             <Button variant="blue" className="w-fit">
-              <Typography fontWeight="bold">
-                {dict.buttons.contactUs}
-              </Typography>
+              <Typography fontWeight="bold">{dict.global.contactUs}</Typography>
             </Button>
           </Link>
         </Header>
