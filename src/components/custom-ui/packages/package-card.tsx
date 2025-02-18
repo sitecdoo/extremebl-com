@@ -9,9 +9,16 @@ type PackageCardProps = {
   price: string;
   offers: string[];
   className?: string;
+  text: string;
 };
 
-const PackageCard = ({ name, price, offers, className }: PackageCardProps) => {
+const PackageCard = ({
+  name,
+  price,
+  offers,
+  text,
+  className,
+}: PackageCardProps) => {
   return (
     <div
       className={cn(
@@ -41,9 +48,10 @@ const PackageCard = ({ name, price, offers, className }: PackageCardProps) => {
       </div>
       <Link
         href={`kontakt?subject=${encodeURIComponent(name.replace(/ /g, "-"))}`}
+        className="self-center"
       >
         <Button className="w-fit self-center" variant="blue">
-          <Typography fontWeight="bold">Rezervišite termin</Typography>
+          <Typography fontWeight="bold">{text}</Typography>
         </Button>
       </Link>
     </div>

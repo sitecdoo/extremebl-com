@@ -1,10 +1,57 @@
 import React from "react";
 import Typography from "../typography";
 import { Separator } from "../../ui/separator";
-import { colorMap, schedule } from "./training-schedule-config";
 import { cn } from "@/lib/utils";
+import { Dictionary } from "@/utils/dictionary";
 
-const TrainingSchedule = () => {
+const TrainingSchedule = ({
+  dict,
+}: {
+  dict: Pick<Dictionary, "schedule" | "days">;
+}) => {
+  const schedule = {
+    [dict.days.monday]: {
+      activities: [
+        { name: dict.schedule.youngerChildren, time: "19:00 - 20:00h" },
+        { name: dict.schedule.olderChildren, time: "19:30 - 21:00h" },
+      ],
+    },
+    [dict.days.tuesday]: {
+      activities: [{ name: dict.schedule.adultsFree, time: "19:00 - 22:00h" }],
+    },
+    [dict.days.wednesday]: {
+      activities: [
+        { name: dict.schedule.adultsGroup, time: "19:00 - 22:00h" },
+        { name: dict.schedule.adultsFree, time: "19:00 - 22:00h" },
+      ],
+    },
+    [dict.days.thursday]: {
+      activities: [{ name: dict.schedule.adultsFree, time: "19:00 - 22:00h" }],
+    },
+    [dict.days.friday]: {
+      activities: [
+        { name: dict.schedule.youngerChildren, time: "19:00 - 20:00h" },
+        { name: dict.schedule.olderChildren, time: "19:30 - 21:00h" },
+      ],
+    },
+    [dict.days.saturday]: {
+      activities: [{ name: dict.schedule.nonWorking, time: "" }],
+    },
+    [dict.days.sunday]: {
+      activities: [
+        { name: dict.schedule.adultsGroup, time: "19:00 - 22:00h" },
+        { name: dict.schedule.adultsFree, time: "19:00 - 22:00h" },
+      ],
+    },
+  };
+
+  const colorMap: Record<string, string> = {
+    [dict.schedule.youngerChildren]: "bg-yellow-400",
+    [dict.schedule.olderChildren]: "bg-orange-400",
+    [dict.schedule.adultsGroup]: "bg-purple-400",
+    [dict.schedule.adultsFree]: "bg-blue-100",
+  };
+
   return (
     <div className="flex w-full flex-col gap-4 sm:items-center">
       <Typography
@@ -13,7 +60,7 @@ const TrainingSchedule = () => {
         fontWeight="bold"
         className="text-center"
       >
-        Raspored treninga
+        {dict.schedule.title}
       </Typography>
       <div className="grid grid-flow-row gap-6 rounded-2xl bg-neutrals-100 p-2 sm:grid-cols-4 sm:p-3 xl:grid-cols-7 xl:p-16">
         {Object.entries(schedule).map(([day, { activities }]) => (

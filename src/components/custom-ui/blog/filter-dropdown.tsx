@@ -13,12 +13,14 @@ import { Category } from "@/payload-types";
 import Typography from "../typography";
 import { cn } from "@/lib/utils";
 import { PropsWithChildren, useState } from "react";
+import { Dictionary } from "@/utils/dictionary";
 
 type FilterDropdownProps = PropsWithChildren<{
   filterOptions: Category[];
   handleChange: (itemId: number, e: Event) => void;
   clearAll: () => void;
   filters: number[];
+  dict: Dictionary["blog"];
 }>;
 
 export function FilterDropdown({
@@ -26,6 +28,7 @@ export function FilterDropdown({
   handleChange,
   clearAll,
   filters,
+  dict,
 }: FilterDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -43,7 +46,7 @@ export function FilterDropdown({
             size="small"
           >
             <Typography fontWeight="bold" className="uppercase">
-              Filteri
+              {dict.filter}
             </Typography>
             <Filter className="size-5 lg:size-5" />
           </Button>
@@ -66,7 +69,7 @@ export function FilterDropdown({
                 variant="caption"
                 className="text-sm"
               >
-                Izbriši sve
+                {dict.delete}
               </Typography>
               <Trash2 className="size-4" strokeWidth={2.5} />
             </Button>

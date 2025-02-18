@@ -31,7 +31,10 @@ export const sendEmailAction = async (
     return { success: false };
   }
 
-  const subjectPrefix = subject?.includes("paket") ? `Rođendan | ` : "";
+  const subjectPrefix =
+    subject?.includes("paket") || subject?.includes("package")
+      ? `Rođendan | `
+      : "";
   const emailSubject = `${subjectPrefix}${subject ? subject.replace(/-/g, " ").replace(/^./, (char) => char.toUpperCase()) : "ExtremeBL - Contact form"}`;
 
   const emailData = await resend.emails.send({

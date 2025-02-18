@@ -1,1 +1,292 @@
-{}
+{
+  "global": {
+    "climbingForChildren": "Penjanje za djecu",
+    "climbingForAdults": "Penjanje za odrasle",
+    "learnMore": "Saznajte više",
+    "readMore": "Pročitajte više",
+    "contactUs": "Kontaktirajte nas",
+    "signInChildren": "Upišite dijete",
+    "trainingSchedule": "Pogledaj raspored treninga",
+    "signUp": "Prijavi se"
+  },
+
+  "navigation": {
+    "home": "Početna",
+    "about": "O nama",
+    "children": "Djeca",
+    "adults": "Odrasli",
+    "birthdays": "Rođendani",
+    "teambuilding": "Teambuilding",
+    "contact": "Kontakt",
+    "blog": "Blog",
+    "faq": "FAQ"
+  },
+
+  "footer": {
+    "info": "Info",
+    "activities": "Aktivnosti"
+  },
+
+  "about": {
+    "banner": "O nama",
+    "header": "Mi smo jedan od najstarijih penjačkih klubova u Bosni i Hercegovini, osnovan 2001. godine. Pored naše odlično opremljene penjačke sale, organizatori smo Pecka Rock Climbing i Drill & Chill Climbing and Highlining festivala, mnoštva kurseva, takmičenja, putovanja i kampovanje, te smo uredili preko 500 penjačkih smjerova.",
+    "testimonial": "Posvećeni smo promociji sportskog penjanja kroz edukaciju, sigurnost i avanturu za sve ljubitelje ovog sporta."
+  },
+
+  "children": {
+    "banner": "Penjanje za djecu",
+    "header": "Penjanje je nevjerovatna aktivnost za djecu koja poboljšava snagu, koordinaciju i vještine rješavanja problema. Povećava samopouzdanje, pruža osjećaj uspjeha i podstiče timski rad.",
+    "testimonial": "Zainteresovani ste za penjanje za vaše mališane? Kontaktirajte nas na +387 65 303 034 (poziv, SMS, Viber, WhatsApp) da dogovorimo probni trening."
+  },
+
+  "adults": {
+    "banner": "Penjanje za odrasle",
+    "header": "Penjanje za odrasle pruža uzbudljivu priliku za sve ljubitelje avanture, bez obzira na prethodno iskustvo. Bilo da želiš poboljšati svoju fizičku kondiciju, savladati nove izazove ili jednostavno uživati u kampovanju i boravku u prirodi.",
+    "testimonial": "Spremni za novu avanturu? Pridružite se našoj penjačkoj ekipi i započnite svoje penjačko putovanje danas",
+    "nextSessions": "Naredni termini"
+  },
+
+  "birthdays": {
+    "header": "Proslavite rođendan vašeg deteta na jedinstven i uzbudljiv način! Naša penjačka sala nudi savršeno okruženje za nezaboravnu rođendansku proslavu.",
+    "testimonial": "“Ja sam oduševljena. Instruktori su za čistu desetku, nevjerovatni motivatori... Proslavili smo 14 rođendan i slavljenica kaže da joj je to bio najbolji rođendan!”"
+  },
+
+  "teambuilding": {
+    "header": "Naša penjačka sala je idealno mjesto za teambuilding jer nudi jedinstvenu kombinaciju fizičkih i mentalnih izazova koji podstiču timsku saradnju i komunikaciju.",
+    "testimonial": "Najviše mi se svidjelo kako su aktivnosti bile prilagođene našim sposobnostima, omogućujući svakom članu tima da se osjeća uključenim i podržanim. Ovo iskustvo je definitivno poboljšalo našu timsku dinamiku i preporučujemo ga svakome ko želi ojačati svoj tim kroz zabavu i avanturu!"
+  },
+
+  "contact": {
+    "title": "Kontaktirajte nas",
+    "description": "Imate pitanja ili trebate dodatne informacije? Slobodno nas kontaktirajte! Tu smo da vam pomognemo i pružimo sve potrebne informacije.",
+    "phone": "Telefon",
+    "address": "Adresa",
+    "generalContact": "generalni kontakt",
+    "childrenContact": "dječiji treninzi",
+    "location": "Lokacija",
+    "formTitle": "Napiši nam poruku",
+    "name": "Ime i prezime*",
+    "phoneNumber": "Broj telefona*",
+    "message": "Poruka*",
+    "send": "Pošalji upit"
+  },
+
+  "blog": {
+    "search": "Pretraži...",
+    "filter": "Filteri",
+    "sort": "Sortiraj",
+    "delete": "Izbriši sve",
+    "emptyTitle": "Nema rezultata za vašu pretragu!",
+    "emptyDescription": "Pokušajte promjeniti filtere ili pretražiti koristeći drugačije ključne reči.",
+    "category": "Odaberi kategoriju",
+    "view": "Pogledaj Blogpostove"
+  },
+
+  "blogPost": {
+    "latestPosts": "Najnovije objave",
+    "author": "Autor",
+    "date": "Datum objave",
+    "share": "Podijeli na"
+  },
+
+  "heroBanner": {
+    "title": "Započni avanturu",
+    "description": "Kreni ka novim visinama, Pridruži se našem klubu!"
+  },
+
+  "smallQuestions": {
+    "whatIsQuestion": "Šta je penjanje",
+    "benefitsQuestion": "Koji su benefiti penjanja?",
+    "canAnyoneQuestion": "Da li svako može penjati?",
+    "whatIsAnswer": "Sportsko penjanje sve je popularniji oblik rekreacije i sporta, odnedavno i olimpijski sport, privlačan ljudima širom svijeta. Može se izvoditi na prirodnim ili vještačkim stijenama, a postoje dva glavna načina penjanja – bouldering, koji se odvija na nižim stijenama bez užeta, i penjanje na visokoj stijeni, koje uključuje korištenje sigurnosne opreme poput užadi. Cilj je uspješno popeti zadani smjer, savladavajući sve njegove prepreke (tzv. 'detalje'). Ovaj sport je dostupan ljudima svih starosnih doba, od djece do starijih osoba.",
+    "benefitsAnswer": "Sportsko penjanje je dinamična i uzbudljiva aktivnost koja donosi brojne koristi za tijelo i um, pružajući fizički izazov, ali i priliku za druženje, putovanja i boravak u prirodi. Osim što pomaže početnicima da prevladaju strah, poboljšava koordinaciju, fokus te jača snagu i izdržljivost cijelog tijela – često ga nazivaju modernom gimnastikom. Kod djece doprinosi razvoju fine i grube motorike, poboljšavajući ravnotežu i svjesnost o pokretima. Penjanje takođe podstiče proizvodnju hormona koji smanjuju stres i povećavaju osjećaj zadovoljstva i ispunjenosti.",
+    "canAnyoneAnswer": "Da, sportsko penjanje je aktivnost kojom se može baviti gotovo svako, bez obzira na uzrast i nivo fizičke spremnosti. Penjački smjerovi dolaze u različitim težinama, tako da uvijek postoji nešto prilagođeno početnicima, ali i izazovi za iskusnije penjače. Ipak, osobe s određenim zdravstvenim stanjima, poput problema sa srcem, zglobovima ili balansom, trebalo bi da se konsultuju s ljekarom prije nego što počnu."
+  },
+
+  "infoSection": {
+    "homePage": {
+      "adultsTitle": "Penjanje za odrasle",
+      "adultsDescription": "Naše penjanje za odrasle pruža uzbudljivu priliku za sve ljubitelje avanture, bez obzira na prethodno iskustvo. Bilo da želiš poboljšati svoju fizičku kondiciju, savladati nove izazove ili jednostavno uživati u društvu entuzijasta kao što si ti, naši instruktori su tu da ti pruže podršku na svakom koraku.",
+      "childrenTitle": "Penjanje za djecu",
+      "childrenDescription": "Penjanje za djecu je savršen način da mališani razviju svoje motoričke veštine, samopouzdanje i timski duh. Naši programi su prilagođeni različitim uzrastima i nivoima vještina, uz stalni nadzor i podršku iskusnih instruktora. Kroz igru i zabavu, djeca će naučiti osnovne tehnike penjanja, a možda čak i otkriti svoju ljubav prema ovom sportu.",
+      "birthdayTitle": "Proslava rođendana",
+      "birthdayDescription": "Proslavite rođendan vašeg djeteta na jedinstven i uzbudljiv način! Naša penjačka sala nudi savršeno okruženje za nezaboravnu rođendansku proslavu uz profesionalne instruktore, sigurnu opremu i zabavu za sve uzraste.",
+      "teambuildingTitle": "Teambuilding",
+      "teambuildingDescription": "Naša penjačka sala je idealno mjesto za teambuilding jer nudi jedinstvenu kombinaciju fizičkih i mentalnih izazova koji podstiču timsku saradnju i komunikaciju. Uz to nudimo profesionalne instruktore, sigurnu opremu i neograničen broj ideja kojima ćete uvijek iznenaditi vaš tim."
+    },
+    "about": {
+      "history": "Istorijat",
+      "historyDescription": "Tekst je u izradi, posjeti link kasnije.",
+      "ourMission": "Naša misija",
+      "ourMissionDescription": "Naša misija je popularizacija i unapređenje sportskog penjanja na prirodnim i vještačkim stijenama kroz organizaciju treninga, kurseva, takmičenja, festivala i penjačkih putovanja, te kroz izgradnju i održavanje penjačke infrastukture."
+    },
+    "children": {
+      "youngerChildrenTitle": "Djeca mlađeg uzrasta",
+      "youngerChildrenDescription": "Sportsko penjanje za djecu od 6 do 10 godina razvija snagu, koordinaciju i samopouzdanje. Uz stručne trenere i sigurnu opremu, trening je prilagođen igri i postepenom učenju.",
+      "olderChildrenTitle": "Djeca starijeg uzrasta",
+      "olderChildrenDescription": "Sportsko penjanje za djecu od 10 godina i više jača izdržljivost, tehniku i mentalnu snagu. Treninzi su zahtjevniji, uz fokus na usavršavanje pokreta, dok stručni treneri i sigurna oprema omogućavaju bezbjedno napredovanje."
+    },
+    "adults": {
+      "trainingTitle": "Trening",
+      "trainingDescription": "Možeš trenirati samostalno u slobodnim terminima ili se pridružiti grupnim treninzima pod vodstvom trenera. Tokom slobodnih termina, dežurna osoba ti može pomoći u organizaciji treninga i pružiti savjete. Da bi se priključio/la dovoljno je da dođeš na jedan od treninga za odrasle.",
+      "basicCourseTitle": "Osnovni kurs",
+      "basicCourseDescription": "Ovaj vikend kurs je namenjen početnicima i omogućava im da nauče da samostalno penju i osiguravaju na 'top rope'. Kada vremenski uslovi dozvole, kurs se održava na prirodnim stijenama.",
+      "advancedCourseTitle": "Napredni kurs",
+      "advancedCourseDescription": "Ovaj kurs je namenjen penjačima koji već imaju iskustva u penjanju na 'top rope' i žele da nauče da penju i osiguravaju na vođenje. Kurs traje mjesec dana i održava se dva puta sedmično. Ako vremenski uslovi dozvole, dio časova se održava na prirodnoj stijeni.",
+      "fieldTripTitle": "Izleti u prirodu",
+      "fieldTripDescription": "Već sa prvim dolaskom na trening stičeš pravo odlaska na izlete u prirodu. Oni se obično dešavaju vikendom, 1-2 puta mjesečno. Najčešće obilazimo okolna penjališta, ali ponekad organizujemo i putovanja u druge gradove i zemlje."
+    },
+    "birthdays": {
+      "instructorsTitle": "Profesionalni instruktori",
+      "instructorsDescription": "Naši profesionalni instruktori nisu samo iskusni penjači, već i sjajni animatori koji će učiniti svaki rođendan još zabavnijim. Kroz igru i avanturu, djecu vode kroz sigurno i uzbudljivo penjačko iskustvo, pomažući im da savladaju osnovne tehnike dok se istovremeno odlično zabavljaju.",
+      "saftyTitle": "Sigurna oprema",
+      "saftyDescription": "Koristimo provjerenu i kvalitetnu penjačku opremu koja osigurava maksimalnu sigurnost tokom penjanja. Sva užad, pojasevi i penjačke sprave redovno se pregledaju i održavaju, a naši instruktori vode računa da se oprema pravilno koristi, omogućavajući bezbrižno i sigurno iskustvo za sve učesnike.",
+      "funTitle": "Zabava za sve uzraste",
+      "funDescription": "Penjački rođendani su idealna zabava za djecu svih uzrasta – od najmlađih avanturista do starijih mališana željnih izazova! Naši instruktori prilagođavaju igre i smjerove kako bi svaki učesnik, bez obzira na godine ili iskustvo, mogao uživati u sigurnoj i uzbudljivoj avanturi ispunjenoj smijehom i druženjem."
+    },
+    "teambuilding": {
+      "instructorsTitle": "Profesionalni instruktori",
+      "instructorsDescription": "Naši profesionalni instruktori nisu samo iskusni penjači, već i odlični motivatori koji će vaš teambuilding učiniti dinamičnim i zabavnim. Kroz timske izazove i penjačke zadatke, učesnike vode kroz sigurno i uzbudljivo iskustvo, podstičući saradnju, komunikaciju i jačanje timskog duha u opuštenoj i inspirativnoj atmosferi.",
+      "saftyTitle": "Sigurna oprema",
+      "saftyDescription": "Koristimo provjerenu i kvalitetnu penjačku opremu koja osigurava maksimalnu sigurnost tokom penjanja. Sva užad, pojasevi i penjačke sprave redovno se pregledaju i održavaju, a naši instruktori vode računa da se oprema pravilno koristi, omogućavajući bezbrižno i sigurno iskustvo za sve učesnike.",
+      "activitiesTitle": "Različite aktivnosti",
+      "activitiesDescription": "U našoj penjačkoj sali nudimo raznovrsne teambuilding aktivnosti, uključujući timske penjačke izazove, zabavne takmičarske igre, vježbe povjerenja i rješavanje problema kroz penjanje. Sve aktivnosti su prilagođene različitim nivoima iskustva i osmišljene tako da jačaju saradnju, komunikaciju i timski duh."
+    }
+  },
+
+  "days": {
+    "monday": "Ponedjeljak",
+    "tuesday": "Utorak",
+    "wednesday": "Srijeda",
+    "thursday": "Četvrtak",
+    "friday": "Petak",
+    "saturday": "Subota",
+    "sunday": "Nedjelja"
+  },
+
+  "schedule": {
+    "title": "Raspored treninga",
+    "youngerChildren": "Djeca mlađeg uzrasta",
+    "olderChildren": "Djeca starijeg uzrasta",
+    "adultsGroup": "Odrasli grupni termin",
+    "adultsFree": "Odrasli slobodni termin",
+    "nonWorking": "Neradni dan"
+  },
+
+  "socialMedia": {
+    "title": "Socijalne mreže",
+    "error": "Učitavanje postova nije uspelo. Pokušajte ponovo kasnije."
+  },
+
+  "faq": {
+    "title": "Često postavljena pitanja",
+    "description": "U ovoj sekciji pronaći ćete odgovore na najčešća pitanja o penjanju kao i načinima da se priključite i počnete sa treningom!",
+    "questions": {
+      "sportsClimbing": "Šta je sportsko penjanje?",
+      "safety": "Da li je sportsko penjanje sigurno?",
+      "experience": "Da li je potrebno prethodno iskustvo za bavljenje sportskim penjanje?",
+      "physical": "Koje su fizičke prednosti sportskog penjanja?",
+      "starting": "Kako da počnem trenirati sportsko penjanje?",
+      "age": "Sa koliko godina djeca mogu početi sa sportskim penjanjem?",
+      "enrollment": "Kako upisati dijete na sportsko penjanje?"
+    },
+    "answers": {
+      "sportsClimbing": "Sportsko penjanje sve je popularniji oblik rekreacije i sporta, odnedavno i olimpijski sport, privlačan ljudima širom svijeta. Može se izvoditi na prirodnim ili vještačkim stijenama, a postoje dva glavna načina penjanja – bouldering, koji se odvija na nižim stijenama bez užeta, i penjanje na visokoj stijeni, koje uključuje korištenje sigurnosne opreme poput užadi. Cilj je uspješno popeti zadani smjer, savladavajući sve njegove prepreke (tzv. 'detalje'). Ovaj sport je dostupan ljudima svih starosnih doba, od djece do starijih osoba.",
+      "safety": "Sportsko penjanje je sigurno uz ispravnu opremu i poštovanje sigurnosnih pravila. Osiguranje užetom, pojasevi i strunjače smanjuju rizik od povreda. Većina nesreća dešava se zbog nepažnje ili loše tehnike, ali uz obuku i odgovorno penjanje, ovaj sport je bezbjedan i koristan za tijelo i um.",
+      "experience": "Ne, prethodno iskustvo nije potrebno za bavljenje sportskim penjanjem. Početnici mogu započeti uz stručni nadzor na vještačkim stijenama ili na uređenim prirodnim penjalištima. Osnovne tehnike, sigurnosna pravila i korištenje opreme brzo se uče, a smjerovi različite težine omogućavaju postepeni napredak.",
+      "physical": "Sportsko penjanje jača cijelo tijelo, poboljšava koordinaciju i povećava izdržljivost. Aktivira mišiće ruku, nogu, leđa i core-a, razvijajući snagu i fleksibilnost, zbog čega ga često nazivaju modernom gimnastikom. Takođe, poboljšava ravnotežu, motoriku i svjesnost o pokretima, dok ponavljani pokreti i kontrolisano disanje doprinose boljoj kondiciji i otpornosti na umor.",
+      "starting": "Dovoljno je da dođeš na probni trening za odrasle, a nakon toga možeš nastaviti dolaziti na treninge. Obično prva dva mjeseca samo penješ, a potom organizujemo osnovni kurs na kojem ćeš naučiti kako da koristiš penjačku užad i opremu.",
+      "age": "Djeca mogu početi da se bave sportskim penjanjem već od šeste godine, zavisno od njihove motoričke razvijenosti i koordinacije. Uz stručni nadzor i prilagođene smjerove, penjanje im pomaže u razvoju snage, ravnoteže i samopouzdanja, dok istovremeno kroz igru uče osnovne tehnike i sigurnosna pravila.",
+      "enrollment": "Dovoljno je da nas kontaktirate na +387 65 303 034 putem poziva, SMS-a, Viber-a ili WhatsApp-a kako bismo dogovorili probni trening."
+    }
+  },
+
+  "services": {
+    "title": "Nudimo usluge",
+    "coursesTitle": "Kursevi penjanja",
+    "coursesDescription": "Organizujemo osnovne i napredne kurseve sportskog penjanja. Naši instruktori su profesionalci sa dugogodišnjim iskustvom.",
+    "equipmentTitle": "Iznajmljivanje opreme",
+    "equipmentDescription": "Ukoliko nemate svoju opremu, kod nas možete iznajmiti sve što vam je potrebno za sigurno penjanje.",
+    "birthdayTitle": "Proslava rođendana",
+    "birthdayDescription": "Proslavite rođendan vašeg djeteta na jedinstven i uzbudljiv način uz stručne istruktore i sigurnu opremu.",
+    "teambuildingTitle": "Teambuilding",
+    "teambuildingDescription": "Organizujemo teambuilding programe za firme i organizacije, prilagođene vašim potrebama i ciljevima.",
+    "outdoorTitle": "Izleti u prirodu",
+    "outdoorDescription": "Organizujemo penjačke izlete u prirodu i putovanja za sve ljubitelje penjačke i avanture.",
+    "trainingTitle": "Treninzi za djecu i odrasle",
+    "trainingDescription": "Organizujemo redovne treninge za djecu i odrasle, prilagođene različitim uzrastima i nivoima vještina."
+  },
+
+  "priceList": {
+    "title": "Cjenovnik",
+    "youngerTraining": "Trening za djecu mlađeg uzrasta",
+    "olderTraining": "Trening za djecu starijeg uzrasta",
+    "adultTraining": "Trening za odrasle",
+    "trial": "Probni trening",
+    "monthly": "Mjesečna članarina",
+    "twoChildren": "Mjesečna članarina (dvoje djece iz iste porodice)",
+    "dailyPass": "Dnevna karta / Probni trening",
+    "entries": "10 ulazaka",
+    "halfYear": "Polugodišnja članarina",
+    "annual": "Godišnja članarina"
+  },
+
+  "benefits": {
+    "titleChildren": "Benefiti penjanja za djecu",
+    "titleAdults": "Benefiti penjanja za odrasle",
+    "titleTeambuilding": "Zašto je penjanje savršen Teambuilding?",
+    "children": {
+      "developmentTitle": "Razvoj motoričkih vještina",
+      "developmentDescription": "Penjanje pomaže djeci da razviju finu i grubu motoriku, poboljšavajući koordinaciju, ravnotežu i snagu. Kroz razne pokrete i hvatanja, djeca postaju svjesnija svog tijela i načina na koji ga mogu koristiti.",
+      "independenceTitle": "Samopouzdanje i samostalnost",
+      "independenceDescription": "Svaki uspon predstavlja mali izazov, a njegovo savladavanje jača djetetovo samopouzdanje i osjećaj samostalnosti. Penjanje omogućava djeci da preuzmu inicijativu i samostalno donose odluke, što je ključno za njihov osobni razvoj.",
+      "cognitiveTitle": "Razvoj kognitivnih sposobnosti",
+      "cognitiveDescription": "Penjanje potiče djecu na razmišljanje i planiranje, poboljšavajući njihove problem-solving vještine i prostornu svijest. Dok biraju najbolji put do vrha, djeca uče kako analizirati situacije i donositi brze odluke."
+    },
+    "adults": {
+      "fitnessTitle": "Fizička kondicija",
+      "fitnessDescription": "Penjanje je odlična vježba za cijelo tijelo koja poboljšava snagu, fleksibilnost i izdržljivost. Aktivira mnoge mišićne grupe i pomaže u sagorijevanju kalorija.",
+      "mentalTitle": "Mentalna snaga",
+      "mentalDescription": "Penjanje zahtijeva koncentraciju, strateško razmišljanje i brzo donošenje odluka. Ova aktivnost smanjuje stres i poboljšava mentalnu otpornost.",
+      "socialTitle": "Društvena povezanost",
+      "socialDescription": "Penjanje je često timska aktivnost koja potiče saradnju i komunikaciju među članovima. Pomaže u izgradnji zajednice i jačanju međuljudskih veza."
+    },
+    "teambuilding": {
+      "teamworkTitle": "Jačanje timske saradnje",
+      "teamworkDescription": "Penjanje zahtijeva međusobnu podršku i povjerenje među članovima tima. Kroz osiguravanje i zajedničko savladavanje izazova, tim se povezuje i razvija efikasniju komunikaciju.",
+      "limitTitle": "Prevazilaženje granica",
+      "limitDescription": "Suočavanje s visinama i fizičkim izazovima pomaže učesnicima da izađu iz zone komfora. Ovaj proces gradi mentalnu otpornost i jača samopouzdanje, što se prenosi i na poslovne izazove.",
+      "successTitle": "Zajednički uspjesi",
+      "successDescription": "Penjanje donosi uzbuđenje i osjećaj postignuća, a dijeljenje tih trenutaka jača odnose među kolegama. Opuštena atmosfera i fizička aktivnost podstiču dobro raspoloženje i motivaciju u timu."
+    }
+  },
+
+  "packages": {
+    "title": "Paketi",
+    "reserve": "Rezervišite termin",
+    "packageOne": "paket 1",
+    "packageTwo": "paket 2",
+    "packageThree": "paket 3",
+    "twelveChildren": "Do 12 djece",
+    "twoTrainers": "2 trenera",
+    "twoFiveHours": "2-2,5 sata",
+    "space": "Prostor za proslavu",
+    "equipment": "Oprema za penjanje",
+    "eighteenChildren": "Do 18 djece",
+    "threeTrainers": "3 trenera",
+    "fourTrainers": "4 trenera"
+  },
+
+  "notes": {
+    "title": "Napomene:",
+    "traditional": "Ne nudimo klasičnu igraonicu ",
+    "traditionalText": "- roditelji su odgovorni za hranu, piće, čaše, escajg i ostale potrepštine. Prisutni mogu biti isključivo roditelji slavljenika radi fotografisanja ili posluživanja.",
+    "noCafe": "U prostoru nema kafića niti posebnog prostora za boravak roditelja.",
+    "noCafeText": "Proslava je fokusirana isključivo na djecu i njihovu aktivnost u penjačkoj sali.",
+    "noFridge": "Nema frižider za tortu,",
+    "noFridgeText": "pa preporučujemo da se donese neposredno prije posluživanja, posebno tokom toplijih mjeseci.",
+    "noShoes": "Ako dijete ne želi koristiti penjačice iz sale, ",
+    "cleanShoes": "potrebno je da donese čiste patike namijenjene za zatvoreni prostor.",
+    "warnning": "Molimo roditelje da na to unaprijed upozore goste."
+  }
+}

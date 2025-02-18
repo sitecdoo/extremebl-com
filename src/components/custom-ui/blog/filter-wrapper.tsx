@@ -8,8 +8,14 @@ import FilterSheet from "./filter-sheet";
 import { FilterDropdown } from "./filter-dropdown";
 import { parseAsArrayOf, parseAsInteger, useQueryState } from "nuqs";
 import { Category } from "@/payload-types";
+import { Dictionary } from "@/utils/dictionary";
 
-const FilterWrapper = ({ filterOptions }: { filterOptions: Category[] }) => {
+type FilterWrapperProps = {
+  filterOptions: Category[];
+  dict: Dictionary["blog"];
+};
+
+const FilterWrapper = ({ filterOptions, dict }: FilterWrapperProps) => {
   const [filters, setFilters] = useQueryState(
     "categoryIds",
     parseAsArrayOf(parseAsInteger)
@@ -58,7 +64,7 @@ const FilterWrapper = ({ filterOptions }: { filterOptions: Category[] }) => {
       size="small"
     >
       <Typography fontWeight="bold" className="uppercase">
-        Filteri
+        {dict.filter}
       </Typography>
       <Filter className="size-5 lg:size-6" />
     </Button>
@@ -70,6 +76,7 @@ const FilterWrapper = ({ filterOptions }: { filterOptions: Category[] }) => {
         clearAll={clearAll}
         filterOptions={filterOptions}
         handleChange={handleChange}
+        dict={dict}
       >
         {trigger}
       </FilterSheet>
@@ -78,6 +85,7 @@ const FilterWrapper = ({ filterOptions }: { filterOptions: Category[] }) => {
         clearAll={clearAll}
         filterOptions={filterOptions}
         handleChange={handleChange}
+        dict={dict}
       >
         {trigger}
       </FilterDropdown>

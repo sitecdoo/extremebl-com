@@ -7,9 +7,10 @@ import Typography from "../typography";
 
 interface SortButtonProps {
   initialSortOrder: "asc" | "desc";
+  text: string;
 }
 
-const SortButton = ({ initialSortOrder }: SortButtonProps) => {
+const SortButton = ({ initialSortOrder, text }: SortButtonProps) => {
   const [sortOrder, setSortOrder] = useQueryState("sort", {
     defaultValue: initialSortOrder,
     shallow: false,
@@ -28,7 +29,7 @@ const SortButton = ({ initialSortOrder }: SortButtonProps) => {
         }}
       >
         <Typography fontWeight="bold" className="uppercase">
-          Sortiraj
+          {text}
         </Typography>
         {sortOrder === "asc" ? (
           <CalendarArrowUp size={20} />

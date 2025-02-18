@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/sheet";
 import { Facebook, Instagram, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { navbarConfig } from "./navbar-config";
+import { NavigationItem } from "./navbar-config";
 import Typography from "@/components/custom-ui/typography";
 import Image from "next/image";
 import LanguageSelector from "./language-selector";
@@ -21,9 +21,11 @@ import { Language, Languages } from "@/utils/dictionary";
 const MobileMenu = ({
   languages,
   currentLanguage,
+  navigation,
 }: {
   languages: Languages;
   currentLanguage: Language;
+  navigation: NavigationItem;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -66,7 +68,7 @@ const MobileMenu = ({
             {/* Main Navigation */}
             <div>
               <div className="flex flex-col gap-5 pb-6 pt-12">
-                {navbarConfig.main.map((item) => (
+                {navigation.main.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
@@ -82,7 +84,7 @@ const MobileMenu = ({
 
               {/* Secondary Navigation */}
               <div className="flex flex-col gap-4 py-4">
-                {navbarConfig.secondary.map((item) => (
+                {navigation.secondary.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}

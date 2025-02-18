@@ -16,6 +16,7 @@ import PostBannerBlobs from "@/components/custom-ui/blobs/post";
 import { generatePageTitle } from "@/utils/generate-page-title";
 import MediaShare from "@/components/custom-ui/media-share";
 import { getPost, getRecentPosts } from "@/db/queries";
+import { getDictionary } from "@/utils/dictionary";
 
 interface BlogPostPageProps {
   params: {
@@ -65,6 +66,7 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
   const { id } = await params;
   const post = await getPost(id);
   const { docs } = await getRecentPosts();
+  const dict = await getDictionary();
 
   if (!post) {
     notFound();
@@ -81,12 +83,13 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
         <div className="flex flex-col items-center justify-center gap-2 pb-12 pt-24 text-neutral-600 sm:flex-row sm:gap-9 sm:pb-16 sm:pt-44">
           <div className="flex">
             <Typography variant="body-sm" fontWeight="bold">
-              Autor: <span className="font-normal"> {author.name}</span>
+              {dict.blogPost.author}:{" "}
+              <span className="font-normal"> {author.name}</span>
             </Typography>
           </div>
           <div className="flex">
             <Typography variant="body-sm" fontWeight="bold">
-              Datum objave:
+              {dict.blogPost.date}:
               <span className="font-normal">
                 {" "}
                 {format(post.createdAt, "dd.MM.yyyy")}
@@ -225,14 +228,17 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
               variant="caption"
               className="whitespace-nowrap uppercase"
             >
-              Share on
+              {dict.blogPost.share}
             </Typography>
             <MediaShare id={id} />
           </div>
         </div>
       </div>
 
-      <RecentBlogWrapper posts={docs} />
+      <RecentBlogWrapper
+        posts={docs}
+        dict={{ global: dict.global, blogPost: dict.blogPost }}
+      />
     </div>
   );
 };

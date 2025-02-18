@@ -14,68 +14,72 @@ import { Metadata } from "next";
 import { getRecentPosts } from "@/db/queries";
 import Link from "next/link";
 import Typography from "@/components/custom-ui/typography";
+import { getDictionary } from "@/utils/dictionary";
 
 export const metadata: Metadata = {
   title: "Extreme",
 };
 
 export default async function HomePage() {
+  const dict = await getDictionary();
   const { docs } = await getRecentPosts();
 
   return (
     <div className="relative flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">
       <HomeBannerBlobs />
       <div className="flex w-full flex-col items-center gap-24 lg:gap-48">
-        <BigHeroBanner />
-        <SmallQuestions />
+        <BigHeroBanner
+          dict={{ global: dict.global, heroBanner: dict.heroBanner }}
+        />
+        <SmallQuestions dict={dict.smallQuestions} />
       </div>
       <div className="flex w-full flex-col gap-y-24 lg:gap-y-32">
         <InfoSection
           image="/climbing-for-adults.jpg"
-          title="Penjanje za odrasle"
-          description="Naše penjanje za odrasle pruža uzbudljivu priliku za sve ljubitelje avanture, bez obzira na prethodno iskustvo. Bilo da želiš poboljšati svoju fizičku kondiciju, savladati nove izazove ili jednostavno uživati u društvu entuzijasta kao što si ti, naši instruktori su tu da ti pruže podršku na svakom koraku."
+          title={dict.infoSection.homePage.adultsTitle}
+          description={dict.infoSection.homePage.adultsDescription}
           yPosition={60}
         >
           <Link href="/odrasli-penjanje">
             <Button variant="black" className="w-fit">
-              <Typography fontWeight="bold">Saznajte više</Typography>
+              <Typography fontWeight="bold">{dict.global.learnMore}</Typography>
             </Button>
           </Link>
         </InfoSection>
         <InfoSection
           image="/climbing-for-children.jpg"
-          title="Penjanje za djecu"
-          description="Penjanje za djecu  je savršen način da mališani razviju svoje motoričke veštine, samopouzdanje i timski duh. Naši programi su prilagođeni različitim uzrastima i nivoima vještina, uz stalni nadzor i podršku iskusnih instruktora. Kroz igru i zabavu, djeca će naučiti osnovne tehnike penjanja, a možda čak i otkriti svoju ljubav prema ovom sportu."
+          title={dict.infoSection.homePage.childrenTitle}
+          description={dict.infoSection.homePage.childrenDescription}
           yPosition={30}
         >
           <Link href="/djeca-penjanje">
             <Button variant="yellow" className="w-fit">
-              <Typography fontWeight="bold">Saznajte više</Typography>
+              <Typography fontWeight="bold">{dict.global.learnMore}</Typography>
             </Button>
           </Link>
         </InfoSection>
       </div>
-      <TrainingSchedule />
+      <TrainingSchedule dict={{ schedule: dict.schedule, days: dict.days }} />
       <div className="hidden" />
       <InfoSection
         image="/birthdays/hero.jpg"
-        title="Proslava rođendana"
-        description="Proslavite rođendan vašeg djeteta na jedinstven i uzbudljiv način! Naša penjačka sala nudi savršeno okruženje za nezaboravnu rođendansku proslavu uz profesionalne instruktore, sigurnu opremu i zabavu za sve uzraste."
+        title={dict.infoSection.homePage.birthdayTitle}
+        description={dict.infoSection.homePage.birthdayDescription}
       >
         <Link href="/rodjendani">
           <Button variant="blue" className="w-fit">
-            <Typography fontWeight="bold">Saznajte više</Typography>
+            <Typography fontWeight="bold">{dict.global.learnMore}</Typography>
           </Button>
         </Link>
       </InfoSection>
       <InfoSection
         image="/teambuilding/teambuilding-banner.jpg"
-        title="Teambuilding"
-        description="Naša penjačka sala je idealno mjesto za teambuilding jer nudi jedinstvenu kombinaciju fizičkih i mentalnih izazova koji podstiču timsku saradnju i komunikaciju. Uz to nudimo profesionalne instruktore, sigurnu opremu i neograničen broj ideja kojima ćete uvijek iznenaditi vaš tim."
+        title={dict.infoSection.homePage.teambuildingTitle}
+        description={dict.infoSection.homePage.teambuildingDescription}
       >
         <Link href="/teambuilding">
           <Button variant="blue" className="w-fit">
-            <Typography fontWeight="bold">Saznajte više</Typography>
+            <Typography fontWeight="bold">{dict.global.learnMore}</Typography>
           </Button>
         </Link>
       </InfoSection>
@@ -86,12 +90,15 @@ export default async function HomePage() {
         >
           <Typography uppercase>Blog</Typography>
         </Button>
-        <RecentBlogWrapper posts={docs}>
+        <RecentBlogWrapper
+          posts={docs}
+          dict={{ global: dict.global, blogPost: dict.blogPost }}
+        >
           <HomePostsBlobs />
         </RecentBlogWrapper>
       </div>
-      <InstagramPostsWrapper />
-      <Questions />
+      <InstagramPostsWrapper dict={dict.socialMedia} />
+      <Questions dict={dict.faq} />
     </div>
   );
 }
