@@ -1,4 +1,15 @@
 {
+  "global": {
+    "climbingForChildren": "Climbing for children",
+    "climbingForAdults": "Climbing for adults",
+    "learnMore": "Learn more",
+    "readMore": "Read more",
+    "contactUs": "Contact us",
+    "signInChildren": "Enroll Your Child",
+    "trainingSchedule": "View training schedule",
+    "signUp": "Sign up"
+  },
+
   "navigation": {
     "home": "Home",
     "about": "About",
@@ -68,7 +79,7 @@
     "emptyTitle": "No results for your search!",
     "emptyDescription": "Try adjusting the filters or searching with different keywords.",
     "category": "Select category",
-    "button": "View blog posts"
+    "view": "View blog posts"
   },
 
   "blogPost": {
@@ -83,24 +94,13 @@
     "description": "Reach new heights, Join our club!"
   },
 
-  "buttons": {
-    "climbingForChildren": "Climbing for children",
-    "climbingForAdults": "Climbing for adults",
-    "learnMore": "Learn more",
-    "readMore": "Read more",
-    "contactUs": "Contact us",
-    "signInChildren": "Enroll Your Child",
-    "trainingSchedule": "View training schedule",
-    "signUp": "Sign up"
-  },
-
   "smallQuestions": {
-    "question1": "What is climbing?",
-    "question2": "Benefits of climbing?",
-    "question3": "Can anyone climb?",
-    "answer1": "Sport climbing is an increasingly popular form of recreation and sport, recently an Olympic sport, attracting people worldwide. It can be done on natural or artificial rocks, with two main types – bouldering, performed on lower rocks without ropes, and high rock climbing, which involves safety equipment like ropes. The goal is to successfully climb the set route, overcoming all its obstacles (known as 'cruxes'). This sport is accessible to people of all ages, from children to the elderly.",
-    "answer2": "Sport climbing is a dynamic and exciting activity offering numerous physical and mental benefits, providing a physical challenge while also offering opportunities for socializing, traveling, and enjoying nature. It helps beginners overcome fear, improves coordination and focus, and builds strength and endurance for the whole body – often called modern gymnastics. For children, it aids in developing fine and gross motor skills, enhancing balance and movement awareness. Climbing also stimulates the production of hormones that reduce stress and increase feelings of satisfaction and fulfillment.",
-    "answer3": "Yes, sport climbing is an activity that almost anyone can participate in, regardless of age or fitness level. Climbing routes vary in difficulty, ensuring there is always something suitable for beginners as well as challenges for more experienced climbers. However, people with certain health conditions, such as heart issues, joint problems, or balance difficulties, should consult a doctor before starting."
+    "whatIsQuestion": "What is climbing?",
+    "benefitsQuestion": "Benefits of climbing?",
+    "canAnyoneQuestion": "Can anyone climb?",
+    "whatIsAnswer": "Sport climbing is an increasingly popular form of recreation and sport, recently an Olympic sport, attracting people worldwide. It can be done on natural or artificial rocks, with two main types – bouldering, performed on lower rocks without ropes, and high rock climbing, which involves safety equipment like ropes. The goal is to successfully climb the set route, overcoming all its obstacles (known as 'cruxes'). This sport is accessible to people of all ages, from children to the elderly.",
+    "benefitsAnswer": "Sport climbing is a dynamic and exciting activity offering numerous physical and mental benefits, providing a physical challenge while also offering opportunities for socializing, traveling, and enjoying nature. It helps beginners overcome fear, improves coordination and focus, and builds strength and endurance for the whole body – often called modern gymnastics. For children, it aids in developing fine and gross motor skills, enhancing balance and movement awareness. Climbing also stimulates the production of hormones that reduce stress and increase feelings of satisfaction and fulfillment.",
+    "canAnyoneAnswer": "Yes, sport climbing is an activity that almost anyone can participate in, regardless of age or fitness level. Climbing routes vary in difficulty, ensuring there is always something suitable for beginners as well as challenges for more experienced climbers. However, people with certain health conditions, such as heart issues, joint problems, or balance difficulties, should consult a doctor before starting."
   },
 
   "infoSection": {
@@ -154,40 +154,23 @@
     }
   },
 
-  "trainingSchedule": {
+  "days": {
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday"
+  },
+
+  "schedule": {
     "title": "Training schedule",
-    "monday": {
-      "title": "Monday",
-      "schedule1": "Younger children",
-      "schedule2": "Older children"
-    },
-    "tuesday": {
-      "title": "Tuesday",
-      "schedule1": "Adults - Free climbing session"
-    },
-    "wednesday": {
-      "title": "Wednesday",
-      "schedule1": "Adults - Group training",
-      "schedule2": "Adults - Free climbing session"
-    },
-    "thursday": {
-      "title": "Thursday",
-      "schedule1": "Adults - Free climbing session"
-    },
-    "friday": {
-      "title": "Friday",
-      "schedule1": "Younger children",
-      "schedule2": "Older children"
-    },
-    "saturday": {
-      "title": "Saturday",
-      "schedule1": "Non-working day"
-    },
-    "sunday": {
-      "title": "Sunday",
-      "schedule1": "Adults - Group training",
-      "schedule2": "Adults - Free climbing session"
-    }
+    "youngerChildren": "Younger children",
+    "olderChildren": "Older children",
+    "adultsGroup": "Adults - Group training",
+    "adultsFree": "Adults - Free climbing session",
+    "nonWorking": "Non-working day"
   },
 
   "socialMedia": {
@@ -236,27 +219,16 @@
 
   "priceList": {
     "title": "Price List",
-    "children": {
-      "youngerTitle": "Training for Younger Children",
-      "olderTitle": "Training for Older Children",
-      "monday": "Monday",
-      "friday": "Friday",
-      "trial": "Trial Session",
-      "monthly": "Monthly Membership",
-      "twoChildren": "Monthly Membership (two children from the same family)"
-    },
-    "adults": {
-      "title": "Adult Training",
-      "tuesday": "Utorak",
-      "wednesday": "Srijeda",
-      "thursday": "Četvrtak",
-      "sunday": "Nedjelja",
-      "dailyPass": "Day pass / Trial session",
-      "monthly": "Monthly membership",
-      "entries": "10 entries",
-      "halfYear": "Half-year membership",
-      "annual": "Annual membership"
-    }
+    "youngerTraining": "Training for Younger Children",
+    "olderTraining": "Training for Older Children",
+    "adultTraining": "Adult Training",
+    "trial": "Trial Session",
+    "monthly": "Monthly Membership",
+    "twoChildren": "Monthly Membership (two children from the same family)",
+    "dailyPass": "Day pass / Trial session",
+    "entries": "10 entries",
+    "halfYear": "Half-year membership",
+    "annual": "Annual membership"
   },
 
   "benefits": {
@@ -291,7 +263,7 @@
 
   "packages": {
     "title": "Packages",
-    "button": "Reserve a time",
+    "reserve": "Reserve a time",
     "packageOne": "package 1",
     "packageTwo": "package 2",
     "packageThree": "package 3",
