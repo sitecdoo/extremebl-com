@@ -38,8 +38,8 @@ export const sendEmailAction = async (
   const emailSubject = `${subjectPrefix}${subject ? subject.replace(/-/g, " ").replace(/^./, (char) => char.toUpperCase()) : "ExtremeBL - Contact form"}`;
 
   const emailData = await resend.emails.send({
-    from: "ExtremeBL <onboarding@resend.dev>",
-    to: "andrejjurisic99@gmail.com",
+    from: "ExtremeBL <website@extremebl.com>",
+    to: "extremebl@gmail.com",
     subject: emailSubject,
     react: EmailTemplate({ name, email, message, phone }),
   });
