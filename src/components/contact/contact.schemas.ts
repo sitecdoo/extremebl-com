@@ -5,7 +5,7 @@ export const getContactSchema = () =>
     name: z.string().trim().min(1, { message: "Name is required" }),
     email: z.string().email({ message: "Please enter a valid email" }),
     subject: z.string().optional().default(""),
-    phone: z.string().trim().optional(),
+    phone: z.string().trim().min(1, { message: "Phone number is required" }),
     message: z.string().trim().min(1, { message: "Message is required" }),
   });
 

@@ -4,7 +4,7 @@ type EmailTemplateProps = {
   name: string;
   email: string;
   message: string;
-  phone?: string;
+  phone: string;
 };
 
 const EmailTemplate = ({ name, email, message, phone }: EmailTemplateProps) => {
@@ -25,7 +25,7 @@ const EmailTemplate = ({ name, email, message, phone }: EmailTemplateProps) => {
             <Section>
               <Text>Ime i prezime: {name}</Text>
               <Text>Email: {email}</Text>
-              {phone && <Text>Telefon: {phone}</Text>}
+              <Text>Telefon: {phone}</Text>
               <Text>Poruka:</Text>
               <Text>{message}</Text>
             </Section>
