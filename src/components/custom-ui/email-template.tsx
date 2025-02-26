@@ -25,7 +25,7 @@ const EmailTemplate = ({ name, email, message, phone }: EmailTemplateProps) => {
             <Section>
               <Text>Ime i prezime: {name}</Text>
               <Text>Email: {email}</Text>
-              <Text>Telefon: {phone}</Text>
+              {phone && <Text>Telefon: {phone}</Text>}
               <Text>Poruka:</Text>
               <Text>{message}</Text>
             </Section>
