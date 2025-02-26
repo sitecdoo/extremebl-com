@@ -14,9 +14,12 @@ import { Button } from "@/components/ui/button";
 import { NavigationItem } from "./navbar-config";
 import Typography from "@/components/custom-ui/typography";
 import Image from "next/image";
-import LanguageSelector from "./language-selector";
-import { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Language, Languages } from "@/utils/dictionary";
+import { changeLanguage } from "./utils";
+import { usePathname } from "next/navigation";
+import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
 
 const MobileMenu = ({
   languages,
@@ -38,6 +41,14 @@ const MobileMenu = ({
       document.body.setAttribute("data-scroll-no-lock", "true");
     else document.body.removeAttribute("data-scroll-no-lock");
   }, [isOpen]);
+
+  const pathname = usePathname();
+  const redirectedPathname = (language: Language) => {
+    if (!pathname) return "/";
+    const segments = pathname.split("/");
+    segments[1] = language;
+    return segments.join("/");
+  };
 
   return (
     <div className="lg:hidden">
@@ -111,10 +122,31 @@ const MobileMenu = ({
                   </Link>
                 </div>
               </div>
-              <LanguageSelector
-                languages={languages}
-                currentLanguage={currentLanguage}
-              />
+              <div className="flex items-center gap-3">
+                {languages.map((lang, index) => (
+                  <React.Fragment key={index}>
+                    <Link href={redirectedPathname(lang)}>
+                      <Button
+                        asChild
+                        onClick={() => changeLanguage(lang)}
+                        variant="transparent"
+                        className={cn(
+                          "size-12 rounded-md p-3 hover:bg-transparent active:bg-blue-200",
+                          currentLanguage === lang &&
+                            "pointer-events-none bg-blue-200",
+                        )}
+                      >
+                        <Typography className="font-bold text-neutrals-50">
+                          {lang === "sr" ? "SR" : "EN"}
+                        </Typography>
+                      </Button>
+                    </Link>
+                    {index < languages.length - 1 && (
+                      <Separator className="h-4 w-[1px] bg-neutrals-50" />
+                    )}
+                  </React.Fragment>
+                ))}
+              </div>
             </div>
           </nav>
         </SheetContent>
