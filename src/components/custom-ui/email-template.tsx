@@ -1,4 +1,4 @@
-import React from "react";
+import { Html, Body, Tailwind, Section, Text } from "@react-email/components";
 
 type EmailTemplateProps = {
   name: string;
@@ -9,12 +9,30 @@ type EmailTemplateProps = {
 
 const EmailTemplate = ({ name, email, message, phone }: EmailTemplateProps) => {
   return (
-    <div>
-      <h2>You just received a message from {name}</h2>
-      <h2>{email}</h2>
-      {phone && <h2>{phone}</h2>}
-      <p>{message}</p>
-    </div>
+    <Html>
+      <Tailwind
+        config={{
+          theme: {
+            fontFamily: {
+              "league-spartan": ["var(--font-league-spartan)", "sans-serif"],
+            },
+          },
+        }}
+      >
+        <Body>
+          <Section className="flex flex-col gap-4">
+            <Text className="font-bold">Kontakt forma:</Text>
+            <Section>
+              <Text>Ime i prezime: {name}</Text>
+              <Text>Email: {email}</Text>
+              <Text>Telefon: {phone}</Text>
+              <Text>Poruka:</Text>
+              <Text>{message}</Text>
+            </Section>
+          </Section>
+        </Body>
+      </Tailwind>
+    </Html>
   );
 };
 
