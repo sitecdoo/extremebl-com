@@ -97,14 +97,28 @@ const Footer = async () => {
           </div>
           <section>
             <div className="flex items-center justify-between border-t-[0.5px] border-t-neutrals-300 pt-5 md:pt-6">
-              <Typography
-                tag="p"
-                variant="caption"
-                className="w-44 flex-wrap text-neutrals-400 sm:w-fit"
-              >
-                Copyright 2024 Extreme Climbing. All Rights Reserved
-              </Typography>
-              <div className="flex gap-x-6">
+              <div className="flex flex-col gap-y-2">
+                <Typography
+                  variant="caption"
+                  className="w-44 flex-wrap text-neutrals-400 sm:w-fit"
+                >
+                  Copyright 2025 Extreme Climbing. All Rights Reserved
+                </Typography>
+                <Typography
+                  variant="caption"
+                  className="flex flex-wrap gap-1 text-neutrals-400 sm:w-fit"
+                >
+                  Developed by
+                  <Link
+                    href="https://sitec.dev/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Sitec.dev
+                  </Link>
+                </Typography>
+              </div>
+              <div className="flex gap-x-6 self-start">
                 <Link
                   href="https://www.facebook.com/extremebl/"
                   target="_blank"
