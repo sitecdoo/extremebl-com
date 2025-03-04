@@ -33,7 +33,10 @@ const InstagramPosts = ({ posts }: InstagramPostsProps) => {
                 priority
               />
             ) : (
-              <video controls className="h-full rounded-xl lg:rounded-28">
+              <video
+                controls
+                className="aspect-video h-full w-full rounded-xl lg:rounded-28"
+              >
                 <source src={post.media_url} type="video/mp4" />
               </video>
             )}
