@@ -38,7 +38,7 @@ const SmallQuestions = ({ dict }: { dict: Dictionary["smallQuestions"] }) => {
   };
 
   return (
-    <div className="flex flex-col gap-8 self-start lg:flex-row lg:items-center lg:justify-between lg:gap-10 lg:self-center xl:gap-20 2xl:gap-40">
+    <div className="flex flex-col gap-8 self-start lg:flex-row lg:items-start lg:justify-between lg:gap-10 lg:self-center xl:gap-20 2xl:gap-40">
       <div className="space-y-4 lg:space-y-8">
         {questions.map((question, index) => {
           return (

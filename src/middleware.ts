@@ -13,11 +13,11 @@ export async function middleware(request: NextRequest) {
 
   // Get the preferred language from the cookie or default to 'en'
   const languageCookie = request.cookies.get(LANGUAGE_COOKIE);
-  let language = languageCookie ? languageCookie.value : "en";
+  let language = languageCookie ? languageCookie.value : "sr";
 
   // Ensure the language is valid, default to 'en' if not
   if (!LANGUAGES.includes(language as Language)) {
-    language = "en";
+    language = "sr";
   }
 
   // Check if the pathname already includes a locale

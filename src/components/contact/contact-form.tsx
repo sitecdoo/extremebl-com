@@ -133,8 +133,7 @@ const ContactForm = ({ dict }: { dict: Dictionary["contact"] }) => {
               <FormItem>
                 <FormControl>
                   <Input
-                    type="number"
-                    className="[appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                    type="tel"
                     disabled={isSubmitting}
                     variant="form"
                     inputSize="lg"
