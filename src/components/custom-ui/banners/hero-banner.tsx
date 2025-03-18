@@ -22,8 +22,8 @@ const HeroBanner = ({ img, title, position }: HeroBannerProps) => {
         )}
         priority
         quality={85}
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1280px"
         loading="eager"
-        fetchPriority="high"
       />
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-dark-500/0 to-dark-500/30 lg:rounded-40" />
       <Typography
