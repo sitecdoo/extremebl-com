@@ -14,13 +14,16 @@ const HeroBanner = ({ img, title, position }: HeroBannerProps) => {
       <Image
         src={img}
         alt={title}
-        width={1632}
-        height={650}
+        width={1280}
+        height={720}
         className={cn(
           "h-[31.25rem] min-w-72 rounded-2xl object-cover sm:w-full lg:h-[40.625rem] lg:rounded-40",
           position && position,
         )}
         priority
+        quality={85}
+        loading="eager"
+        fetchPriority="high"
       />
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-dark-500/0 to-dark-500/30 lg:rounded-40" />
       <Typography
