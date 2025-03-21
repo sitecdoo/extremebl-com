@@ -29,7 +29,7 @@
 
   "about": {
     "banner": "About us",
-    "header": "We are one of the oldest climbing clubs in Bosnia and Herzegovina, founded in 2001. In addition to our well-equipped climbing hall, we are the organizers of the Pecka Rock Climbing and Drill & Chill Climbing and Highlining festivals, numerous courses, competitions, trips, and camping, and we have established over 500 climbing routes.",
+    "header": "We are one of the oldest climbing clubs in Bosnia and Herzegovina, founded in 2001. In addition to our well-equipped climbing gym, we are the organizers of the Pecka Rock Climbing and Drill & Chill Climbing and Highlining festivals, numerous courses, competitions, trips, and camping, and we have established over 500 climbing routes.",
     "testimonial": "We are dedicated to promoting sport climbing through education, safety, and adventure for all lovers of this sport."
   },
 
@@ -52,7 +52,7 @@
   },
 
   "teambuilding": {
-    "header": "Our climbing gym is the perfect place for team building as it offers a unique combination of physical and mental challenges that encourage teamwork and communication.",
+    "header": "Our climbing gym is the perfect place for teambuilding as it offers a unique combination of physical and mental challenges that encourage teamwork and communication.",
     "testimonial": "What I liked the most was how the activities were tailored to our abilities, allowing every team member to feel included and supported. This experience definitely improved our team dynamics and we highly recommend it to anyone looking to strengthen their team through fun and adventure!"
   },
 
@@ -98,7 +98,7 @@
     "whatIsQuestion": "What is climbing?",
     "benefitsQuestion": "Benefits of climbing?",
     "canAnyoneQuestion": "Can anyone climb?",
-    "whatIsAnswer": "Sport climbing is an increasingly popular form of recreation and sport, recently an Olympic sport, attracting people worldwide. It can be done on natural or artificial rocks, with two main types – bouldering, performed on lower rocks without ropes, and high rock climbing, which involves safety equipment like ropes. The goal is to successfully climb the set route, overcoming all its obstacles (known as 'cruxes'). This sport is accessible to people of all ages, from children to the elderly.",
+    "whatIsAnswer": "Sport climbing is an increasingly popular form of recreation and sport, recently an Olympic sport, attracting people worldwide. It can be done on natural or artificial rocks, with two main types – bouldering, performed on lower rocks without ropes, and high rock climbing, which involves safety equipment like ropes. The goal is to successfully climb the route, overcoming all its obstacles (known as 'cruxes'). This sport is accessible to people of all ages, from children to the elderly.",
     "benefitsAnswer": "Sport climbing is a dynamic and exciting activity offering numerous physical and mental benefits, providing a physical challenge while also offering opportunities for socializing, traveling, and enjoying nature. It helps beginners overcome fear, improves coordination and focus, and builds strength and endurance for the whole body – often called modern gymnastics. For children, it aids in developing fine and gross motor skills, enhancing balance and movement awareness. Climbing also stimulates the production of hormones that reduce stress and increase feelings of satisfaction and fulfillment.",
     "canAnyoneAnswer": "Yes, sport climbing is an activity that almost anyone can participate in, regardless of age or fitness level. Climbing routes vary in difficulty, ensuring there is always something suitable for beginners as well as challenges for more experienced climbers. However, people with certain health conditions, such as heart issues, joint problems, or balance difficulties, should consult a doctor before starting."
   },
@@ -110,9 +110,9 @@
       "childrenTitle": "Climbing for children",
       "childrenDescription": "Climbing for children is a perfect way for kids to develop motor skills, confidence, and team spirit. Our programs are tailored to different age groups and skill levels, with constant supervision and support from experienced instructors. Through play and fun, children will learn the basic climbing techniques and might even discover a love for this sport.",
       "birthdayTitle": "Birthday celebrations",
-      "birthdayDescription": "Celebrate your child's birthday in a unique and exciting way! Our climbing hall offers the perfect setting for an unforgettable birthday celebration with professional instructors, safe equipment, and fun for all ages.",
+      "birthdayDescription": "Celebrate your child's birthday in a unique and exciting way! Our climbing gym offers the perfect setting for an unforgettable birthday celebration with professional instructors, safe equipment, and fun for all ages.",
       "teambuildingTitle": "Teambuilding",
-      "teambuildingDescription": "Our climbing hall is an ideal place for teambuilding as it offers a unique combination of physical and mental challenges that encourage teamwork and communication. We also provide professional instructors, safe equipment, and unlimited ideas to always surprise your team."
+      "teambuildingDescription": "Our climbing gym is an ideal place for teambuilding as it offers a unique combination of physical and mental challenges that encourage teamwork and communication. We also provide professional instructors, safe equipment, and unlimited ideas to always surprise your team."
     },
     "about": {
       "history": "History",
@@ -121,36 +121,36 @@
       "ourMissionDescription": "Our mission is to popularize and advance sport climbing on natural and artificial rocks through the organization of training, courses, competitions, festivals, and climbing trips, as well as through the construction and maintenance of climbing infrastructure."
     },
     "children": {
-      "youngerChildrenTitle": "Younger Children",
+      "youngerChildrenTitle": "Younger children",
       "youngerChildrenDescription": "Sport climbing for children aged 6 to 10 develops strength, coordination, and confidence. With experienced trainers and safe equipment, the training is designed to be playful and promotes gradual learning.",
-      "olderChildrenTitle": "Older Children",
+      "olderChildrenTitle": "Older children",
       "olderChildrenDescription": "Sport climbing for children aged 10 and above enhances endurance, technique, and mental strength. The training sessions are more challenging, focusing on refining movements, while experienced trainers and safe equipment ensure safe progression."
     },
     "adults": {
       "trainingTitle": "Training",
-      "trainingDescription": "You can train independently during free times or join group sessions led by a coach. During free times, the supervising person can assist in organizing your training and offer advice. To join, simply attend one of the adult training sessions.",
-      "basicCourseTitle": "Basic Course",
+      "trainingDescription": "You can train independently during open sessions or join group training led by a coach. During open sessions, the supervising person can assist in organizing your training and offer advice. To join, simply attend one of the adult training sessions.",
+      "basicCourseTitle": "Basic course",
       "basicCourseDescription": "This weekend course is designed for beginners, allowing them to learn how to climb and belay on 'top rope'. If weather conditions permit, the course is held on natural rocks.",
-      "advancedCourseTitle": "Advanced Course",
+      "advancedCourseTitle": "Advanced Can",
       "advancedCourseDescription": "This course is intended for climbers who already have experience with 'top rope' climbing and want to learn how to lead climb and belay. The course lasts for a month and takes place twice a week. If weather conditions allow, some lessons are held on natural rocks.",
-      "fieldTripTitle": "Nature Trips",
+      "fieldTripTitle": "Nature trips",
       "fieldTripDescription": "From the very first training session, you gain the right to join trips into nature. These trips usually take place on weekends, 1-2 times a month. We most often visit local climbing spots, but occasionally we also organize trips to other cities and countries."
     },
     "birthdays": {
-      "instructorsTitle": "Professional Instructors",
+      "instructorsTitle": "Professional instructors",
       "instructorsDescription": "Our professional instructors are not only experienced climbers but also excellent animators who make every birthday even more fun. Through games and adventure, they guide children through a safe and exciting climbing experience, helping them master basic techniques while having a great time.",
-      "saftyTitle": "Safe Equipment",
+      "saftyTitle": "Safe equipment",
       "saftyDescription": "We use proven and high-quality climbing equipment that ensures maximum safety during climbing. All ropes, harnesses, and climbing gear are regularly inspected and maintained, and our instructors ensure the proper use of the equipment, providing a carefree and safe experience for all participants.",
-      "funTitle": "Fun for All Ages",
+      "funTitle": "Fun for all ages",
       "funDescription": "Climbing birthday parties are the perfect fun for children of all ages – from the youngest adventurers to older kids craving challenges! Our instructors tailor games and routes to ensure that every participant, regardless of age or experience, can enjoy a safe and exciting adventure filled with laughter and socializing."
     },
     "teambuilding": {
-      "instructorsTitle": "Professional Instructors",
-      "instructorsDescription": "Our professional instructors are not only experienced climbers but also great motivators who will make your team building dynamic and fun. Through team challenges and climbing tasks, they guide participants through a safe and exciting experience, encouraging cooperation, communication, and strengthening team spirit in a relaxed and inspiring atmosphere.",
-      "saftyTitle": "Safe Equipment",
+      "instructorsTitle": "Professional instructors",
+      "instructorsDescription": "Our professional instructors are not only experienced climbers but also great motivators who will make your teambuilding dynamic and fun. Through team challenges and climbing tasks, they guide participants through a safe and exciting experience, encouraging cooperation, communication, and strengthening team spirit in a relaxed and inspiring atmosphere.",
+      "saftyTitle": "Safe equipment",
       "saftyDescription": "We use proven and high-quality climbing equipment that ensures maximum safety during climbing. All ropes, harnesses, and climbing devices are regularly inspected and maintained, and our instructors ensure that the equipment is used properly, allowing for a carefree and safe experience for all participants.",
-      "activitiesTitle": "Various Activities",
-      "activitiesDescription": "In our climbing gym, we offer a variety of team building activities, including team climbing challenges, fun competitive games, trust exercises, and problem-solving through climbing. All activities are tailored to different experience levels and designed to strengthen cooperation, communication, and team spirit."
+      "activitiesTitle": "Various activities",
+      "activitiesDescription": "In our climbing gym, we offer a variety of teambuilding activities, including team climbing challenges, fun competitive games, trust exercises, and problem-solving through climbing. All activities are tailored to different experience levels and designed to strengthen cooperation, communication, and team spirit."
     }
   },
 
@@ -169,7 +169,7 @@
     "youngerChildren": "Younger children",
     "olderChildren": "Older children",
     "adultsGroup": "Adults - Group training",
-    "adultsFree": "Adults - Free climbing session",
+    "adultsFree": "Adults - Open climbing session",
     "nonWorking": "Non-working day"
   },
 
@@ -191,9 +191,9 @@
       "enrollment": "How can I enroll my child in sports climbing?"
     },
     "answers": {
-      "sportsClimbing": "Sports climbing is an increasingly popular form of recreation and sport, recently recognized as an Olympic sport, attracting people from all over the world. It can be performed on natural or artificial rocks, and there are two main types of climbing – bouldering, which takes place on lower rocks without ropes, and roped climbing, which involves using safety equipment like ropes. The goal is to successfully climb the given route, overcoming all its obstacles (known as 'problems'). This sport is accessible to people of all ages, from children to older adults.",
+      "sportsClimbing": "Sports climbing is an increasingly popular form of recreation and sport, recently recognized as an Olympic sport, attracting people from all over the world. It can be performed on natural or artificial rocks, and there are two main types of climbing – bouldering, which takes place on lower rocks without ropes, and rope climbing, which involves using safety equipment like ropes. The goal is to successfully climb the given route, overcoming all its obstacles (known as 'problems'). This sport is accessible to people of all ages, from children to older adults.",
       "safety": "Sports climbing is safe when using proper equipment and following safety rules. Rope protection, harnesses, and mats reduce the risk of injury. Most accidents occur due to inattention or poor technique, but with training and responsible climbing, this sport is safe and beneficial for the body and mind.",
-      "experience": "No, prior experience is not required to start sports climbing. Beginners can begin under professional supervision on artificial rocks or well-maintained natural climbing sites. Basic techniques, safety rules, and equipment usage are quickly learned, and routes of varying difficulty allow for gradual progress.",
+      "experience": "No, prior experience is not required to start sports climbing. Beginners can begin under professional supervision on artificial rocks or on natural climbing walls. Basic techniques, safety rules, and equipment usage are quickly learned, and routes of varying difficulty allow for gradual progress.",
       "physical": "Sports climbing strengthens the whole body, improves coordination, and increases endurance. It activates muscles in the arms, legs, back, and core, developing strength and flexibility, which is why it's often called modern gymnastics. It also enhances balance, motor skills, and body awareness, while repetitive movements and controlled breathing contribute to better fitness and resistance to fatigue.",
       "starting": "You can start by attending a trial session for adults, and after that, you can continue with regular training. Usually, the first two months involve just climbing, after which we organize a beginner's course where you'll learn how to use climbing ropes and equipment.",
       "age": "Children can start sports climbing as early as six years old, depending on their motor development and coordination. With professional supervision and adapted routes, climbing helps them develop strength, balance, and confidence, while simultaneously learning basic techniques and safety rules through play.",
