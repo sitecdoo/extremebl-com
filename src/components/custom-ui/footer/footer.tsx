@@ -12,7 +12,7 @@ const NavItems = ({
   title: string;
   children: React.ReactNode;
 }) => (
-  <div className="flex flex-col justify-center">
+  <div className="flex w-[7.5rem] flex-1 flex-col justify-center md:w-auto lg:flex-grow-0">
     <Typography
       tag="p"
       variant="body-sm"
@@ -44,9 +44,9 @@ const Footer = async () => {
             priority
           />
         </Link>
-        <section className="flex w-full flex-col px-4 md:max-w-[50rem] md:gap-y-20 md:px-0">
-          <div className="flex flex-col justify-between gap-x-5 gap-y-16 py-8 md:flex-row md:py-0">
-            <NavItems title={dict.footer.info}>
+        <section className="flex w-full flex-col px-10 md:max-w-[50rem] md:gap-y-20 md:px-0">
+          <div className="flex flex-wrap gap-12 py-12 md:justify-between md:py-0">
+            <NavItems title={dict.footer.company}>
               {company.map((item) => (
                 <Link key={item.href} href={item.href}>
                   {item.label}
@@ -60,7 +60,7 @@ const Footer = async () => {
                 </Link>
               ))}
             </NavItems>
-            <div className="flex flex-col justify-center">
+            <div className="flex flex-1 flex-col lg:flex-grow-0">
               <Typography
                 tag="p"
                 variant="body-sm"
@@ -88,7 +88,11 @@ const Footer = async () => {
                   <div className="size-6">
                     <MapPin className="size-6" strokeWidth={1.5} />
                   </div>
-                  <Typography tag="p" variant="body-sm" className="md:max-w-64">
+                  <Typography
+                    tag="p"
+                    variant="body-sm"
+                    className="min-w-[12.5rem] md:min-w-56 lg:min-w-64"
+                  >
                     {contact.location}
                   </Typography>
                 </div>

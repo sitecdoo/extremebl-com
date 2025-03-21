@@ -39,6 +39,8 @@ const InstagramPostsWrapper = async ({
         <Link
           href="https://www.instagram.com/extreme_bl/"
           className="flex w-fit items-center gap-3"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <Image
             width={150}
@@ -48,7 +50,7 @@ const InstagramPostsWrapper = async ({
             className="size-10 rounded-full lg:size-14"
           />
           <Typography className="text-neutrals-600 lg:text-2xl lg:leading-7 lg:text-neutrals-500">
-            extremeclimbing
+            extreme_bl
           </Typography>
         </Link>
         {postsComponent}
