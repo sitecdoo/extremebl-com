@@ -149,7 +149,7 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
 
               return (
                 <ListTag className="mb-12 ml-6 list-disc text-neutrals-800 sm:mb-24">
-                  <Typography>{children}</Typography>
+                  {children}
                 </ListTag>
               );
             },
