@@ -28,7 +28,7 @@ export async function middleware(request: NextRequest) {
   // If the pathname doesn't have a locale, redirect to the appropriate language
   if (!pathnameHasLocale) {
     const newUrl = new URL(
-      `/${language}${pathname === "/" ? "" : `/${pathname.replace(/^\//, "")}`}`,
+      `/${language}${pathname.startsWith("/") ? "" : "/"}${pathname}`,
       request.url,
     );
 
