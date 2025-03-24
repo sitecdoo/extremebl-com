@@ -148,8 +148,8 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
               const ListTag = node.listType === "number" ? "ol" : "ul";
 
               return (
-                <ListTag className="mb-4 ml-6 list-inside text-neutrals-800">
-                  <Typography>{children}</Typography>
+                <ListTag className="-mt-8 mb-12 ml-6 list-disc text-neutrals-800 sm:-mt-20 sm:mb-24">
+                  {children}
                 </ListTag>
               );
             },
@@ -157,7 +157,7 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
               const children = nodesToJSX({ nodes: node.children });
               return (
                 <li className="mb-2">
-                  <Typography>{children}</Typography>
+                  <Typography tag="span">{children}</Typography>
                 </li>
               );
             },
