@@ -148,7 +148,7 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
               const ListTag = node.listType === "number" ? "ol" : "ul";
 
               return (
-                <ListTag className="mb-12 ml-6 list-disc text-neutrals-800 sm:mb-24">
+                <ListTag className="-mt-8 mb-12 ml-6 list-disc text-neutrals-800 sm:-mt-20 sm:mb-24">
                   {children}
                 </ListTag>
               );
