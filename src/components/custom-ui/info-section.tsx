@@ -23,8 +23,8 @@ const InfoSection = ({
       <Image
         src={image}
         alt="card"
-        width={4000}
-        height={2667}
+        width={820}
+        height={700}
         className="h-[22.5rem] w-full min-w-64 rounded-2xl object-cover md:w-3/4 lg:h-[43.75rem] lg:w-2/3 lg:rounded-20 2xl:w-1/2"
         priority
         style={{ objectPosition: `${xPosition}% ${yPosition}%` }}
