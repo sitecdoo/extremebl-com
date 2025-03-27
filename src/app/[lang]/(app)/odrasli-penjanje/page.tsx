@@ -101,13 +101,13 @@ const AdultsPage = async () => {
               {dict.adults.nextSessions}
             </Typography>
             <RectangleWrapper
-              text="29.03. - 30.03"
-              href="https://forms.gle/jPSnH41XGEf4c25S9"
+              text="05.04. - 06.04"
+              href="https://forms.gle/EuDQyCdKXdWhKPnJ7"
               buttonText={dict.global.signUp}
             />
             <RectangleWrapper
-              text="26.04. - 27.04"
-              href="https://forms.gle/wPscJjUauwjdAWM98"
+              text={dict.adults.waitingList}
+              href="https://forms.gle/QUSEXP6p9vyUtRSQ7"
               buttonText={dict.global.signUp}
             />
           </div>
@@ -119,13 +119,18 @@ const AdultsPage = async () => {
           description={dict.infoSection.adults.advancedCourseDescription}
           xPosition={100}
         >
-          <div className="space-y-4">
-            <Typography fontWeight="bold">
-              {dict.adults.nextSessions}
-            </Typography>
+          <div className="space-y-6">
+            <div className="space-y-2">
+              <Typography fontWeight="bold">
+                {dict.adults.noScheduledCourses}
+              </Typography>
+              <Typography>
+                {dict.adults.joinWaitingList}
+              </Typography>
+            </div>
             <RectangleWrapper
-              text="01.04. - 30.04"
-              href="https://forms.gle/hiHBh7zCgZpjs4Eu7"
+              text={dict.adults.waitingList}
+              href="https://forms.gle/JRWvBwJiehRridcP8"
               buttonText={dict.global.signUp}
             />
           </div>

@@ -43,7 +43,10 @@
     "banner": "Climbing for Adults",
     "header": "Climbing for adults offers an exciting opportunity for all adventure lovers, regardless of prior experience. Whether you want to improve your physical fitness, conquer new challenges, or simply enjoy camping and staying in nature.",
     "testimonial": "Ready for a new adventure? Join our climbing team and start your climbing journey today.",
-    "nextSessions": "Next Sessions"
+    "nextSessions": "Next Sessions",
+    "noScheduledCourses": "There are currently no scheduled courses.",
+    "joinWaitingList": "Join the waiting list to be the first to know when new course slots become available!",
+    "waitingList": "Waiting List"
   },
 
   "birthdays": {

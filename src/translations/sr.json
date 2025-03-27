@@ -43,7 +43,10 @@
     "banner": "Penjanje za odrasle",
     "header": "Penjanje za odrasle pruža uzbudljivu priliku za sve ljubitelje avanture, bez obzira na prethodno iskustvo. Bilo da želiš poboljšati svoju fizičku kondiciju, savladati nove izazove ili jednostavno uživati u kampovanju i boravku u prirodi.",
     "testimonial": "Spremni za novu avanturu? Pridružite se našoj penjačkoj ekipi i započnite svoje penjačko putovanje danas",
-    "nextSessions": "Naredni termini"
+    "nextSessions": "Naredni termini",
+    "noScheduledCourses": "Trenutno nema dostupnih termina",
+    "joinWaitingList": "Prijavi se na listu čekanja kako bi prvi saznali nove termine kurseva!",
+    "waitingList": "Lista čekanja"
   },
 
   "birthdays": {
