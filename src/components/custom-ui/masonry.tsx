@@ -20,7 +20,9 @@ function Masonry({ images }: MasonryProps) {
             alt={images[0].alt}
             fill
             className="rounded-lg object-cover"
-            priority
+            priority={false}
+            loading="lazy"
+            quality={65}
             style={{
               objectPosition: `${images[0].xPosition}% ${images[0].yPosition}%`,
             }}
@@ -35,7 +37,9 @@ function Masonry({ images }: MasonryProps) {
               fill
               className="rounded-lg object-cover"
               sizes="50vw"
-              priority
+              priority={false}
+              loading="lazy"
+              quality={65}
               style={{
                 objectPosition: `${images[1].xPosition}% ${images[1].yPosition}%`,
               }}
@@ -48,7 +52,9 @@ function Masonry({ images }: MasonryProps) {
               fill
               className="rounded-lg object-cover"
               sizes="50vw"
-              priority
+              priority={false}
+              loading="lazy"
+              quality={65}
               style={{
                 objectPosition: `${images[2].xPosition}% ${images[2].yPosition}%`,
               }}
@@ -62,7 +68,9 @@ function Masonry({ images }: MasonryProps) {
             alt={images[3].alt}
             fill
             className="rounded-lg object-cover"
-            priority
+            priority={false}
+            loading="lazy"
+            quality={65}
             style={{
               objectPosition: `${images[3].xPosition}% ${images[3].yPosition}%`,
             }}
@@ -74,7 +82,9 @@ function Masonry({ images }: MasonryProps) {
             alt={images[4].alt}
             fill
             className="rounded-lg object-cover"
-            priority
+            priority={false}
+            loading="lazy"
+            quality={65}
             style={{
               objectPosition: `${images[4].xPosition}% ${images[4].yPosition}%`,
             }}
@@ -91,7 +101,9 @@ function Masonry({ images }: MasonryProps) {
             fill
             className="rounded-lg object-cover"
             sizes="(min-width: 768px) 66vw"
-            priority
+            priority={false}
+            loading="lazy"
+            quality={65}
             style={{
               objectPosition: `${images[0].xPosition}% ${images[0].yPosition}%`,
             }}
@@ -105,7 +117,9 @@ function Masonry({ images }: MasonryProps) {
             fill
             className="rounded-lg object-cover"
             sizes="(min-width: 768px) 33vw"
-            priority
+            priority={false}
+            loading="lazy"
+            quality={65}
             style={{
               objectPosition: `${images[1].xPosition}% ${images[1].yPosition}%`,
             }}
@@ -119,7 +133,9 @@ function Masonry({ images }: MasonryProps) {
             fill
             className="rounded-lg object-cover"
             sizes="(min-width: 768px) 33vw"
-            priority
+            priority={false}
+            loading="lazy"
+            quality={65}
             style={{
               objectPosition: `${images[2].xPosition}% ${images[2].yPosition}%`,
             }}
@@ -133,7 +149,9 @@ function Masonry({ images }: MasonryProps) {
             fill
             className="rounded-lg object-cover"
             sizes="(min-width: 768px) 33vw"
-            priority
+            priority={false}
+            loading="lazy"
+            quality={65}
             style={{
               objectPosition: `${images[3].xPosition}% ${images[3].yPosition}%`,
             }}
@@ -146,7 +164,9 @@ function Masonry({ images }: MasonryProps) {
             fill
             className="rounded-lg object-cover"
             sizes="(min-width: 768px) 66vw"
-            priority
+            priority={false}
+            loading="lazy"
+            quality={65}
             style={{
               objectPosition: `${images[4].xPosition}% ${images[4].yPosition}%`,
             }}

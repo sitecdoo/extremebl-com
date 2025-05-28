@@ -17,8 +17,10 @@ export async function generateMetadata() {
 }
 
 const FAQPage = async () => {
-  const dict = await getDictionary();
-  const { docs } = await getRecentPosts();
+  const [dict, { docs }] = await Promise.all([
+    getDictionary(),
+    getRecentPosts(),
+  ]);
 
   return (
     <div className="relative flex w-full flex-col items-center gap-24 pb-24 lg:gap-48 lg:pb-48">

@@ -15,11 +15,12 @@ const BigHeroBanner = ({
       <Image
         src="/hero-image.jpg"
         alt="hero-banner"
+        decoding="sync"
         width={1920}
         height={1080}
         className="h-[40rem] min-w-64 rounded-2xl object-cover object-[70%] sm:w-full lg:h-[62.5rem] lg:rounded-40 lg:object-bottom"
         priority
-        quality={85}
+        quality={65}
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1920px"
         loading="eager"
       />

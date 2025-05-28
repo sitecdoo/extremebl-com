@@ -12,6 +12,7 @@ const NavItem = ({ href, name }: { href: string; name: string }) => {
     <Link
       href={href}
       className="rounded-60 text-neutrals-800 hover:bg-neutrals-75"
+      prefetch
     >
       <Typography
         className={cn(

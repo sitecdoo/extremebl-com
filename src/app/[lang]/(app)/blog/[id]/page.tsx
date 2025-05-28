@@ -25,8 +25,7 @@ interface BlogPostPageProps {
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps) {
-  const { id } = await params;
-  const data = await getPost(id);
+  const [{ id }, data] = await Promise.all([params, getPost(params.id)]);
   const thumbnail = data.thumbnail as Media;
 
   return {
@@ -63,10 +62,12 @@ export async function generateStaticParams() {
 export const revalidate = 3600;
 
 const BlogPost = async ({ params }: BlogPostPageProps) => {
-  const { id } = await params;
-  const post = await getPost(id);
-  const { docs } = await getRecentPosts();
-  const dict = await getDictionary();
+  const [{ id }, post, { docs }, dict] = await Promise.all([
+    params,
+    getPost(params.id),
+    getRecentPosts(),
+    getDictionary(),
+  ]);
 
   if (!post) {
     notFound();

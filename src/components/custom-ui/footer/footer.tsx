@@ -28,8 +28,10 @@ const NavItems = ({
 );
 
 const Footer = async () => {
-  const dict = await getDictionary();
-  const navigation = await getFooterItems();
+  const [dict, navigation] = await Promise.all([
+    getDictionary(),
+    getFooterItems(),
+  ]);
   const { company, activity, contact } = navigation;
 
   return (

@@ -21,9 +21,10 @@ const NavLink = ({ href, children }: { href: string; children: ReactNode }) => (
 );
 
 const Navbar = async () => {
-  const currentLanguage = await getLanguage();
-
-  const navigation = await getNavigationItems();
+  const [currentLanguage, navigation] = await Promise.all([
+    getLanguage(),
+    getNavigationItems(),
+  ]);
 
   return (
     <nav className="flex items-center justify-between bg-neutrals-50 px-4 py-4 md:px-8 md:py-6 lg:px-6 xl:px-12 xl:py-8">
