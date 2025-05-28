@@ -23,7 +23,9 @@ const Testimonial = ({
           src={image}
           alt={`${name}-image`}
           className="size-9 rounded-full object-cover"
-          priority
+          loading="lazy"
+          decoding="sync"
+          quality={65}
         />
         <Typography fontWeight="bold" uppercase>
           {name}

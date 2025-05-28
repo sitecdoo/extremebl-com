@@ -25,10 +25,9 @@ const Blog = async ({
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) => {
-  const [params, dict] = await Promise.all([
-    Promise.resolve(searchParams),
-    getDictionary(),
-  ]);
+  const params = searchParams;
+  const dict = await getDictionary();
+
   const sortParam = params.sort === "asc" ? "createdAt" : "-createdAt";
   const searchParam = params.search || "";
   const categoryIds = params.categoryIds || "";

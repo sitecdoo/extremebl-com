@@ -30,7 +30,9 @@ const InstagramPosts = ({ posts }: InstagramPostsProps) => {
                 className="h-full rounded-xl lg:rounded-28"
                 width={384}
                 height={384}
-                priority
+                loading="lazy"
+                decoding="sync"
+                quality={65}
               />
             ) : (
               <video

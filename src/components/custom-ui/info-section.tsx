@@ -26,7 +26,6 @@ const InfoSection = ({
         width={820}
         height={700}
         className="h-[22.5rem] w-full min-w-64 rounded-2xl object-cover md:w-3/4 lg:h-[43.75rem] lg:w-2/3 lg:rounded-20 2xl:w-1/2"
-        priority={false}
         quality={65}
         loading="lazy"
         style={{ objectPosition: `${xPosition}% ${yPosition}%` }}

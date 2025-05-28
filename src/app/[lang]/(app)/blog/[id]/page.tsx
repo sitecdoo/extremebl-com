@@ -175,7 +175,9 @@ const BlogPost = async ({ params }: BlogPostPageProps) => {
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw"
-                    priority
+                    loading="lazy"
+                    decoding="sync"
+                    quality={65}
                   />
                 </div>
               );

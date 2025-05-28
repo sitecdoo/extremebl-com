@@ -16,6 +16,9 @@ const ServiceCard = ({ title, description, image }: ServiceCardProps) => {
         height={90}
         alt={`${title}-icon`}
         className="size-[4.5rem] lg:size-[5.625rem]"
+        loading="lazy"
+        decoding="sync"
+        quality={65}
       />
       <div className="mx-8 flex min-w-40 flex-col items-center gap-y-4 text-center sm:mx-7 sm:max-w-80">
         <div>

@@ -20,7 +20,6 @@ function Masonry({ images }: MasonryProps) {
             alt={images[0].alt}
             fill
             className="rounded-lg object-cover"
-            priority={false}
             loading="lazy"
             quality={65}
             style={{
@@ -37,7 +36,6 @@ function Masonry({ images }: MasonryProps) {
               fill
               className="rounded-lg object-cover"
               sizes="50vw"
-              priority={false}
               loading="lazy"
               quality={65}
               style={{
@@ -52,7 +50,6 @@ function Masonry({ images }: MasonryProps) {
               fill
               className="rounded-lg object-cover"
               sizes="50vw"
-              priority={false}
               loading="lazy"
               quality={65}
               style={{
@@ -68,7 +65,6 @@ function Masonry({ images }: MasonryProps) {
             alt={images[3].alt}
             fill
             className="rounded-lg object-cover"
-            priority={false}
             loading="lazy"
             quality={65}
             style={{
@@ -82,7 +78,6 @@ function Masonry({ images }: MasonryProps) {
             alt={images[4].alt}
             fill
             className="rounded-lg object-cover"
-            priority={false}
             loading="lazy"
             quality={65}
             style={{
@@ -101,7 +96,6 @@ function Masonry({ images }: MasonryProps) {
             fill
             className="rounded-lg object-cover"
             sizes="(min-width: 768px) 66vw"
-            priority={false}
             loading="lazy"
             quality={65}
             style={{
@@ -117,7 +111,6 @@ function Masonry({ images }: MasonryProps) {
             fill
             className="rounded-lg object-cover"
             sizes="(min-width: 768px) 33vw"
-            priority={false}
             loading="lazy"
             quality={65}
             style={{
@@ -133,7 +126,6 @@ function Masonry({ images }: MasonryProps) {
             fill
             className="rounded-lg object-cover"
             sizes="(min-width: 768px) 33vw"
-            priority={false}
             loading="lazy"
             quality={65}
             style={{
@@ -149,7 +141,6 @@ function Masonry({ images }: MasonryProps) {
             fill
             className="rounded-lg object-cover"
             sizes="(min-width: 768px) 33vw"
-            priority={false}
             loading="lazy"
             quality={65}
             style={{
@@ -164,7 +155,6 @@ function Masonry({ images }: MasonryProps) {
             fill
             className="rounded-lg object-cover"
             sizes="(min-width: 768px) 66vw"
-            priority={false}
             loading="lazy"
             quality={65}
             style={{

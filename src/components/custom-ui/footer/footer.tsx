@@ -43,7 +43,9 @@ const Footer = async () => {
             alt="logo-footer"
             width={409}
             height={328}
-            priority
+            loading="lazy"
+            decoding="sync"
+            quality={65}
           />
         </Link>
         <section className="flex w-full flex-col px-10 md:max-w-[50rem] md:gap-y-20 md:px-0">
