@@ -22,7 +22,6 @@ const BigHeroBanner = ({
         priority
         quality={65}
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1920px"
-        loading="eager"
       />
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-dark-500/0 from-40% to-dark-500 lg:rounded-40 lg:bg-gradient-to-l lg:to-dark-500/50" />
       <div className="absolute bottom-10 left-0 px-4 text-neutrals-50 sm:bottom-20 sm:left-10 sm:max-w-xl sm:px-0 lg:left-14 lg:top-1/3 lg:max-w-2xl 2xl:left-32">
