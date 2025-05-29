@@ -16,6 +16,9 @@ const BenefitsCard = ({ title, description, image }: BenefitsCardProps) => {
         width={90}
         height={90}
         alt={`${title}-icon`}
+        loading="lazy"
+        decoding="sync"
+        quality={65}
         className="size-[4.5rem] lg:mt-10 lg:size-[5.625rem]"
       />
       <div className="mx-8 flex min-w-40 max-w-72 flex-col items-center gap-y-4 text-center lg:max-w-[21.5rem]">

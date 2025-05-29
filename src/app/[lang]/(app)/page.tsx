@@ -21,8 +21,10 @@ export const metadata: Metadata = {
 };
 
 export default async function HomePage() {
-  const dict = await getDictionary();
-  const { docs } = await getRecentPosts();
+  const [dict, { docs }] = await Promise.all([
+    getDictionary(),
+    getRecentPosts(),
+  ]);
 
   return (
     <div className="relative flex w-full flex-col items-center gap-24 pb-24 lg:gap-64 lg:pb-64">

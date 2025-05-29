@@ -48,6 +48,9 @@ const InstagramPostsWrapper = async ({
             src="/instagram-logo.png"
             alt="Logo"
             className="size-10 rounded-full lg:size-14"
+            loading="lazy"
+            decoding="sync"
+            quality={65}
           />
           <Typography className="text-neutrals-600 lg:text-2xl lg:leading-7 lg:text-neutrals-500">
             extreme_bl

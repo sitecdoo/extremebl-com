@@ -28,7 +28,9 @@ const ImageCarousel = ({ images, children }: ImageCarouselProps) => {
               alt={image.alt}
               width={1340}
               height={842}
-              priority
+              loading="lazy"
+              decoding="sync"
+              quality={65}
               className="h-[358px] max-h-[52.7rem] w-full rounded-2xl object-cover sm:h-full"
               style={{
                 objectPosition: `${image.xPosition}% ${image.yPosition}%`,

@@ -85,6 +85,7 @@ const MobileMenu = ({
                     href={item.href}
                     className="block py-2 text-lg font-medium text-neutrals-50 hover:text-neutrals-200"
                     onClick={onClose}
+                    prefetch
                   >
                     <Typography variant="h4" fontWeight="bold">
                       {item.label}
@@ -101,6 +102,7 @@ const MobileMenu = ({
                     href={item.href}
                     className="block py-2 text-lg font-medium text-neutrals-50 hover:text-neutrals-200"
                     onClick={onClose}
+                    prefetch
                   >
                     <Typography>{item.label}</Typography>
                   </Link>
