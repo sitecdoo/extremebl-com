@@ -31,7 +31,7 @@ const PackagesSection = ({ dict }: { dict: Dictionary["packages"] }) => {
       name: dict.packageThree,
       price: "250 km",
       offers: [
-        dict.twelveChildren,
+        dict.twentyFourChildren,
         dict.fourTrainers,
         dict.twoFiveHours,
         dict.space,
