@@ -45,6 +45,7 @@ export const sendEmailAction = async (
   });
 
   if (emailData.error) {
+    console.error("[Resend error]", emailData.error);
     return { success: false };
   }
 

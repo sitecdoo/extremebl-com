@@ -72,7 +72,10 @@ const Birthdays = async () => {
         ))}
       </div>
       <div className="relative space-y-9 lg:space-y-16">
-        <PackagesSection dict={dict.packages} />
+        <PackagesSection
+          dict={dict.packages}
+          birthdayFormDict={dict.birthdayForm}
+        />
         <NotesSection dict={dict.notes} />
         <BirthdaysPackagesBlobs />
       </div>

@@ -28,7 +28,7 @@ const ContactForm = ({ dict }: { dict: Dictionary["contact"] }) => {
 
   const subject = useSearchParams().get("subject");
 
-  const formSchema = getContactSchema();
+  const formSchema = getContactSchema(dict.errors);
 
   const form = useForm<ContactPayload>({
     resolver: zodResolver(formSchema),
@@ -64,11 +64,13 @@ const ContactForm = ({ dict }: { dict: Dictionary["contact"] }) => {
 
     if (result?.success) {
       form.reset();
-      toast.success({ title: "Email sent successfully" });
+      toast.success({
+        title: dict.successTitle,
+      });
       return;
     }
 
-    toast.error({ title: "Something went wrong" });
+    toast.error({ title: dict.errorTitle });
   };
 
   const { isSubmitting } = form.formState;
