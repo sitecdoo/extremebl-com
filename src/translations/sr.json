@@ -61,6 +61,15 @@
 
   "contact": {
     "title": "Kontaktirajte nas",
+    "errors": {
+      "nameRequired": "Ime je obavezno",
+      "nameTooLong": "Ime je predugačko",
+      "emailInvalid": "Unesite ispravnu email adresu",
+      "phoneRequired": "Broj telefona je obavezan",
+      "phoneInvalid": "Unesite ispravan broj telefona",
+      "messageTooShort": "Poruka je prekratka (min. 10 znakova)",
+      "messageTooLong": "Poruka je predugačka (max. 2000 znakova)"
+    },
     "description": "Imate pitanja ili trebate dodatne informacije? Slobodno nas kontaktirajte! Tu smo da vam pomognemo i pružimo sve potrebne informacije.",
     "phone": "Telefon",
     "address": "Adresa",
@@ -71,7 +80,11 @@
     "name": "Ime i prezime*",
     "phoneNumber": "Broj telefona*",
     "message": "Poruka*",
-    "send": "Pošalji upit"
+    "send": "Pošalji upit",
+    "successTitle": "Poruka poslana!",
+    "successMessage": "Javit ćemo vam se što je prije moguće.",
+    "errorTitle": "Nešto je pošlo po krivu",
+    "errorMessage": "Molimo pokušajte ponovo ili nas kontaktirajte direktno."
   },
 
   "blog": {
@@ -281,6 +294,40 @@
     "fourTrainers": "4 trenera"
   },
 
+  "birthdayForm": {
+    "title": "Rezervišite termin",
+    "errors": {
+      "nameRequired": "Ime je obavezno",
+      "nameTooLong": "Ime je predugačko",
+      "emailInvalid": "Unesite ispravnu email adresu",
+      "phoneRequired": "Broj telefona je obavezan",
+      "phoneInvalid": "Unesite ispravan broj telefona",
+      "dateRequired": "Datum je obavezan",
+      "datePast": "Datum ne može biti u prošlosti",
+      "timeRequired": "Preferirano vrijeme je obavezno",
+      "timeInvalid": "Termin mora biti na puni sat ili pola sata (npr. 10:00 ili 10:30)",
+      "licensePlateTooLong": "Broj tablica je predugačak",
+      "childrenAgeRequired": "Uzrast djece je obavezan"
+    },
+    "packageOne": "Paket 1 (do 12 djece)",
+    "packageTwo": "Paket 2 (do 18 djece)",
+    "packageThree": "Paket 3 (do 24 djece)",
+    "name": "Ime i prezime*",
+    "email": "E-mail*",
+    "phone": "Broj telefona*",
+    "date": "Datum proslave*",
+    "time": "Preferirano vrijeme*",
+    "licensePlate": "Broj registarskih tablica",
+    "licensePlateNote": "S obzirom na to da je ulaz na kampus Univerziteta u Banjoj Luci ograničen samo na zaposlene, potrebno je da vas unaprijed najavimo kako biste na dan proslave mogli unijeti hranu i piće, ukoliko to želite.",
+    "childrenAge": "Uzrast djece*",
+    "childrenAgeNote": "Prosječna starost djece na proslavi",
+    "submit": "Rezerviši",
+    "successTitle": "Rezervacija poslana!",
+    "successMessage": "Potvrdit ćemo vaš termin što je prije moguće.",
+    "errorTitle": "Došlo je do greške",
+    "errorMessage": "Molimo pokušajte ponovo ili nas kontaktirajte direktno."
+  },
+
   "notes": {
     "title": "Napomene:",
     "traditional": "Ne nudimo klasičnu igraonicu ",
@@ -291,6 +338,6 @@
     "noFridgeText": "pa preporučujemo da se donese neposredno prije posluživanja, posebno tokom toplijih mjeseci.",
     "noShoes": "Ako dijete ne želi koristiti penjačice iz sale, ",
     "cleanShoes": "potrebno je da donese čiste patike namijenjene za zatvoreni prostor.",
-    "warnning": "Molimo roditelje da na to unaprijed upozore goste."
+    "warning": "Molimo roditelje da na to unaprijed upozore goste."
   }
 }

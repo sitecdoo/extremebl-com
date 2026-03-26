@@ -10,6 +10,8 @@ type PackageCardProps = {
   offers: string[];
   className?: string;
   text: string;
+  href?: string;
+  onReserve?: () => void;
 };
 
 const PackageCard = ({
@@ -18,6 +20,8 @@ const PackageCard = ({
   offers,
   text,
   className,
+  href,
+  onReserve,
 }: PackageCardProps) => {
   return (
     <div
@@ -46,14 +50,27 @@ const PackageCard = ({
           ))}
         </div>
       </div>
-      <Link
-        href={`kontakt?subject=${encodeURIComponent(name.replace(/ /g, "-"))}`}
-        className="self-center"
-      >
-        <Button className="w-fit self-center" variant="blue">
+      {onReserve ? (
+        <Button
+          className="w-fit self-center"
+          variant="blue"
+          onClick={onReserve}
+        >
           <Typography fontWeight="bold">{text}</Typography>
         </Button>
-      </Link>
+      ) : (
+        <Link
+          href={
+            href ??
+            `kontakt?subject=${encodeURIComponent(name.replace(/ /g, "-"))}`
+          }
+          className="self-center"
+        >
+          <Button className="w-fit self-center" variant="blue">
+            <Typography fontWeight="bold">{text}</Typography>
+          </Button>
+        </Link>
+      )}
     </div>
   );
 };

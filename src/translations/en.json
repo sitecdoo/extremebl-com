@@ -61,6 +61,15 @@
 
   "contact": {
     "title": "Contact Us",
+    "errors": {
+      "nameRequired": "Name is required",
+      "nameTooLong": "Name is too long",
+      "emailInvalid": "Please enter a valid email",
+      "phoneRequired": "Phone number is required",
+      "phoneInvalid": "Please enter a valid phone number",
+      "messageTooShort": "Message is too short (min. 10 characters)",
+      "messageTooLong": "Message is too long (max. 2000 characters)"
+    },
     "description": "Have questions or need more information? Feel free to reach out! We're here to help and provide all the necessary information.",
     "phone": "Phone Number",
     "address": "Address",
@@ -71,7 +80,11 @@
     "name": "Full Name*",
     "phoneNumber": "Phone Number*",
     "message": "Message*",
-    "send": "Send Inquiry"
+    "send": "Send Inquiry",
+    "successTitle": "Message sent!",
+    "successMessage": "We'll get back to you as soon as possible.",
+    "errorTitle": "Something went wrong",
+    "errorMessage": "Please try again or contact us directly."
   },
 
   "blog": {
@@ -281,6 +294,40 @@
     "fourTrainers": "4 instructors"
   },
 
+  "birthdayForm": {
+    "title": "Reserve a time",
+    "errors": {
+      "nameRequired": "Name is required",
+      "nameTooLong": "Name is too long",
+      "emailInvalid": "Please enter a valid email",
+      "phoneRequired": "Phone number is required",
+      "phoneInvalid": "Please enter a valid phone number",
+      "dateRequired": "Date is required",
+      "datePast": "Date cannot be in the past",
+      "timeRequired": "Preferred time is required",
+      "timeInvalid": "Time must be on the hour or half hour (e.g. 10:00 or 10:30)",
+      "licensePlateTooLong": "License plate is too long",
+      "childrenAgeRequired": "Children's age is required"
+    },
+    "packageOne": "Package 1 (up to 12 children)",
+    "packageTwo": "Package 2 (up to 18 children)",
+    "packageThree": "Package 3 (up to 24 children)",
+    "name": "Full Name*",
+    "email": "E-mail*",
+    "phone": "Phone Number*",
+    "date": "Date of celebration*",
+    "time": "Preferred time*",
+    "licensePlate": "License plate number",
+    "licensePlateNote": "Since access to the University of Banja Luka campus is restricted to employees only, we need to register you in advance so that on the day of the celebration you can bring food and drinks, if you wish.",
+    "childrenAge": "Children's age*",
+    "childrenAgeNote": "Average age of children at the party",
+    "submit": "Reserve",
+    "successTitle": "Reservation sent!",
+    "successMessage": "We'll confirm your booking as soon as possible.",
+    "errorTitle": "Something went wrong",
+    "errorMessage": "Please try again or contact us directly."
+  },
+
   "notes": {
     "title": "Notes:",
     "traditional": "We do not offer a traditional playroom ",
@@ -291,6 +338,6 @@
     "noFridgeText": "so we recommend bringing it shortly before serving, especially during warmer months.",
     "noShoes": "If the child does not want to use the climbing shoes from the gym, ",
     "cleanShoes": "they must bring clean sneakers intended for indoor use.",
-    "warnning": "Please remind parents to inform their guests about this in advance."
+    "warning": "Please remind parents to inform their guests about this in advance."
   }
 }
