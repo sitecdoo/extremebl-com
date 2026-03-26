@@ -42,7 +42,7 @@ export const sendBirthdayEmailAction = async (
   const [year, month, day] = parsedData.date.split("-");
   const formattedDate = `${day}.${month}.${year}.`;
 
-  const campusEmailRecipient = "dj.blagojevic@gmail.com";
+  const campusEmailRecipient = "srdjan.bijelovic@unibl.org";
   const hasCampusEmail =
     parsedData.licensePlate && parsedData.licensePlate.trim().length > 0;
 
@@ -64,7 +64,7 @@ export const sendBirthdayEmailAction = async (
             to: campusEmailRecipient,
             cc: ["extremebl@gmail.com"],
             subject: "Zahtjev za ulazak vozila na kampus",
-            text: `Poštovani,\n\nobraćamo vam se sa molbom za odobrenje za ulazak automobilom na područje kampusa na dan ${formattedDate} godine za automobil registarskih oznaka ${parsedData.licensePlate}.\n\nAutomobili treba da prevezu rekvizite za proslavu rodjendana u penjačkoj sali.\n\nHvala unaprijed i srdačan pozdrav,\nPK Extreme`,
+            text: `Poštovani,\n\nobraćamo vam se sa molbom za odobrenje za ulazak automobilom na područje kampusa na dan ${formattedDate} godine za automobil registarskih oznaka ${parsedData.licensePlate}.\n\nAutomobili treba da prevezu rekvizite za proslavu rođendana u penjačkoj sali.\n\nHvala unaprijed i srdačan pozdrav,\nPK Extreme`,
           })
         : Promise.resolve(null),
       resend.emails.send({
