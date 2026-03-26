@@ -307,8 +307,7 @@
       "timeRequired": "Preferirano vrijeme je obavezno",
       "timeInvalid": "Termin mora biti na puni sat ili pola sata (npr. 10:00 ili 10:30)",
       "licensePlateTooLong": "Broj tablica je predugačak",
-      "childrenAgeRequired": "Uzrast djece je obavezan",
-      "childrenAgeInvalid": "Unesite broj izmedju 1 i 18"
+      "childrenAgeRequired": "Uzrast djece je obavezan"
     },
     "packageOne": "Paket 1 (do 12 djece)",
     "packageTwo": "Paket 2 (do 18 djece)",
@@ -324,7 +323,7 @@
     "childrenAgeNote": "Prosječna starost djece na proslavi",
     "submit": "Rezerviši",
     "successTitle": "Rezervacija poslana!",
-    "successMessage": "Potvrdıt ćemo vaš termin što je prije moguće.",
+    "successMessage": "Potvrdit ćemo vaš termin što je prije moguće.",
     "errorTitle": "Došlo je do greške",
     "errorMessage": "Molimo pokušajte ponovo ili nas kontaktirajte direktno."
   },

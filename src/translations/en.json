@@ -307,8 +307,7 @@
       "timeRequired": "Preferred time is required",
       "timeInvalid": "Time must be on the hour or half hour (e.g. 10:00 or 10:30)",
       "licensePlateTooLong": "License plate is too long",
-      "childrenAgeRequired": "Children's age is required",
-      "childrenAgeInvalid": "Please enter a number between 1 and 18"
+      "childrenAgeRequired": "Children's age is required"
     },
     "packageOne": "Package 1 (up to 12 children)",
     "packageTwo": "Package 2 (up to 18 children)",

@@ -14,7 +14,6 @@ type BirthdayErrors = {
   timeInvalid?: string;
   licensePlateTooLong?: string;
   childrenAgeRequired?: string;
-  childrenAgeInvalid?: string;
 };
 
 export const getBirthdaySchema = (e: BirthdayErrors = {}) =>
