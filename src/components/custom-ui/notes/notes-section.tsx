@@ -19,7 +19,7 @@ const NotesSection = ({ dict }: { dict: Dictionary["notes"] }) => {
     {
       intro: dict.noShoes,
       statment: dict.cleanShoes,
-      text: dict.warnning,
+      text: dict.warning,
     },
   ];
 

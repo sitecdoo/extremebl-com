@@ -325,7 +325,7 @@
     "submit": "Rezerviši",
     "successTitle": "Rezervacija poslana!",
     "successMessage": "Potvrdıt ćemo vaš termin što je prije moguće.",
-    "errorTitle": "Nešto je pošlo po krivu",
+    "errorTitle": "Došlo je do greške",
     "errorMessage": "Molimo pokušajte ponovo ili nas kontaktirajte direktno."
   },
 
@@ -339,6 +339,6 @@
     "noFridgeText": "pa preporučujemo da se donese neposredno prije posluživanja, posebno tokom toplijih mjeseci.",
     "noShoes": "Ako dijete ne želi koristiti penjačice iz sale, ",
     "cleanShoes": "potrebno je da donese čiste patike namijenjene za zatvoreni prostor.",
-    "warnning": "Molimo roditelje da na to unaprijed upozore goste."
+    "warning": "Molimo roditelje da na to unaprijed upozore goste."
   }
 }
