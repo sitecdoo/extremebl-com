@@ -77,17 +77,7 @@ export const getBirthdaySchema = (e: BirthdayErrors = {}) =>
       .trim()
       .min(1, {
         message: e.childrenAgeRequired ?? "Children's age is required",
-      })
-      .refine(
-        (val) => {
-          const n = parseInt(val, 10);
-          return /^\d+$/.test(val) && n >= 1 && n <= 18;
-        },
-        {
-          message:
-            e.childrenAgeInvalid ?? "Please enter a valid age between 1 and 18",
-        },
-      ),
+      }),
   });
 
 export type BirthdayPayload = z.infer<ReturnType<typeof getBirthdaySchema>>;

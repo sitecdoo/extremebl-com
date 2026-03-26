@@ -338,9 +338,6 @@ const BirthdayForm = ({
             <FormItem>
               <FormControl>
                 <Input
-                  type="number"
-                  min={1}
-                  max={18}
                   disabled={isSubmitting}
                   variant="form"
                   inputSize="lg"
