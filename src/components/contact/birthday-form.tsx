@@ -72,28 +72,33 @@ const BirthdayForm = ({
   }, []);
 
   const errors = form.formState.errors;
-  const today = new Date().toISOString().split("T")[0];
+  const _now = new Date();
+  const today = `${_now.getFullYear()}-${String(_now.getMonth() + 1).padStart(2, "0")}-${String(_now.getDate()).padStart(2, "0")}`;
 
   const handleSubmit = async (data: BirthdayPayload) => {
-    const altchaPayload = await getSolution();
+    try {
+      const altchaPayload = await getSolution();
 
-    if (!altchaPayload) {
-      toast.error({ title: "Captcha verification failed" });
-      return;
+      if (!altchaPayload) {
+        toast.error({ title: dict.errorTitle });
+        return;
+      }
+
+      const result = await sendBirthdayEmailAction(data, altchaPayload);
+
+      if (result?.success) {
+        form.reset();
+        toast.success({
+          title: dict.successTitle,
+        });
+        onSuccess?.();
+        return;
+      }
+
+      toast.error({ title: dict.errorTitle });
+    } catch {
+      toast.error({ title: dict.errorTitle });
     }
-
-    const result = await sendBirthdayEmailAction(data, altchaPayload);
-
-    if (result?.success) {
-      form.reset();
-      toast.success({
-        title: dict.successTitle,
-      });
-      onSuccess?.();
-      return;
-    }
-
-    toast.error({ title: dict.errorTitle });
   };
 
   const { isSubmitting } = form.formState;
