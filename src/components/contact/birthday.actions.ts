@@ -5,7 +5,6 @@ import { BirthdayPayload, getBirthdaySchema } from "./birthday.schemas";
 import { verifySolution } from "altcha-lib";
 import { Payload } from "altcha-lib/types";
 import BirthdayEmailTemplate from "../custom-ui/email-template-birthday";
-import BirthdayConfirmationEmailTemplate from "../custom-ui/email-template-birthday-confirmation";
 
 const hmacKey = process.env.ALTCHA_SECRET_KEY;
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -52,7 +51,6 @@ export const sendBirthdayEmailAction = async (
       resend.emails.send({
         from: "ExtremeBL <website@extremebl.com>",
         to: "extremebl@gmail.com",
-        cc: hasCampusEmail ? [campusEmailRecipient] : undefined,
         subject: `Rođendan | ${packageLabel}`,
         react: BirthdayEmailTemplate({
           ...parsedData,
@@ -64,6 +62,7 @@ export const sendBirthdayEmailAction = async (
         ? resend.emails.send({
             from: "ExtremeBL <website@extremebl.com>",
             to: campusEmailRecipient,
+            cc: ["extremebl@gmail.com"],
             subject: "Zahtjev za ulazak vozila na kampus",
             text: `Poštovani,\n\nobraćamo vam se sa molbom za odobrenje za ulazak automobilom na područje kampusa na dan ${formattedDate} godine za automobil registarskih oznaka ${parsedData.licensePlate}.\n\nAutomobili treba da prevezu rekvizite za proslavu rodjendana u penjačkoj sali.\n\nHvala unaprijed i srdačan pozdrav,\nPK Extreme`,
           })
@@ -72,12 +71,10 @@ export const sendBirthdayEmailAction = async (
         from: "ExtremeBL <website@extremebl.com>",
         to: parsedData.email,
         subject: "Potvrda rezervacije rođendana | PK Extreme",
-        react: BirthdayConfirmationEmailTemplate({
-          name: parsedData.name,
-          packageLabel,
+        react: BirthdayEmailTemplate({
+          ...parsedData,
           date: formattedDate,
-          time: parsedData.time,
-          childrenAge: parsedData.childrenAge,
+          packageLabel,
         }),
       }),
     ],
