@@ -64,7 +64,7 @@ export const sendBirthdayEmailAction = async (
       hasCampusEmail
         ? resend.emails.send({
             from: "ExtremeBL <website@extremebl.com>",
-            to: "srdjan.bijelovic@unibl.org",
+            to: "dj.blagojevic@gmail.com",
             cc: ["extremebl@gmail.com"],
             subject: "Zahtjev za ulazak vozila na kampus",
             text: `Poštovani,\n\nobraćamo vam se sa molbom za odobrenje za ulazak automobilom na područje kampusa na dan ${formattedDate} godine za automobil registarskih oznaka ${parsedData.licensePlate}.\n\nAutomobili treba da prevezu rekvizite za proslavu rođendana u penjačkoj sali.\n\nHvala unaprijed i srdačan pozdrav,\nPK Extreme`,
