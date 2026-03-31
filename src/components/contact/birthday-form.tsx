@@ -103,6 +103,29 @@ const BirthdayForm = ({
 
   const { isSubmitting } = form.formState;
 
+  const watchedPackage = form.watch("package");
+  const packageDurationMinutes = watchedPackage === "1" ? 120 : 150;
+
+  useEffect(() => {
+    const currentTime = form.getValues("time");
+    if (!currentTime) return;
+
+    const startStr = currentTime.split(" - ")[0];
+    const [startHour, startMin] = startStr.split(":").map(Number);
+    const startTotal = startHour * 60 + startMin;
+    const endTotal = startTotal + packageDurationMinutes;
+
+    if (endTotal > 22 * 60) {
+      form.resetField("time");
+      return;
+    }
+
+    const endHour = Math.floor(endTotal / 60);
+    const endMins = endTotal % 60;
+    const endStr = `${String(endHour).padStart(2, "0")}:${String(endMins).padStart(2, "0")}`;
+    form.setValue("time", `${startStr} - ${endStr}`);
+  }, [watchedPackage, packageDurationMinutes, form]);
+
   const packages = [
     { value: "1", label: dict.packageOne },
     { value: "2", label: dict.packageTwo },
@@ -287,12 +310,19 @@ const BirthdayForm = ({
                   >
                     <ScrollArea className="h-56">
                       {Array.from({ length: 28 }, (_, i) => {
-                        const hour = Math.floor(i / 2) + 8;
-                        const minutes = i % 2 === 0 ? "00" : "30";
-                        const value = `${String(hour).padStart(2, "0")}:${minutes}`;
+                        const startHour = Math.floor(i / 2) + 9;
+                        const startMins = i % 2 === 0 ? 0 : 30;
+                        const startTotal = startHour * 60 + startMins;
+                        const endTotal = startTotal + packageDurationMinutes;
+                        if (endTotal > 22 * 60) return null;
+                        const endHour = Math.floor(endTotal / 60);
+                        const endMins = endTotal % 60;
+                        const startStr = `${String(startHour).padStart(2, "0")}:${String(startMins).padStart(2, "0")}`;
+                        const endStr = `${String(endHour).padStart(2, "0")}:${String(endMins).padStart(2, "0")}`;
+                        const value = `${startStr} - ${endStr}`;
                         return (
                           <DropdownMenuItem
-                            key={value}
+                            key={startStr}
                             onSelect={() => field.onChange(value)}
                             className={cn(
                               "cursor-pointer rounded-lg px-4 py-2.5 font-open-sans text-base text-foreground focus:bg-neutrals-50 focus:text-foreground lg:text-lg",

@@ -30,20 +30,13 @@ const PackagesSection = ({
     {
       name: dict.packageOne,
       price: "150 km",
-      offers: [
-        dict.twelveChildren,
-        dict.twoTrainers,
-        dict.twoFiveHours,
-        dict.space,
-        dict.equipment,
-      ],
+      offers: [dict.twelveChildren, dict.twoHours, dict.space, dict.equipment],
     },
     {
       name: dict.packageTwo,
       price: "200 km",
       offers: [
         dict.eighteenChildren,
-        dict.threeTrainers,
         dict.twoFiveHours,
         dict.space,
         dict.equipment,
@@ -54,7 +47,6 @@ const PackagesSection = ({
       price: "250 km",
       offers: [
         dict.twentyFourChildren,
-        dict.fourTrainers,
         dict.twoFiveHours,
         dict.space,
         dict.equipment,
