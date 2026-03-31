@@ -3,10 +3,16 @@ import Image from "next/image";
 type InstagramPost = {
   id: string;
   caption: string;
-  media_type: string;
-  media_url: string;
-  thumbnail_url: string;
+  mediaType: string;
+  mediaUrl: string;
+  thumbnailUrl: string;
   permalink: string;
+  sizes: {
+    small: { mediaUrl: string };
+    medium: { mediaUrl: string };
+    large: { mediaUrl: string };
+    full: { mediaUrl: string };
+  };
 };
 
 type InstagramPostsProps = {
@@ -22,10 +28,10 @@ const InstagramPosts = ({ posts }: InstagramPostsProps) => {
             key={post.id}
             className="h-44 max-w-44 sm:h-72 sm:max-w-72 lg:h-full lg:max-h-96 lg:max-w-96"
           >
-            {post.media_type === "IMAGE" ||
-            post.media_type === "CAROUSEL_ALBUM" ? (
+            {post.mediaType === "IMAGE" ||
+            post.mediaType === "CAROUSEL_ALBUM" ? (
               <Image
-                src={post.media_url}
+                src={post.sizes.medium.mediaUrl}
                 alt={post.caption || "Instagram Post"}
                 className="h-full rounded-xl lg:rounded-28"
                 width={384}
@@ -35,12 +41,16 @@ const InstagramPosts = ({ posts }: InstagramPostsProps) => {
                 quality={65}
               />
             ) : (
-              <video
-                controls
-                className="aspect-video h-full w-full rounded-xl lg:rounded-28"
-              >
-                <source src={post.media_url} type="video/mp4" />
-              </video>
+              <Image
+                src={post.sizes.medium.mediaUrl}
+                alt={post.caption || "Instagram Post"}
+                className="h-full rounded-xl lg:rounded-28"
+                width={384}
+                height={384}
+                loading="lazy"
+                decoding="sync"
+                quality={65}
+              />
             )}
           </div>
         ))}

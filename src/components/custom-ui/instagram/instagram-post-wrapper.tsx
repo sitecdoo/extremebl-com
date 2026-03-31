@@ -5,9 +5,6 @@ import Link from "next/link";
 import Typography from "../typography";
 import { Dictionary } from "@/utils/dictionary";
 
-const instagramToken = process.env.INSTAGRAM_TOKEN;
-const userId = process.env.INSTAGRAM_USER_ID;
-
 const InstagramPostsWrapper = async ({
   dict,
 }: {
@@ -16,14 +13,13 @@ const InstagramPostsWrapper = async ({
   let postsComponent;
 
   try {
-    const data = await fetch(
-      `https://graph.instagram.com/${userId}/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink&access_token=${instagramToken}&limit=4`,
-    );
+    const data = await fetch(`https://feeds.behold.so/CpdMSsFFhMkYtp3Ng0mu`);
+
     if (!data.ok) {
       postsComponent = renderError(dict.error);
     } else {
-      const posts = await data.json();
-      postsComponent = <InstagramPosts posts={posts.data} />;
+      const feed = await data.json();
+      postsComponent = <InstagramPosts posts={feed.posts} />;
     }
   } catch (error) {
     console.error("Fetch error:", error);
