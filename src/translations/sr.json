@@ -306,7 +306,7 @@
       "dateRequired": "Datum je obavezan",
       "datePast": "Datum ne može biti u prošlosti",
       "timeRequired": "Preferirano vrijeme je obavezno",
-      "timeInvalid": "Termin mora biti na puni sat ili pola sata (npr. 10:00 ili 10:30)",
+      "timeInvalid": "Odabrani termin nije ispravan",
       "licensePlateTooLong": "Broj tablica je predugačak",
       "childrenAgeRequired": "Uzrast djece je obavezan"
     },

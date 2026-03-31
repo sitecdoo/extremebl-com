@@ -306,7 +306,7 @@
       "dateRequired": "Date is required",
       "datePast": "Date cannot be in the past",
       "timeRequired": "Preferred time is required",
-      "timeInvalid": "Time must be on the hour or half hour (e.g. 10:00 or 10:30)",
+      "timeInvalid": "Please select a valid time slot",
       "licensePlateTooLong": "License plate is too long",
       "childrenAgeRequired": "Children's age is required"
     },
