@@ -51,8 +51,8 @@ export const sendBirthdayEmailAction = async (
   const [emailData, campusEmailData, confirmationEmailData] = await Promise.all(
     [
       resend.emails.send({
-        from: "onboarding@resend.dev",
-        to: "dj.blagojevic@gmail.com",
+        from: "ExtremeBL <website@extremebl.com>",
+        to: "extremebl@gmail.com",
         subject: `Rođendan | ${packageLabel}`,
         react: BirthdayEmailTemplate({
           ...parsedData,
@@ -63,15 +63,16 @@ export const sendBirthdayEmailAction = async (
       }),
       hasCampusEmail
         ? resend.emails.send({
-            from: "onboarding@resend.dev",
-            to: "dj.blagojevic@gmail.com",
+            from: "ExtremeBL <website@extremebl.com>",
+            to: "srdjan.bijelovic@unibl.org",
+            cc: ["extremebl@gmail.com"],
             subject: "Zahtjev za ulazak vozila na kampus",
             text: `Poštovani,\n\nobraćamo vam se sa molbom za odobrenje za ulazak automobilom na područje kampusa na dan ${formattedDate} godine za automobil registarskih oznaka ${parsedData.licensePlate}.\n\nAutomobili treba da prevezu rekvizite za proslavu rođendana u penjačkoj sali.\n\nHvala unaprijed i srdačan pozdrav,\nPK Extreme`,
           })
         : Promise.resolve(null),
       resend.emails.send({
-        from: "onboarding@resend.dev",
-        to: "dj.blagojevic@gmail.com",
+        from: "ExtremeBL <website@extremebl.com>",
+        to: parsedData.email,
         subject: "Potvrda rezervacije rođendana | PK Extreme",
         react: BirthdayEmailTemplate({
           ...parsedData,
