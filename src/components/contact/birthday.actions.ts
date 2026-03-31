@@ -42,39 +42,42 @@ export const sendBirthdayEmailAction = async (
   const [year, month, day] = parsedData.date.split("-");
   const formattedDate = `${day}.${month}.${year}.`;
 
-  const campusEmailRecipient = "srdjan.bijelovic@unibl.org";
+  const campusImageSrc =
+    "https://extremebl.com/api/media/file/pristup_autom.jpg";
+
   const hasCampusEmail =
     parsedData.licensePlate && parsedData.licensePlate.trim().length > 0;
 
   const [emailData, campusEmailData, confirmationEmailData] = await Promise.all(
     [
       resend.emails.send({
-        from: "ExtremeBL <website@extremebl.com>",
-        to: "extremebl@gmail.com",
+        from: "onboarding@resend.dev",
+        to: "dj.blagojevic@gmail.com",
         subject: `Rođendan | ${packageLabel}`,
         react: BirthdayEmailTemplate({
           ...parsedData,
           date: formattedDate,
           packageLabel,
+          campusImageSrc,
         }),
       }),
       hasCampusEmail
         ? resend.emails.send({
-            from: "ExtremeBL <website@extremebl.com>",
-            to: campusEmailRecipient,
-            cc: ["extremebl@gmail.com"],
+            from: "onboarding@resend.dev",
+            to: "dj.blagojevic@gmail.com",
             subject: "Zahtjev za ulazak vozila na kampus",
             text: `Poštovani,\n\nobraćamo vam se sa molbom za odobrenje za ulazak automobilom na područje kampusa na dan ${formattedDate} godine za automobil registarskih oznaka ${parsedData.licensePlate}.\n\nAutomobili treba da prevezu rekvizite za proslavu rođendana u penjačkoj sali.\n\nHvala unaprijed i srdačan pozdrav,\nPK Extreme`,
           })
         : Promise.resolve(null),
       resend.emails.send({
-        from: "ExtremeBL <website@extremebl.com>",
-        to: parsedData.email,
+        from: "onboarding@resend.dev",
+        to: "dj.blagojevic@gmail.com",
         subject: "Potvrda rezervacije rođendana | PK Extreme",
         react: BirthdayEmailTemplate({
           ...parsedData,
           date: formattedDate,
           packageLabel,
+          campusImageSrc,
         }),
       }),
     ],

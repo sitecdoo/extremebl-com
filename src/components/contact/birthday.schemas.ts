@@ -51,19 +51,9 @@ export const getBirthdaySchema = (e: BirthdayErrors = {}) =>
       .string()
       .trim()
       .min(1, { message: e.timeRequired ?? "Preferred time is required" })
-      .refine(
-        (val) => {
-          const parts = val.split(":");
-          if (parts.length < 2) return false;
-          const minutes = parseInt(parts[1], 10);
-          return minutes === 0 || minutes === 30;
-        },
-        {
-          message:
-            e.timeInvalid ??
-            "Time must be on the hour or half hour (e.g. 10:00 or 10:30)",
-        },
-      ),
+      .refine((val) => /^\d{2}:\d{2} - \d{2}:\d{2}$/.test(val), {
+        message: e.timeInvalid ?? "Please select a valid time slot",
+      }),
     licensePlate: z
       .string()
       .max(20, {

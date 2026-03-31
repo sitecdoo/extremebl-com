@@ -1,4 +1,12 @@
-import { Html, Body, Tailwind, Section, Text } from "@react-email/components";
+import {
+  Html,
+  Body,
+  Tailwind,
+  Section,
+  Text,
+  Img,
+  Link,
+} from "@react-email/components";
 
 type BirthdayEmailTemplateProps = {
   packageLabel: string;
@@ -9,6 +17,7 @@ type BirthdayEmailTemplateProps = {
   time: string;
   licensePlate?: string;
   childrenAge: string;
+  campusImageSrc: string;
 };
 
 const BirthdayEmailTemplate = ({
@@ -20,6 +29,7 @@ const BirthdayEmailTemplate = ({
   time,
   licensePlate,
   childrenAge,
+  campusImageSrc,
 }: BirthdayEmailTemplateProps) => {
   return (
     <Html>
@@ -44,6 +54,26 @@ const BirthdayEmailTemplate = ({
               <Text>Preferirano vrijeme: {time}</Text>
               {licensePlate && <Text>Registarske tablice: {licensePlate}</Text>}
               <Text>Uzrast djece: {childrenAge}</Text>
+              <Text>
+                Lokacija:{" "}
+                <Link href="https://share.google/XmNFjG0WRYO2xmN5Q">
+                  Climbing Club Extreme na Google Maps
+                </Link>
+              </Text>
+              {licensePlate && (
+                <>
+                  <Text>
+                    Ukoliko ste nam poslali vaše registarske tablice, vašem
+                    automobilu je omogućen pristup na Kampus i do naše sale
+                    možete doći prateći uputstva na priloženoj slici.
+                  </Text>
+                  <Img
+                    src={campusImageSrc}
+                    alt="Uputstvo za pristup kampusu automobilom"
+                    style={{ maxWidth: "500px", height: "auto" }}
+                  />
+                </>
+              )}
             </Section>
           </Section>
         </Body>
