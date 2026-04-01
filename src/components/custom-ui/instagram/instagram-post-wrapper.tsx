@@ -18,6 +18,7 @@ const InstagramPostsWrapper = async ({
   try {
     const data = await fetch(
       `https://graph.instagram.com/${userId}/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink&access_token=${instagramToken}&limit=4`,
+      { next: { revalidate: 3600 } },
     );
     if (!data.ok) {
       postsComponent = renderError(dict.error);
