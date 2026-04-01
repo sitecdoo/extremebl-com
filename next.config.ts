@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
   //   serverComponentsHmrCache: true,
   // },
   images: {
+    qualities: [65],
     remotePatterns: [
       {
         protocol: "https",
