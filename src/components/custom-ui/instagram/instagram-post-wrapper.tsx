@@ -10,16 +10,28 @@ const InstagramPostsWrapper = async ({
 }: {
   dict: Dictionary["socialMedia"];
 }) => {
+  const limit = 4;
   let postsComponent;
 
   try {
-    const data = await fetch(`https://feeds.behold.so/CpdMSsFFhMkYtp3Ng0mu`);
+    const data = await fetch(
+      `https://graph.instagram.com/v25.0/${process.env.INSTAGRAM_USER_ID}/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&limit=${limit}&access_token=${process.env.INSTAGRAM_TOKEN}`,
+      { next: { revalidate: 3600 } }
+    );
 
     if (!data.ok) {
       postsComponent = renderError(dict.error);
     } else {
       const feed = await data.json();
-      postsComponent = <InstagramPosts posts={feed.posts} />;
+      const posts = feed.data?.map((post: Record<string, string>) => ({
+        id: post.id,
+        caption: post.caption,
+        mediaType: post.media_type,
+        mediaUrl: post.media_url,
+        thumbnailUrl: post.thumbnail_url,
+        permalink: post.permalink,
+      }));
+      postsComponent = <InstagramPosts posts={posts} />;
     }
   } catch (error) {
     console.error("Fetch error:", error);

@@ -24,7 +24,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "behold.pictures",
+        hostname: "**.fbcdn.net",
       },
     ],
   },
