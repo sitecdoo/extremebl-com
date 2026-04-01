@@ -6,16 +6,6 @@ const nextConfig: NextConfig = {
   //   optimizePackageImports: ["lucide-react"],
   //   serverComponentsHmrCache: true,
   // },
-  // serverExternalPackages: [
-  //   "payload",
-  //   "@payloadcms/db-sqlite",
-  //   "@payloadcms/richtext-lexical",
-  //   "@payloadcms/storage-uploadthing",
-  //   "@payloadcms/payload-cloud",
-  //   "graphql",
-  //   "sharp",
-  //   "@libsql/client",
-  // ],
   images: {
     remotePatterns: [
       {
