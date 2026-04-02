@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, X } from "lucide-react";
 import { parseAsInteger, useQueryState } from "nuqs";
+import { useState } from "react";
 
 type SearchFilterProps = {
   placeholder: string;
@@ -24,8 +25,11 @@ const SearchFilter = ({ placeholder }: SearchFilterProps) => {
       .withDefault(1),
   );
 
+  const [inputValue, setInputValue] = useState(query || "");
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
+    setInputValue(value);
     setPage(1);
     if (value) {
       setQuery(value);
@@ -34,20 +38,25 @@ const SearchFilter = ({ placeholder }: SearchFilterProps) => {
     }
   };
 
+  const handleClear = () => {
+    setInputValue("");
+    setQuery(null);
+  };
+
   return (
     <div className="relative flex w-full items-center sm:max-w-[33.1rem]">
       <Input
         placeholder={placeholder}
         onChange={handleChange}
-        value={query || ""}
-        className="h-12 w-full border-neutrals-200 pl-8 pr-8 lg:h-14 lg:pl-12"
+        value={inputValue}
+        className="h-12 w-full border-neutrals-200 pl-8 pr-8 lg:h-14 lg:pl-12 lg:pr-12"
       />
       <Search className="absolute left-3 top-4 size-4 text-neutrals-400 lg:size-6" />
-      {query && (
+      {inputValue && (
         <Button
           variant="transparent"
           className="absolute right-2 top-4 h-fit bg-inherit p-0 hover:bg-inherit hover:text-neutrals-400 active:bg-inherit lg:right-0 lg:top-0"
-          onClick={() => setQuery(null)}
+          onClick={handleClear}
         >
           <X className="size-4 lg:size-6" />
         </Button>
