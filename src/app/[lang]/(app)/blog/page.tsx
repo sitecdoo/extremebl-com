@@ -23,9 +23,9 @@ export async function generateMetadata() {
 const Blog = async ({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) => {
-  const params = searchParams;
+  const params = await searchParams;
   const dict = await getDictionary();
 
   const sortParam = params.sort === "asc" ? "createdAt" : "-createdAt";
@@ -76,7 +76,7 @@ const Blog = async ({
   }
 
   const [postsResponse, categoriesResponse] = await Promise.all([
-    getPosts({ query }),
+    getPosts(query),
     getCategories(),
   ]);
 
