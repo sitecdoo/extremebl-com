@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 type InstagramPost = {
   id: string;
@@ -18,8 +19,11 @@ const InstagramPosts = ({ posts }: InstagramPostsProps) => {
     <div className="grid grid-cols-2 gap-2 sm:gap-5 lg:grid-cols-4">
       {posts &&
         posts.map((post) => (
-          <div
+          <Link
             key={post.id}
+            href={post.permalink}
+            target="_blank"
+            rel="noopener noreferrer"
             className="h-44 max-w-44 sm:h-72 sm:max-w-72 lg:h-full lg:max-h-96 lg:max-w-96"
           >
             {post.media_type === "IMAGE" ||
@@ -42,7 +46,7 @@ const InstagramPosts = ({ posts }: InstagramPostsProps) => {
                 <source src={post.media_url} type="video/mp4" />
               </video>
             )}
-          </div>
+          </Link>
         ))}
     </div>
   );
