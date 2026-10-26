@@ -53,7 +53,7 @@ export const sendBirthdayEmailAction = async (
       resend.emails.send({
         from: "ExtremeBL <website@extremebl.com>",
         to: "extremebl@gmail.com",
-        subject: `Rođendan | ${packageLabel}`,
+        subject: `ROĐENDAN | ${packageLabel}, ${parsedData.name}`,
         react: BirthdayEmailTemplate({
           ...parsedData,
           date: formattedDate,
