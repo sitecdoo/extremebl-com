@@ -57,8 +57,8 @@ const Children = async () => {
       {
         title: dict.priceList.olderTraining,
         date: [
-          { day: dict.days.monday, time: "19:30 - 21:00h" },
-          { day: dict.days.friday, time: "19:30 - 21:00h" },
+          { day: dict.days.monday, time: "20:00 - 21:00h" },
+          { day: dict.days.friday, time: "20:00 - 21:00h" },
         ],
       },
     ],
